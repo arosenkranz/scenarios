@@ -1,8 +1,8 @@
 {
-  "title": "PatternFly React basics",
-  "description": "Build your first PatternFly component.",
+  "title": "React: UI Component Documentation",
+  "description": "Build and document a React UI Component.",
   "difficulty": "beginner",
-  "time": "10 minutes",
+  "time": "12 minutes",
   "details": {
     "intro": {
       "text": "intro.md",
