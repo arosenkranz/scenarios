@@ -20,18 +20,10 @@
     "delayToSaveFileAfterStopTypingMilliseconds": 2000,
     "autoFormatEnable": false,
     "dashboards": [{ "name": "UI Component Documentation", "port": 6006 }],
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "vscode",
     "uisettings": "javascript",
     "showide": true,
-    "exclusionPatterns": [
-      "._*",
-      "package.json",
-      "package-lock.json",
-      "node_modules*",
-      "public*",
-      "serviceWorker*"
-    ],
-    "hideHiddenFiles": true
+    "hideHiddenFiles": false
   },
   "backend": {
     "imageid": "nodejs:12",
