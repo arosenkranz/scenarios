@@ -20,7 +20,7 @@
     "delayToSaveFileAfterStopTypingMilliseconds": 2000,
     "autoFormatEnable": false,
     "dashboards": [{ "name": "UI Component Documentation", "port": 6006 }],
-    "uilayout": "editor-iframe-split",
+    "uilayout": "vscode-terminal-split",
     "uisettings": "javascript",
     "showide": true,
     "exclusionPatterns": [
