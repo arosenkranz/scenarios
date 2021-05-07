@@ -18,10 +18,9 @@
   "environment": {
     "showdashboard": true,
     "delayToSaveFileAfterStopTypingMilliseconds": 2000,
-    "autoFormatEnable": true,
+    "autoFormatEnable": false,
     "dashboards": [{ "name": "UI Component Documentation", "port": 6006 }],
     "uilayout": "editor-iframe-split",
-    "uieditorpath": "/component-library-demo",
     "uisettings": "javascript",
     "showide": true,
     "exclusionPatterns": [
