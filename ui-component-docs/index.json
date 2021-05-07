@@ -19,7 +19,7 @@
     "showdashboard": true,
     "delayToSaveFileAfterStopTypingMilliseconds": 2000,
     "autoFormatEnable": false,
-    "dashboards": [{ "name": "UI Component Documentation", "port": 6006 }],
+    "dashboards": [{ "name": "Site Preview", "port": 6006 }],
     "uilayout": "vscode",
     "uisettings": "javascript",
     "hideHiddenFiles": false
