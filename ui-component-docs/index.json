@@ -22,7 +22,6 @@
     "dashboards": [{ "name": "UI Component Documentation", "port": 6006 }],
     "uilayout": "vscode",
     "uisettings": "javascript",
-    "showide": true,
     "hideHiddenFiles": false
   },
   "backend": {
