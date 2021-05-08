@@ -8,7 +8,7 @@
       "text": "intro.md"
     },
     "steps": [
-      { "title": "Step 1: Install", "text": "step1.md", "code": "setup.sh" }
+      { "title": "Step 1: Install", "text": "step1.md", "code": "step-1.sh" }
     ],
     "finish": {
       "text": "finish.md"
