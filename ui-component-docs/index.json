@@ -40,7 +40,7 @@
       }
     ],
     "idePort": 23000,
-    "uilayout": "terminal",
+    "uilayout": "editor-terminal",
     "showide": true,
     "uisettings": "javascript",
     "hideHiddenFiles": false,
