@@ -18,14 +18,19 @@
   "environment": {
     "showdashboard": true,
     "delayToSaveFileAfterStopTypingMilliseconds": 2000,
-    "autoFormatEnable": false,
-    "dashboards": [{ "name": "Site Preview", "port": 6006 }],
+    "autoFormatEnable": true,
+    "dashboards": [
+      {
+        "name": "Site Preview",
+        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ],
     "uilayout": "vscode",
     "uisettings": "javascript",
     "hideHiddenFiles": false
   },
   "backend": {
-    "imageid": "nodejs:12",
+    "imageid": "ubuntu:1804",
     "port": 6006
   }
 }
