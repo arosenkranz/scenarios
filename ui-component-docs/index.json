@@ -22,8 +22,12 @@
     "autoFormatEnable": true,
     "dashboards": [
       {
-        "name": "Site Preview",
+        "name": "Documentation",
         "href": "https://[[HOST_SUBDOMAIN]]-6006-[[KATACODA_HOST]].environments.katacoda.com"
+      },
+      {
+        "name": "Documentation",
+        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ],
     "idePort": 23000,
@@ -34,7 +38,6 @@
     "uieditorpath": "/root/component-library-demo"
   },
   "backend": {
-    "imageid": "ubuntu:1804",
-    "port": 6006
+    "imageid": "ubuntu:1804"
   }
 }
