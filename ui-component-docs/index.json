@@ -15,8 +15,7 @@
       },
       {
         "title": "Step 2: Add Button Variations",
-        "text": "step2.md",
-        "code": "step-2.sh"
+        "text": "step2.md"
       }
     ],
     "finish": {
@@ -40,7 +39,7 @@
       }
     ],
     "idePort": 23000,
-    "uilayout": "editor-terminal",
+    "uilayout": "terminal",
     "showide": true,
     "uisettings": "javascript",
     "hideHiddenFiles": false,

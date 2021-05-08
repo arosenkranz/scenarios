@@ -1,3 +1,21 @@
-# Demo Intro
+# Introduction
 
-But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
+In this lesson, we're going to walk through how to build a React UI component for a component library and document it using Storybook and MDX.
+
+Ensuring that UI component looks and functions properly is important if a component library is to be used by a cross-functional development team or by the open source community. Having these components available and well-documented helps users not only understand how to use a component, but can also support companies in less thought about tasks such as onboarding a new team member to the design system.
+
+## Learning Objectives
+
+In this lesson, we will accomplish the following tasks:
+
+* Build a UI component using styled-components and React.
+
+* Add variants and disabled state styles to a UI component.
+
+* Integrate prop validation and default prop values using the Prop Types library.
+
+* Document how to use a UI component with Storybook and MDX.
+
+* Create an interactive sandbox for a UI component.
+
+> **Important:** When starting the first step, please allow the GitHub repo to be cloned and installed.

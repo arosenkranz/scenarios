@@ -93,4 +93,13 @@ Now let's test it out and see it in action! Run the following command and open t
 
 `npm run dev`{{execute}}
 
-Great work! 
+Great work! Now let's save our work and checkout into the next branch before moving on to adding some variants to our new `Button` component.
+
+Run the following command:
+
+`
+git add -A
+git commit -m 'feat(step-1): adds button component'
+git checkout step-2
+`{{execute}}
+
