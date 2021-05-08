@@ -26,7 +26,7 @@
         "href": "https://[[HOST_SUBDOMAIN]]-6006-[[KATACODA_HOST]].environments.katacoda.com"
       },
       {
-        "name": "Documentation",
+        "name": "Main Site",
         "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ],
