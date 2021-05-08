@@ -1,6 +1,6 @@
 # Step 4
 
-In this step, we're going to add documentation for the Button component we just created, allowing developers to identify how to properly use it.
+In this final step, we're going to add documentation for the Button component we just created, allowing developers to identify how to properly use it.
 
 Storybook is the tool we'll be using for the documentation, as they specialize in documenting these types of libraries.
 
@@ -21,7 +21,6 @@ In this file, let's import our dependencies. Select this code to place it into t
 <pre class="file" data-filename="./src/components/Button/Button.stories.mdx" data-target="append">import {
   Meta,
   Story,
-  Canvas,
   ArgsTable,
   Preview,
 } from &#x27;@storybook/addon-docs/blocks&#x27;;
@@ -103,7 +102,6 @@ Navigate to the documentation by selecting the "Documentation" tab in the dashbo
 
 Explore a little bit and get familiar with Storybook. Use the "Docs" tab to see all of the documentation we've written at once, including the table of possible prop argument values.
 
-Notice the "Canvas" tab? Storybook even lets us dynamically update a component with different props so we can test it in real-time. We'll see how it works next.
 
 ## Save Our Work
 

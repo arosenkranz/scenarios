@@ -1,10 +1,12 @@
 # Step 1
 
-While everything is installing and getting set up, get yourself acclimated with the environment. Select the `IDE` tab to load up the VSCode environment, as we'll be doing most of our work between there and the terminal!
+In this first step, we'll inherit a codebase and extend upon it by adding a new Button component.
 
-## Build Component
+While everything is installing and getting set up, get yourself acclimated with the environment. Select the **IDE** tab to load up the VSCode environment, as we'll be doing most of our work between there and the terminal!
 
-Once everything is installed, let's start by creating a new file for our component. Run the following commands to create a directory and file:
+## Build the Component
+
+Once everything is installed, let's and create a new file for our component. Run the following commands to create a directory and file:
 
 `mkdir ./src/components/Button && touch ./src/components/Button/index.jsx`{{execute}}
 
@@ -12,16 +14,17 @@ Then open the file in the IDE by selecting the next file path:
 
 `./src/components/Button/index.jsx`{{open}}
 
-In this file, let's first import our dependencies. Select this code to place it into the file:
+Import the component's dependencies by copying the following code into the file:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme, typeScale, primaryFont } from '../../utils';
+
 </pre>
 
-We don't need to concern ourselves with the contents of our imports from the `utils` directory, but feel free to take a moment to explore those files before moving on if you want to see how the color theme and typographic properties are set up.
+We don't need to concern ourselves with the contents of our imports from the **utils** directory, but feel free to take a moment to explore those files before moving on if you want to see how the color theme and typographic properties are set up.
 
-Now let's set up our button's default styles. Add the following code into `Button/index.jsx`:
+Now let's set up our Button component's default styles. Add the following code into `Button/index.jsx`:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
 const StyledButton = styled.button`
@@ -64,13 +67,16 @@ export const Button = (props) => {
 };
 
 export default Button;
+
 </pre>
+
+The `withComponent` function allows us to take style definitions from a component and copy it over to a different HTML element.
 
 With this in place, we now allow users to call the `<Button>` component as either a `<button>` or an `<a>` depending on the existence of the `href` prop.
 
-## Test Component
+## Test Component in App
 
-Let's see how it looks! Let's import it into the `App.jsx` file with the following import statement:
+Let's see how our Button looks! Import it into the `App.jsx` file with the following import statement:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_1">import { Button } from './components/Button';
 </pre>
@@ -85,7 +91,7 @@ Now let's include an example into our JSX with the following code:
       &#x3C;/div&#x3E;
 </pre>
 
-Notice how we pass an `onClick` event handler to the `<Button>` component? Remember, when all is said and done, this is still valid React JSX returning. So we get to use all of the tools and features we're used to using with React!
+Notice how we pass an `onClick` event handler to the `<Button>`? Remember, when all is said and done, these are still valid React components returning. So we get to use all of the tools and features we're used to using with React!
 
 If we pass an `href` to the component as a prop, the component will still render, except this time as an anchor element instead.
 
@@ -93,7 +99,9 @@ Now let's test it out and see it in action! Run the following command to start t
 
 `npm run dev`{{execute}}
 
-Great work! As we can see on the page, our new component is rendered along with some default styles and hover and focus states.
+Great work! As we can see on the page, our new component is rendered along with some default styles and hover and focus states. The page should look something like the following image:
+
+![The main page displays previously created components and the new Button components.](ui-component-docs/assets/01-1_default-btn.png)
 
 ## Save Our Work
 

@@ -1,8 +1,8 @@
 # Introduction
 
-In this lesson, we're going to walk through how to build a React UI component for a component library and document it using Storybook and MDX.
+In this scenario, we're going to inherit a UI component library and step through how to build a React UI component and document it using styled-components, Prop Types, Storybook, and MDX.
 
-Ensuring that UI component looks and functions properly is important if a component library is to be used by a cross-functional development team or by the open source community. Having these components available and well-documented helps users not only understand how to use a component, but can also support companies in less thought about tasks such as onboarding a new team member to the design system.
+Ensuring that a UI component looks and functions properly is important if a component library is to be used by a cross-functional development team or throughout the open source community. Having these components available and well-documented helps developers not only understand how to use a component, but can also support company-based processes such as onboarding a new team member to the design system.
 
 ## Learning Objectives
 
