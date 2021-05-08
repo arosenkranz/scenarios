@@ -30,7 +30,7 @@
     "hideHiddenFiles": false
   },
   "backend": {
-    "imageid": "ubuntu:1804",
+    "imageid": "ubuntu:2004",
     "port": 6006
   }
 }
