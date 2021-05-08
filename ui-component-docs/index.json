@@ -30,7 +30,8 @@
     "uilayout": "terminal",
     "showide": true,
     "uisettings": "javascript",
-    "hideHiddenFiles": false
+    "hideHiddenFiles": false,
+    "uieditorpath": "/root/component-library-demo"
   },
   "backend": {
     "imageid": "ubuntu:1804",
