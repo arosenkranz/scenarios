@@ -2,6 +2,8 @@
 
 While everything is installing and getting set up, get yourself acclimated with the environment. Select the `IDE` tab to load up the VSCode environment, as we'll be doing most of our work between there and the terminal!
 
+## Build Component
+
 Once everything is installed, let's start by creating a new file for our component. Run the following commands to create a directory and file:
 
 `mkdir ./src/components/Button && touch ./src/components/Button/index.jsx`{{execute}}
@@ -68,7 +70,9 @@ export default Button;
 
 With this in place, we now allow users to call the `<Button>` component as either a `<button>` or an `<a>` depending on the existence of the `href` prop.
 
-Let's see how it looks! Let's import it into our `App.jsx` file with the following import statement:
+## Test Component
+
+Let's see how it looks! Let's import it into the `App.jsx` file with the following import statement:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_1">import { Button } from './components/Button';
 </pre>
@@ -78,15 +82,24 @@ Now let's include an example into our JSX with the following code:
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_2">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
   &#x3C;Button onClick={() =&#x3E; alert(&#x27;clicked!&#x27;)&#x3E;This is a button&#x3C;/Button&#x3E;
 &#x3C;/div&#x3E;
+&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
+  &#x3C;Button href=&#x22;#&#x22;&#x3E;This is link&#x3C;/Button&#x3E;
+&#x3C;/div&#x3E;
 </pre>
 
 Notice how we pass an `onClick` event handler to the `<Button>` component? Remember, when all is said and done, this is still valid React JSX returning. So we get to use all of the tools and features we're used to using with React!
+
+If we pass an `href` to the component as a prop, the component will still render, except this time as an anchor element instead.
 
 Now let's test it out and see it in action! Run the following command to start the development server and open the `Main Site` tab to see our Button on the page with the other components already created for us:
 
 `npm run dev`{{execute}}
 
-Great work! Now let's save our work and checkout into the next branch before moving on. Run the following command:
+Great work! As we can see on the page, our new component is rendered along with some default styles and hover and focus states.
+
+## Save Our Work
+
+Before moving on, take a moment and save your work. Then checkout into the next step's branch to ensure a clean environment. Do so by running the following commands:
 
 `git add -A
 git commit -m 'feat(step-1): adds button component'
