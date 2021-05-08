@@ -18,7 +18,8 @@ cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
   }
 }
 VSCODEEOF
-
+git config --global user.email "demouser@xyz.biz"
+git config --global user.name "demo user name"
 git clone https://github.com/arosenkranz/component-library-demo
 cd component-library-demo
 git fetch && git checkout step-1
