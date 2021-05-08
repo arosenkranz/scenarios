@@ -54,8 +54,6 @@ Add the following Story definitions to the file with this code:
 
 <pre class="file" data-filename="./src/components/Button/Button.stories.mdx" data-target="append">## Render a primary button
 
-You can use a button for both DOM event binding or as a hyperlink &#x26;lt;a&#x26;gt;
-
 &#x3C;Preview withToolbar&#x3E;
   &#x3C;Story name=&#x27;Primary&#x27;&#x3E;
     &#x3C;Button
@@ -69,8 +67,6 @@ You can use a button for both DOM event binding or as a hyperlink &#x26;lt;a&#x2
 &#x3C;/Preview&#x3E;
 
 ## Render a secondary button
-
-The secondary button will be used is forms.
 
 &#x3C;Preview withToolbar&#x3E;
   &#x3C;Story name=&#x27;Secondary&#x27;&#x3E;
