@@ -18,14 +18,7 @@ With these in place, we'll be able to use them to check against inserted prop va
 
 An interesting thing about styled-components is that we can check on the value of a prop from within our component's definition using JavaScript. Let's see how that works, add the following code into the `StyledButton` definition right under the defined styles:
 
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">import { Button } from './components/Button';
-</pre>
-
-## Test Component
-
-Let's see how it looks! Let's import it into the `App.jsx` file with the following import statement:
-
-<pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_1">${({ variant }) =&#x3E; {
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">${({ variant }) =&#x3E; {
     if (variant === VARIANTS.PRIMARY) {
       return css&#x60;
         background-color: ${theme.button.primary.bg};
