@@ -1,8 +1,10 @@
 # Introduction
 
-In this scenario, we're going to inherit a UI component library and step through how to build a React UI component and document it using styled-components, Prop Types, Storybook, and MDX.
+In this scenario, we're going to inherit a UI component library built with React, styled-components, Prop Types, and Storybook, and step through how to build and document a React UI component.
 
-Ensuring that a UI component looks and functions properly is important if a component library is to be used by a cross-functional development team or throughout the open source community. Having these components available and well-documented helps developers not only understand how to use a component, but can also support company-based processes such as onboarding a new team member to the design system.
+Ensuring that a UI component looks and is used properly is important if the component library is to be utilized by a cross-functional development team or throughout the open source community.
+
+This lesson assumes that you have working knowledge of React and CSS-in-JS technologies, and that you know how to configure a Storybook project. If you've never set up Storybook before, check out the [Storybook documentation.](https://storybook.js.org/docs/react/get-started/introduction)
 
 ## Learning Objectives
 
@@ -15,7 +17,5 @@ In this lesson, we will accomplish the following tasks:
 * Integrate prop validation and default prop values using the Prop Types library.
 
 * Document how to use a UI component with Storybook and MDX.
-
-* Create an interactive sandbox for a UI component.
 
 > **Important:** When starting the first step, please allow the GitHub repo to be cloned and installed.

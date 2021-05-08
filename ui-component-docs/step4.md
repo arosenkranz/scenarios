@@ -2,17 +2,17 @@
 
 In this final step, we're going to add documentation for the Button component we just created, allowing developers to identify how to properly use it.
 
-Storybook is the tool we'll be using for the documentation, as they specialize in documenting these types of libraries.
+Storybook is the tool we'll be using for the documentation, as it specializes in documenting these types of libraries.
 
 > **Important:** Make sure you're in the correct branch, `step-4`. Use the terminal or VSCode window to switch between branches.
 
 ## Set Up Documentation
 
-First thing we need to do is create a file that will hold our documentation for Storybook to pick up on. Run the following command to create the file:
+First thing we need to do is create a file to hold our documentation for Storybook. Run the following command to create the file:
 
 `touch ./src/components/Button/Button.stories.mdx`{{execute}}
 
-If you're unfamiliar with MDX, that's okay. All we need to know is that it allows us to combine the text formatting of Markdown and functionality of a React component using JSX! Open the file in the IDE by selecting the next file path:
+If you're unfamiliar with MDX, that's okay. All we need to know is it allows us to combine the text formatting of Markdown and functionality of a React component using JSX! Open the file in the IDE by selecting the next file path:
 
 `./src/components/Button/Button.stories.mdx`{{open}}
 
@@ -48,7 +48,7 @@ We then begin our documentation by explaining to the user what this component is
 
 ## Create Stories
 
-Each defined use of a component in Storybook is known as a "Story". Using them can help demonstrate how the component can be used with certain props.
+Each defined use of a component in Storybook is known as a "Story". Using stories helps demonstrate how the component can be used with certain props.
 
 Add the following Story definitions to the file with this code:
 
@@ -85,7 +85,7 @@ These will show users how to render a Primary and Secondary button and what they
 
 ## Add Args Table
 
-Last, we want to be able to show developers a table of all options for its prop values. Add the following code:
+Finally, we want to be able to show developers a table of all options for the component's prop values. Add the following code:
 
 <pre class="file" data-filename="./src/components/Button/Button.stories.mdx" data-target="append">## Button Component Props
 
@@ -98,19 +98,11 @@ Because this is running through Storybook, we are going to run this different co
 
 `npm run storybook`{{execute}}
 
-Navigate to the documentation by selecting the "Documentation" tab in the dashboard. The resulting page should list all of the defined components, including our Button! 
+Navigate to the documentation by selecting the **Documentation** tab in the dashboard. The resulting page should list all of the defined components, including our Button, as the following image shows:
+
+![]()
 
 Explore a little bit and get familiar with Storybook. Use the "Docs" tab to see all of the documentation we've written at once, including the table of possible prop argument values.
 
-
-## Save Our Work
-
-Before moving on, take a moment and save your work. Then checkout into the next step's branch to ensure a clean environment. Do so by running the following commands:
-
-`git add -A
-git commit -m 'feat(step-4): adds documentation'
-git checkout step-5
-`{{execute interrupt}}
-
-In the next step, we'll use Storybook to enable our Button component to be tested and updated in real-time in the documentation.
+Great work on getting this component created and documented! Let's recap everything we learned on the following page.
 

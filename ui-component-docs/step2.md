@@ -16,7 +16,9 @@ Let's begin by defining what types of variants we'll have. This will help if we 
 
 With these in place, we'll be able to use them to check against inserted prop values and help determine which variant's styles should be rendered.
 
-An interesting thing about styled-components is that we can check on the value of a prop from within our component's definition using JavaScript. Let's see how that works, add the following code into the `StyledButton` definition right under the defined styles:
+An interesting feature about styled-components is that we can check on the value of a prop from within our component's definition using JavaScript. 
+
+Let's see how that works&mdash;add the following code into the `StyledButton` definition right under the defined styles:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">${({ variant }) =&#x3E; {
     if (variant === VARIANTS.PRIMARY) {
@@ -45,7 +47,7 @@ An interesting thing about styled-components is that we can check on the value o
 
 Here, we execute a function that accepts the `props` object in as a parameter. Since we're only interested in checking the value of the `variant` prop, we destructure the value out of the `props` object and check its value against our `VARIANTS` object.
 
-While we're here, let's also add style definitions for if the Button should be in a disabled state. This is important for both the user experience and accessibility, so it's good to make sure there's something in place.
+While we're here, let's add styles for the button's disabled state. This is important for both the user experience and accessibility, so it's good to make sure there's something in place.
 
 ## Add Disabled Button Styles
 
@@ -64,7 +66,7 @@ Right below our code for the variant styles in `StyledButton`, add the following
     &#x60;}
 </pre>
 
-With this, we check if `props.disabled` exists and if it does, we render styles that let the user know that the button is unable to be selected.
+With this, we check if the `disabled` prop exists and if it does, we render styles that let the user know that the button is unable to be selected.
 
 Let's see how these different variations look!
 
@@ -97,9 +99,13 @@ Now let's test it out! Run the following command to start the development server
 
 `npm run dev`{{execute}}
 
-Awesome! Our Button component now renders in different styles based on passed in prop data. We should maybe do something about what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
+The page should now look something like the following image:
 
-## Save Our Work
+![](ui-component-docs/assets/)
+
+Awesome! Our Button component now renders in different styles based on passed in prop data. We should probably account for what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
+
+## Save Your Work
 
 Before moving on, take a moment and save your work. Then checkout into the next step's branch to ensure a clean environment. Do so by running the following commands:
 
