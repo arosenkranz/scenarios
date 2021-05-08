@@ -14,7 +14,7 @@ Then open the file:
 
 Now let's get our dependencies imported:
 
-<pre class="file" data-filename="./components/Button/index.jsx" data-target="append">
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme, typeScale, primaryFont } from '../../utils';
@@ -24,7 +24,7 @@ import { theme, typeScale, primaryFont } from '../../utils';
 
 Now let's set up our button:
 
-<pre class="file" data-filename="./components/Button/index.jsx" data-target="append">
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
 const StyledButton = styled.button`
   border-radius: none;
   display: inline-block;
