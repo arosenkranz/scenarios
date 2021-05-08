@@ -22,7 +22,7 @@
     "dashboards": [
       {
         "name": "Site Preview",
-        "href": "https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com"
+        "href": "https://[[HOST_SUBDOMAIN]]-6006-[[KATACODA_HOST]].environments.katacoda.com"
       }
     ],
     "uilayout": "vscode",
@@ -30,7 +30,7 @@
     "hideHiddenFiles": false
   },
   "backend": {
-    "imageid": "ubuntu:2004",
+    "imageid": "ubuntu:1804",
     "port": 6006
   }
 }
