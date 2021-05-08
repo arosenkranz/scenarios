@@ -43,7 +43,7 @@ An interesting thing about styled-components is that we can check on the value o
   }}
 </pre>
 
-Here, we execute a function that passes the `props` object in as a parameter. Since we're only interested in checking the value of the `variant` prop, we destructure the value out of the `props` object and check it's value against our `VARIANTS` object.
+Here, we execute a function that accepts the `props` object in as a parameter. Since we're only interested in checking the value of the `variant` prop, we destructure the value out of the `props` object and check its value against our `VARIANTS` object.
 
 While we're here, let's also add style definitions for if the Button should be in a disabled state. This is important for both the user experience and accessibility, so it's good to make sure there's something in place.
 

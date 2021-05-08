@@ -1,7 +1,7 @@
 {
   "title": "React: UI Component Documentation",
   "description": "Build and document a React UI Component.",
-  "difficulty": "beginner",
+  "difficulty": "intermediate",
   "time": "12 minutes",
   "details": {
     "intro": {
@@ -20,6 +20,10 @@
       {
         "title": "Step 3: Add Prop Validation and Defaults",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4: Component Documentation",
+        "text": "step4.md"
       }
     ],
     "finish": {
