@@ -18,6 +18,7 @@ Now let's get our dependencies imported:
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme, typeScale, primaryFont } from '../../utils';
+
 </pre>
 
 - append initial button styles
@@ -46,13 +47,14 @@ const StyledButton = styled.button`
   }
 
 `;
+
 </pre>
 
 - append button and export
 
 Great! We have our base button all set up and created, but we still want to allow users to use this component as an anchor tag if they'd like, so let's add the following code and finish out the file (for now).
 
-<pre class="file" data-filename="./components/Button/index.jsx" data-target="append">
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
 const ButtonLink = StyledButton.withComponent('a');
 
 export const Button = (props) => {
@@ -64,6 +66,7 @@ export const Button = (props) => {
 };
 
 export default Button;
+
 </pre>
 
 
@@ -74,6 +77,7 @@ With this in place, we now allow users to call the `<Button>` component as eithe
 Let's see how it looks! Let's import it into our `App.jsx` file with the following import statement:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_1">import { Button } from './components/Button';
+
 </pre>
 
 Now let's include an example into our JSX with the following code:
@@ -82,6 +86,7 @@ Now let's include an example into our JSX with the following code:
   <div style={{ margin: '16px 0' }}>
     <Button>This is a button</Button>
   </div>
+  
 </pre>
 
 Now let's test it out and see it in action! Run the following command and open the `Main Site` tab:

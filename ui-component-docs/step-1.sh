@@ -23,6 +23,6 @@ git clone https://github.com/arosenkranz/component-library-demo
 cd component-library-demo
 git fetch && git checkout step-1
 
-npm install -ci
+npm install -q
 clear
 echo "READY TO START!"
