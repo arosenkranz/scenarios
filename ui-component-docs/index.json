@@ -16,6 +16,10 @@
       {
         "title": "Step 2: Add Button Variations",
         "text": "step2.md"
+      },
+      {
+        "title": "Step 3: Add Prop Validation and Defaults",
+        "text": "step3.md"
       }
     ],
     "finish": {

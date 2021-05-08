@@ -14,11 +14,9 @@ Then open the file in the IDE by selecting the next file path:
 
 In this file, let's first import our dependencies. Select this code to place it into the file:
 
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
-import React from 'react';
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme, typeScale, primaryFont } from '../../utils';
-
 </pre>
 
 We don't need to concern ourselves with the contents of our imports from the `utils` directory, but feel free to take a moment to explore those files before moving on if you want to see how the color theme and typographic properties are set up.
@@ -80,11 +78,11 @@ Let's see how it looks! Let's import it into the `App.jsx` file with the followi
 Now let's include an example into our JSX with the following code:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_2">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-      &#x3C;Button onClick={() =&#x3E; alert(&#x27;clicked!&#x27;)}&#x3E;This is a button&#x3C;/Button&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-      &#x3C;Button href=&#x22;#&#x22;&#x3E;This is a link&#x3C;/Button&#x3E;
-    &#x3C;/div&#x3E;
+        &#x3C;Button onClick={() =&#x3E; alert(&#x27;clicked!&#x27;)}&#x3E;This is a button&#x3C;/Button&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
+        &#x3C;Button href=&#x22;#&#x22;&#x3E;This is a link&#x3C;/Button&#x3E;
+      &#x3C;/div&#x3E;
 </pre>
 
 Notice how we pass an `onClick` event handler to the `<Button>` component? Remember, when all is said and done, this is still valid React JSX returning. So we get to use all of the tools and features we're used to using with React!

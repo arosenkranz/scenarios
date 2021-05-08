@@ -72,7 +72,7 @@ Let's see how these different variations look!
 
 In `App.jsx`, we already have the Button component imported, so let's see how these variations look by adding the following code to the returning JSX:
 
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_4">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
+<pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-2_4">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button variant=&#x27;primary&#x27;&#x3E;This is a primary button&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
       &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
