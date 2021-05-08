@@ -59,9 +59,9 @@ const ButtonLink = StyledButton.withComponent('a');
 
 export const Button = (props) => {
   return props.href ? (
-    <ButtonLink href={props.href} {...props} />
+    &#x3C;ButtonLink href={props.href} {...props} /&#x3E;
   ) : (
-    <StyledButton {...props} />
+    &#x3C;StyledButton {...props} /&#x3E;
   );
 };
 
@@ -83,10 +83,10 @@ Let's see how it looks! Let's import it into our `App.jsx` file with the followi
 Now let's include an example into our JSX with the following code:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_2">
-  <div style={{ margin: '16px 0' }}>
-    <Button>This is a button</Button>
-  </div>
-  
+  &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
+    &#x3C;Button&#x3E;This is a button&#x3C;/Button&#x3E;
+  &#x3C;/div&#x3E;
+
 </pre>
 
 Now let's test it out and see it in action! Run the following command and open the `Main Site` tab:
