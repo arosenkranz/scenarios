@@ -8,7 +8,16 @@
       "text": "intro.md"
     },
     "steps": [
-      { "title": "Step 1: Install", "text": "step1.md", "code": "step-1.sh" }
+      {
+        "title": "Step 1: Create Button Component",
+        "text": "step1.md",
+        "code": "step-1.sh"
+      },
+      {
+        "title": "Step 2: Add Button Variations",
+        "text": "step2.md",
+        "code": "step-2.sh"
+      }
     ],
     "finish": {
       "text": "finish.md"
