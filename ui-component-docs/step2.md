@@ -1,27 +1,23 @@
 # Step 2
 
-Great work getting the Button component set up and tested. In this step, we're going to extend upon this component by accepting props that will dictate the style the button appears in.
+In this step, we're going to extend upon this component by accepting props that will dictate the style the button appears in.
 
 > **Important:** Make sure you're in the correct branch, `step-2`. Use the terminal or VSCode window to switch between branches.
 
 ## Add Primary and Secondary Variants
 
-Let's begin by defining what types of variants we'll have. This will help if we ever need to scale this component up and allow even more variants in the future. Add the following code below the import statements in `Button/index.jsx`:
+Let's define what types of variants we'll have. Add the following code below the import statements in `./src/Components/Button/index.jsx`{{open}}:
 
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_1">const VARIANTS = {
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_1">const BTN_VARIANTS = {
   PRIMARY: &#x27;primary&#x27;,
   SECONDARY: &#x27;secondary&#x27;,
 };
-</pre>
+</pre> 
 
-With these in place, we'll be able to use them to check against inserted prop values and help determine which variant's styles should be rendered.
+Let's now define styles for our variants by checking prop values using JavaScript. Add the following code into the `StyledButton` definition right under the defined styles:
 
-An interesting feature about styled-components is that we can check on the value of a prop from within our component's definition using JavaScript. 
-
-Let's see how that works&mdash;add the following code into the `StyledButton` definition right under the defined styles:
-
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">${({ variant }) =&#x3E; {
-    if (variant === VARIANTS.PRIMARY) {
+<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">${(props) =&#x3E; {
+    if (props.variant === BTN_VARIANTS.PRIMARY) {
       return css&#x60;
         background-color: ${theme.button.primary.bg};
         border: 1px solid ${theme.button.primary.bg};
@@ -31,7 +27,7 @@ Let's see how that works&mdash;add the following code into the `StyledButton` de
           color: ${theme.button.primary.textHover};
         }
       &#x60;;
-    } else if (variant === VARIANTS.SECONDARY) {
+    } else if (props.variant === BTN.VARIANTS.SECONDARY) {
       return css&#x60;
         background-color: ${theme.button.secondary.bg};
         color: ${theme.button.secondary.text};
@@ -45,43 +41,19 @@ Let's see how that works&mdash;add the following code into the `StyledButton` de
   }}
 </pre>
 
-Here, we execute a function that accepts the `props` object in as a parameter. Since we're only interested in checking the value of the `variant` prop, we destructure the value out of the `props` object and check its value against our `VARIANTS` object.
+Here, we execute a function that accepts the `props` object as a parameter.This is how styled-components allows us to dynamically set styles based on prop data. Specifically, we check the `props.variant` value against our `BTN_VARIANTS` object.
 
-While we're here, let's add styles for the button's disabled state. This is important for both the user experience and accessibility, so it's good to make sure there's something in place.
-
-## Add Disabled Button Styles
-
-Right below our code for the variant styles in `StyledButton`, add the following:
-
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_3">${({ disabled }) =&#x3E;
-    disabled &#x26;&#x26;
-    css&#x60;
-      background: none !important;
-      color: ${theme.button.disabled.text} !important;
-      border: 1px solid ${theme.button.disabled.text} !important;
-      cursor: not-allowed;
-      &#x26;:hover {
-        box-shadow: none !important;
-      }
-    &#x60;}
-</pre>
-
-With this, we check if the `disabled` prop exists and if it does, we render styles that let the user know that the button is unable to be selected.
-
-Let's see how these different variations look!
+Let's see how they look!
 
 ## Add to App and Test
 
-In `App.jsx`, we already have the Button component imported, so let's see how these variations look by adding the following code to the returning JSX:
+In `./src/App.jsx`{{open}}, we already have the Button component imported, so let's see how these variations look by adding the following code to the returning JSX:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-2_4">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button variant=&#x27;primary&#x27;&#x3E;This is a primary button&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
       &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button variant=&#x27;secondary&#x27;&#x3E;This is a secondary button&#x3C;/Button&#x3E;
-      &#x3C;/div&#x3E;
-      &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-        &#x3C;Button disabled&#x3E;This is a disabled button&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
       &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button variant=&#x27;primary&#x27; href=&#x27;#&#x27;&#x3E;
@@ -93,7 +65,7 @@ In `App.jsx`, we already have the Button component imported, so let's see how th
       &#x3C;/div&#x3E;
 </pre>
 
-Here, we provide a number of variations of the Button component so we can see how it looks.
+Here, we provide a number of variations of the Button component so we can see how it looks with different prop values.
 
 Now let's test it out! Run the following command to start the development server and open the `Main Site` tab:
 
@@ -103,7 +75,7 @@ The page should now look something like the following image:
 
 ![](ui-component-docs/assets/)
 
-Awesome! Our Button component now renders in different styles based on passed in prop data. We should probably account for what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
+Our Button component now renders in different styles based on passed in prop data. We should probably account for what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
 
 ## Save Your Work
 
@@ -114,5 +86,5 @@ git commit -m 'feat(step-2): adds button component variants'
 git checkout step-3
 `{{execute interrupt}}
 
-In the next step, we'll use the Prop Types library to set expected prop data and provide default prop values for our component and support the developer's experience using the component.
+In the next step, we'll use the PropTypes library to set expected prop data and provide default prop values for our component and support the developer's experience using the component.
 

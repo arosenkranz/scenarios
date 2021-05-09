@@ -6,11 +6,11 @@ While everything is installing and getting set up, get yourself acclimated with 
 
 ## Build the Component
 
-Once everything is installed, let's create a new file for our component. Click the code below to run following commands to create a directory and file:
+Once everything is installed, click the code below to run following commands to create a directory and file for our component:
 
 `mkdir ./src/components/Button && touch ./src/components/Button/index.jsx`{{execute}}
 
-Then open the file in the IDE by click the next file path:
+Then open the file in the IDE by clicking the next file path:
 
 `./src/components/Button/index.jsx`{{open}}
 
@@ -21,8 +21,6 @@ import styled, { css } from 'styled-components';
 import { theme, typeScale, primaryFont } from '../../utils';
 
 </pre>
-
-We don't need to concern ourselves with the contents of our imports from the **utils** directory, but feel free to take a moment to explore those files before moving on if you want to see how the color theme and typographic properties are set up.
 
 Now let's set up our Button component's default styles. Add the following code into `Button/index.jsx`:
 
@@ -53,7 +51,7 @@ const StyledButton = styled.button`
 
 Here we use the tagged template function, `styled.button`, to define our `StyledButton` component and apply styles for its default, hover, and focus states.
 
-We have our default button all set up and created, but we still want to allow users to use this component as an anchor tag if they'd like, so let's add the following code and finish out the file (for now):
+Let's allow users to also use this component as an anchor tag by leveraging the `withComponent` method from styled-components and finish out the file:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
 const ButtonLink = StyledButton.withComponent('a');
@@ -69,8 +67,6 @@ export const Button = (props) => {
 export default Button;
 
 </pre>
-
-The `withComponent` function allows us to take style definitions from a component and copy it over to a different HTML element.
 
 With this in place, we now allow users to call the `<Button>` component as either a `<button>` or an `<a>` depending on the existence of the `href` prop.
 
@@ -93,15 +89,15 @@ Now let's include an example into our JSX with the following code:
       &#x3C;/div&#x3E;
 </pre>
 
-Notice how we pass an `onClick` event handler to the `<Button>` in the first `<div>`? Remember, this is still React and JSX, so we get to use all of the functionality and features we're used to using!
+In the first example, we pass an `onClick` event handler to our component, as we normally do with most buttons in React. 
 
-In the next `<div>`, we pass an `href` to the component as a prop. The component will render as an anchor element instead.
+In the next example, we pass an `href` to the component as a prop. The component will render as an anchor element instead.
 
-Now let's test it out and see it in action! Run the following command to start the development server and open the `Main Site` tab to see our Button on the page with the other components already created for us:
+Now let's test it out and see it in action! Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
 
 `npm run dev`{{execute}}
 
-Great work! As we can see on the page, our new component is rendered and contains some default styles and styles for the hover and focus states. The page should look something like the following image:
+As we can see on the page, our new component has joined the components we've inherited and is rendered to the page in two formats. The page should look something like the following image:
 
 ![The main page displays previously created components and the new Button components.](ui-component-docs/assets/01-1_default-btn.png)
 
