@@ -94,7 +94,7 @@ Because this is running through Storybook, we are going to run this different co
 
 `npm run storybook`{{execute}}
 
-Navigate to the documentation by selecting the **Documentation** tab in the dashboard. The resulting page should list all of the defined components, including our Button, as the following image shows:
+Navigate to the documentation by selecting the [**Documentation**](https://[[HOST_SUBDOMAIN]]-6006-[[KATACODA_HOST]].environments.katacoda.com) tab in the dashboard. The resulting page should list all of the defined components, including our Button, as the following image shows:
 
 ![]()
 

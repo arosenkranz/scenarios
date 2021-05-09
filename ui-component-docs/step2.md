@@ -27,7 +27,7 @@ Let's now define styles for our variants by checking prop values using JavaScrip
           color: ${theme.button.primary.textHover};
         }
       &#x60;;
-    } else if (props.variant === BTN.VARIANTS.SECONDARY) {
+    } else if (props.variant === BTN_VARIANTS.SECONDARY) {
       return css&#x60;
         background-color: ${theme.button.secondary.bg};
         color: ${theme.button.secondary.text};
@@ -67,7 +67,7 @@ In `./src/App.jsx`{{open}}, we already have the Button component imported, so le
 
 Here, we provide a number of variations of the Button component so we can see how it looks with different prop values.
 
-Now let's test it out! Run the following command to start the development server and open the `Main Site` tab:
+Now let's test it out! Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
 
 `npm run dev`{{execute}}
 

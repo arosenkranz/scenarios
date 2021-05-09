@@ -37,7 +37,7 @@ In `./src/App.jsx`{{open}}, let's add one more variation of our Button component
 &#x3C;/div&#x3E;
 </pre>
 
-Now we have a version of almost every type of Button rendering to the page. Run the following command to start the development server and open the `Main Site` tab:
+Now we have a version of almost every type of Button rendering to the page. Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
 
 `npm run dev`{{execute}}
 
