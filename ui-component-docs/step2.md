@@ -13,7 +13,7 @@ Let's define what types of variants we'll have. Add the following code below the
 };
 </pre> 
 
-Let's now define styles for our variants by checking prop values using JavaScript. Add the following code into the `StyledButton` definition right under the defined styles:
+Let's now define styles for our variants by checking prop values using JavaScript. Add the following code into the `Button` definition right under the defined styles:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_2">${(props) =&#x3E; {
     if (props.variant === BTN_VARIANTS.PRIMARY) {

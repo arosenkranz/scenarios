@@ -38,7 +38,7 @@ Now we have a version of almost every type of Button rendering to the page. Run 
 
 `npm run dev`{{execute}}
 
-Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
+Open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
 
 Now we don't need to pass any `variant` props at all and still get a nice-looking button rendered to the page, as the next image shows:
 
@@ -65,6 +65,6 @@ In the next step, we'll use Storybook and write documentation for our new UI com
 
 Let's take a quick knowledge check:
 
->>Question: True or False: We can add PropTypes to any React component and not just ones built with styled-components.<<
+>>Question: True or False. We can add PropTypes to any React component and not just ones built with styled-components.<<
 (*)  True
 ( )  False 

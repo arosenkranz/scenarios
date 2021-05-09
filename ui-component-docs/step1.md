@@ -59,7 +59,7 @@ Import the Button component into the file with the following line:
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_1">import { Button } from './components/Button';
 </pre>
 
-Now let's include an example into our JSX with the following code:
+Now let's include a Button into our JSX with the following code:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_2">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button onClick={() =&#x3E; alert(&#x27;clicked!&#x27;)}&#x3E;This is a button&#x3C;/Button&#x3E;
