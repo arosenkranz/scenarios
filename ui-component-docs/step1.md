@@ -25,7 +25,7 @@ import { theme, typeScale, primaryFont } from '../../utils';
 Now let's set up our Button component's default styles. Add the following code into `Button/index.jsx`:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
-const StyledButton = styled.button`
+const Button = styled.button`
   border-radius: none;
   display: inline-block;
   min-width: 75px;
@@ -49,26 +49,7 @@ const StyledButton = styled.button`
 
 </pre>
 
-Here we use the tagged template function, `styled.button`, to define our `StyledButton` component and apply styles for its default, hover, and focus states.
-
-Let's allow users to also use this component as an anchor tag by leveraging the `withComponent` method from styled-components and finish out the file:
-
-<pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
-const ButtonLink = StyledButton.withComponent('a');
-
-export const Button = (props) => {
-  return props.href ? (
-    &#x3C;ButtonLink href={props.href} {...props} /&#x3E;
-  ) : (
-    &#x3C;StyledButton {...props} /&#x3E;
-  );
-};
-
-export default Button;
-
-</pre>
-
-With this in place, we now allow users to call the `<Button>` component as either a `<button>` or an `<a>` depending on the existence of the `href` prop.
+Here we use the tagged template function, `styled.button`, to define our `Button` component and apply styles for its default, hover, and focus states.
 
 ## Test Component in App
 
@@ -84,14 +65,9 @@ Now let's include an example into our JSX with the following code:
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-1_2">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button onClick={() =&#x3E; alert(&#x27;clicked!&#x27;)}&#x3E;This is a button&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
-      &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-        &#x3C;Button href=&#x22;#&#x22;&#x3E;This is a link&#x3C;/Button&#x3E;
-      &#x3C;/div&#x3E;
 </pre>
 
-In the first example, we pass an `onClick` event handler to our component, as we normally do with most buttons in React. 
-
-In the next example, we pass an `href` to the component as a prop. The component will render as an anchor element instead.
+In this component, we pass an `onClick` event handler to our component, as we normally do with most buttons in React. 
 
 Now let's test it out and see it in action! Run the following command to start the development server:
 
@@ -102,6 +78,8 @@ Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].e
 As we can see on the page, our new component has joined the components we've inherited and is rendered to the page in two formats. The page should look something like the following image:
 
 ![The main page displays previously created components and the new Button components.](ui-component-docs/assets/step-01_1.png)
+
+> **Tip:** If you want to use this component as a hyperlink, do so with something like `<Button as='a' href="#">I'm a link!</Button>` and render it as an anchor element!
 
 ## Save Your Work
 

@@ -13,12 +13,10 @@ Add the following code near the bottom of the file:
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-3_1">Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(Object.values(BTN_VARIANTS)),
-  href: PropTypes.string,
 };
 
 Button.defaultProps = {
   variant: BTN_VARIANTS.PRIMARY,
-  href: undefined,
 };
 </pre>
 

@@ -56,11 +56,6 @@ In `./src/App.jsx`{{open}}, we already have the Button component imported, so le
         &#x3C;Button variant=&#x27;secondary&#x27;&#x3E;This is a secondary button&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
       &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-        &#x3C;Button variant=&#x27;primary&#x27; href=&#x27;#&#x27;&#x3E;
-          This is a primary button link
-        &#x3C;/Button&#x3E;
-      &#x3C;/div&#x3E;
-      &#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
         &#x3C;Button&#x3E;This button has no props&#x3C;/Button&#x3E;
       &#x3C;/div&#x3E;
 </pre>
