@@ -106,7 +106,7 @@ Let's recap everything we learned on the following page.
 Let's take a quick knowledge check:
 
 >>Question: What Storybook component allows us to name and organize our component's documentation for users?<<
-(*)  `<Meta>`
-( )  `<Preview>`
-( )  `<Story>`
-( )  `<ArgsTable>`
+(*)  <Meta>
+( )  <Preview>
+( )  <Story>
+( )  <ArgsTable>

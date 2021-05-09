@@ -25,7 +25,7 @@ import { theme, typeScale, primaryFont } from '../../utils';
 Now let's set up our Button component's default styles. Add the following code into `Button/index.jsx`:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="append">
-const Button = styled.button`
+export const Button = styled.button`
   border-radius: none;
   display: inline-block;
   min-width: 75px;
