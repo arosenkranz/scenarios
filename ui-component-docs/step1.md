@@ -74,7 +74,7 @@ Now let's test it out and see it in action! Run the following command to start t
 
 Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
 
-As we can see on the page, our new component has joined the components we've inherited and is rendered to the page in two formats. The page should look something like the following image:
+As we can see, our new component has joined the components we've inherited and is rendered to the page. The page should look something like the following image:
 
 ![The main page displays previously created components and the new Button components.](./assets/step-01_1.png)
 
@@ -93,7 +93,7 @@ In the next step, we'll take this component further and add variants to help dis
 
 Let's take a quick knowledge check:
 
->>Question: How would we create a styled `h1` element with styled-components? <<
+>>Question: How would we create a styled `h1` element with styled-components?<<
 ( )  styled(h1)``
 (*)  styled.h1``
 ( )  withComponent(h1)

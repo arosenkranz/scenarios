@@ -40,7 +40,7 @@ Let's now define styles for our variants by checking prop values using JavaScrip
   }}
 </pre>
 
-Here, we execute a function that accepts the `props` object as a parameter.This is how styled-components allows us to dynamically set styles based on prop data. Specifically, we check the `props.variant` value against our `BTN_VARIANTS` object.
+Here, we execute a function that accepts the `props` object as a parameter. This is how styled-components allows us to dynamically set styles based on prop data. Specifically, we check the `props.variant` value against our `BTN_VARIANTS` object.
 
 Let's see how they look!
 
@@ -89,5 +89,4 @@ Let's take a quick knowledge check:
 >>Question: What would happen if we passed in `size="large"` as a prop if we didn't define it in our component?<<
 ( )  It will break the component because we don't explicitly mention it in our component's styles.
 ( )  It will make the button larger.
-(*)  Nothing will happen because we don't look to style our component any differently based on its value.
-
+(*)  It will have no effect on the component.
