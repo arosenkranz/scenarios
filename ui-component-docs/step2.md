@@ -1,4 +1,3 @@
-# Step 2
 
 In this step, we're going to extend upon this component by accepting props that will dictate the style the button appears in.
 
@@ -70,7 +69,7 @@ Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].e
 
 The page should now look something like the following image:
 
-![The page now displays multiple buttons with different styles.](ui-component-docs/assets/step-02_1.png)
+![The page now displays multiple buttons with different styles.](./assets/step-02_1.png)
 
 Our Button component now renders in different styles based on passed in prop data. We should probably account for what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
 

@@ -1,4 +1,3 @@
-# Step 3
 
 Our Button component is complete, but if we want other developers to download and use this component, we should add some default values and warning messages for when an incorrect prop value is used.
 
@@ -43,11 +42,11 @@ Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].e
 
 Now we don't need to pass any `variant` props at all and still get a nice-looking button rendered to the page, as the next image shows:
 
-![The page displays multiple buttons with their variant styles and one un-styled button.](/ui-component-docs/assets/step-03_1.png)
+![The page displays multiple buttons with their variant styles and one un-styled button.](./assets/step-03_1.png)
 
 Notice the one at the bottom with the incorrect `variant` prop value passed in? It doesn't break the application, but it does throw a warning to the developer console, as can be seen in the following image:
 
-![The developer console shows a warning indicating an incorrect prop value was used.](/ui-component-docs/assets/step-03_2.png)
+![The developer console shows a warning indicating an incorrect prop value was used.](./assets/step-03_2.png)
 
 The work we did here adds a lot to a developer's experience if they are to use this component library in their own project. Not only can they do less work because of the default props set up, they can also debug any errors by checking for a mismatched prop value.
 
@@ -66,6 +65,6 @@ In the next step, we'll use Storybook and write documentation for our new UI com
 
 Let's take a quick knowledge check:
 
->>Question: True or False: We can add PropTypes to any React component.<<
+>>Question: True or False: We can add PropTypes to any React component and not just ones built with styled-components.<<
 (*)  True
 ( )  False 

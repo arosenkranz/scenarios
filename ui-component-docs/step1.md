@@ -1,4 +1,3 @@
-# Step 1
 
 In this first step, we'll inherit a codebase for a design system and extend upon it by adding a new Button component.
 
@@ -77,7 +76,7 @@ Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].e
 
 As we can see on the page, our new component has joined the components we've inherited and is rendered to the page in two formats. The page should look something like the following image:
 
-![The main page displays previously created components and the new Button components.](ui-component-docs/assets/step-01_1.png)
+![The main page displays previously created components and the new Button components.](./assets/step-01_1.png)
 
 > **Tip:** If you want to use this component as a hyperlink, do so with something like `<Button as='a' href="#">I'm a link!</Button>` and render it as an anchor element!
 
