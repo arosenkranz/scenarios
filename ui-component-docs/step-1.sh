@@ -19,12 +19,6 @@ cat << VSCODEEOF > /opt/.katacodacode/user-data/User/settings.json
 }
 VSCODEEOF
 
-apt install bsdtar -y
-
-curl -L https://marketplace.visualstudio.com/_apis/public/gallery/publishers/silvenon/vsextensions/mdx/0.1.0/vspackage | bsdtar -xvf - extension
-
-mv extension /opt/.katacodacode/extensions/mdx
-
 git config --global user.email "demouser@xyz.biz"
 git config --global user.name "demo user name"
 git clone https://github.com/arosenkranz/component-library-demo

@@ -46,6 +46,8 @@ Here, we use the Storybook `Meta` component to define the title of this page in 
 
 We then begin our documentation by explaining to the user what this component is and how to import it.
 
+> **Tip:** You can install the [MDX extension](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx) from the VSCode marketplace for syntax highlighting in MDX files.
+
 ## Create Stories
 
 Each defined use of a component in Storybook is known as a "Story". Using stories helps demonstrate how the component can be used with certain props.
