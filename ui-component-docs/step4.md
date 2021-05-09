@@ -138,7 +138,7 @@ Now our Button has been built and documented, allowing other developers to learn
 Let's recap everything we learned on the following page. But first, let's take one final knowledge check:
 
 >>Question: What Storybook component allows us to name and organize our component's documentation for users?<<
-(*)  Meta
 ( )  Preview
 ( )  Story
+(*)  Meta
 ( )  ArgsTable

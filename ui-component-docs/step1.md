@@ -94,7 +94,7 @@ In the next step, we'll take this component further and add variants to help dis
 Let's take a quick knowledge check:
 
 >>Question: How would we create a styled `h1` element with styled-components? <<
-(*)  styled.h1``
 ( )  styled(h1)``
+(*)  styled.h1``
 ( )  withComponent(h1)
 ( )  h1``

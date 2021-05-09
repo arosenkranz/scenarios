@@ -87,7 +87,7 @@ In the next step, we'll use the PropTypes library to set expected prop data and 
 Let's take a quick knowledge check:
 
 >>Question: What would happen if we passed in `size="large"` as a prop if we didn't define it in our component?<<
-(*)  Nothing will happen because we don't look to style our component any differently based on its value.
 ( )  It will break the component because we don't explicitly mention it in our component's styles.
 ( )  It will make the button larger.
+(*)  Nothing will happen because we don't look to style our component any differently based on its value.
 
