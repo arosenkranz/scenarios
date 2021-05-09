@@ -6,7 +6,7 @@ In this step, we're going to extend upon this component by accepting props that 
 
 ## Add Primary and Secondary Variants
 
-Let's define what types of variants we'll have. Add the following code below the import statements in `./src/Components/Button/index.jsx`{{open}}:
+Let's define what types of variants we'll have. Add the following code below the import statements in `./src/components/Button/index.jsx`{{open}}:
 
 <pre class="file" data-filename="./src/components/Button/index.jsx" data-target="insert" data-marker="#step-2_1">const BTN_VARIANTS = {
   PRIMARY: &#x27;primary&#x27;,
@@ -67,13 +67,15 @@ In `./src/App.jsx`{{open}}, we already have the Button component imported, so le
 
 Here, we provide a number of variations of the Button component so we can see how it looks with different prop values.
 
-Now let's test it out! Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
+Now let's test it out! Run the following command to start the development server:
 
 `npm run dev`{{execute}}
 
+Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
+
 The page should now look something like the following image:
 
-![](ui-component-docs/assets/)
+![The page now displays multiple buttons with different styles.](ui-component-docs/assets/step-02_1.png)
 
 Our Button component now renders in different styles based on passed in prop data. We should probably account for what happens if you pass in an incorrect prop, or no props at all, as that last button doesn't look too great compared to the others.
 
@@ -87,4 +89,11 @@ git checkout step-3
 `{{execute interrupt}}
 
 In the next step, we'll use the PropTypes library to set expected prop data and provide default prop values for our component and support the developer's experience using the component.
+
+Let's take a quick knowledge check:
+
+>>Question: What would happen if we passed in `size="large"` as a prop if we didn't define it in our component?<<
+(*)  Nothing will happen because we don't look to style our component any differently based on its value.
+( )  It will break the component because we don't explicitly mention it in our component's styles.
+( )  It will make the button larger.
 

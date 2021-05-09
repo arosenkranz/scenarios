@@ -40,6 +40,7 @@ The button component can be used by importing it into your app with the followin
 &#x60;&#x60;&#x60;js
 import { Button } from &#x27;@org/component-library&#x27;;
 &#x60;&#x60;&#x60;
+
 </pre>
 
 Here, we use the Storybook `Meta` component to define the title of this page in the documentation and provide context as to what component we're documenting.
@@ -58,12 +59,8 @@ Add the following Story definitions to the file with this code:
 
 &#x3C;Preview withToolbar&#x3E;
   &#x3C;Story name=&#x27;Primary&#x27;&#x3E;
-    &#x3C;Button
-      size=&#x27;default&#x27;
-      variant=&#x27;primary&#x27;
-      onClick={() =&#x3E; alert(&#x27;this button was clicked&#x27;)}
-    &#x3E;
-      This is a primary button with a click event
+    &#x3C;Button variant=&#x27;primary&#x27; onClick={() =&#x3E; alert(&#x27;this button was clicked&#x27;)}&#x3E;
+      Primary Button
     &#x3C;/Button&#x3E;
   &#x3C;/Story&#x3E;
 &#x3C;/Preview&#x3E;
@@ -72,11 +69,10 @@ Add the following Story definitions to the file with this code:
 
 &#x3C;Preview withToolbar&#x3E;
   &#x3C;Story name=&#x27;Secondary&#x27;&#x3E;
-    &#x3C;Button size=&#x27;default&#x27; variant=&#x27;secondary&#x27;&#x3E;
-      This is a secondary button
-    &#x3C;/Button&#x3E;
+    &#x3C;Button variant=&#x27;secondary&#x27;&#x3E;Secondary Button&#x3C;/Button&#x3E;
   &#x3C;/Story&#x3E;
 &#x3C;/Preview&#x3E;
+
 </pre>
 
 These will show users how to render a Primary and Secondary button and what they actually look like on a page.
@@ -88,6 +84,7 @@ Finally, we want to be able to show developers a table of all options for the co
 <pre class="file" data-filename="./src/components/Button/Button.stories.mdx" data-target="append">## Button Component Props
 
 &#x3C;ArgsTable of={Button} /&#x3E;
+
 </pre>
 
 Great! Now let's see how it all looks.
@@ -98,9 +95,18 @@ Because this is running through Storybook, we are going to run this different co
 
 Navigate to the documentation by selecting the [**Documentation**](https://[[HOST_SUBDOMAIN]]-6006-[[KATACODA_HOST]].environments.katacoda.com) tab in the dashboard. The resulting page should list all of the defined components, including our Button, as the following image shows:
 
-![]()
+![The Storybook documentation shows stories for the created components, including the Button component.](/ui-component-docs/step-04_1.png)
 
 Explore a little bit and get familiar with Storybook. Use the "Docs" tab to see all of the documentation we've written at once, including the table of possible prop argument values.
 
-Great work on getting this component created and documented! Let's recap everything we learned on the following page.
+Now our Button has been built and documented, allowing other developers to learn how to use it. Great work! 
 
+Let's recap everything we learned on the following page.
+
+Let's take a quick knowledge check:
+
+>>Question: What Storybook component allows us to name and organize our component's documentation for users?<<
+(*)  `<Meta>`
+( )  `<Preview>`
+( )  `<Story>`
+( )  `<ArgsTable>`

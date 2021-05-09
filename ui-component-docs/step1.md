@@ -93,13 +93,15 @@ In the first example, we pass an `onClick` event handler to our component, as we
 
 In the next example, we pass an `href` to the component as a prop. The component will render as an anchor element instead.
 
-Now let's test it out and see it in action! Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
+Now let's test it out and see it in action! Run the following command to start the development server:
 
 `npm run dev`{{execute}}
 
+Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
+
 As we can see on the page, our new component has joined the components we've inherited and is rendered to the page in two formats. The page should look something like the following image:
 
-![The main page displays previously created components and the new Button components.](ui-component-docs/assets/01-1_default-btn.png)
+![The main page displays previously created components and the new Button components.](ui-component-docs/assets/step-01_1.png)
 
 ## Save Your Work
 
@@ -112,3 +114,10 @@ git checkout step-2
 
 In the next step, we'll take this component further and add variants to help distinguish different UI styles and states.
 
+Let's take a quick knowledge check:
+
+>>Question: How would we create a styled `h1` element with styled-components? <<
+(*)  styled.h1``
+( )  styled(h1)``
+( )  withComponent(h1)
+( )  h1``

@@ -33,21 +33,23 @@ Let's see how it all works!
 In `./src/App.jsx`{{open}}, let's add one more variation of our Button component. This time, though, we'll pass a `variant` prop value that doesn't exist in our predefined `BTN_VARIANTS` list. Add the following code:
 
 <pre class="file" data-filename="./src/App.jsx" data-target="insert" data-marker="#step-3_2">&#x3C;div style={{ margin: &#x27;16px 0&#x27; }}&#x3E;
-      &#x3C;Button variant=&#x22;tertiary&#x22;&#x3E;This button has an incorrect variant property&#x3C;/Button&#x3E;
-    &#x3C;/div&#x3E;
+        &#x3C;Button variant=&#x22;tertiary&#x22;&#x3E;This button has an incorrect variant property&#x3C;/Button&#x3E;
+      &#x3C;/div&#x3E;
 </pre>
 
-Now we have a version of almost every type of Button rendering to the page. Run the following command to start the development server and open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab:
+Now we have a version of almost every type of Button rendering to the page. Run the following command to start the development server:
 
 `npm run dev`{{execute}}
 
+Now open the [**Main Site**](https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com) tab.
+
 Now we don't need to pass any `variant` props at all and still get a nice-looking button rendered to the page, as the next image shows:
 
-![]()
+![The page displays multiple buttons with their variant styles and one un-styled button.](/ui-component-docs/assets/step-03_1.png)
 
 Notice the one at the bottom with the incorrect `variant` prop value passed in? It doesn't break the application, but it does throw a warning to the developer console, as can be seen in the following image:
 
-![]()
+![The developer console shows a warning indicating an incorrect prop value was used.](/ui-component-docs/assets/step-03_2.png)
 
 The work we did here adds a lot to a developer's experience if they are to use this component library in their own project. Not only can they do less work because of the default props set up, they can also debug any errors by checking for a mismatched prop value.
 
@@ -64,3 +66,8 @@ git checkout step-4
 
 In the next step, we'll use Storybook and write documentation for our new UI component using MDX.
 
+Let's take a quick knowledge check:
+
+>>Question: True or False: We can add PropTypes to any React component.<<
+(*)  True
+( )  False 
