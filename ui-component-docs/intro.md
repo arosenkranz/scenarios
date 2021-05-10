@@ -1,10 +1,10 @@
 # Introduction
 
-In this scenario, we're going to inherit a UI component library built with the React, styled-components, PropTypes, and Storybook JavaScript libraries, and step through how to build and document a React UI component so other developers know how to use it.
+In this lesson, we're going to inherit a UI component library built with React, styled-components, PropTypes, and Storybook, and step through how to build and document a React UI component so other developers know how to use it.
 
-Ensuring that a UI component looks and is used properly is important if the component library is to be utilized by a cross-functional development team or throughout the open source community.
+Ensuring that a UI component is used properly is important if the component library is to be utilized by a cross-functional development team or throughout the open source community.
 
-This lesson assumes that you have working knowledge of JavaScript, React and CSS-in-JS technologies, and that you know how Storybook is configured. You don't have to be an expert to get through this scenario, as we'll learn particulars along the way! If you've never set up Storybook before, check out the [Storybook documentation](https://storybook.js.org/docs/react/get-started/introduction) and see how a project is configured.
+This lesson assumes that you have working knowledge of JavaScript, React, CSS-in-JS technologies, and that you know how Storybook is configured. You don't have to be an expert to get through this scenario, as we'll learn particulars along the way! If you've never set up Storybook before, check out the [Storybook documentation](https://storybook.js.org/docs/react/get-started/introduction) and see how a project is configured.
 
 ## Learning Objectives
 
