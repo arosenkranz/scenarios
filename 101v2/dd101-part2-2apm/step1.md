@@ -8,14 +8,14 @@
 
 3. The Datadog Agent enables APM trace metrics and allows non-local traffic by default, so we don't need to explicitly turn either one on. 
 
-    **Note:** If you ever need to disable APM or not allow non-local traffic, add the following environment variable settings into your configuration:
-     
-    ```yaml
-    - name: DD_APM_ENABLED
-      value: "false"
-    - name: DD_APM_NON_LOCAL_TRAFFIC
-      value: "false"
-    ``` 
+    > **Note:** If you ever need to disable APM or not allow non-local traffic, add the following environment variable settings into your configuration:
+    > 
+    > ```yaml
+    > - name: DD_APM_ENABLED
+    >   value: "false"
+    > - name: DD_APM_NON_LOCAL_TRAFFIC
+    >   value: "false"
+    > ``` 
 
 4. Open the application dashboard by clicking the second tab in the terminal window to the right. Sometimes this takes a minute to be available, so be patient.
 
