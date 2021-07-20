@@ -1,0 +1,56 @@
+{
+  "title": "Getting Started with Datadog Part2 v2",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-1usethetools",
+      "id": "dd101-part2-1usethetools",
+      "title": "Introduction",
+      "description": "Let's get started with the platform"
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-2apm",
+      "id": "dd101-part2-2apm",
+      "title": "Using APM",
+      "description": "Learn about application performance monitoring"
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-3logs",
+      "id": "dd101-part2-3logs",
+      "title": "Using logs",
+      "description": "Learn about using logs"
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-4synthetics",
+      "id": "dd101-part2-4synthetics",
+      "title": "Working with synthetics",
+      "description": "Learn how to setup and use synthetics"
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-7rum",
+      "id": "dd101-part2-7rum",
+      "title": "Real User Monitoring",
+      "description": "Introduction to Real User Monitoring (RUM)"
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-5usethetools",
+      "id": "dd101-part2-5usethetools",
+      "title": "using the tools",
+      "description": ""
+    },
+    {
+      "pathway_id": "datadog/101v2",
+      "course_id": "dd101-part2-6npm",
+      "id": "dd101-part2-6npm",
+      "title": "Network Performance Monitoring",
+      "description": "Introduction to Network Performance monitoring (NPM)"
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-Congratulations! You have completed the section of the Introduction to Datadog course focusing on how to install the Datadog Agent. Did you take a look at how to enable APM in the previous step? Well, it was a bit of a trick question since it was already enabled by default. Any commented values in `datadog.yaml` represent their default values. To get an idea of what the configuration file looks like, you can take a look at the [sample configuration file](https://github.com/DataDog/dd-agent/blob/master/conf.d/datadog.yaml.sample).
-
-Now you have seen how to install and configure the agent on a virtual machine, click the **Next** button below to try the same thing on Docker.
