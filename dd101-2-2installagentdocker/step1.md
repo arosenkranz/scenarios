@@ -15,11 +15,11 @@
        - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
    </pre>
 1. Ensure you are in the `/root/lab` directory. If not, run `cd /root/lab`{{execute}} in the terminal.
-1. Run `docker-compose up`{{execute}} in the terminal to start.
+1. Run `docker-compose up`{{execute}} in the terminal to start up the Docker containers in the terminal window. The result will be running logs for our containers that look like the following image:
 
-    > **Note:** This command will run an ongoing process in the terminal window, so there's no need to wait for it to finish.
+    ![The first terminal window displays the logs of running Docker containers.](/assets/images/docker-compose-running.png)
   
-1. Switch over to the Terminal 2, ensure you are in the `/root/lab` directory, and run the Datadog status command: `docker-compose exec datadog agent status`{{execute T2}}. This command is telling `docker-compose` to execute the command `agent status` inside the `datadog` container.
+1. Once it's running, switch over to Terminal 2, ensure you are in the `/root/lab` directory, and run the Datadog status command: `docker-compose exec datadog agent status`{{execute T2}}. This command is telling `docker-compose` to execute the command `agent status` inside the `datadog` container.
 1. As you can see, the Datadog agent is running but we have the same issue we saw in the previous step with Logs not enabled. Instead of using a YAML file to configure the Datadog Agent container, we use environment variables.
 1. In the editor, add the following environment variable to the Datadog service:
     `DD_LOGS_ENABLED=true`
