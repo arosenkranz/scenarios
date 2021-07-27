@@ -20,7 +20,7 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "datadog-base-v2",
+    "imageid": "ubuntu:2004",
     "reuseConnection": "false"
   }
 }
