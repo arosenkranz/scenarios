@@ -17,8 +17,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
-    "uieditorpath": "/root/editor"
+    "uilayout": "terminal"
   },
   "backend": {
     "imageid": "datadog-base-v2",
