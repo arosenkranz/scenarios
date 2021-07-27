@@ -6,7 +6,7 @@ Part of that preparation is provisioning a temporary account for the Datadog app
 
 1. Take a look at the terminal and wait until the startup script finishes. The resulting screen should list your account credentials and how much time is left on the account, resembling this image:
 
-    ![](./assets/lab-startup.png)
+    ![The terminal displays the provisioned account credentials for the user.](./assets/dd-credentials.png)
 
 1. In case you need to retrieve your credentials, you can print them to the terminal with the following command:
 
