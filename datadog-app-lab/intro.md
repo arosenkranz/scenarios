@@ -1,4 +1,4 @@
-When learning with Datadog, you'll be provided temporary account to log into the Datadog application. This allows you to learn about the features of the application in an environment that doesn't affect your organization's security, data, or billing.
+When learning with Datadog, you'll be provided temporary account to log into the Datadog application. This allows you to learn about the features of the application in an environment that won't affect your organization's security, data, or billing.
 
 In this lab, you're going to confirm that you can log into the Datadog application using the account credentials provisioned for you. 
 
