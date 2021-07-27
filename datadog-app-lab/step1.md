@@ -10,7 +10,7 @@ Part of that preparation is provisioning a temporary account for the Datadog app
 
 1. In case you need to retrieve your credentials, you can print them to the terminal with the following command:
 
-`creds`{{execute}}
+    `creds`{{execute}}
 
 1. Now login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> with your provisioned credentials.
 
