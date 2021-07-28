@@ -18,6 +18,6 @@ Part of that preparation is provisioning a temporary account for the Datadog app
 
     > **Note:** API and Application keys are different.
 
-    If this is not the same API key that you saw in your Datadog account, you may have been in the wrong organization. You can switch organizations by clicking on the Account menu in the Datadog nav bar and selecting the new organization we created for you.
+    If this is not the same API key that you saw in your Datadog account, you may have been in the wrong account or organization. You can switch organizations or logout in the account options menu located towards the bottom of the navigation bar. 
 
-1. At the end of every section of this course, including this one, run `grademe`{{execute}} when you are finished. Go for it. Run it now.
+1. If they match, great! You're ready to move on and use the Datadog application in future labs. Select the **Continue** button below to finish up.

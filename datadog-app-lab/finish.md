@@ -1,3 +1,3 @@
-Congratulations! You have set up your account and are ready to start using the Datadog app.
+Congratulations! You have set up your account and are ready to start using the Datadog app in upcoming labs.
 
-In the next section we will actually start working with Datadog.
+Remember that throughout all labs, you can use the `creds` command to retrieve your account credentials.
