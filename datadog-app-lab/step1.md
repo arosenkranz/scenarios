@@ -1,8 +1,6 @@
 You'll notice in the terminal that there is a script running. This script will fetch and prepare your environment for the lab.
 
-Part of that preparation is provisioning a temporary account for the Datadog application that you'll use throughout the rest of your labs. Let's confirm that it works!
-
-> **Note:** These accounts are temporary and to be used for 14 days. After that, you will be provisioned a new account.
+Part of that preparation is provisioning a temporary account for the Datadog application that you'll use throughout the rest of your labs. Let's confirm that you can log in!
 
 1.  Take a look at the terminal and wait until the startup script finishes. The resulting screen should list your account credentials and how much time is left on the account, resembling this image:
 

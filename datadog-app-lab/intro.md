@@ -5,7 +5,7 @@ In this lab, you're going to confirm that you can log into the Datadog applicati
 The objectives of this section are:
 
 1. Log into the Datadog application with the provided credentials.
-1. Ensure you are in the right Datadog account.
+1. Confirm you are in the correct Datadog account by checking the API key.
 
 > **Note:** If you ever experience an error in the environment, refresh your browser.
 
