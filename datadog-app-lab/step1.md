@@ -10,9 +10,9 @@ Part of that preparation is provisioning a temporary account for the Datadog app
 
     `creds`{{execute}}
 
-1. Now login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> with your provisioned credentials.
+1. Now login to your <a href="https://app.datadoghq.com" target="_datadog">Datadog account</a> with your provisioned credentials. If you're currently logged into the Datadog application with your personal or organization's account, you'll have to log out first.
 
-1. Let's verify that you are in the right organization. Visit <a href="https://app.datadoghq.com/account/settings#api" target="_datadog">the API Keys section</a>, which you can find in the Global Navigation under **Integrations > APIs**. Expand API Keys and hover over the purple rectangle to reveal the API key we have created for you.
+1. Let's verify that you are in the right account. Visit <a href="https://app.datadoghq.com/account/settings#api" target="_datadog">the API Keys section</a>, which you can find in the Global Navigation under **Integrations > APIs**. Expand API Keys and hover over the purple rectangle to reveal the API key we have created for you.
 
 1. In the Training Lab terminal, run the command `echo $DD_API_KEY`{{execute}} to see the API key environment variable. Verify that this is the same API key. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.
 
