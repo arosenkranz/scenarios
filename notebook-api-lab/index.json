@@ -1,0 +1,46 @@
+{
+  "title": "Using Datadog Notebooks for Centralized Reporting",
+  "description": "Use Datadog Notebooks and the Datadog API to organize, maintain, and share reports.",
+  "time": "20 minutes",
+  "difficulty": "Intermediate",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "00-intro.md"
+    },
+    "steps": [
+      {
+        "text": "01-create-notebook.md",
+        "title": "Create a Notebook on Datadog"
+      },
+      {
+        "text": "02-get-notebooks.md",
+        "title": "Get Notebook Data with the Datadog API"
+      },
+      {
+        "text": "03-update-notebook.md",
+        "title": "Update Notebook with Third Party Data"
+      },
+      {
+        "text": "04-share-notebook.md",
+        "title": "Explore Notebook Sharing Options"
+      }
+    ],
+    "finish": {
+      "text": "05-finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}
