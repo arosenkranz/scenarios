@@ -29,15 +29,15 @@
     ],
     "finish": {
       "text": "05-finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        }
+      ]
     }
-  },
-  "assets": {
-    "host01": [
-      {
-        "file": "docker-compose.yml",
-        "target": "/root"
-      }
-    ]
   },
   "environment": {
     "uilayout": "terminal",
