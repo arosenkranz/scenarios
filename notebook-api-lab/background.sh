@@ -1,15 +1,22 @@
 #!/bin/bash
+# Put stuff here that runs in a background process, invisible to the learner.
 
+# Get the latest scenario tools
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
+# Wait for required assets to appear in the filesystem
+until  [ -f /root/docker-compose.yml ]
+do
+  sleep 2
+done
+
+# Create a tidy workspace for the learner
 mkdir /root/lab
+mv /root/docker-compose.yml /root/lab
 
-cd /ecommworkshop
-git fetch
-git checkout tags/2.0.0
+statusupdate "workspace"
+statuscheck "environment-variables"
 
-mv /ecommworkshop/deploy/docker-compose/docker-compose-fixed-instrumented.yml /root/lab/docker-compose.yml
+cd /root/lab && docker-compose up -d
 
-docker-compose -f /root/lab/docker-compose.yml pull
-
-statusupdate environments
+statusupdate "storedog"

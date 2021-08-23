@@ -1,14 +1,21 @@
 #!/bin/bash
-export POSTGRES_USER=postgres
-export POSTGRES_PASSWORD=postgres
-export DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount
-export DD_ADS_URL=https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com/
+# Put stuff here that runs in a foreground process, visible to the learner.
 
-clear
-
-statuscheck environment
-
+statuscheck "workspace"
 cd /root/lab
 
+# Store learner environment variablse for background.sh to access
+# ** Set DD_ENV to a unique value for your scenario. E.g. dd-201 **
+printf "DD_API_KEY=$DD_API_KEY\n\
+DD_APP_KEY=$DD_APP_KEY\n\
+POSTGRES_USER=postgres\n\
+DD_ENV=my-environment\n\ 
+POSTGRES_PASSWORD=postgres" > .env 
+
+clear
+statusupdate "environment-variables"
+statuscheck "storedog"
+
+# Display trial account credentials in terminal
 statusupdate complete
 prepenvironment

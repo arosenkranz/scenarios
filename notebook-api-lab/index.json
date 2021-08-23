@@ -31,12 +31,18 @@
       "text": "05-finish.md"
     }
   },
+  "assets": {
+    "host01": [
+      {
+        "file": "docker-compose.yml",
+        "target": "/root"
+      }
+    ]
+  },
   "environment": {
     "uilayout": "terminal",
     "showide": "true",
     "uieditorpath": "/root/lab",
-    "hideHiddenFiles": true,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
