@@ -9,7 +9,5 @@ Not only will you create and update a notebook, but you’ll also learn the diff
 Let's review the learning objectives for this lab:
 
 1. Create a Notebook through the Datadog app to get familiar with its features.
-
 1. Utilize the Datadog API to retrieve and update a notebook with data from a third party.
-
 1. Know how and when to use the different means of sharing a notebook.
