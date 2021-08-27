@@ -1,15 +1,17 @@
-apt install qemu qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager libguestfs-tools
+# apt-get update
 
-systemctl enable --now libvirtd
-systemctl enable --now virtlogd
+# apt install qemu qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager libguestfs-tools
 
-echo 1 | tee /sys/module/kvm/parameters/ignore_msrs
+# systemctl enable --now libvirtd
+# systemctl enable --now virtlogd
 
-modprobe kvm
+# echo 1 | tee /sys/module/kvm/parameters/ignore_msrs
 
-docker run -it \
-  --device /dev/kvm \
-  -p 50922:10022 \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  -e "DISPLAY=${DISPLAY:-:0.0}" \
-  sickcodes/docker-osx:latest
+# modprobe kvm
+
+# docker run -it \
+#   --device /dev/kvm \
+#   -p 50922:10022 \
+#   -v /tmp/.X11-unix:/tmp/.X11-unix \
+#   -e "DISPLAY=${DISPLAY:-:0.0}" \
+#   sickcodes/docker-osx:latest
