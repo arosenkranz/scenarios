@@ -7,23 +7,21 @@ Since you've recently created a notebook, the next thing to learn is how to inte
 1. To interact with the Datadog API, you'll need to provide your API key and application key. Both of these have been saved to your environment variables and can be viewed with the following command in your terminal:
 
   ```bash
-  echo $DD_API_KEY && echo $DD_APPLICATION_KEY
+  echo $DD_API_KEY && echo $DD_APP_KEY
   ```{{exec}}
 
 1. To get all of your organization's notebooks, run the following command:
 
-  ```
+  ```bash
   curl -G \
       "https://api.datadoghq.com/api/v1/notebooks" \
       -H "DD-API-KEY: ${DD_API_KEY}" \
-      -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
+      -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
   ```{{execute}}
 
-You need to use your account’s API and APP keys, which were set as environment variables when the lab started
+> **Tip:** Pipe your response to `jq` for more readable output.
 
-Run GET `/api/v1/notebooks` in terminal and point out response data
-
-Blockquote - Tip: Pipe response to `jq` to pretty print it
+In the response, you'll find a list of the notebooks you've created, complete with their IDs, names, and information about their cells.
 
 Pull out the id of the notebook created in previous step and save it to environment variable
 
