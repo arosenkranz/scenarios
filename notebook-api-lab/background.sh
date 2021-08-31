@@ -13,8 +13,9 @@ done
 # Create a tidy workspace for the learner
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
-mv /root/get_all_notebooks_response.json /root/lab
-mv /root/get_single_notebook_response.json /root/lab
+mv /root/get_all_notebooks_sample.json /root/lab
+mv /root/get_single_notebook_sample.json /root/lab
+mv /root/update_notebook.sh /root/lab
 
 statusupdate "workspace"
 statuscheck "environment-variables"

@@ -43,6 +43,10 @@
         {
           "file": "get_single_notebook_sample.json",
           "target": "/root"
+        },
+        {
+          "file": "update_notebook.sh",
+          "target": "/root"
         }
       ]
     }
