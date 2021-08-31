@@ -8,7 +8,7 @@ Since you've recently created a notebook, the next thing to learn is how to inte
 
   ```bash
   echo $DD_API_KEY && echo $DD_APP_KEY
-  ```{{exec}}
+  ```{{execute}}
 
 1. To get all of your organization's notebooks, run the following command:
 
@@ -21,9 +21,26 @@ Since you've recently created a notebook, the next thing to learn is how to inte
 
 > **Tip:** Pipe your response to `jq` for more readable output.
 
-In the response, you'll find a list of the notebooks you've created, complete with their IDs, names, and information about their cells.
+In the response, you'll find a list of the notebooks you've created, complete with their IDs, names, and information about their cells. 
 
-Pull out the id of the notebook created in previous step and save it to environment variable
+1. For a more detailed and isolated look at a notebook's data, you can also use the `/api/v1/notebooks/:notebook_id` endpoint. First, you'll need to get the notebook's ID, which can be found in the response data, as this image shows:
+
+  ![](@TODO: Add image)
+
+  Once you locate it, save it to an environment variable by running this command in the terminal to the right:
+
+  ```bash
+  export NOTEBOOK_ID=<paste ID here>
+  ```
+
+1. Now run the following command to get a single notebook's data:
+
+  ```bash
+  curl -G \
+      "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
+      -H "DD-API-KEY: ${DD_API_KEY}" \
+      -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
+  ```{{execute}}
 
 Run GET `/api/v1/notebooks/${NOTEBOOK_ID}` and pipe it to `jq` to get data for a single notebook, then walk through some of the returned data and explain how the cells are formatted
 
