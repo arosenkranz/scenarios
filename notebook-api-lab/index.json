@@ -35,6 +35,14 @@
         {
           "file": "docker-compose.yml",
           "target": "/root"
+        },
+        {
+          "file": "get_all_notebooks_sample.json",
+          "target": "/root"
+        },
+        {
+          "file": "get_single_notebook_sample.json",
+          "target": "/root"
         }
       ]
     }

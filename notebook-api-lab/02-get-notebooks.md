@@ -39,9 +39,15 @@ In the response, you'll find a list of the notebooks you've created, complete wi
   curl -G \
       "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
       -H "DD-API-KEY: ${DD_API_KEY}" \
-      -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
+      -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | jq
   ```{{execute}}
 
-Run GET `/api/v1/notebooks/${NOTEBOOK_ID}` and pipe it to `jq` to get data for a single notebook, then walk through some of the returned data and explain how the cells are formatted
+1. Notice how each cell is represented. Most of the important content for each cell is under the `attribute` key, where you'll find information about the type of cell, its size, what content is to be displayed, and other data important to displaying the cell properly.
 
-Now that you know how to access a single notebook’s data, you can now add to it with a PUT request
+  Take a moment or two to explore the data, specifically how the first and second cells are represented when compared to the third. The first two hold information specific to data captured by Datadog, while the third cell is a text cell created by the user that can be populated with Markdown content from any source.
+
+  > **Note:** Sample copies of the returned JSON data can be found in the **IDE** tab to your right.
+
+Now that you have learned how to get a notebook and its data, you can begin to consider what other content you may want to add to it. 
+
+In the next step, you'll do just that by adding release notes from a sample GitHub repo to your notebook through the API.  

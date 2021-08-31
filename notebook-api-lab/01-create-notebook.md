@@ -34,6 +34,8 @@ Once the initialization completes, you can browse the Storedog app by clicking o
 
   ![](@TODO: insert image)
 
+> **Tip:** You can adjust the size of each cell's content by selecting the `Edit` button and then the `Graph Settings` button to the right of it.
+
 1. Save the cell, then create one more below it. This time, create a "Text" cell with the following Markdown content and save it:
 
   ```md
