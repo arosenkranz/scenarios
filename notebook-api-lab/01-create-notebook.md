@@ -2,11 +2,15 @@ In the terminal on the right, the Storedog app is being instrumented for APM wit
 
 Once the initialization completes, you can browse the Storedog app by clicking on the `storedog` tab in the terminal to the right. Throughout this lab, you will use a notebook to report on the frontend service of this application's health and correlate it with software release notes over the span of a week.
 
-1. In a new window/tab, log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you by the lab. If you need to recall your credentials, type `creds`{{execute}} in the terminal.
+## Log In and Confirm Logs are Collected
 
-1. Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">application's Logs page</a> to confirm logs are being captured. There isn't anything in particular you need to look for here, just confirm that the service `store-frontend` is being logged.
+In a new window/tab, log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you by the lab. If you need to recall your credentials, type `creds`{{execute}} in the terminal.
 
-1. Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog">Notebooks > New Notebook</a> to create a new notebook.
+Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">application's Logs page</a> to confirm logs are being captured. There isn't anything in particular you need to look for here, just confirm that the service `store-frontend` is being logged.
+
+## Create Your Notebook
+
+Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog">Notebooks > New Notebook</a> to create a new notebook by following these steps:
 
 1. Name the notebook `Frontend Service - Weekly Report`, then set the time span to be `Past 1 Week` towards the top of the page.
 
@@ -16,11 +20,11 @@ Once the initialization completes, you can browse the Storedog app by clicking o
 
   ![](@TODO: insert image)
 
-1. Now set it up so the cell's is set to query `Metrics` with a value of `trace.rack.request.duration` from `env:my-environment, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
+1. Now set it up so the cell's is set to query `Metrics` with a value of `trace.rack.request.duration` from `env:ecommerce-store, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
 
   ![](@TODO: insert image)
 
-  > **Note:** The `env:my-environment` and `service:store-frontend` facets were created for you when the application was instrumented and can be found in the `docker-compose.yml` file in the IDE tab.
+> **Note:** The `env:ecommerce-store` and `service:store-frontend` facets were created for you when the application was instrumented and can be found in the `docker-compose.yml` file in the IDE tab.
 
   Notice how the time seems a bit slower than expected? This is because it is calculating an average based off the week's data, but metrics have only been collected for a few minutes so far.
 

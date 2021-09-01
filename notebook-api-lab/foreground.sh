@@ -9,7 +9,7 @@ cd /root/lab
 printf "DD_API_KEY=$DD_API_KEY\n\
 DD_APP_KEY=$DD_APP_KEY\n\
 POSTGRES_USER=postgres\n\
-DD_ENV=my-environment\n\ 
+DD_ENV=ecommerce-store\n\ 
 POSTGRES_PASSWORD=postgres" > .env 
 
 clear

@@ -1,3 +1,7 @@
+#!/bin/bash
+
+PREVIOUS_WEEK=$(date -d "7 days ago" +"%Y-%m-%d")
+
 # Curl command
 curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
 -H "Content-Type: application/json" \
@@ -8,6 +12,8 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
   "data": {
     "attributes": {
       "name": "Frontend Service Weekly Report",
+      "status": "published",
+      "time": { "live_span": "1w" },
       "cells": [
         {
           "attributes": {
@@ -19,7 +25,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
                   "response_format": "scalar",
                   "queries": [
                     {
-                      "query": "avg:trace.rack.request.duration{env:my-environment,service:store-frontend}",
+                      "query": "avg:trace.rack.request.duration{env:ecommerce-store,service:store-frontend}",
                       "data_source": "metrics",
                       "name": "query1",
                       "aggregator": "avg"
@@ -34,7 +40,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
             "graph_size": "m",
             "time": null
           },
-          "type": "notebook_cells",
+          "type": "notebook_cells"
         },
         {
           "attributes": {
@@ -77,25 +83,24 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
             "split_by": { "keys": [], "tags": [] },
             "time": null
           },
-          "type": "notebook_cells",
+          "type": "notebook_cells"
         },
         {
           "attributes": {
-            "definition": { "text": "## Release Notes\n", "type": "markdown" }
+            "definition": { "text": "## Release Notes\nWeek of ${PREVIOUS_WEEK}", "type": "markdown" }
           },
-          "type": "notebook_cells",
+          "type": "notebook_cells"
         },
         {
           "attributes": {
             "definition": { 
-              "text": "\n### Week of: ${date -d "$date -7 days" +"%Y-%m-%d"}\n\n#### Added\n\n- Added a new advertisements image [#123](#)\n- Added margin around product images [#128](#)\n- Added discount code display area [#139](#)\n\n#### Fixed\n\n- Applied all the latest security updates to frontend service\n- Removed lingering debugging logs [#137](#)\n\n#### Changed\n\n- Updated the logging payload in frontend service [#120](#)\n\n", 
+              "text": "#### Added\n\n- Added a new advertisements image [#123](#)\n- Added margin around product images [#128](#)\n- Added discount code display area [#139](#)\n\n---\n\n#### Fixed\n\n- Applied all the latest security updates to frontend service\n- Removed lingering debugging logs [#137](#)\n\n---\n\n#### Changed\n\n- Updated the logging payload in frontend service [#120](#)\n\n", 
               "type": "markdown" }
           },
-          "type": "notebook_cells",
+          "type": "notebook_cells"
         }
-      ],
-      "time": { "live_span": "1w" }
-    }
+      ]
+    },
     "type": "notebooks"
   }
 }

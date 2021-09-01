@@ -17,7 +17,7 @@
                     "response_format": "scalar",
                     "queries": [
                       {
-                        "query": "avg:trace.rack.request.duration{env:my-environment,service:store-frontend}",
+                        "query": "avg:trace.rack.request.duration{env:ecommerce-store,service:store-frontend}",
                         "data_source": "metrics",
                         "name": "query1",
                         "aggregator": "avg"
