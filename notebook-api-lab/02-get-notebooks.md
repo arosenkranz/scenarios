@@ -2,7 +2,7 @@ Using the Datadog API, you can interact with your organization's notebooks in a 
 
 Since you've recently created a notebook, the next thing to learn is how to interact with it outside of Datadog. You'll start by getting your notebook's data so you can see what data is returned.
 
-> **Note**: You'll use cURL commands to interact with the API in this lab, but you can also use a Datadog client library offered in your choice of programming language. Check out the documentation for the [Notebooks API](https://docs.datadoghq.com/api/latest/notebooks/) to learn more.
+> **Note**: You'll use cURL commands to interact with the API in this lab, but you can also use a Datadog client library offered in your choice of programming language. Check out the documentation for the <a href="https://docs.datadoghq.com/api/latest/notebooks" target="_datadog">Notebooks API<a> to learn more.
 
 ## Get All Notebooks
 
@@ -29,7 +29,7 @@ In the response, you'll find a list of the notebooks you've created, complete wi
 
 For a more detailed and isolated look at a notebook's data, you can also use the `/api/v1/notebooks/:notebook_id` endpoint. First, you'll need to get the notebook's ID, which can be found in the response data, as this image shows:
 
-![](@TODO: Add image)
+![@TODO: Add image]()
 
 Once you locate it, save it to an environment variable by running this command in the terminal to the right:
 

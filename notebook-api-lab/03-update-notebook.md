@@ -21,7 +21,7 @@ Another thing to be mindful of is how the release notes stored in the `body` fie
 
 > **Note:** For this lab, the JSON data will be provided to you in a way that is already formatted and valid for the Datadog API.
 >
-> To get a better understanding of what is expected by the API to update a notebook, check out the [Datadog Notebook API documentation](https://docs.datadoghq.com/api/latest/notebooks/#update-a-notebook).
+> To get a better understanding of what is expected by the API to update a notebook, check out the <a href="https://docs.datadoghq.com/api/latest/notebooks/#update-a-notebook" target="_datadog">Datadog Notebook API documentation</a>.
 
 ## Update Notebook with Release Notes
 
@@ -39,13 +39,13 @@ Go ahead and run this script in the terminal to update the notebook:
 bash update_notebook.sh
 ```{{execute}}
 
-The response should be the notebook's new content, resembling the body of the request. Go ahead and check out your  notebook in the [Datadog app](https://app.datadoghq.com/notebooks), which should look something like this image:
+The response should be the notebook's new content, resembling the body of the request. Go ahead and view your notebook in the <a href="https://app.datadoghq.com/notebooks/list" target="_datadog">Datadog app</a>, which should look something like this image:
 
 ![@TODO: Add image]()
 
 Great work! Now you can see what work was done in the previous week and how it impacted the application's health and performance, all in one place. This gives you and your team a more holistic view of your application and if the work being performed is being done effectively.
 
-While the script provided in the `update_notebook.sh` file is a good starting point to see what's possible, you may want to consider how you can make it more flexible and customized to you and your team's needs. With the [Datadog API](https://docs.datadoghq.com/api/latest/), you can write scripts much like this one in your preferred language that automates report generation for you.
+While the script provided in the `update_notebook.sh` file is a good starting point to see what's possible, you may want to consider how you can make it more flexible and customized to you and your team's needs. With the <a href="https://docs.datadoghq.com/api/latest/" target="_datadog">Datadog API</a>, you can write scripts much like this one in your preferred language that automates report generation for you.
 
 Select the **Continue** button to move onto the next step, where you'll learn what options are available for you to share your notebook with teammates and stakeholders.
 

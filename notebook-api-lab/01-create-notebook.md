@@ -18,11 +18,11 @@ Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog"
 
   First, give it a name of `Avg Request Duration` in the input box at the top of the cell. Then find the dropdown menu titled `Timeseries`, then select the `Query` option. It should look something like this image:
 
-  ![](@TODO: insert image)
+  ![@TODO: insert image]()
 
 1. Now set it up so the cell's is set to query `Metrics` with a value of `trace.rack.request.duration` from `env:ecommerce-store, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
 
-  ![](@TODO: insert image)
+  ![@TODO: insert image]()
 
 > **Note:** The `env:ecommerce-store` and `service:store-frontend` facets were created for you when the application was instrumented and can be found in the `docker-compose.yml` file in the IDE tab.
 
@@ -36,15 +36,15 @@ Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog"
 
   The result should be a line graph of the status of the application broken out by status. To make it more readable, set the "Display" option to be `Bars`, resulting in something that looks like the following image:
 
-  ![](@TODO: insert image)
+  ![@TODO: insert image]()
 
 > **Tip:** You can adjust the size of each cell's content by selecting the `Edit` button and then the `Graph Settings` button to the right of it.
 
 1. Save the cell, then create one more below it. This time, create a "Text" cell with the following Markdown content and save it:
 
-  ```md
-  ## Release Notes
-  ```{{copy}}
+```md
+## Release Notes
+```{{copy}}
 
 1. Now save the notebook by selecting the `Save Notebook` button on the page.
 

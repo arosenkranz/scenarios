@@ -2,7 +2,7 @@ You've already seen how a notebook's data is returned by the API, and while it's
 
 Luckily, there are other means of sharing notebooks. Ones that can work with you and your team's workflow.
 
-Head to the Datadog app to [view your notebook](https://app.datadoghq.com/notebooks/list). In the upper-right corner of the page, you'll find the "Share" button. Select it and you'll see a dropdown list of sharing options for you to explore that looks like this image:
+Head to the Datadog app to <a href="https://app.datadoghq.com/notebooks/list" target="_datadog">view your notebook</a>. In the upper-right corner of the page, you'll find the "Share" button. Select it and you'll see a dropdown list of sharing options for you to explore that looks like this image:
 
 ![@TODO: Add image]()
 
