@@ -54,4 +54,4 @@ Take a moment or two to explore the data, specifically how the first and second 
 
 Now that you have learned how to get a notebook and its data, you can begin to consider what other content and data you may want to add to it. 
 
-In the next step, you'll do just that by adding release notes from a sample GitHub repo to your notebook through the API.  
+Select the **Continue** button to move onto the next step, where you'll add release notes from a sample GitHub repository to your notebook through the API.

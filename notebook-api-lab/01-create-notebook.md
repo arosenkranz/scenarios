@@ -48,4 +48,4 @@ Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog"
 
 1. Now save the notebook by selecting the `Save Notebook` button on the page.
 
-With your notebook created and set up to pull a report of the frontend service's health, you can now move on to the next step, where you'll learn how to query a notebook's data using the Datadog API.
+With your notebook created and set up to pull a report of the frontend service's health, select the **Continue** button to move on to the next step, where you'll learn how to query a notebook's data using the Datadog API.
