@@ -37,7 +37,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
               "precision": 2,
               "title": "Avg Request Duration"
             },
-            "graph_size": "m",
+            "graph_size": "s",
             "time": null
           },
           "type": "notebook_cells"
@@ -61,7 +61,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
                   "display_type": "bars",
                   "queries": [
                     {
-                      "search": { "query": "service:store-frontend" },
+                      "search": { "query": "service:store-frontend env:ecommerce-store" },
                       "data_source": "logs",
                       "compute": { "interval": 30000, "aggregation": "count" },
                       "name": "query1",
@@ -79,7 +79,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
               ],
               "title": "Logs"
             },
-            "graph_size": "l",
+            "graph_size": "m",
             "split_by": { "keys": [], "tags": [] },
             "time": null
           },
