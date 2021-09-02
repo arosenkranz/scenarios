@@ -13,7 +13,7 @@ curl -G \
 
 Use the following image as a reference of what a single release looks like and where to locate some of the data you may want to consider including in your notebook:
 
-![The JSON response for a repository's release data holds important details about the release that can be used for reporting.](./assets/step-03_01.png)
+![The JSON response for a repository's release data holds important details about the release that can be used for reporting.](./assets/step-3_01.png)
 
 In a case like this, where you want to only get notes from the previous week, you'd need to identify all of the releases that were created within that time frame and filter out the rest.
 
@@ -41,7 +41,7 @@ bash update_notebook.sh
 
 The response should be the notebook's new content, resembling the body of the request. Go ahead and view your notebook in the <a href="https://app.datadoghq.com/notebooks/list" target="_datadog">Datadog app</a>, which should look something like this image:
 
-![@TODO: Add image]()
+![The notebook in Datadog is now updated with the data provided in the update request.](./assets/step-3_02.png)
 
 Great work! Now you can see what work was done in the previous week and how it impacted the application's health and performance, all in one place. This gives you a more holistic view of your application and if the work being performed is effective.
 

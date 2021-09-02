@@ -8,13 +8,13 @@ Head to the Datadog app to <a href="https://app.datadoghq.com/notebooks/list" ta
 
 Select it and you'll see a dropdown list of sharing options for you to explore that looks like this image:
 
-![@TODO: Add image]()
+![The options for sharing a notebook appear after selecting the "Share" button on the page.](./assets/step-4_01.png)
 
 The first option, "Copy formatted contents", will copy the notebook's contents to your clipboard in a way that you can paste into a document or email. 
 
 Try it out by selecting the option, opening a [new Google Docs document](https://docs.new), and pasting the notebook's contents into the document. The result will look something like this image:
 
-![@TODO: Add image]()
+![A pasted notebook's content looks the same when pasted into a new Google doc file.](./assets/step-4_02.png)
 
 The second option, "Download as PDF", will save the notebook's contents to a PDF file for you to share. Same with the "Download as Markdown (.md)" option.
 
