@@ -14,15 +14,15 @@ Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog"
 
 1. Name the notebook `Frontend Service - Weekly Report`{{copy}}, then set the time span to be `Past 1 Week` towards the top of the page.
 
-1. When you started the new notebook, a cell was added with a sample timeseries graph to get you started. 
+1. When you started the new notebook, a cell was added with a sample Timeseries graph to get you started. 
 
-  First, give it a name of `Avg Request Duration`{{copy}} in the input box at the top of the cell. Then find the dropdown menu titled "Timeseries", then select the `Query` option. It should look something like this image:
+  First, give it a name of `Avg Request Duration`{{copy}} in the input box at the top of the cell. Then select the dropdown menu with a value set to "Timeseries" and select the "Query" option. It should look something like this image:
 
-  ![@TODO: insert image]()
+  ![The notebook's cell displays options for the different types of cell.](./assets/step-1_01.png)
 
 1. Now set it up so the cell's is set to query "Metrics" with a value of `trace.rack.request.duration`{{copy}} from `env:ecommerce-store, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
 
-  ![@TODO: insert image]()
+  ![The Query cell now displays the average duration of the frontend service's requests.](./assets/step-1_02.png)
 
 > **Note:** The `env:ecommerce-store` and `service:store-frontend` facets were created for you when the application was instrumented and can be found in the `docker-compose.yml` file in the IDE tab.
 
@@ -34,7 +34,7 @@ Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog"
 
   The result should be a line graph of the status of the application broken out by status. To make it more readable, set the "Display" option to be `Bars`, resulting in something that looks like the following image:
 
-  ![@TODO: insert image]()
+  ![The Timeseries cell displays a bar graph of the frontend service's logged statuses grouped by type.](./assets/step-1_03.png)
 
 > **Tip:** You can adjust the size of each cell's content by selecting the `Edit` button and then the `Graph Settings` button to the right of it.
 
