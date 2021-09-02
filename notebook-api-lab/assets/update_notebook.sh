@@ -11,7 +11,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
 {
   "data": {
     "attributes": {
-      "name": "Frontend Service Weekly Report",
+      "name": "Frontend Service - Weekly Report",
       "status": "published",
       "time": { "live_span": "1w" },
       "cells": [

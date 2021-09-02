@@ -12,27 +12,25 @@ Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">appli
 
 Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog">Notebooks > New Notebook</a> to create a new notebook by following these steps:
 
-1. Name the notebook `Frontend Service - Weekly Report`, then set the time span to be `Past 1 Week` towards the top of the page.
+1. Name the notebook `Frontend Service - Weekly Report`{{copy}}, then set the time span to be `Past 1 Week` towards the top of the page.
 
 1. When you started the new notebook, a cell was added with a sample timeseries graph to get you started. 
 
-  First, give it a name of `Avg Request Duration` in the input box at the top of the cell. Then find the dropdown menu titled `Timeseries`, then select the `Query` option. It should look something like this image:
+  First, give it a name of `Avg Request Duration`{{copy}} in the input box at the top of the cell. Then find the dropdown menu titled "Timeseries", then select the `Query` option. It should look something like this image:
 
   ![@TODO: insert image]()
 
-1. Now set it up so the cell's is set to query `Metrics` with a value of `trace.rack.request.duration` from `env:ecommerce-store, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
+1. Now set it up so the cell's is set to query "Metrics" with a value of `trace.rack.request.duration`{{copy}} from `env:ecommerce-store, service:store-frontend`{{copy}}. The result should be the duration displayed in the cell, resembling this image:
 
   ![@TODO: insert image]()
 
 > **Note:** The `env:ecommerce-store` and `service:store-frontend` facets were created for you when the application was instrumented and can be found in the `docker-compose.yml` file in the IDE tab.
 
-  Notice how the time seems a bit slower than expected? This is because it is calculating an average based off the week's data, but metrics have only been collected for a few minutes so far.
-
 1. Go ahead and save the cell, either by selecting the cell's `Done` button or clicking anywhere outside of the cell.
 
-1. Now create another cell below the one you just created. This time, make it a Timeseries cell with a name of `Logs`.
+1. Now create another cell below the one you just created. This time, make it a "Timeseries" cell with a name of `Log Statuses by Type`{{copy}}.
 
-1. For this cells query, set it to query `Logs` with a value of `Service:store-frontend`{{copy}} and set the "group by" option to be `Status(status)`{{copy}}`.
+1. For this cells query, set it to query `Logs` with a value of `Env:ecommerce-store, Service:store-frontend`{{copy}} and set the "group by" option to be `Status(status)`{{copy}}`.
 
   The result should be a line graph of the status of the application broken out by status. To make it more readable, set the "Display" option to be `Bars`, resulting in something that looks like the following image:
 
