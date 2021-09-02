@@ -44,7 +44,7 @@ curl -G \
 
 Take a moment or two to explore the data, specifically how the first and second cells are represented when compared to the third. The first two hold information specific to data captured by Datadog, while the third cell is a text cell created by the user that can be populated with Markdown content from any source.
 
-> **Note:** Sample copies of the returned JSON data can be found in the **IDE** tab to your right.
+> **Note:** A sample copy of the returned JSON data can be found in the **IDE** tab to your right.
 
 Now that you have learned how to get a notebook and its data, you can begin to consider what other content and data you may want to add to it. 
 

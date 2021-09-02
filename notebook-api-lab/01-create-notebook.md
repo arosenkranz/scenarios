@@ -1,4 +1,4 @@
-In the terminal on the right, the Storedog app is being instrumented for APM with Datadog. Live traffic to the app is also being simulated. This may take up to 2 minutes. Once the app is running, you will see the message `Provisioning Complete` in the terminal along with your Datadog login credentials.
+In the terminal on the right, the Storedog app is being instrumented for APM with Datadog. Live traffic to the app is also being simulated. This may take a minute or two. Once the app is running, you will see the message `Provisioning Complete` in the terminal along with your Datadog login credentials.
 
 Once the initialization completes, you can browse the Storedog app by clicking on the `storedog` tab in the terminal to the right. Throughout this lab, you will use a notebook to report on the frontend service of this application's health and correlate it with software release notes over the span of a week.
 

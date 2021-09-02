@@ -87,7 +87,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
         },
         {
           "attributes": {
-            "definition": { "text": "## Release Notes\nWeek of ${PREVIOUS_WEEK}", "type": "markdown" }
+            "definition": { "text": "## Release Notes: Week of ${PREVIOUS_WEEK}", "type": "markdown" }
           },
           "type": "notebook_cells"
         },
