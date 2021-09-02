@@ -6,15 +6,18 @@ Since you've recently created a notebook, the next thing to learn is how to inte
 
 To interact with the Datadog API, you'll need to provide your API and application keys. Both of these have been saved as environment variables and can be viewed with the following command in your terminal:
 
-<pre><code>echo $DD_API_KEY && echo $DD_APP_KEY</code></pre>{{execute}}
+```
+echo $DD_API_KEY && echo $DD_APP_KEY</code></code>
+```{{execute}}
 
 To get all of your organization's notebooks, run the following command:
 
-<pre><code>curl -G \
+```
+curl -G \
   "https://api.datadoghq.com/api/v1/notebooks" \
   -H "DD-API-KEY: ${DD_API_KEY}" \
   -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
-</code></pre>{{execute}}
+```{{execute}}
 
 > **Tip:** Pipe your response to `jq` for more readable output.
 
@@ -26,15 +29,18 @@ To get the notebook you just created, you can use the `/api/v1/notebooks/:notebo
 
 Once you locate it, save it to an environment variable by running this command in the terminal to the right:
 
-<pre><code>export NOTEBOOK_ID=<paste ID here></code></pre>
+```
+export NOTEBOOK_ID=<paste ID here>
+```
 
 Now run the following command to get a single notebook's data:
 
-<pre><code>curl -G \
+```
+curl -G \
   "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
   -H "DD-API-KEY: ${DD_API_KEY}" \
   -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | jq
-</code></pre>{{execute}}
+```{{execute}}
 
 Take a moment or two to explore the data, specifically how the first and second cells are represented when compared to the third. The first two hold information specific to data captured by Datadog, while the third cell is a text cell created by the user that can be populated with Markdown content from any source.
 
