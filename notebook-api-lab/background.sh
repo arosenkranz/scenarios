@@ -17,6 +17,17 @@ mv /root/get_all_notebooks_sample.json /root/lab
 mv /root/get_single_notebook_sample.json /root/lab
 mv /root/update_notebook.sh /root/lab
 
+cat << VSCODEEOF >> /opt/.katacodacode/user-data/User/settings.json
+{ 
+  "workbench.startupEditor": "none", 
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 751, 
+  "editor.minimap.enabled": false, 
+  "files.exclude": {".*": true},
+  "editor.wordWrap": "on"
+}
+VSCODEEOF
+
 statusupdate "workspace"
 statuscheck "environment-variables"
 

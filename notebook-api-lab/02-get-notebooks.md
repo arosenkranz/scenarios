@@ -1,13 +1,13 @@
 Since you've recently created a notebook, the next thing to learn is how to interact with it outside of Datadog with the API. You'll start by getting your notebook's data so you can see what data is returned.
 
-> **Note**: You'll use cURL commands to interact with the API in this lab, but you can also use a Datadog client library offered in your choice of programming language. Check out the documentation for the <a href="https://docs.datadoghq.com/api/latest/notebooks" target="_datadog">Notebooks API</a> to learn more.
+> **Note**: You'll use cURL to interact with the API in this lab, but you can also use a Datadog client library. Check out the documentation for the <a href="https://docs.datadoghq.com/api/latest/notebooks" target="_datadog">Notebooks API</a> to learn more.
 
 ## Get All Notebooks
 
 To interact with the Datadog API, you'll need to provide your API and application keys. Both of these have been saved as environment variables and can be viewed with the following command in your terminal:
 
 ```
-echo $DD_API_KEY && echo $DD_APP_KEY</code></code>
+echo $DD_API_KEY && echo $DD_APP_KEY
 ```{{execute}}
 
 To get all of your organization's notebooks, run the following command:
