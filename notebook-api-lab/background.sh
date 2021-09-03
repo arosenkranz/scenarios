@@ -17,6 +17,7 @@ mv /root/get_all_notebooks_sample.json /root/lab
 mv /root/get_single_notebook_sample.json /root/lab
 mv /root/update_notebook.sh /root/lab
 
+rm /opt/.katacodacode/user-data/User/settings.json
 cat << VSCODEEOF >> /opt/.katacodacode/user-data/User/settings.json
 { 
   "workbench.startupEditor": "none", 
