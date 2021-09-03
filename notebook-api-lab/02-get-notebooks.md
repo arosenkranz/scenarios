@@ -46,6 +46,4 @@ Take a moment or two to explore the data, specifically how the first and second 
 
 > **Note:** A sample copy of the returned JSON data can be found in the **IDE** tab to your right.
 
-Now that you have learned how to get a notebook and its data, you can begin to consider what other content and data you may want to add to it. 
-
 Select the **Continue** button to move onto the next step, where you'll add release notes from a sample GitHub repository to your notebook through the API.

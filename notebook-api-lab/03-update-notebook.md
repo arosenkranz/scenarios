@@ -45,7 +45,7 @@ The response should be the notebook's new content, resembling the body of the re
 
 Great work! Now you can see what work was done in the previous week and how it impacted the application's health and performance, all in one place. This gives you a more holistic view of your application and if the work being performed is effective.
 
-While the script provided in the `update_notebook.sh` file is a good starting point to see what's possible, you may want to consider how you can make it more flexible and customized to your needs. With the <a href="https://docs.datadoghq.com/api/latest/" target="_datadog">Datadog API</a>, you can write scripts much like this one in your preferred language that automates report generation for you.
+While the script provided in the `update_notebook.sh` file is a good starting point to see what's possible, you should consider how you can make it more flexible and customized to your needs. With the <a href="https://docs.datadoghq.com/api/latest/" target="_datadog">Datadog API</a>, you can write scripts much like this one in your preferred language that automates report generation for you.
 
 Select the **Continue** button to move onto the next step, where you'll learn what options are available for you to share your notebook with teammates and stakeholders.
 

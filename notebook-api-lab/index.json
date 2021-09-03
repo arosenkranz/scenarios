@@ -1,6 +1,6 @@
 {
   "title": "Using Datadog Notebooks for Centralized Reporting",
-  "description": "Use Datadog Notebooks and the Datadog API to build reports that combine metrics and information from third-party services",
+  "description": "Use Datadog Notebooks and the Datadog API to build reports that combine metrics and information from third-party services.",
   "time": "20 minutes",
   "difficulty": "Intermediate",
   "details": {
