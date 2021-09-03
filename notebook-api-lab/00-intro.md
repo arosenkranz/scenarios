@@ -1,4 +1,4 @@
-# Introduction
+<h1 style="max-width: 75vw; display: block; margin: auto; margin-bottom: 40px;">Introduction</h1>
 
 With Datadog, notebooks are commonly associated with incident management and postmortems, where they are used to help gather information about a situation and make it easy to share among team members and stakeholders. Well why wait for an incident? You can also use notebooks to document work, share knowledge, or even correlate data from Datadog with other sources.
 
