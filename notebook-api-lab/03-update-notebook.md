@@ -29,7 +29,7 @@ Keep in mind that updating a Datadog notebook via the API is a complete overwrit
 
 In the **IDE** tab, open the `update_notebook.sh`{{open}} file and you'll find a script for updating your notebook, complete with the request body already formatted. 
 
-The first two cells are in place to keep the notebook's existing data intact. The third cell has been updated to include the date from 7 days ago, to help you identify which week you're looking at.
+The first two cells are in place to keep the notebook's existing data intact. The third cell has been updated to include the date from 7 days ago to help you identify which week you're looking at.
 
 A fourth cell has been added to include the release note data from the GitHub API. They are grouped by the type of change made and also include links to the relevant GitHub issue or pull request. For this lab, however, none of the links will go anywhere.
 
