@@ -1,4 +1,4 @@
-# Review
+<h1 style="max-width: 75vw; display: block; margin: auto">Review</h1>
 
 In this lab, you used both Datadog and the Datadog API to build a notebook that helps you correlate the work performed by your team to the overall health of your application. Take a moment review what you accomplished:
 

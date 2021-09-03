@@ -1,12 +1,14 @@
 In the terminal on the right, the Storedog app is being instrumented for APM with Datadog. Live traffic to the app is also being simulated. This may take a minute or two. Once the app is running, you will see the message `Provisioning Complete` in the terminal along with your Datadog login credentials.
 
-Once the initialization completes, you can browse the Storedog app by clicking on the `storedog` tab in the terminal to the right. Throughout this lab, you will use a notebook to report on the frontend service of this application's health and correlate it with software release notes over the span of a week.
+Once the initialization completes, you can browse the Storedog app by clicking on the `storedog` tab in the terminal to the right. 
+
+Throughout this lab, you will use a notebook to report on the frontend service of this application's health and correlate it with software release notes over the span of a week.
 
 ## Log In and Confirm Logs are Collected
 
-In a new window/tab, log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you by the lab. If you need to recall your credentials, type `creds`{{execute}} in the terminal.
+In a tab, log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog training account</a> that was created for you for the lab. If you need to recall your credentials, type `creds`{{execute}} in the terminal.
 
-Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">application's Logs page</a> to confirm logs are being captured. There isn't anything in particular you need to look for here, just confirm that the service `store-frontend` is being logged.
+Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">application's Logs page</a> to confirm logs are being captured. There isn't anything in particular you need to look for here, just confirm that the `store-frontend` service is being logged.
 
 ## Create Your Notebook
 
