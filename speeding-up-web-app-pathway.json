@@ -1,12 +1,12 @@
 {
-    "title": "Speeding Up and Testing Web Applications",
-    "description": "Learn how to use RUM and Synthetics to get observability on web applications",
-    "icon": "fa-katacoda",
-    "courses": [
-        {
-            "course_id": "speeding-up-and-testing-web-applications",
-            "title": "Speeding Up and Testing Web Applications",
-            "description": "Learn how to use RUM and Synthetics to get observability on web applications"
-        }
-    ]
+  "title": "Speeding Up and Testing Web Applications",
+  "description": "Learn how to use RUM and Synthetics to get observability on web applications",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "course_id": "speeding-up-web-app",
+      "title": "Speeding Up and Testing Web Applications",
+      "description": "Learn how to use RUM and Synthetics to get observability on web applications"
+    }
+  ]
 }
