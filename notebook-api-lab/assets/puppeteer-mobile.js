@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const startUrl = process.env.RUM_START_URL;
+const startUrl = process.env.PUPPETEER_URL;
 
 const choosePhone = () => {
   const deviceNames = [
@@ -20,13 +20,13 @@ const choosePhone = () => {
     'iPhone 8 Plus',
     'iPhone 6',
     'iPad Pro',
-    'iPad Mini'
+    'iPad Mini',
   ];
 
   const deviceIndex = Math.floor(Math.random() * deviceNames.length);
   const device = deviceNames[deviceIndex];
   return puppeteer.devices[device];
-}
+};
 
 const getNewBrowser = async () => {
   const browser = await puppeteer.launch({
@@ -38,8 +38,8 @@ const getNewBrowser = async () => {
       '--disable-setuid-sandbox',
       // This will write shared memory files into /tmp instead of /dev/shm,
       // because Docker’s default for /dev/shm is 64MB
-      '--disable-dev-shm-usage'
-    ]
+      '--disable-dev-shm-usage',
+    ],
   });
   const browserVersion = await browser.version();
   console.log(`Started ${browserVersion}`);
@@ -58,24 +58,21 @@ const runSession = async (url, selectors) => {
     console.log(`"${pageTitle}" loaded`);
 
     // Wait for xhr requests on home page
-    console.log("Waiting for asynchronous DOM elements...");
+    console.log('Waiting for asynchronous DOM elements...');
     await page.waitForSelector('#ads-block', { visible: true });
     await page.waitForSelector('#discount-block', { visible: true });
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
       console.log(`Going to click on ${selector}...`);
-      await Promise.all([
-        page.waitForNavigation(),
-        page.click(selector)
-      ]);
-    };
-  } catch(err) {
+      await Promise.all([page.waitForNavigation(), page.click(selector)]);
+    }
+  } catch (err) {
     console.log(`Session failed: ${err}`);
   } finally {
     browser.close();
   }
-}
+};
 
 let selectors;
 
@@ -84,7 +81,7 @@ let selectors;
   selectors = [
     '#search-bar > .ml-2 > .btn',
     '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
-    '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span'
+    '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
   ];
   await runSession(startUrl, selectors);
 })();
@@ -93,7 +90,7 @@ let selectors;
 (async () => {
   selectors = [
     '#product_2 > .card > .card-body > .d-block > .info',
-    '#add-to-cart-button'
+    '#add-to-cart-button',
   ];
   await runSession(startUrl, selectors);
 })();
@@ -103,7 +100,7 @@ let selectors;
   selectors = [
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
     '.row > #sidebar > div > #sidebar_products_search > .btn',
-    '.container > #main-nav-bar > .nav > #home-link > .nav-link'
+    '.container > #main-nav-bar > .nav > #home-link > .nav-link',
   ];
   await runSession(startUrl, selectors);
 })();
@@ -114,7 +111,7 @@ let selectors;
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(3)',
     '#product_8 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
-    '#home-link > .nav-link'
+    '#home-link > .nav-link',
   ];
   await runSession(startUrl, selectors);
 })();
@@ -125,7 +122,7 @@ let selectors;
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(3)',
     '#product_8 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
-    '#home-link > .nav-link'
+    '#home-link > .nav-link',
   ];
   await runSession(startUrl, selectors);
 })();

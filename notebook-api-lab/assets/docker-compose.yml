@@ -10,7 +10,7 @@ services:
       - DD_PROCESS_AGENT_ENABLED=true
       - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
       - DD_TAGS="env:${DD_ENV}"
-      - DD_CONTAINER_EXCLUDE="image:ddtraining/traffic-replay"
+      - DD_CONTAINER_EXCLUDE="image:ddtraining/traffic-replay image:buildkite/puppeteer:10.0.0"
     ports:
       - '8126:8126'
     volumes:
