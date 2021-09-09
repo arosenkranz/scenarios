@@ -9,8 +9,10 @@ cd /root/lab
 printf "DD_API_KEY=$DD_API_KEY\n\
 DD_APP_KEY=$DD_APP_KEY\n\
 POSTGRES_USER=postgres\n\
-DD_ENV=ecommerce-store\n\ 
-POSTGRES_PASSWORD=postgres" > .env 
+DD_ENV=notebook-reports\n\ 
+POSTGRES_PASSWORD=postgres
+PUPPETEER_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/" > .env 
+
 
 clear
 statusupdate "environment-variables"

@@ -43,6 +43,14 @@
         {
           "file": "update_notebook.sh",
           "target": "/root"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root"
         }
       ]
     }
