@@ -110,13 +110,13 @@ services:
       com.datadoghq.tags.service: 'postgres'
   traffic:
     image: ddtraining/traffic-replay:latest
-  # puppeteer:
-  #   image: buildkite/puppeteer:10.0.0
-  #   volumes:
-  #     - /root/puppeteer-mobile.js:/puppeteer.js
-  #     - /root/puppeteer.sh:/puppeteer.sh
-  #   environment:
-  #     - PUPPETEER_URL
-  #   depends_on:
-  #     - frontend
-  #   command: bash puppeteer.sh
+  puppeteer:
+    image: buildkite/puppeteer:10.0.0
+    volumes:
+      - /root/puppeteer-mobile.js:/puppeteer.js
+      - /root/puppeteer.sh:/puppeteer.sh
+    environment:
+      - PUPPETEER_URL
+    depends_on:
+      - frontend
+    command: bash puppeteer.sh
