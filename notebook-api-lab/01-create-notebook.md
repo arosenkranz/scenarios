@@ -14,7 +14,9 @@ Navigate to the <a href="https://app.datadoghq.com/logs" target="_datadog">appli
 
 Next, navigate to <a href="https://app.datadoghq.com/notebook" target="_datadog">Notebooks > New Notebook</a> to create a new notebook by following these steps:
 
-1. Name the notebook `Frontend Service - Weekly Report`{{copy}}, then set the time span to be `Past 1 Week` towards the top of the page.
+1. Name the notebook `Frontend Service: 5-Day Report`{{copy}}
+
+1. Set the time span to a custom relative value of `5d` towards the top of the page.
 
 1. When you started the new notebook, a cell was added with a sample Timeseries graph to get you started. 
 

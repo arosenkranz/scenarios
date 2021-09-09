@@ -1,6 +1,6 @@
 While your notebook in its current state displays good information about the application, it may not be enough to provide a full picture of what actually happened during the week to produce such metrics. For some, it may be helpful to correlate an application's performance with other data sourced from services such as PagerDuty or Jira. 
 
-In this step, you'll update your notebook with release notes for the week from the application's repository.
+In this step, you'll update your notebook with release notes from the application's repository.
 
 ## Get Release Notes Data from GitHub
 
@@ -29,7 +29,7 @@ Updating a Datadog notebook with the API is a complete overwrite, so existing ce
 
 In the **IDE** tab, open the `update_notebook.sh`{{open}} file and you'll find a script for updating your notebook, complete with the request body already formatted. 
 
-The first two cells are in place to keep the notebook's existing data intact. The third cell has been updated to include the date from 7 days ago to help you identify which week you're viewing.
+The first two cells are in place to keep the notebook's existing data intact. The third cell has been updated to help you identify which time span you're viewing.
 
 A fourth cell has been added to include the release note data from the GitHub API. They are grouped by the type of change made and also include links to the relevant GitHub issue or pull request. For this lab, however, none of the links will go anywhere.
 

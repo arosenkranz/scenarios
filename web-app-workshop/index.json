@@ -1,0 +1,92 @@
+{
+  "title": "Dash 2020 UX workshop 1",
+  "description": "Speeding Up and Testing Web Applications",
+  "difficulty": "Beginner",
+  "time": "2 hours 30 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Introduction",
+        "text": "step1.md"
+      },
+      {
+        "title": "Real User Monitoring set up",
+        "text": "step2.md"
+      },
+      {
+        "title": "Getting to know Storedog",
+        "text": "step3.md"
+      },
+      {
+        "title": "Discovering the RUM interface",
+        "text": "step4.md"
+      },
+      {
+        "title": "Your first RUM Monitor",
+        "text": "step5.md"
+      },
+      {
+        "title": "Using RUM Global Context",
+        "text": "step6.md"
+      },
+      {
+        "title": "Synthetic Tests introduction",
+        "text": "step7.md"
+      },
+      {
+        "title": "Test metadata",
+        "text": "step8.md"
+      },
+      {
+        "title": "Recording the test",
+        "text": "step9.md"
+      },
+      {
+        "title": "Detect a regression with Synthetics",
+        "text": "step10.md"
+      },
+      {
+        "title": "Focusing our front-end efforts with RUM",
+        "text": "step11.md"
+      },
+      {
+        "title": "Debugging performance issues",
+        "text": "step12.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "courseData": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "get_single_notebook_sample.json",
+          "target": "/root"
+        },
+        {
+          "file": "update_notebook.sh",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "uieditorpath": "/root/lab",
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-PREVIOUS_WEEK=$(date -d "7 days ago" +"%Y-%m-%d")
+FIVE_DAYS_AGO=$(date -d "5 days ago" +"%Y-%m-%d")
+TODAY=$(date +"%Y-%m-%d")
 
 # Curl command
 curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
@@ -11,9 +12,9 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
 {
   "data": {
     "attributes": {
-      "name": "Frontend Service - Weekly Report",
+      "name": "Frontend Service: 5-Day Report",
       "status": "published",
-      "time": { "live_span": "1w" },
+      "time": { "live_span": "5d" },
       "cells": [
         {
           "attributes": {
@@ -87,7 +88,7 @@ curl -X PUT "https://api.datadoghq.com/api/v1/notebooks/${NOTEBOOK_ID}" \
         },
         {
           "attributes": {
-            "definition": { "text": "## Release Notes: Week of ${PREVIOUS_WEEK}", "type": "markdown" }
+            "definition": { "text": "## Release Notes: ${FIVE_DAYS_AGO} to ${TODAY}", "type": "markdown" }
           },
           "type": "notebook_cells"
         },

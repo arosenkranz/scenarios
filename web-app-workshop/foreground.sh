@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export POSTGRES_USER=postgres
+export POSTGRES_PASSWORD=postgres
+clear
+while [ ! -f /root/lab/docker-compose-files/docker-compose-fixed-instrumented.yml ]; do sleep 2; done
+cd /root/lab/docker-compose-files
+clear
