@@ -1,6 +1,8 @@
 <h1 style="max-width: 75vw; display: block; margin: auto">Introduction</h1>
 
-With Datadog, notebooks are commonly associated with incident management and postmortems, where they are used to help gather information about a situation and make it easy to share among team members and stakeholders. Well why wait for an incident? You can also use notebooks to document work, share knowledge, or even correlate data from Datadog with other sources.
+With Datadog, notebooks are commonly associated with incident management and postmortems where they are used to help gather information about a situation and make it easy to share among team members and stakeholders. 
+
+Well, why wait for an incident? You can also use notebooks to document work, share knowledge, or even correlate data from Datadog with other sources.
 
 In this lab, you'll learn how to use Datadog and the Datadog API to build a notebook that holds both metric data and software release notes for an application over a 5-day span. This will give you a more complete picture of the state of your application and help you make more informed decisions about where time should be spent.
 
