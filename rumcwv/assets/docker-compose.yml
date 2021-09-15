@@ -1,7 +1,7 @@
 version: '3'
 services:
   agent:
-    image: "datadog/agent:7.29.0"
+    image: 'datadog/agent:7.29.0'
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
@@ -11,7 +11,7 @@ services:
       - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
       - DD_TAGS='env:development'
     ports:
-      - "8126:8126"
+      - '8126:8126'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /proc/:/host/proc/:ro
@@ -32,21 +32,26 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_PROFILING_ENABLED=true
-    image: "ddtraining/discounts:2.0.0"
-    command: [sh, -c, "pip install -r requirements.txt && ddtrace-run flask run --port=5001 --host=0.0.0.0"]
+    image: 'ddtraining/discounts:2.0.0'
+    command:
+      [
+        sh,
+        -c,
+        'pip install -r requirements.txt && ddtrace-run flask run --port=5001 --host=0.0.0.0',
+      ]
     ports:
-      - "5001:5001"
+      - '5001:5001'
     volumes:
-      - "/ecommworkshop/discounts-service:/app"
+      - '/ecommworkshop/discounts-service:/app'
     depends_on:
       - agent
       - db
     labels:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
-      com.datadoghq.tags.env: "development"
-      com.datadoghq.tags.service: "discounts-service"
-      com.datadoghq.tags.version: "1.1"
-      my.custom.label.team: "discounts"
+      com.datadoghq.tags.env: 'development'
+      com.datadoghq.tags.service: 'discounts-service'
+      com.datadoghq.tags.version: '1.1'
+      my.custom.label.team: 'discounts'
   frontend:
     environment:
       - DD_AGENT_HOST=agent
@@ -61,12 +66,12 @@ services:
       - DD_APPLICATION_ID
       - DD_DISCOUNTS_URL
       - DD_ADS_URL
-    image: "ddtraining/storefront-fixed:2.0.0"
+    image: 'ddtraining/storefront-fixed:2.0.0'
     command: sh docker-entrypoint.sh
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
-      - "/ecommworkshop/store-frontend-instrumented-fixed:/app"
+      - '/ecommworkshop/store-frontend-instrumented-fixed:/app'
     depends_on:
       - agent
       - db
@@ -74,10 +79,10 @@ services:
       - advertisements
     labels:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service": "store-frontend"}]'
-      com.datadoghq.tags.env: "development"
-      com.datadoghq.tags.service: "store-frontend"
-      com.datadoghq.tags.version: "1.1"
-      my.custom.label.team: "frontend"
+      com.datadoghq.tags.env: 'development'
+      com.datadoghq.tags.service: 'store-frontend'
+      com.datadoghq.tags.version: '1.1'
+      my.custom.label.team: 'frontend'
   advertisements:
     environment:
       - FLASK_APP=ads.py
@@ -92,21 +97,26 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_PROFILING_ENABLED=true
-    image: "ddtraining/advertisements:2.0.0"
-    command: [sh, -c, "pip install -r requirements.txt && ddtrace-run flask run --port=5002 --host=0.0.0.0"]
+    image: 'ddtraining/advertisements:2.0.0'
+    command:
+      [
+        sh,
+        -c,
+        'pip install -r requirements.txt && ddtrace-run flask run --port=5002 --host=0.0.0.0',
+      ]
     ports:
-      - "5002:5002"
+      - '5002:5002'
     volumes:
-      - "/ecommworkshop/ads-service:/app"
+      - '/ecommworkshop/ads-service:/app'
     depends_on:
       - agent
       - db
     labels:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'
-      com.datadoghq.tags.env: "development"
-      com.datadoghq.tags.service: "advertisements-service"
-      com.datadoghq.tags.version: "1.1"
-      my.custom.label.team: "advertisements"
+      com.datadoghq.tags.env: 'development'
+      com.datadoghq.tags.service: 'advertisements-service'
+      com.datadoghq.tags.version: '1.1'
+      my.custom.label.team: 'advertisements'
   db:
     image: postgres:11-alpine
     restart: always
@@ -121,9 +131,15 @@ services:
     volumes:
       - /root/puppeteer-mobile.js:/puppeteer.js
       - /root/puppeteer.sh:/puppeteer.sh
-    environment: 
+    environment:
       - RUM_START_URL
     depends_on:
       - frontend
     command: bash puppeteer.sh
-
+  react:
+    image:
+      context: /react
+      dockerfile: Dockerfile
+    stdin_open: true
+    ports:
+      - '3001:80'
