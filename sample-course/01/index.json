@@ -2,20 +2,12 @@
   "time": "5 Minutes",
   "title": "Test Scenario 1",
   "details": {
-    "intro": {
-      "courseData": "background.sh",
-      "code": "foreground.sh",
-      "text": "intro.md"
-    },
     "steps": [
       {
         "text": "intro.md",
         "title": "First Step"
       }
-    ],
-    "finish": {
-      "text": "intro.md"
-    }
+    ]
   },
   "environment": {
     "uilayout": "terminal",
