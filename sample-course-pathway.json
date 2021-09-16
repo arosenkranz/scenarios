@@ -2,12 +2,10 @@
   "title": "Sample Pathway",
   "courses": [
     {
-      "pathway_id": "sample-course",
       "course_id": "01",
       "title": "Course 1"
     },
     {
-      "pathway_id": "sample-course",
       "course_id": "02",
       "title": "Course 2"
     }
