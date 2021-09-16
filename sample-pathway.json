@@ -1,0 +1,15 @@
+{
+  "title": "Sample Pathway",
+  "courses": [
+    {
+      "pathway_id": "sample-course",
+      "course_id": "sample-course01",
+      "title": "Course 1"
+    },
+    {
+      "pathway_id": "sample-course",
+      "course_id": "sample-course02",
+      "title": "Course 2"
+    }
+  ]
+}
