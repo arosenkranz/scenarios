@@ -1,0 +1,36 @@
+{
+  "title": "Datadog 101: Developers",
+  "description": "",
+  "courses": [
+    {
+      "course_id": "01-intro",
+      "title": "Introduction to the Course",
+      "description": ""
+    },
+    {
+      "course_id": "02-install-agent-docker",
+      "title": "Installing the Agent",
+      "description": ""
+    },
+    {
+      "course_id": "03-apm",
+      "title": "Using APM",
+      "description": ""
+    },
+    {
+      "course_id": "04-logs",
+      "title": "Using Logs",
+      "description": ""
+    },
+    {
+      "course_id": "05-synthetics",
+      "title": "Using Synthetics",
+      "description": ""
+    },
+    {
+      "course_id": "06-rum",
+      "title": "Using Real User Monitoring",
+      "description": ""
+    }
+  ]
+}

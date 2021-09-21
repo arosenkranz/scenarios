@@ -1,0 +1,43 @@
+{
+  "difficulty": "Intermediate",
+  "title": "Using Synthetics",
+  "time": "15 minutes",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md",
+      "code": "finish.sh"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      },
+      {
+        "text": "step2.md"
+      },
+      {
+        "text": "step3.md"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uieditorpath": "k8s-yaml-files",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "App Dashboard",
+        "port": 30001,
+        "href": "https://[[HOST2_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18",
+    "reuseConnection": "false"
+  }
+}

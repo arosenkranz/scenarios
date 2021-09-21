@@ -1,3 +1,0 @@
-# Sample 
-
-lorem ipsum

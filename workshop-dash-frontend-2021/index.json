@@ -1,0 +1,85 @@
+{
+  "title": "Identifying Frontend Issues with RUM and Error Tracking",
+  "description": "",
+  "time": "2 hours",
+  "difficulty": "Intermediate",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md",
+        "title": "Setting up Datadog RUM to collect metrics"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "index.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "spree_application.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "home_controller.rb",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-config.rb",
+          "target": "/root"
+        },
+        {
+          "file": "discounts.py",
+          "target": "/root"
+        },
+        {
+          "file": "discounts-requirements.txt",
+          "target": "/root"
+        },
+        {
+          "file": "ads.py",
+          "target": "/root"
+        },
+        {
+          "file": "ads-requirements.txt",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [
+      { "name": "storedog", "port": 3000 },
+      { "name": "react", "port": 3001 }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}

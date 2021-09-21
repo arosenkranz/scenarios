@@ -1,0 +1,35 @@
+{
+  "time": "3 minutes",
+  "title": "Introduction to the Course",
+  "details": {
+    "intro": {
+      "background": "background.sh",
+      "foreground": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "step1.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "samplefile.txt",
+          "target": "/root/editor"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/root/editor"
+  },
+  "backend": {
+    "imageid": "datadog-base-v2",
+    "reuseConnection": "false"
+  }
+}
