@@ -1,32 +1,57 @@
 {
-  "difficulty": "Intermediate",
-  "title": "Using APM",
-  "time": "25 minutes",
+  "title": "Monitoring App Performance",
+  "description": "Using APM to investigate app performance ",
+  "difficulty": "Beginner",
+  "time": "40 minutes",
   "details": {
+    "steps": [
+      {
+        "title": "Preparing the Environment",
+        "text": "step1.md"
+      },
+      {
+        "title": "Creating APM Monitors",
+        "text": "step2.md"
+      },
+      {
+        "title": "Investigating Request Errors",
+        "text": "step3.md"
+      },
+      {
+        "title": "Investigating Latency Issues",
+        "text": "step4.md"
+      },
+      {
+        "title": "Analyzing Trace Data in App Analytics",
+        "text": "step5.md"
+      },
+      {
+        "title": "Investigating Inefficient Database Queries",
+        "text": "step6.md"
+      }
+    ],
     "intro": {
-      "courseData": "background.sh",
+      "text": "intro.md",
       "code": "foreground.sh",
-      "text": "intro.md"
+      "courseData": "background.sh"
     },
     "finish": {
       "text": "finish.md"
     },
-    "steps": [
-      {
-        "text": "step1.md"
-      },
-      {
-        "text": "step2.md"
-      },
-      {
-        "text": "step3.md"
-      }
-    ],
     "assets": {
       "host01": [
-        
         {
-          "file": "finish",
+          "file": "grademe",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "envready",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "check-file",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         }
@@ -34,18 +59,14 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
-    "uieditorpath": "k8s-yaml-files",
+    "uilayout": "editor-terminal", 
+    "uieditorpath": "/ecommworkshop",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "App Dashboard",
-        "href": "https://[[HOST2_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/"
-      }
-    ]
+    "dashboards": [{"name": "storedog", "port": 3000}]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18",
-    "reuseConnection": "false"
+    "imageid": "datadog-base-v1"
   }
 }

@@ -8,22 +8,22 @@
       "description": ""
     },
     {
-      "course_id": "02-instrument-application",
+      "course_id": "02-install-agent-docker",
       "title": "Instrument Application for APM and Log Collection",
       "description": ""
     },
     {
-      "course_id": "03-apm-fixapp",
+      "course_id": "03-apm",
       "title": "Monitoring App Performance with APM",
       "description": ""
     },
     {
-      "course_id": "04-querylogs",
+      "course_id": "04-logs",
       "title": "Log Querying and Analytics",
       "description": ""
     },
     {
-      "course_id": "05-synthetics-intro",
+      "course_id": "05-synthetics",
       "title": "Introduction to Synthetic Tests",
       "description": ""
     },

@@ -1,31 +1,13 @@
-1. The application we're going to monitor in this lab consists of services running on 10 containers across 7 Kubernetes pods. Make sure all the pods in your environment are running or at least being created:
+In the terminal on the right, the Storedog app is being instrumented for APM with Datadog. Live traffic to the app is also being simulated. This may take up to 2 minutes. Once the app is running, you will see the message `Provisioning Complete` in the terminal along with your Datadog login credentials.
 
-    `kubectl get pods`{{execute}}.
+1. In a new window/tab, log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you by learn.datadoghq.com.
 
-2. Once all of the pods report 1/1 in the Ready column, log into the <a href="https://app.datadoghq.com" target="_datadog">Datadog application</a>. Click on Infrastructure > Containers to verify that metrics from the environment are coming in to the platform.
+2. Navigate to <a href="https://app.datadoghq.com/apm/traces" target="_datadog">**APM** > **Traces**</a> in Datadog to view the list of traces that are being ingested for the storedog app. <p> If you are working in a new Datadog organization, the link will be redirected to the **APM** > **Introduction** page. You may need to wait about two minutes as Datadog's Autodiscovery feature picks up the traces that are coming in. In the main menu, when the option appears, click the **APM > Traces** to see the list of traces.
 
-    To figure out which integrations are installed in this environment, run the Agent status command in the terminal using `kubectl exec $(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep datadog) -- agent status`{{execute}}. This command figures out which pod is running the Datadog Agent, and executes `agent status` on that pod.
+3. In the search field, enter `env:ruby-shop` if it is not listed to make sure that you are only viewing traces for the Storedog app. 
 
-3. The Datadog Agent enables APM trace metrics and allows non-local traffic by default, so we don't need to explicitly turn either one on. 
+4. Under **Facets**, expand **Services** to confirm that all the services shown below are reporting traces. <p> ![trace-services](fixapp/assets/trace-services.png)
 
-    > **Note:** If you ever need to disable APM or not allow non-local traffic, add the following environment variable settings into your configuration:
-    > 
-    > ```yaml
-    > - name: DD_APM_ENABLED
-    >   value: "false"
-    > - name: DD_APM_NON_LOCAL_TRAFFIC
-    >   value: "false"
-    > ``` 
+5. Navigate to <a href="https://app.datadoghq.com/apm/map?env=ruby-shop" target="_datadog">**APM** > **Service Map**</a> to visualize the services and their dependencies. <p> If there is a menu next to the **Search APM** field, make sure that `env:ruby-shop` is selected. A menu is available if you've monitored more than one environment in this Datadog organization. <p> Hover over each service node to view the direction of the dependencies. <p> Click each node, then click **Inspect** to view the dependencies more clearly. <p> Notice that users primarily interact with the `store-frontend` service, which is on the left when you **Inspect** any service node linked to it.
 
-4. Open the application dashboard by clicking the tab titled "App Dashboard" in the terminal window to the right. Sometimes this takes a minute to be available upon opening, so be patient.
-
-5. You can add a few pumps to the application by pressing the **Add Pump** button. To simulate usage, scroll down and click one of the **Generate API Traffic** buttons.
-
-6. Navigate to <a href="https://app.datadoghq.com/apm/intro" target="_datadog">to the APM section</a> in the Datadog application. Because we haven't enabled traces from our application services yet, you'll see an introduction page. Click the **Get Started** button.
-
-7. On the next page you will see the instructions for getting your traces into Datadog based on how your application is hosted and the types of services you want to trace. We'll skip this page for now, as the application is already configured, but keep this page in mind when you want to enable tracing in your own applications.
-
-8. New menu options become available under APM in the nav bar when application traces are detected. Navigate to the <a href="https://app.datadoghq.com/apm/traces" target="_datadog">APM Trace List</a> and you should see traces start showing up. 
-
-    If you still see the APM intro page, you may need to try the link again. Just refreshing the page will reload the APM intro page. Also make sure you clicked one of the Generate API traffic buttons, and that you ran the `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}} command if you made any changes to datadog-agent.yaml.
- 
+With Datadog collecting trace and log data from the Storedog app, let's create monitors for some of its services.

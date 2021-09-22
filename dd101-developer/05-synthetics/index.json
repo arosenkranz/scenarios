@@ -1,43 +1,84 @@
 {
-  "difficulty": "Intermediate",
-  "title": "Using Synthetics",
-  "time": "15 minutes",
+  "time": "50 minutes",
+  "title": "Introduction to Synthetic Tests",
   "details": {
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
       "text": "intro.md"
     },
-    "finish": {
-      "text": "finish.md",
-      "code": "finish.sh"
-    },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "about-lab.md",
+        "title": "About the Lab"
       },
       {
-        "text": "step2.md"
+        "text": "api-test.md",
+        "title": "Create an API Test"
       },
       {
-        "text": "step3.md"
+        "text": "improve-api-test.md",
+        "title": "Improve the API Test"
+      },
+      {
+        "text": "multistep-api-test-one.md",
+        "title": "Plan a Multistep API Test"
+      },
+      {
+        "text": "multistep-api-test-two.md",
+        "title": "Create a Multistep API Test"
+      },
+      {
+        "text": "browser-test-one.md",
+        "title": "Create a Browser Test"
+      },
+      {
+        "text": "browser-test-two.md",
+        "title": "Complete the Browser Test"
       }
-    ]
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "regression.patch",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-docker-entrypoint.sh",
+          "target": "/root"
+        },
+        {
+          "file": "discounts.py",
+          "target": "/root"
+        }
+      ]
+    }
   },
   "environment": {
-    "uilayout": "editor-terminal",
-    "uieditorpath": "k8s-yaml-files",
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root",
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "App Dashboard",
-        "port": 30001,
-        "href": "https://[[HOST2_SUBDOMAIN]]-30001-[[KATACODA_HOST]].environments.katacoda.com/"
+        "name": "Storedog",
+        "port": 3000
+      },
+      {
+        "name": "Discounts API",
+        "href": "https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount"
       }
     ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18",
+    "imageid": "datadog-base-v2",
     "reuseConnection": "false"
   }
 }

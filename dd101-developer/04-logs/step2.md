@@ -1,35 +1,21 @@
-1. Open the <a href="https://app.datadoghq.com/logs" target="_datadog">Log Explorer</a> in Datadog.
+With the <a href="https://docs.datadoghq.com/logs/explorer/#fields" target="_blank">Fields</a> aggregation, all logs matching the query filter are aggregated into groups based on the value of a log facet. For these groups, you can extract counts of logs per group, unique count of coded values for a facet per group, and statistical operations on numerical values of a facet per group.
 
-    _You should be seeing logs coming in now. The screen will refresh on it's own, but you can always press the refresh button as well towards the top right of the screen_
+1. In <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>, filter the list to the `service:advertisements-service`, `service:discounts-service`, `status:error`.
 
-2. We haven't done much to get useful information out of the logs, but already some pipelines have been automatically created. Expand the **Source** and **Service** facets on the left side.
+2. Select `Fields` for **Aggregate by** below the search field. A graph visualization of the filtered logs will replace the Log List.  
 
-     _Notice that you can filter the logs based on any of the facets that have been identified._
+    Group the fields by service so that it reads **Aggregate by** `Fields` of `Service`.
 
-3. Open some of the other facets to see what else has been identified.
+    Above the graph, you'll see that **Timeseries** is selected. Select **Toplist** next to Timeseries, then select **Table** to view the different visualizations. Click **Timeseries** again.
 
-4. Click on one of the log lines.
+    ![fields-agg](querylogs/assets/fields-agg.gif)
 
-    _Notice the information being extracted from the log line. You might have to look around to find one that is extracting attributes because we haven't done any configuration. Use the up and down arrow keys to display other log lines. The `agent` service entries should have attributes._
+3. Click **Export** above the graph. You can export the visualization areas of the product, such as a Logs Monitor, to a dashboard, and to generate a log-based metric (<a href="https://docs.datadoghq.com/logs/logs_to_metrics/" target="_blank">Generate Metrics</a>). Click **Export** again to close the menu.
 
-5. Now navigate to <a href="https://app.datadoghq.com/logs/pipelines" target="_datadog">Logs Configuration</a>, where we'll take a look at pipelines.
+4. Click **Save** above the search field to save this view.
 
-6. Depending on how long you have taken in this section, you may see a few active pipelines. Click on the **Datadog Agent** pipeline.
+    Enter `Ads_Discounts_Errors_Timeseries`{{copy}} as the name of the **New View** and click **Save**. The new view will appear in the list. 
 
-    _Notice that the filter is set to **source:agent**. Anything that comes from the agent will be processed by this pipeline._
+    Click the **Ads_Discounts_Errors** view. The view will change to the Log List you saved earlier. Click the **Ads_Discounts_Errors_Timeseries** view again. Click **Hide** to close the Saved Views panel.
 
-7. Double-click on the first item in the list: **Grok Parser: Parsing Datadog Agent logs**.
-
-    _Here you can see the rules used by Datadog to parse the Agent log lines. To get a better understanding of what some of this means, click the small question mark next to **Define parsing rules**._
-
-8. Look through the rest of the pipelines. See if you can identify some of the pipelines that extracted the facets we saw earlier in the Logs Explorer.
-
-9. One more thing to look at that is incredibly useful before and after you do any configuration is the <a href="https://app.datadoghq.com/logs/patterns" target="_datadog">Log Patterns</a> view.
-
-    _Scroll through the patterns. You can very quickly identify problems and issues you should work on right away_
-
-Spend some time playing around with the various options and settings in the Pipelines view. 
-
-There is so much you can do with logs in Datadog and if you haven't worked with the feature, please check out our training on the Learning Platform. 
-
-When you are done with this section, run `grademe`{{execute}} to indicate that you are done. Then click the **Continue** button.
+5. Click the X next to **Fields** to return to the Log List.

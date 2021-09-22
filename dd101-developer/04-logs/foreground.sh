@@ -1,19 +1,32 @@
 #!/bin/bash
-while [ ! -f "/usr/local/bin/prepenvironment" ]; do
-  sleep 0.3
-done
-sleep 0.3
-kubeloopstart=`date +%s`
-until kubectl create secret generic datadog-api --from-literal=token=$DD_API_KEY
-do
-  kubeloopend=`date +%s`
-  kubeloopruntime=$((kubeloopend-kubeloopstart))
-  echo "kubectl isn't ready yet."
-  echo "It has been $kubeloopruntime seconds"
-  echo "If this doesn't resolve after 60 seconds, contact support."
-  sleep 2
-done
 
-clear
+export POSTGRES_USER=postgres
+export POSTGRES_PASSWORD=postgres
+
+statuscheck files
+
+cd /ecommworkshop
+rm -r ./store-frontend-instrumented-fixed
+rm -r ./store-frontend-broken-instrumented
+git fetch
+git checkout 11e4a4b ./store-frontend-instrumented-fixed
+git checkout 11e4a4b ./store-frontend-broken-instrumented
+
+
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./ads-service/requirements.txt
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./ads-service-fixed/requirements.txt
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./discounts-service-fixed/requirements.txt
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./discounts-service/requirements.txt
+#cp /root/frontend-docker-entrypoint.sh ./store-frontend-instrumented-fixed/docker-entrypoint.sh
+#cp /root/frontend-docker-entrypoint.sh ./store-frontend-broken-instrumented/docker-entrypoint.sh
+
+cd /ecommworkshop/deploy/docker-compose
+docker-compose -f docker-compose-fixed.yml up -d
+
+envready
+
+docker kill docker-compose_db_1
+
+statusupdate complete
 
 prepenvironment

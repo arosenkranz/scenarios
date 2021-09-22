@@ -1,49 +1,40 @@
 #!/bin/bash
-# mkdir k8s-yaml-files
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
-touch status.txt
-echo "">/root/status.txt
+statusupdate tools
+mv /root/docker-compose.yml /ecommworkshop/
+cd /ecommworkshop
+git fetch
 
-if [ ! -f "/root/provisioned" ]; then
-  wall -n "Cloning the Github Repo"
-  git clone https://github.com/burningion/distributed-tracing-with-apm-workshop trace
-  cd trace
-  wall -n "Checking out the right branch"
-  git checkout -b k8s-autodiscovery 4b0c105fb3158d0418226642b5a3160c020164e8 # locked to commit on may 6, 2019
-  cd ..
-  wall -n "Getting everything into the right place"
-  mv trace/* .
-  cd k8s-yaml-files
-  sudo sed -i 's/extensions\/v1beta1/apps\/v1/g' datadog-agent.yaml
-  sudo sed -i 's/6.11.1/6.27.0/' datadog-agent.yaml #agent version
-  sudo sed -i '/updateStrategy:/i \ \ selector:\n\ \ \ \ matchLabels:\n\ \ \ \ \ \ app:\ datadog-agent' datadog-agent.yaml
-  # sudo sed -i '76,78d' datadog-agent.yaml #pointerdir in volumes
-  # sudo sed -i '73,74d' datadog-agent.yaml #pointerdir in vol mounts
-  # sudo sed -i '42,53d' datadog-agent.yaml #the logs and apm env vars
-  # sudo sed -i '16d' datadog-agent.yaml #hostnetwork
-  # sudo sed -i '41,42d' frontend-service.yaml #dd_logs_injection
-  # sudo sed -i '37,38d' frontend-service.yaml # datadog service name
-  # sudo sed -i '36,39d' node-api.yaml # service name and logs injection
-  # sudo sed -i '42,43d' pumps-service.yaml # datadogservice name
-  # sudo sed -i '36,37d' pumps-service.yaml #logs injections
-  # sudo sed -i '38,39d' sensors-api.yaml #logs injection
-  # sudo sed -i '34,35d' sensors-api.yaml #service name
-fi
-# rm datadog-agent.yaml
-wall -n "Creating Kubernetes Secrets"
+# fix 2.5 second delay in ads service
+git checkout e400e3fc ./ads-service-fixed/ads.py
+mv ./ads-service-fixed/ads.py ./ads-service/ads.py
 
-until kubectl create secret generic postgres-user --from-literal=token=datadog
-do
-  sleep 2
+# Use enhanced discounts service
+mv /root/discounts.py ./discounts-service-fixed/discounts.py
+mv /root/regression.patch ./discounts-service-fixed/regression.patch
+
+# fix env tagging
+sed -i 's/.ruby-shop./ENV["DD_ENV"]/' ./store-frontend-instrumented-fixed/api/config/initializers/datadog.rb
+sed -i 's/.ruby-shop./ENV["DD_ENV"]/' ./store-frontend-instrumented-fixed/config/initializers/datadog.rb
+sed -i 's/.ruby-shop./ENV["DD_ENV"]/' ./store-frontend-instrumented-fixed/frontend/config/initializers/datadog.rb
+
+# update ddtrace
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./ads-service/requirements.txt
+sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./discounts-service-fixed/requirements.txt
+mv /root/frontend-docker-entrypoint.sh ./store-frontend-instrumented-fixed/docker-entrypoint.sh
+
+statusupdate setup
+
+# Start storedog
+statuscheck "environment-variables"
+docker-compose --env-file ./docker.env up -d
+
+# Wait for the frontend-service container to fire up
+while [[ -z $(docker ps --filter "name=ecommworkshop_frontend_1" --format '{{.Names}}') ]]
+do sleep 5
 done
-kubectl create secret generic postgres-password --from-literal=token=postgres
-wall -n "Starting services"
-kubectl apply -f redis-deploy.yaml
-kubectl apply -f postgres-deploy.yaml
-kubectl apply -f node-api.yaml
-kubectl apply -f pumps-service.yaml
-kubectl apply -f sensors-api.yaml
-kubectl apply -f frontend-service.yaml
-kubectl apply -f datadog-agent.yaml
 
-echo "complete">>/root/status.txt
+statusupdate complete
+
+# Generate traffic
+./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" >> /dev/null 2>&1

@@ -1,1 +1,3 @@
-Congratulations on completing the introductory Synthetics lesson. Stay tuned to the Learning Center for a deeper dive on Synthetics coming soon.
+Great job creating Datadog synthetic tests to monitor Storedog's discounts service. You can probably think of ways that you can use some or all of these tests to monitor the user experience of your own organization.
+
+Click the **Next** button below to review what you have learned.

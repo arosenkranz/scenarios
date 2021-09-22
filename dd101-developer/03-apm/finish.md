@@ -1,1 +1,3 @@
-That was an introduction to APM on Kubernetes in Datadog. Obviously we can't do a complete introduction to APM in a few minutes, so visit the Introduction to APM on the Datadog Learning center at http://learn.datadoghq.com.
+Congratulations! You've used Datadog APM to fix the performance of the Storedog application.
+
+To continue, click **Next**.

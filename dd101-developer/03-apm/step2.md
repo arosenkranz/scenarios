@@ -1,73 +1,38 @@
-We are already collecting traces, but let's customize the environment a bit further. One improvement we can make is to update the service names to better represent our application. For example, the frontend service, the pumps service, and the sensors API are all named "flask." That's the default service name for Flask web application traces. We can override these with environment variables. While we're at it, let's enable trace analytics for each service:
+In Datadog, you can create a variety of <a href="https://docs.datadoghq.com/monitors/" target="_datadog">**Monitors**</a> to track the health of your applications and to alert you if action is needed. 
 
-1. Open the **frontend-service.yaml** file in the editor. Scroll down to the **env:** section and add the following after the DATADOG_PATCH_MODULES block:
+Let's create monitors to track the latency of specific store-frontend, discounts, and advertisements service resources. You will use these monitors later in the activity.
 
-    <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-             value: 'true'
-           - name: DATADOG_SERVICE_NAME
-             value: 'frontend-service'
-           - name: DD_TRACE_ANALYTICS_ENABLED
-             value: 'true'
-           </pre>
+#### Store-frontend Service
 
-    _Note: formatting here is a little weird to ensure it pastes into the editor correctly._
+1. In the <a href="https://app.datadoghq.com/apm/map?env=ruby-shop" target="_datadog">**Service Map**</a>, click the **store-frontend** node and select **View service overview**.
 
-2. Apply the frontend-service yaml file:
-   `kubectl apply -f k8s-yaml-files/frontend-service.yaml`{{execute}}
+2. Scroll to the **Endpoints** list and click **Spree::HomeController#index**.
 
-3. Return to the <a href="https://app.datadoghq.com/apm/traces" target="_datadog">Trace List view</a> in Datadog. You should see that the service has been renamed from "flask".
+3. Click the **No Monitors or Synthetics Tests** banner near the top and click **New Resource Monitor**. You will be redirected to a new APM monitor page.
 
-    _If you aren't seeing any traces coming in, visit the application dashboard again_
+4. Notice that the **Select monitor scope** section is already filled out for the respective service and resource.
 
-4. Continue updating the other yaml files as follows, applying the changes as you go:
+5. Expand **Set alert conditions**, select **Threshold Alert**. <p>Set the alert as follows: **Alert when `Avg latency` is `above` `1` over the last `1 minute`**.
 
-    **node-api.yaml**
-     <pre class="file" data-target="clipboard">- name: DD_SERVICE_NAME
-             value: 'users-api'
-           - name: DD_LOGS_INJECTION
-             value: 'true'
-           - name: DD_TRACE_ANALYTICS_ENABLED
-             value: 'true'
-           </pre>
+6. Expand **Say what's happening**, leave the message as is. 
 
-    _Note: formatting here is a little weird to ensure it pastes into the editor correctly._
+7. Under **Notify your team**, delete `@store-frontend`. You will notice that `@store-frontend` is automatically deleted from the message in step 5. In this case, you do not want to send any notifications.
 
-    `kubectl apply -f k8s-yaml-files/node-api.yaml`{{execute}}
+8. Click **Save** on the bottom right. <p> You will be redirected to the new monitor page. Browse the details. <p> Notice that **Tags** for the resource, service, and environment were automatically assigned to the monitor. These tags will correlate the monitor to the respective Service Page and Resource Page.
 
-    **pumps-service.yaml**
 
-    <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-             value: 'true'
-           - name: DATADOG_SERVICE_NAME
-             value: 'pumps-service'
-           - name: DD_TRACE_ANALYTICS_ENABLED
-             value: 'true'
-           </pre>
+#### Discounts Service
 
-    _Note: formatting here is a little weird to ensure it pastes into the editor correctly._
+1. Continuing from step 8 above, click **New Monitor +** in the top right.
 
-    `kubectl apply -f k8s-yaml-files/pumps-service.yaml`{{execute}}
+2. Select **APM** from the list of monitor types.
 
-    **sensors-api.yaml**
+3. Under **Select monitor scope**, select **APM Metrics**. <p>Then, select `discounts-service` as the **Service** and `get_/discount` as the **Resource**.
 
-    <pre class="file" data-target="clipboard">- name: DD_LOGS_INJECTION
-             value: 'true'
-           - name: DATADOG_SERVICE_NAME
-             value: 'sensors-api'
-           - name: DD_TRACE_ANALYTICS_ENABLED
-             value: 'true'
-           </pre>
+4. Repeat steps 5 - 8 above, but with the following change. Delete `@discounts-service` in step 7.
 
-    _Note: formatting here is a little weird to ensure it pastes into the editor correctly._
+#### Advertisements Service
 
-    `kubectl apply -f k8s-yaml-files/sensors-api.yaml`{{execute}}
+1. Repeat the steps you completed for the discounts service monitor. <p>In step 3, select `advertisements-service` for the **Service** and `get_/ads` for the **Resource**. <p> In step 4, delete `@advertisements-service`.
 
-5. Return to the **datadog-agent.yaml** file and add the following to the **env:** section. This will make trace search a bit better.
-
-    <pre class="file" data-target="clipboard">- name: DD_APM_ANALYZED_SPANS
-               value: "users-api|express.request=1,sensors-api|flask.request=1,pumps-service|flask.request=1,frontend-service|flask.request=1"
-               </pre>
-
-    `kubectl apply -f k8s-yaml-files/datadog-agent.yaml`{{execute}}
-
-To learn more about configuring tracing at the application level, see <a href="https://docs.datadoghq.com/tracing/setup/" target="_datadog">Instrument Your Application</a> in the Datadog docs.
+When you view the monitors in <a href="https://app.datadoghq.com/monitors#/create" target="_datadog">**Monitor** > **Manage Monitors**</a>, you'll notice that their status is `No Data`. Because the monitors are new, it may take a few minutes for the status of the monitors to update. 
