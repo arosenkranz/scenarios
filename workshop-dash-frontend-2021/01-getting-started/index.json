@@ -1,8 +1,8 @@
 {
-  "title": "Identifying Frontend Issues with RUM and Error Tracking",
+  "title": "Getting Started with RUM",
   "description": "",
-  "time": "2 hours",
-  "difficulty": "Intermediate",
+  "time": "15 minutes",
+  "difficulty": "Beginner",
   "details": {
     "intro": {
       "courseData": "background.sh",
@@ -22,6 +22,10 @@
       "host01": [
         {
           "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "docker-compose-dev.yml",
           "target": "/root"
         },
         {
@@ -76,7 +80,7 @@
     "showdashboard": true,
     "dashboards": [
       { "name": "storedog", "port": 3000 },
-      { "name": "react", "port": 3001 }
+      { "name": "microsite", "port": 3001 }
     ]
   },
   "backend": {
