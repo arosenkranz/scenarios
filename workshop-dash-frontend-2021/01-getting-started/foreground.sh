@@ -4,8 +4,6 @@ export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
 export DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount
 export DD_ADS_URL=https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com/
-export REACT_APP_DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount
-export REACT_APP_DD_ADS_URL=https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com/
 export RUM_START_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/
 export MICROSITE_URL=https://[[HOST_SUBDOMAIN]]-3001-[[KATACODA_HOST]].environments.katacoda.com/
 
@@ -23,14 +21,23 @@ export DD_APPLICATION_ID=`curl -s "https://api.datadoghq.com/api/v1/rum/projects
 
 ([ -z $DD_APPLICATION_ID ] || [ -z $DD_CLIENT_TOKEN ]) && clear && echo '** Storedog RUM Application not found! **'
 
-export REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID
-export REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN
-
 clear
 
 statuscheck environment
 
 cd /root/lab
+
+printf "DD_API_KEY=$DD_API_KEY\n\
+DD_APP_KEY=$DD_APP_KEY\n\
+DD_APPLICATION_ID=$DD_APPLICATION_ID\n\
+DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN\n\
+POSTGRES_USER=postgres\n\
+POSTGRES_PASSWORD=postgres\n
+REACT_APP_DD_ADS_URL=$DD_ADS_URL\n
+REACT_APP_DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n
+REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID\n
+REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN\n
+MICROSITE_URL=$MICROSITE_URL" > .env 
 
 statusupdate complete
 prepenvironment
