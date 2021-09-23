@@ -143,6 +143,8 @@ services:
     stdin_open: true
     ports:
       - '3001:80'
+    volumes:
+      - /storedog-microsite:/app
     environment:
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
