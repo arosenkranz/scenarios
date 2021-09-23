@@ -1,4 +1,6 @@
 #!/bin/bash
+
+. setrumvars
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
 export DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount
