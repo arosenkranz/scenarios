@@ -156,6 +156,8 @@ services:
       - DD_ADS_URL
       - REACT_APP_DD_APPLICATION_ID
       - REACT_APP_DD_CLIENT_TOKEN
+      - REACT_APP_DD_DISCOUNTS_URL
+      - REACT_APP_DD_ADS_URL
     depends_on:
       - agent
       - db
