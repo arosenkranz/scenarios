@@ -5,7 +5,7 @@ curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 
-git clone https://github.com/arosenkranz/storedog-microsite.git /storedog-microsite
+git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 
 cd /ecommworkshop
 git fetch
