@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true%7Cbash
+curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
