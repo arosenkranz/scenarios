@@ -140,11 +140,11 @@ services:
     build:
       context: /storedog-microsite
       dockerfile: Dockerfile
-      args:
-        DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
-        DD_APPLICATION_ID: ${DD_APPLICATION_ID}
-        DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
-        DD_ADS_URL: ${DD_ADS_URL}
+      # args:
+      #   DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
+      #   DD_APPLICATION_ID: ${DD_APPLICATION_ID}
+      #   DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
+      #   DD_ADS_URL: ${DD_ADS_URL}
     stdin_open: true
     ports:
       - '3001:80'
