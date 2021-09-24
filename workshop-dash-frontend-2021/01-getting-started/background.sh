@@ -6,6 +6,8 @@ mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
+cd /storedog-microsite
+npm install --silent
 
 cd /ecommworkshop
 git fetch
@@ -31,7 +33,6 @@ ln -s /ecommworkshop/store-frontend-instrumented-fixed/config/environments/devel
 
 # Link to microsite
 ln -s /storedog-microsite /root/lab/microsite
-
 
 docker-compose -f /root/lab/docker-compose.yml pull
 
