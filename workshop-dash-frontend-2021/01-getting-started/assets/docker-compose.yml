@@ -140,9 +140,14 @@ services:
     build:
       context: /storedog-microsite
       dockerfile: Dockerfile
+      args:
+        DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
+        DD_APPLICATION_ID: ${DD_APPLICATION_ID}
+        DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
+        DD_ADS_URL: ${DD_ADS_URL}
     stdin_open: true
     ports:
-      - '3001:3001'
+      - '3001:80'
     volumes:
       - /storedog-microsite:/app
     environment:
@@ -166,7 +171,7 @@ services:
       - discounts
       - advertisements
     labels:
-      com.datadoghq.ad.logs: '[{"source": "nodejs", "service": "store-microsite"}]'
+      com.datadoghq.ad.logs: '[{"source": "nginx", "service": "store-microsite"}]'
       com.datadoghq.tags.env: 'development'
       com.datadoghq.tags.service: 'store-microsite'
       com.datadoghq.tags.version: '1.1'
