@@ -3,7 +3,7 @@
 apt-get update && apt-get install -y curl
 
 checkStoredog() {
-  curl --silent --fail $RUM_START_URL 2>&1 |grep -qi storedog
+  curl --silent --fail $STOREDOG_URL 2>&1 |grep -qi storedog
 }
 
 printf "\nWaiting for Storedog"
@@ -17,5 +17,5 @@ printf "\nInfinite Mobile Replay Starting.\n\n"
 
 while :
 do
-  node puppeteer.js $RUM_START_URL
+  node puppeteer.js $STOREDOG_URL
 done

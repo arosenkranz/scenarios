@@ -132,7 +132,7 @@ services:
       - /root/puppeteer-mobile.js:/puppeteer.js
       - /root/puppeteer.sh:/puppeteer.sh
     environment:
-      - RUM_START_URL
+      - STOREDOG_URL
     depends_on:
       - frontend
     command: bash puppeteer.sh
@@ -145,6 +145,7 @@ services:
         DD_APPLICATION_ID: ${DD_APPLICATION_ID}
         DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
         DD_ADS_URL: ${DD_ADS_URL}
+        STOREDOG_URL: ${STOREDOG_URL}
     stdin_open: true
     ports:
       - '3001:80'
@@ -161,6 +162,7 @@ services:
       - DD_APPLICATION_ID
       - DD_DISCOUNTS_URL
       - DD_ADS_URL
+      - STOREDOG_URL
     depends_on:
       - agent
       - db
