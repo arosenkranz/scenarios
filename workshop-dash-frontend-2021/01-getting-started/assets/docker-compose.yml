@@ -142,7 +142,7 @@ services:
       dockerfile: Dockerfile
     stdin_open: true
     ports:
-      - '3001:80'
+      - '3001:3001'
     volumes:
       - /storedog-microsite:/app
     environment:
