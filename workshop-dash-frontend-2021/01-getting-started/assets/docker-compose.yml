@@ -140,12 +140,12 @@ services:
     build:
       context: /storedog-microsite
       dockerfile: Dockerfile
-      args:
-        DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
-        DD_APPLICATION_ID: ${DD_APPLICATION_ID}
-        DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
-        DD_ADS_URL: ${DD_ADS_URL}
-        STOREDOG_URL: ${STOREDOG_URL}
+      # args:
+      #   DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
+      #   DD_APPLICATION_ID: ${DD_APPLICATION_ID}
+      #   DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
+      #   DD_ADS_URL: ${DD_ADS_URL}
+      #   STOREDOG_URL: ${STOREDOG_URL}
     stdin_open: true
     ports:
       - '3001:80'
@@ -163,6 +163,11 @@ services:
       - DD_DISCOUNTS_URL
       - DD_ADS_URL
       - STOREDOG_URL
+      - REACT_APP_STOREDOG_URL
+      - REACT_APP_DD_CLIENT_TOKEN
+      - REACT_APP_DD_APPLICATION_ID
+      - REACT_APP_DD_DISCOUNTS_URL
+      - REACT_APP_DD_ADS_URL
     depends_on:
       - agent
       - db
