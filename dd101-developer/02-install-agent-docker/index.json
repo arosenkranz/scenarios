@@ -22,6 +22,16 @@
           "file": "docker-compose.yml",
           "target": "/root",
           "chmod": "+x"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root",
+          "chmod": "+x"
         }
       ]
     }
