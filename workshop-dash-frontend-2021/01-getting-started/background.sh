@@ -34,6 +34,8 @@ ln -s /ecommworkshop/store-frontend-instrumented-fixed/config/environments/devel
 # Link to microsite
 ln -s /storedog-microsite /root/lab/microsite
 
+docker pull node:alpine
+
 docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate environment
