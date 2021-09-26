@@ -1,10 +1,20 @@
-rm /usr/local/bin/prepenvironment
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
-mkdir -p /etc/datadog-agent
-touch /etc/datadog-agent/empty
-mkdir -p /root/lab
-ln -s /etc/datadog-agent /root/lab/datadog-agent
-docker pull redis:6.0.11
-docker pull datadog/agent:7.25.1
+#!/bin/bash
 
-statusupdate complete
+curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+
+mkdir /root/lab
+mv /root/docker-compose.yml /root/lab
+
+cd /ecommworkshop
+git fetch
+git checkout tags/2.0.0
+
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
+
+ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
+
+ln -s /ecommworkshop/ads-service /root/lab/ads-service
+
+docker-compose -f /root/lab/docker-compose.yml pull
+
+statusupdate environment

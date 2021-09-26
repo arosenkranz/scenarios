@@ -20,24 +20,23 @@
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root/lab",
+          "target": "/root",
           "chmod": "+x"
         }
       ]
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "terminal",
+    "showide": true,
     "uieditorpath": "/root/lab",
-    "terminals": [
-      {
-        "name": "Terminal 2",
-        "command": "cd /root/lab"
-      }
-    ]
+    "hideHiddenFiles": false,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v2",
+    "imageid": "datadog-base-v3",
     "reuseConnection": "false"
   }
 }
