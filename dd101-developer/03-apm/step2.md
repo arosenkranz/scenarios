@@ -18,7 +18,11 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
 7. Under **Notify your team**, delete `@store-frontend`. You will notice that `@store-frontend` is automatically deleted from the message in step 5. In this case, you do not want to send any notifications.
 
-8. Click **Save** on the bottom right. <p> You will be redirected to the new monitor page. Browse the details. <p> Notice that **Tags** for the resource, service, and environment were automatically assigned to the monitor. These tags will correlate the monitor to the respective Service Page and Resource Page.
+8. Click **Save** on the bottom right. 
+
+  You will be redirected to the new monitor page. Browse the details.
+  
+  Notice that **Tags** for the resource, service, and environment were automatically assigned to the monitor. These tags will correlate the monitor to the respective Service Page and Resource Page.
 
 
 #### Discounts Service
@@ -27,7 +31,9 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
 2. Select **APM** from the list of monitor types.
 
-3. Under **Select monitor scope**, select **APM Metrics**. <p>Then, select `discounts-service` as the **Service** and `get_/discount` as the **Resource**.
+3. Under **Select monitor scope**, select **APM Metrics**. 
+
+  Then, select `discounts-service` as the **Service** and `get_/discount` as the **Resource**.
 
 4. Repeat steps 5 - 8 above, but with the following change. Delete `@discounts-service` in step 7.
 

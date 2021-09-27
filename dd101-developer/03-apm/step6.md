@@ -8,7 +8,11 @@ In the Storedog app, the discount service is making N+1 queries to the postgres 
 
 3. Under **Traces**, click any span. 
 
-4. In the **Flame Graph**, hover over the spans below the end of **discounts.status */discounts*** span and scroll to zoom in on the spans. <p> Notice that there are numerous spans of the two queries you saw listed in the Span Summary in step 2 above. <p> ![n1query](fixapp/assets/n1query.gif) <p> Let's replace the N+1 queries with one query that retrieves the same data.
+4. In the **Flame Graph**, hover over the spans below the end of **discounts.status */discounts*** span and scroll to zoom in on the spans. <p> Notice that there are numerous spans of the two queries you saw listed in the Span Summary in step 2 above. 
+
+  ![n1query](fixapp/assets/n1query.gif)
+  
+  Let's replace the N+1 queries with one query that retrieves the same data.
 
 5. Click `discounts-service/discounts.py`{{open}}.
 
