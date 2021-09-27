@@ -10,4 +10,4 @@
     6. Resources analysis: Shows the resources loaded grouped by type (JS, CSS, etc).
 4. If you go back to your [RUM Application List](https://app.datadoghq.com/rum/list), you can also check out the **Sessions**, **Resource** and **Errors** dashboards to view more details for those.
 
-Nice work! Now you can reward yourself with a passing grade by typing `grademe`{{execute}} in the terminal.
+Nice work! Now execute `finish`{{execute}} in the terminal to complete this activity.
