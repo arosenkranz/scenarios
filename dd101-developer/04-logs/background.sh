@@ -2,13 +2,8 @@
 
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
-mkdir /root/lab
-mv /root/docker-compose.yml /root/lab
+mv /root/docker-compose-fixed.yml /ecommworkshop/deploy/docker-compose/
+mv /root/docker-compose-broken.yml /ecommworkshop/deploy/docker-compose/
+statusupdate files
 
-ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
-ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
-ln -s /ecommworkshop/ads-service /root/lab/ads-service
-
-docker-compose -f /root/lab/docker-compose.yml pull
-
-statusupdate environment
+/ecommworkshop/gor --input-file-loop --input-file "/ecommworkshop/requests_0.gor|300%" --output-http "http://localhost:3000" >> /dev/null 2>&1
