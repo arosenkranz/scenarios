@@ -4,7 +4,11 @@ Let's analyze how the changes you made affected app performance.
 
 2. In the graph metrics editor below the search field, select `Resource` for **group by**.
 
-3. In the **Facets** on the left, select `Error` under **Status**. `ERROR` appears in the search field as a filter. <p> Notice that the resources/endpoints that had the `ActionView::Template::Error: undefined method [] for nil:NilClass` error are the only resources in the graph. <p> Also, notice that there are no more errors since you restarted the app.
+3. In the **Facets** on the left, select `Error` under **Status**. `ERROR` appears in the search field as a filter. 
+
+  Notice that the resources/endpoints that had the `ActionView::Template::Error: undefined method [] for nil:NilClass` error are the only resources in the graph. 
+  
+  Also, notice that there are no more errors since you restarted the app.
 
 4. Delete `ERROR` from the search field. 
 
@@ -22,4 +26,4 @@ The outline of the store-frontend, discounts-service, and advertisements-service
 
 Notice that the **Total Requests** and **Total Errors** graphs have no new error data since you fixed the store-frontend.
 
-Let's explore the store-frontend service more to see if the app has any other undesired behavior.
+Great work! You've successfully improved the performance of your app. Run `finish`{{execute}} to complete the lab.

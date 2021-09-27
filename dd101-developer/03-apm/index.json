@@ -29,10 +29,6 @@
       {
         "title": "Analyzing Trace Data in App Analytics",
         "text": "step5.md"
-      },
-      {
-        "title": "Investigating Inefficient Database Queries",
-        "text": "step6.md"
       }
     ],
     "finish": {
@@ -42,14 +38,6 @@
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root"
-        },
-        {
-          "file": "puppeteer-mobile.js",
-          "target": "/root"
-        },
-        {
-          "file": "puppeteer.sh",
           "target": "/root"
         },
         {

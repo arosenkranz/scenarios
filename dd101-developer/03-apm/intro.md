@@ -5,6 +5,5 @@ In this activity, you'll continue to work with the fictional ecommerce app, Stor
 3. Investigating Request Errors
 4. Investigating Latency Issues
 5. Analyzing Trace Data in App Analytics
-6. Investigating Inefficient Database Queries
 
 When you are ready to continue, click **Start Scenario**.

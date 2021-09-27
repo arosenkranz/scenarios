@@ -8,7 +8,7 @@ Here's a summary of the services that comprise Storedog:
 | frontend       | Spree, an open source e-commerce framework written in Ruby |
 | discounts      | Python Flask API that serves store item discounts |
 | advertisements | Python Flask API that serves advertisements |
-| puppeteer          | Puppeteer will be used to simulate user traffic and interaction with the application |
+| puppeteer OR traffic-replay          | A Puppeteer or Traffic Replay service will be used to simulate user traffic and interaction with the application |
 
 1. Open the `docker-compose.yml`{{open}} file in the IDE tab and review how these services are configured. 
 
