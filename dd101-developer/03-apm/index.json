@@ -42,23 +42,19 @@
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer-mobile.js",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer.sh",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "discounts.py",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         }
       ]
     }
