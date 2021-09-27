@@ -1,18 +1,16 @@
-sudo service datadog-agent stop
-docker kill $(docker ps -q)
-docker container rm $(docker container ls -qa)
+#!/bin/bash
+
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
-rmdir /root/lab/ecommerceapp
-statusupdate tools
-cd /ecommworkshop
-git pull
-# locked to specific commit on 2020-10-02
-git checkout 9ce34516d9a65d6f09a6fffd5c4911a409d31e3f
-git reset --hard
 
+mkdir /root/lab
+mv /root/docker-compose.yml /root/lab
 
-statusupdate createdirs
-docker-compose -f /ecommworkshop/docker-compose-files/docker-compose-fixed-instrumented.yml pull
-statusupdate dockerpulls
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
 
-statusupdate complete
+ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
+
+ln -s /ecommworkshop/ads-service /root/lab/ads-service
+
+docker-compose -f /root/lab/docker-compose.yml pull
+
+statusupdate environment

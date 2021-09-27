@@ -1,5 +1,5 @@
 {
-  "time": "30 minutes",
+  "time": "25 minutes",
   "title": "Using Real User Monitoring",
   "details": {
     "intro": {
@@ -40,11 +40,11 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "/root/ecommworkshop",
+    "uieditorpath": "/root/lab",
     "showdashboard": true,
-    "dashboards": [{ "name": "StoreDog", "port": 3000 }]
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v1"
+    "imageid": "datadog-base-v3"
   }
 }
