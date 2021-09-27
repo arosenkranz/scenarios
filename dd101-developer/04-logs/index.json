@@ -33,34 +33,21 @@
     "assets": {
       "host01": [
         {
-          "file": "envready",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "docker-compose-fixed.yml",
-          "target": "/root"
-        },
-        {
-          "file": "docker-compose-broken.yml",
-          "target": "/root"
-        },
-        {
-          "file": "frontend-docker-entrypoint.sh",
+          "file": "docker-compose.yml",
           "target": "/root"
         }
       ]
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
-    "uieditorpath": "/ecommworkshop",
-    "hideHiddenFiles": true,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
     "showdashboard": true,
-    "dashboards": [{"name": "storedog", "port": 3000}]
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v2"
+    "imageid": "datadog-base-v3"
   }
 }
