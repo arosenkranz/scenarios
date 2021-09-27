@@ -6,7 +6,7 @@ export DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].enviro
 export DD_ADS_URL=https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com
 export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com
 
-clear
+# clear
 
 statuscheck environment
 cd /root/lab 
@@ -21,7 +21,7 @@ DD_ADS_URL=$DD_ADS_URL\n\
 DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
-docker-compose up -d
+# docker-compose up -d
 
 statusupdate complete
 prepenvironment
