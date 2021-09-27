@@ -3,7 +3,9 @@ With log collection set up in a previous activity, you'll want to start querying
 This activity provides an overview of Search, Groups, Patterns, and Transactions in Logs.
 
 **Learning Objectives:**
-1. Work with Logs Search
-2. 
+1. Search for logs
+2. Learn the difference between tags, attributes, and facets
+3. Aggregate logs using patterns, transactions, and graphs
+
 
 When you are ready to begin, click **Start Scenario**.
