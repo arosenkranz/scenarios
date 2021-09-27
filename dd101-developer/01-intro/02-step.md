@@ -20,7 +20,7 @@ docker-compose up -d
 
 1. With the application up and running, select the tab titled "storedog" in the right-hand panel. This will open up Storedog as a new tab in your browser.
 
-> **TODO:** add screenshot of the application running
+  > **TODO:** add screenshot of the application running
 
 1. Take a few moments and explore the application before moving on. You'll use this application throughout the rest of the course to learn about different components about the Datadog platform.
 
