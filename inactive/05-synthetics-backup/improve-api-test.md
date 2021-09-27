@@ -39,4 +39,4 @@ To see the additional information that failed tests provide, click on one of res
 
 Go back to the terminal and start the discounts service again. 
 
-Now that you know how to create API tests and interpret their results, click the **Continue** button below to create a Browser Test.
+Now that you know how to create API tests and interpret their results, click the **Continue** button below to create a more complex Multistep API test.
