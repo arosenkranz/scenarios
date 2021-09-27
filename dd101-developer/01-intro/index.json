@@ -1,36 +1,53 @@
 {
-  "time": "3 minutes",
+  "time": "5 minutes",
   "title": "Introduction to the Course",
   "details": {
     "intro": {
       "background": "background.sh",
       "foreground": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "01-step.md"
+      },
+      {
+        "text": "02-step.md"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "03-finish.md"
     },
     "assets": {
       "host01": [
         {
-          "file": "samplefile.txt",
-          "target": "/root/lab"
+          "file": "docker-compose.yml",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root",
+          "chmod": "+x"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "terminal",
-    "showide": "true",
-    "uieditorpath": "/root/lab"
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-    "imageid": "datadog-base-v3",
-    "reuseConnection": "false"
+    "imageid": "datadog-base-v3"
   }
 }

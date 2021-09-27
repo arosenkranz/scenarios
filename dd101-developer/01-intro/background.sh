@@ -1,4 +1,20 @@
-# mkdir editor
-rm /usr/local/bin/prepenvironment
+#!/bin/bash
+
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
-statusupdate complete
+
+mkdir /root/lab
+mv /root/docker-compose.yml /root/lab
+
+cd /ecommworkshop
+git fetch
+git checkout tags/2.0.0
+
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
+
+ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
+
+ln -s /ecommworkshop/ads-service /root/lab/ads-service
+
+docker-compose -f /root/lab/docker-compose.yml pull
+
+statusupdate environment
