@@ -43,7 +43,6 @@
     "showide": true,
     "uieditorpath": "/root/lab",
     "hideHiddenFiles": false,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },

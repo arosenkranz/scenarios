@@ -22,6 +22,4 @@ docker-compose up -d
 
   > **TODO:** add screenshot of the application running
 
-1. Take a few moments and explore the application before moving on. You'll use this application throughout the rest of the course to learn about different components about the Datadog platform.
-
 1. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. 
