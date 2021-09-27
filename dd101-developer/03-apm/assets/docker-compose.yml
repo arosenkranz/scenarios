@@ -126,13 +126,15 @@ services:
       - DD_ENV=dd101-dev
     labels:
       com.datadoghq.ad.logs: '[{"source": "postgresql", "service": "postgres"}]'
-  puppeteer:
-    image: buildkite/puppeteer:10.0.0
-    volumes:
-      - /root/puppeteer-mobile.js:/puppeteer.js
-      - /root/puppeteer.sh:/puppeteer.sh
-    environment:
-      - STOREDOG_URL
-    depends_on:
-      - frontend
-    command: bash puppeteer.sh
+  # puppeteer:
+  #   image: buildkite/puppeteer:10.0.0
+  #   volumes:
+  #     - /root/puppeteer-mobile.js:/puppeteer.js
+  #     - /root/puppeteer.sh:/puppeteer.sh
+  #   environment:
+  #     - STOREDOG_URL
+  #   depends_on:
+  #     - frontend
+  #   command: bash puppeteer.sh
+  traffic-replay:
+    image: 'ddtraining/traffic-replay:latest'

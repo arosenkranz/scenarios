@@ -12,7 +12,7 @@ In the terminal on the right, the Storedog app is being instrumented for APM wit
 
   ![trace-services](fixapp/assets/trace-services.png)
 
-5. Navigate to <a href="https://app.datadoghq.com/apm/map?env=ruby-shop" target="_datadog">**APM** > **Service Map**</a> to visualize the services and their dependencies. 
+5. Navigate to <a href="https://app.datadoghq.com/apm/map?env=dd101-dev" target="_datadog">**APM** > **Service Map**</a> to visualize the services and their dependencies. 
 
   If there is a menu next to the **Search APM** field, make sure that `env:dd101-dev` is selected. A menu is available if you've monitored more than one environment in this Datadog organization. 
   

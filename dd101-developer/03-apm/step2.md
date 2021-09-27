@@ -4,7 +4,7 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
 #### Store-frontend Service
 
-1. In the <a href="https://app.datadoghq.com/apm/map?env=ruby-shop" target="_datadog">**Service Map**</a>, click the **store-frontend** node and select **View service overview**.
+1. In the <a href="https://app.datadoghq.com/apm/map?env=dd101-dev" target="_datadog">**Service Map**</a>, click the **store-frontend** node and select **View service overview**.
 
 2. Scroll to the **Endpoints** list and click **Spree::HomeController#index**.
 
