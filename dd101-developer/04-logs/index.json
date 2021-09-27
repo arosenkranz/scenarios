@@ -35,6 +35,11 @@
         {
           "file": "docker-compose.yml",
           "target": "/root"
+        },
+        {
+          "file": "envready",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
         }
       ]
     }

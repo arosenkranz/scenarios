@@ -22,6 +22,9 @@ DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
 docker-compose up -d
+
+envready
+
 docker kill lab_db_1
 
 statusupdate complete
