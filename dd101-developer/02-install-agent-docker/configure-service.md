@@ -5,7 +5,7 @@ In the same way that you configured the Agent container, you'll add environment 
 1. Open the file `docker-compose.yml`{{open}} in the IDE.
 1. Add the the following environment variables to the `discounts` service by clicking on **Copy to Editor** in the following block of code:
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste discounts vars here">
-  - DD_ENV=dd101-sre
+  - DD_ENV=dd101-dev
          - DD_SERVICE=discounts-service
          - DD_VERSION=1.1
          - DD_AGENT_HOST=datadog
@@ -13,14 +13,14 @@ In the same way that you configured the Agent container, you'll add environment 
          - DD_TRACE_ANALYTICS_ENABLED=true
          - DD_PROFILING_ENABLED=true
     </pre> 
-1. The first 3 environment variables will tell the Agent to tag metrics, traces, and logs from this service with the `env:dd101-sre` and `service:discounts-service`, and `version:1.1`. Together, these comprise Unified Service Tagging, which you'll learn more about in the APM lab.
+1. The first 3 environment variables will tell the Agent to tag metrics, traces, and logs from this service with the `env:dd101-dev` and `service:discounts-service`, and `version:1.1`. Together, these comprise Unified Service Tagging, which you'll learn more about in the APM lab.
 
     The remaining variables tell the Agent to collect application traces, profiling metrics, and to associate APM and log entries with each other. You can learn more about container environment variables in [the docs](https://docs.datadoghq.com/agent/docker).
 1. Add the the following labels variables to the `discounts` service by clicking on **Copy to Editor** in the following block of code:
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste discounts labels here">
 labels:
          com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
-         com.datadoghq.tags.env: 'dd101-sre'
+         com.datadoghq.tags.env: 'dd101-dev'
          com.datadoghq.tags.service: 'discounts-service'
          com.datadoghq.tags.version: '1.1'
          my.custom.label.team: 'discounts'
