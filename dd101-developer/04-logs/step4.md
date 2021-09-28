@@ -4,9 +4,9 @@ Transactions aggregate indexed logs according to instances of a sequence of even
 
 1. In <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>, filter the list to the `service:advertisements-service`, `service:discounts-service`.
 
-2. Select `Transactions` for **Aggregate by** below the search field.
+2. Select `Transactions` for **Group by** below the search field.
 
-    Group the transactions by service so that it reads **Aggregate by** `Transactions` on `Service` and Count `all logs`.
+    Group the transactions by service so that it reads **Group by** `Transactions` on `Service` and Count `all logs`.
 
     The Transactions list will display each service along with the the total count of logs.
 
@@ -20,7 +20,7 @@ Transactions aggregate indexed logs according to instances of a sequence of even
 
     ![frontend_status_transactions](querylogs/assets/frontend_status_transactions.png)
 
-4. Click the X next to **Patterns** to return to the Log List.
+4. Click the X next to the **Group by** field to return to the Log List.
 
 
 ### Assessment
