@@ -18,8 +18,8 @@ if (window.DD_RUM) {
     trackInteractions: true,
     service: 'storedog-ui',
     allowedTracingOrigins: [/https:\/\/.*\.environments.katacoda\.com/],
-    env: 'production',
-    version: 1.1
+    env: '<%= ENV['DD_ENV'] %>',
+    version: '<%= ENV['DD_VERSION'] %>'
   });
 
   window.DD_RUM.startSessionReplayRecording();

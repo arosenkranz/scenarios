@@ -49,5 +49,7 @@ REACT_APP_STOREDOG_URL=$STOREDOG_URL\n\
 REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID\n\
 REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN" > .env 
 
+cp .env /storedog-microsite
+
 statusupdate complete
 prepenvironment

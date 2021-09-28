@@ -8,7 +8,7 @@ All <a href="https://docs.datadoghq.com/agent/docker/?tab=standard" target="_bla
 
 Because the application is run in a Docker (containerized) environment, the Datadog Agent runs in a container alongside the application containers: `agent`. 
      
-Each application service runs in its own Docker container: `discounts`, `frontend`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
+Each application service runs in its own Docker container: `discounts`, `frontend`, `microsite`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
 
 Let's configure Datadog RUM for the app.
 
