@@ -1,6 +1,6 @@
 {
   "time": "15-20 minutes",
-  "title": "The Datadog Agent",
+  "title": "Instrument Application for APM and Log Collection",
   "details": {
     "intro": {
       "background": "background.sh",
@@ -9,16 +9,8 @@
     },
     "steps": [
       {
-        "text": "install-agent.md",
+        "text": "step1.md",
         "title": "Install the Agent on Docker"
-      },
-      {
-        "text": "configure-service.md",
-        "title": "Configure a Service for the Agent"
-      },
-      {
-        "text": "configure-all-services.md",
-        "title": "Configure All the Services"
       }
     ],
     "finish": {
@@ -28,11 +20,6 @@
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root",
-          "chmod": "+x"
-        },
-        {
-          "file": "docker-compose-complete.yml",
           "target": "/root",
           "chmod": "+x"
         },
@@ -54,6 +41,7 @@
     "showide": true,
     "uieditorpath": "/root/lab",
     "hideHiddenFiles": false,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
