@@ -2,9 +2,9 @@ With the <a href="https://docs.datadoghq.com/logs/explorer/#fields" target="_bla
 
 1. In <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>, filter the list to the `service:advertisements-service`, `service:discounts-service`, `status:error`.
 
-2. Select `Fields` for **Aggregate by** below the search field. A graph visualization of the filtered logs will replace the Log List.  
+2. Select `Fields` for **Group into** below the search field. A graph visualization of the filtered logs will replace the Log List.  
 
-    Group the fields by service so that it reads **Aggregate by** `Fields` of `Service`.
+    Group the fields by service so that it reads **Group into** `Fields` by `Service`.
 
     Above the graph, you'll see that **Timeseries** is selected. Select **Toplist** next to Timeseries, then select **Table** to view the different visualizations. Click **Timeseries** again.
 
