@@ -2,7 +2,7 @@
   "title": "Monitoring App Performance",
   "description": "Using APM to investigate app performance ",
   "difficulty": "Beginner",
-  "time": "40 minutes",
+  "time": "25 minutes",
   "details": {
     "intro": {
       "text": "intro.md",

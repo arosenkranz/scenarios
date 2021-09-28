@@ -32,7 +32,7 @@ While the monitors are gathering data, let's see how the store-frontend service 
 
 8. Click `store-frontend-broken-instrumented/store-frontend/app/views/spree/products/show.html.erb`{{open}} to open this file. 
 
-9. Scroll to the bottom of the file (**Line 48**). Paste the line from step 7. 
+9. Scroll to the bottom of the file (**Line 48**). Paste the line from step 7 after the `<% end %>` tag. 
 ```<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>```{{copy}}
 
 10. Click `store-frontend/app/views/spree/home/index.html.erb`{{open}} to open this file. 
@@ -40,4 +40,4 @@ While the monitors are gathering data, let's see how the store-frontend service 
 11. Create a new line under **Line 11** and paste the line from step 7. 
 ```<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>```{{copy}} Make sure to match the indent of the new line (**Line 12**) to that of the next line (**Line 13**).
 
-These changes should fix the errors you are seeing in the store-frontend service. It will take about 3-4 minutes for new data to be displayed into Datadog. In the meantime, if you scroll to the trace statistics graphs on the service page, you'll notice that the latency is high (> 1s). Let's explore what may be causing this high latency.
+These changes should fix the errors you are seeing in the store-frontend service. It will take about 3-4 minutes for new data to be displayed into Datadog. In the meantime, navigate back to the <a href="https://app.datadoghq.com/apm/services?env=dd101-dev&paused=false" target="_datadog">**APM** > **Services**</a> page and you'll find that our other monitors are sending alerts. Let's explore what may be causing this high latency.

@@ -14,9 +14,9 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
 5. Expand **Set alert conditions**, select **Threshold Alert**. <p>Set the alert as follows: **Alert when `Avg latency` is `above` `1` over the last `1 minute`**.
 
-6. Expand **Say what's happening**, leave the message as is. 
+6. Expand **Say what's happening**, but you can leave the message as is. 
 
-7. Under **Notify your team**, delete `@store-frontend`. You will notice that `@store-frontend` is automatically deleted from the message in step 5. In this case, you do not want to send any notifications.
+7. Under **Notify your team**, delete your provisioned email address. You will notice that it is automatically deleted from the message in step 5. In this case, you do not want to send any notifications.
 
 8. Click **Save** on the bottom right. 
 
@@ -24,10 +24,9 @@ Let's create monitors to track the latency of specific store-frontend, discounts
   
   Notice that **Tags** for the resource, service, and environment were automatically assigned to the monitor. These tags will correlate the monitor to the respective Service Page and Resource Page.
 
-
 #### Discounts Service
 
-1. Continuing from step 8 above, click **New Monitor +** in the top right.
+1. Continuing from step 8 above, navigate to <a href="https://app.datadoghq.com/monitors#/create" target="_datadog">**Monitors** > **New Monitor**</a> from the menu.
 
 2. Select **APM** from the list of monitor types.
 
@@ -35,10 +34,12 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
   Then, select `discounts-service` as the **Service** and `get_/discount` as the **Resource**.
 
-4. Repeat steps 5 - 8 above, but with the following change. Delete `@discounts-service` in step 7.
+4. Repeat steps 5 - 8 above.
 
 #### Advertisements Service
 
-1. Repeat the steps you completed for the discounts service monitor. <p>In step 3, select `advertisements-service` for the **Service** and `get_/ads` for the **Resource**. <p> In step 4, delete `@advertisements-service`.
+1. Repeat the steps you completed for the discounts service monitor. 
+  
+  In step 3, select `advertisements-service` for the **Service** and `get_/ads` for the **Resource**.
 
-When you view the monitors in <a href="https://app.datadoghq.com/monitors#/create" target="_datadog">**Monitor** > **Manage Monitors**</a>, you'll notice that their status is `No Data`. Because the monitors are new, it may take a few minutes for the status of the monitors to update. 
+When you view the monitors in <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitor** > **Manage Monitors**</a>, you'll notice that their status is `No Data`. Because the monitors are new, it may take a few minutes for the status of the monitors to update. 

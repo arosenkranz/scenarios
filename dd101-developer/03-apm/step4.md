@@ -42,7 +42,7 @@ The monitors you created should have gathered some data. Because the monitors ar
 
   Notice the `Spree::HomeController#index`, `Spree::ProductsController#show`, and `Spree::ProductsController#index` have latencies more than 2.5 seconds. 
 
-17. For each endpoint listed in step 15, click the endpoint to view its page. 
+17. For each endpoint listed in the previous step, click the endpoint to view its page. 
 
   Scroll to the **Span Summary** and sort by **AVG DURATION**. <p> Scroll to the **Traces** list. Click any of the traces to view the details. 
   
