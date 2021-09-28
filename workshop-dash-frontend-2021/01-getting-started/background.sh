@@ -8,7 +8,7 @@ mv /root/docker-compose-dev.yml /root/lab
 
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
-npm install --silent
+docker build -f ./Dockerfile.dev . -t storedog-microsite
 
 # Fetch discounts in the browser
 mv /root/home_controller.rb /ecommworkshop/store-frontend-instrumented-fixed/app/controllers/spree/home_controller.rb

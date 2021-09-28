@@ -36,7 +36,7 @@ Let's configure Datadog RUM for the app.
 
 6. On the right, click the **IDE** tab.  
 
-    Open the file `spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
+    Open the file `storedog-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
 
     **Lines 13-23** are the RUM script in the front end and set the initialization arguments. This code may be slightly different than the current code snippet in the Datadog UI. It will still work.
 
@@ -44,7 +44,9 @@ Let's configure Datadog RUM for the app.
 
     Notice that the code snippet includes environment variables for `applicationId` and `clientToken`.
 
-7. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
+7. Open the file `microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
+
+8. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
     
     Copy the `applicationId` from the RUM UI page. In the terminal, assign the value you copied to `DD_APPLICATION_ID` using the `export` command: `export DD_APPLICATION_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
@@ -52,14 +54,10 @@ Let's configure Datadog RUM for the app.
     
     Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
 
-8. Click `docker-compose up -d`{{execute}} to start the storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers. Once the app is online, you will see the following in the terminal.
+8. Click `docker-compose -f docker-compose-dev.yaml up -d`{{execute}} to start the storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers. Once the app is online, you will see the following in the terminal.
 
     ![docker-compose-up](assets/docker-compose-up.png)
 
-9. One more thing. Let's make sure that Log Management is enabled in the Datadog organization that you are working for this scenario. You will need to access the collected logs in a later step. 
+9. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 
-    If you have previously used the **Log Explorer** in the Datadog organization you are working in, move on to the next step. 
-
-    If you are working in a new Datadog organization, you have to first enable Log Management before you can continue. Navigate to <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>. Click **Getting Started**, then click **Getting Started** again. You will be redirected to the Log Explorer. You should see logs listed in the explorer.
-
-Before you start viewing the CWVs for an app in a RUM product, a helpful first step for getting some basic information about your web app’s UX performance is running a synthetic test (that is, a test with with no user input) on the app's performance in a browser. Let's run this test next.
+10. 

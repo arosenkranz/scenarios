@@ -24,14 +24,6 @@ if (window.DD_RUM) {
 
   window.DD_RUM.startSessionReplayRecording();
 
-
-  if (!window._DATADOG_SYNTHETICS_BROWSER) {
-    window.DD_RUM.setRumGlobalContext({'usr.handle': 'john@storedog.com'});
-  };
-
-  if (window.location.href.includes('utm')) {
-    window.DD_RUM.addRumGlobalContext({'fromUtm': true});
-  };
 }
 </script>
     <%= render partial: 'spree/shared/head' %>

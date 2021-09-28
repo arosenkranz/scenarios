@@ -149,8 +149,8 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - /app/node_modules
-      - .:/app
+      - /storedog-microsite/app/node_modules
+      - /storedog-microsite:/app
     environment:
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
