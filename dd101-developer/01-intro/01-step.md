@@ -20,7 +20,7 @@ Welcome to the first section of the Introduction to Datadog course.
 
     ![The Datadog application displays the API keys provisioned for an org.](./assets/01-api-keys.png)
 
-1. In the Training Lab terminal, confirm that your API key is the same as the one saved as an environment variable with `echo $DD_API_KEY`{{execute}}. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.  
+1. In the terminal, run the `creds`{{execute}} command to confirm that your API key is the same as the one in the Datadog app. You don't have to memorize the entire key. Just making sure that the first and last couple of characters are the same should be good enough to ensure a match.  
 
     _Note: API and Application keys are different._
 
