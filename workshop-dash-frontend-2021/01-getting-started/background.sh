@@ -4,6 +4,7 @@ curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
+mv /root/docker-compose-dev.yml /root/lab
 
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
@@ -26,7 +27,6 @@ ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 # Link to the modified frontend configuration file
 mv /root/frontend-config.rb /ecommworkshop/store-frontend-instrumented-fixed/config/environments/development.rb
-ln -s /ecommworkshop/store-frontend-instrumented-fixed/config/environments/development.rb /root/lab/config.rb
 
 # Link to microsite
 ln -s /storedog-microsite /root/lab/microsite
@@ -34,6 +34,6 @@ ln -s /storedog-microsite /root/lab/microsite
 docker pull node:alpine 
 docker pull nginx 
 
-docker-compose -f /root/lab/docker-compose.yml pull
+docker-compose -f /root/lab/docker-compose-dev.yml pull
 
 statusupdate environment

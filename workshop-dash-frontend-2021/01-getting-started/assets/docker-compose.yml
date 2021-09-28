@@ -9,7 +9,7 @@ services:
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
       - DD_PROCESS_AGENT_ENABLED=true
       - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
-      - DD_TAGS='env:staging'
+      - DD_TAGS='env:frontend-workshop'
     ports:
       - '8126:8126'
     volumes:
@@ -25,7 +25,7 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_USER
       - POSTGRES_HOST=db
-      - DD_ENV=staging
+      - DD_ENV=frontend-workshop
       - DD_SERVICE=discounts-service
       - DD_VERSION=1.1
       - DD_AGENT_HOST=agent
@@ -48,7 +48,7 @@ services:
       - db
     labels:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
-      com.datadoghq.tags.env: 'staging'
+      com.datadoghq.tags.env: 'frontend-workshop'
       com.datadoghq.tags.service: 'discounts-service'
       com.datadoghq.tags.version: '1.1'
       my.custom.label.team: 'discounts'
@@ -57,7 +57,7 @@ services:
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
-      - DD_ENV=staging
+      - DD_ENV=frontend-workshop
       - DD_SERVICE=store-frontend
       - DD_VERSION=1.1
       - DB_USERNAME
@@ -79,7 +79,7 @@ services:
       - advertisements
     labels:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service": "store-frontend"}]'
-      com.datadoghq.tags.env: 'staging'
+      com.datadoghq.tags.env: 'frontend-workshop'
       com.datadoghq.tags.service: 'store-frontend'
       com.datadoghq.tags.version: '1.1'
       my.custom.label.team: 'frontend'
@@ -90,7 +90,7 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_USER
       - POSTGRES_HOST=db
-      - DD_ENV=staging
+      - DD_ENV=frontend-workshop
       - DD_SERVICE=advertisements-service
       - DD_VERSION=1.1
       - DD_AGENT_HOST=agent
@@ -113,7 +113,7 @@ services:
       - db
     labels:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'
-      com.datadoghq.tags.env: 'staging'
+      com.datadoghq.tags.env: 'frontend-workshop'
       com.datadoghq.tags.service: 'advertisements-service'
       com.datadoghq.tags.version: '1.1'
       my.custom.label.team: 'advertisements'
@@ -123,7 +123,7 @@ services:
     environment:
       - POSTGRES_PASSWORD
       - POSTGRES_USER
-      - DD_ENV=staging
+      - DD_ENV=frontend-workshop
     labels:
       com.datadoghq.ad.logs: '[{"source": "postgresql", "service": "postgres"}]'
   puppeteer:
@@ -155,7 +155,7 @@ services:
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
-      - DD_ENV=staging
+      - DD_ENV=frontend-workshop
       - DD_SERVICE=store-microsite
       - DD_VERSION=1.1
       - DD_CLIENT_TOKEN
@@ -170,7 +170,7 @@ services:
       - advertisements
     labels:
       com.datadoghq.ad.logs: '[{"source": "nginx", "service": "store-microsite"}]'
-      com.datadoghq.tags.env: 'staging'
+      com.datadoghq.tags.env: 'frontend-workshop'
       com.datadoghq.tags.service: 'store-microsite'
       com.datadoghq.tags.version: '1.1'
       my.custom.label.team: 'microsite'
