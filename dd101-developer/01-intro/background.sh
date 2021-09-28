@@ -7,11 +7,11 @@ mv /root/docker-compose.yml /root/lab
 
 sed -i 's/production/<%= ENV["DD_ENV"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/layouts/spree_application.html.erb
 
-sed -i 's/1.1/<%= ENV["DD_ENV"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/layouts/spree_application.html.erb
+sed -i 's/1.1/<%= ENV["DD_VERSION"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/layouts/spree_application.html.erb
 
 sed -i 's/production/<%= ENV["DD_ENV"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/layouts/application.html.erb
 
-sed -i 's/1.1/<%= ENV["DD_ENV"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/layouts/application.html.erb
+sed -i 's/1.1/<%= ENV["DD_VERSION"] %>/g' /ecommworkshop/store-frontend-instrumented-fixed/app/views/layouts/application.html.erb
 
 ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
 

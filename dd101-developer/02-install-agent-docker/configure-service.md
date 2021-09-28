@@ -13,9 +13,14 @@ In the same way that you configured the Agent container, you'll add environment 
          - DD_TRACE_ANALYTICS_ENABLED=true
          - DD_PROFILING_ENABLED=true
     </pre> 
-1. The first 3 environment variables will tell the Agent to tag metrics, traces, and logs from this service with the `env:dd101-dev` and `service:discounts-service`, and `version:1.1`. Together, these comprise Unified Service Tagging, which you'll learn more about in the APM lab.
+1. The first 3 environment variables will tell the Agent to tag metrics, traces, and logs from this service with the `env:dd101-dev` and `service:discounts-service`, and `version:1.1`. Together, these comprise **Unified Service Tagging**, which allows you to seamlessly navigate Datadog to see data by service, environment, or version.
 
     The remaining variables tell the Agent to collect application traces, profiling metrics, and to associate APM and log entries with each other. You can learn more about container environment variables in [the docs](https://docs.datadoghq.com/agent/docker).
+
+    These environment variables are passed down to their respective service, where the `dd-trace` library is installed and configured to tag outgoing data based on the values these variables store.
+
+    > **Note:** It is important that you also install the `dd-trace` library into your service at the application level. Learn more about how to install the library in your service at the [Datadog documentation for APM.](https://docs.datadoghq.com/tracing/) 
+
 1. Add the the following labels variables to the `discounts` service by clicking on **Copy to Editor** in the following block of code:
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste discounts labels here">
 labels:
