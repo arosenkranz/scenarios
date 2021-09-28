@@ -10,16 +10,16 @@ Here's a summary of the services that comprise Storedog:
 | advertisements | Python Flask API that serves advertisements |
 | puppeteer OR traffic-replay          | A Puppeteer or Traffic Replay service will be used to simulate user traffic and interaction with the application |
 
-1. Open the `docker-compose.yml`{{open}} file in the IDE tab and review how these services are configured. 
+1. Open the IDE tab to your right and then open the `docker-compose.yml`{{open}} file to review how these services are configured. 
 
 1. To see this application running, execute the following command in the terminal:
 
-```
-docker-compose up -d
-```{{execute}}
+  ```
+  docker-compose up -d
+  ```{{execute}}
 
 1. With the application up and running, select the tab titled "storedog" in the right-hand panel. This will open up Storedog as a new tab in your browser.
 
-  > **TODO:** add screenshot of the application running
+  ![The Storedog application appears in a new tab after starting the services.](./assets/02-storedog.png)
 
 1. At the end of every section of this course, including this one, run `finish`{{execute}} when you are finished. 
