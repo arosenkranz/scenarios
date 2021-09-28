@@ -36,7 +36,7 @@ Let's configure Datadog RUM for the app.
 
 6. On the right, click the **IDE** tab.  
 
-    Open the file `storedog-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
+    Open the file `store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
 
     **Lines 13-23** are the RUM script in the front end and set the initialization arguments. This code may be slightly different than the current code snippet in the Datadog UI. It will still work.
 
@@ -54,9 +54,7 @@ Let's configure Datadog RUM for the app.
     
     Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
 
-8. Click `docker-compose -f docker-compose-dev.yaml up -d`{{execute}} to start the storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers. Once the app is online, you will see the following in the terminal.
-
-    ![docker-compose-up](assets/docker-compose-up.png)
+8. Click `docker-compose -f docker-compose-dev.yml up -d`{{execute}} to start the storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
 
 9. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 
