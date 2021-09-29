@@ -7,16 +7,16 @@
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "step1.md",
+        "text": "01-step.md",
         "title": "Setting up Datadog RUM to collect metrics"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "02-finish.md"
     },
     "assets": {
       "host01": [
