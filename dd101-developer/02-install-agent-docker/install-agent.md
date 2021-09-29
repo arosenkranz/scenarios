@@ -13,7 +13,7 @@ To understand how to install and configure the Agent in a containerized environm
          - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
          - DD_PROCESS_AGENT_ENABLED=true
          - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
-         - DD_TAGS='env:dd101-sre'
+         - DD_TAGS='env:dd101-dev'
        ports:
          - '8126:8126'
        volumes:
