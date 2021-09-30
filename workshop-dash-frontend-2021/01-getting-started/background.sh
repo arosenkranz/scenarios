@@ -38,9 +38,9 @@ ln -s /ecommworkshop/ads-service /root/lab/ads-service
 # Link to microsite
 ln -s /storedog-microsite /root/lab/microsite
 
-# set puppeteer scripts
-mv /root/puppeteer.sh /root/lab/puppeteer.sh
-mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
+# # set puppeteer scripts
+# mv /root/puppeteer.sh /root/lab/puppeteer.sh
+# mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
 
 docker pull node:alpine 
 docker pull nginx 
