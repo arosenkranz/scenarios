@@ -1,4 +1,4 @@
-In the terminal on the right, the enviroment is being prepared. You will see a message `Provisioning Complete` along with some login credentials when the environment is ready.
+In the terminal on the right, the environment is being prepared. You will see a message `Provisioning Complete` along with some login credentials when the environment is ready.
 
 Click the **IDE** tab on the right. It may take a few seconds to load. Once the IDE loads, open the file `docker-compose.yml`{{open}} to view the file in the editor. 
 

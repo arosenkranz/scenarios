@@ -145,7 +145,6 @@ services:
         DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
         DD_ADS_URL: ${DD_ADS_URL}
         STOREDOG_URL: ${STOREDOG_URL}
-        DATADOG_API_KEY: ${DD_API_KEY}
     stdin_open: true
     ports:
       - '3001:80'
@@ -164,6 +163,7 @@ services:
       - DD_ADS_URL
       - STOREDOG_URL
       - MICROSITE_URL
+      - DD_API_KEY
     depends_on:
       - agent
       - db

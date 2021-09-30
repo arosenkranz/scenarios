@@ -128,28 +128,28 @@ services:
   puppeteer:
     image: buildkite/puppeteer:10.0.0
     volumes:
-      - /root/puppeteer-mobile.js:/puppeteer.js
-      - /root/puppeteer.sh:/puppeteer.sh
+      - ./puppeteer-mobile.js:/puppeteer.js
+      - ./puppeteer.sh:/puppeteer.sh
     environment:
-      - STOREDOG_URL
+      - RUM_START_URL
     depends_on:
       - frontend
     command: bash puppeteer.sh
   microsite:
     build:
       context: /storedog-microsite
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       args:
         DD_CLIENT_TOKEN: ${DD_CLIENT_TOKEN}
         DD_APPLICATION_ID: ${DD_APPLICATION_ID}
         DD_DISCOUNTS_URL: ${DD_DISCOUNTS_URL}
         DD_ADS_URL: ${DD_ADS_URL}
         STOREDOG_URL: ${STOREDOG_URL}
-        DATADOG_API_KEY: ${DD_API_KEY}
     stdin_open: true
     ports:
-      - '3001:80'
+      - 3001:3000
     volumes:
+      - /storedog-microsite/app/node_modules
       - /storedog-microsite:/app
     environment:
       - DD_AGENT_HOST=agent
@@ -162,15 +162,13 @@ services:
       - DD_APPLICATION_ID
       - DD_DISCOUNTS_URL
       - DD_ADS_URL
-      - STOREDOG_URL
-      - MICROSITE_URL
     depends_on:
       - agent
       - db
       - discounts
       - advertisements
     labels:
-      com.datadoghq.ad.logs: '[{"source": "nginx", "service": "store-microsite"}]'
+      com.datadoghq.ad.logs: '[{"source": "node", "service": "store-microsite"}]'
       com.datadoghq.tags.env: 'frontend-workshop'
       com.datadoghq.tags.service: 'store-microsite'
       com.datadoghq.tags.version: '1.1'
