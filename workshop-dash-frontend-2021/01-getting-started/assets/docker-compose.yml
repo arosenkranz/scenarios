@@ -163,6 +163,7 @@ services:
       - DD_ADS_URL
       - STOREDOG_URL
       - MICROSITE_URL
+      - DD_API_KEY
     depends_on:
       - agent
       - db
