@@ -162,6 +162,7 @@ services:
       - DD_DISCOUNTS_URL
       - DD_ADS_URL
       - STOREDOG_URL
+      - MICROSITE_URL
     depends_on:
       - agent
       - db
