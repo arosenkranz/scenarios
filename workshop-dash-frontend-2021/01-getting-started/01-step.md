@@ -54,7 +54,7 @@ Let's configure Datadog RUM for the app.
     
     Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
 
-8. Click `docker-compose -f docker-compose-dev.yml up -d`{{execute}} to start the storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
+8. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the Storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
 
 9. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 

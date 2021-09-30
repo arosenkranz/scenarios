@@ -71,7 +71,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - '/ecommworkshop/store-frontend-instrumented-fixed:/app'
+      - '/ecommworkshop/store-frontend-broken-instrumented:/app'
     depends_on:
       - agent
       - db
