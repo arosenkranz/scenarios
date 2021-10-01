@@ -17,7 +17,7 @@ mv /root/home_controller.rb /ecommworkshop/store-frontend-broken-instrumented/ap
 # mv /root/spree_application.html.erb /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/layouts/spree_application.html.erb
 mv /root/spree_application.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/layouts/spree_application.html.erb
 # mv /root/index.html.erb /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/home/index.html.erb
-mv /root/index.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/home/index.html.erb
+# mv /root/index.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/home/index.html.erb
 # mv /root/frontend-config.rb /ecommworkshop/store-frontend-instrumented-fixed/config/environments/development.rb
 mv /root/frontend-config.rb /ecommworkshop/store-frontend-broken-instrumented/config/environments/development.rb
 

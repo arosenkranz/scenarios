@@ -60,7 +60,7 @@ const runSession = async (url, selectors) => {
 
     // Wait for xhr requests on home page
     console.log('Waiting for asynchronous DOM elements...');
-    await page.waitForSelector('#ads-block', { visible: true });
+    // await page.waitForSelector('#ads-block', { visible: true });
     await page.waitForSelector('#discount-block', { visible: true });
 
     for (const selector of selectors) {
