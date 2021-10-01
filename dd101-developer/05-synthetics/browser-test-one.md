@@ -18,7 +18,7 @@ In the Datadog App, navigate to **UX Monitoring > New Test** and click on **New 
 1. For **Name**, enter something like "Discount Rendered on Homepage".
 1. Under **Browsers & Devices**, leave the defaults. These parameters are unique to browser tests and you should tailor them to suit your web application's typical visitor. Note that each selection will result in a separate test result.
 1. Under **Locations**, choose one or more regions from which to run the test. 
-1. Under **Specify test frequency**, select **1w**. You will also trigger this test on demand in this lab.
+1. Under **Specify test frequency**, select **7d**. You will also trigger this test on demand in this lab.
 1. You can leave the defaults for **Define alert conditions** and **Notify your team**, as the notifications are the same as those from API tests.
 1. Click **Save Details & Record Test** to move to the next step.
 

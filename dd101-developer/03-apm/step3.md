@@ -30,7 +30,7 @@ While the monitors are gathering data, let's see how the store-frontend service 
 
   This line for banner ads should be in two other files for the store-frontend.
 
-8. Click `store-frontend-broken-instrumented/store-frontend/app/views/spree/products/show.html.erb`{{open}} to open this file. 
+8. Click `store-frontend/app/views/spree/products/show.html.erb`{{open}} to open this file. 
 
 9. Scroll to the bottom of the file (**Line 48**). Paste the line from step 7 after the `<% end %>` tag. 
 ```<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>```{{copy}}

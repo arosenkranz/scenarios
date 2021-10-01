@@ -28,6 +28,6 @@ ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 cd /root/lab
 
-docker-compose pull
+docker pull datadog/agent:7.31.0
 
 statusupdate "workspace"
