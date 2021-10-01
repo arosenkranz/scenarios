@@ -1,9 +1,14 @@
 #!/bin/bash
 curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate tools
-mv /root/docker-compose.yml /ecommworkshop/
+
+git clone https://github.com/DataDog/ecommerce-workshop.git /ecommworkshop
 cd /ecommworkshop
-git fetch
+git checkout a670e6ab791d3ac4b9ef45dae1b68f64950414e4
+git reset --hard
+
+mv /root/docker-compose.yml /ecommworkshop
+
 
 # fix 2.5 second delay in ads service
 git checkout e400e3fc ./ads-service-fixed/ads.py
