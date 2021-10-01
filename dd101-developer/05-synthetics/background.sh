@@ -27,7 +27,7 @@ statusupdate setup
 
 # Start storedog
 statuscheck "environment-variables"
-docker-compose --env-file ./docker.env up -d
+docker-compose up -d
 
 # Wait for the frontend-service container to fire up
 while [[ -z $(docker ps --filter "name=ecommworkshop_frontend_1" --format '{{.Names}}') ]]
@@ -37,4 +37,4 @@ done
 statusupdate complete
 
 # Generate traffic
-./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" >> /dev/null 2>&1
+# ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" >> /dev/null 2>&1
