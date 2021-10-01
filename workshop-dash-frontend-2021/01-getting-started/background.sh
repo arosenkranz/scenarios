@@ -7,8 +7,7 @@ mv /root/docker-compose.yml /root/lab
 # mv /root/docker-compose-dev.yml /root/lab
 
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
-cd /storedog-microsite
-npm install --silent
+
 npm i -g craco --silent
 
 # Fetch discounts in the browser
@@ -17,7 +16,7 @@ mv /root/home_controller.rb /ecommworkshop/store-frontend-broken-instrumented/ap
 # mv /root/spree_application.html.erb /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/layouts/spree_application.html.erb
 mv /root/spree_application.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/layouts/spree_application.html.erb
 # mv /root/index.html.erb /ecommworkshop/store-frontend-instrumented-fixed/app/views/spree/home/index.html.erb
-# mv /root/index.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/home/index.html.erb
+mv /root/index.html.erb /ecommworkshop/store-frontend-broken-instrumented/app/views/spree/home/index.html.erb
 # mv /root/frontend-config.rb /ecommworkshop/store-frontend-instrumented-fixed/config/environments/development.rb
 mv /root/frontend-config.rb /ecommworkshop/store-frontend-broken-instrumented/config/environments/development.rb
 
@@ -34,9 +33,8 @@ mv /root/ads.py /ecommworkshop/ads-service/ads.py
 ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 
-
 # Link to microsite
-ln -s /storedog-microsite /root/lab/microsite
+ln -s /storedog-microsite /root/lab/storedog-microsite
 
 # # set puppeteer scripts
 # mv /root/puppeteer.sh /root/lab/puppeteer.sh

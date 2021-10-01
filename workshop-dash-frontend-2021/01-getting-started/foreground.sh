@@ -51,5 +51,7 @@ REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN" > .env
 
 cp .env /storedog-microsite
 
+cd /root/lab
+
 statusupdate complete
 prepenvironment
