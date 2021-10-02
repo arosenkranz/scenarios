@@ -136,7 +136,7 @@ services:
       - frontend
     command: bash puppeteer.sh
   microsite:
-    image: nginx:latext
+    image: nginx:latest
     stdin_open: true
     ports:
       - '3001:80'
