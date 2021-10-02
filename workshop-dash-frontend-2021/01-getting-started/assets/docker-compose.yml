@@ -142,7 +142,7 @@ services:
       - '3001:80'
     volumes:
       # - /storedog-microsite:/app
-      - /stordog-microsite/build:/usr/share/nginx/html
+      - /storedog-microsite/build:/usr/share/nginx/html
     depends_on:
       - agent
       - db
