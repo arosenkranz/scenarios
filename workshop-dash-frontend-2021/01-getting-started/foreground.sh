@@ -51,6 +51,14 @@ REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN" > .env
 
 cp .env /storedog-microsite
 
+cd /storedog-microsite
+npm run build
+npx datadog-ci sourcemaps upload ./build \
+  --project-path=./src/ \
+  --service=storedog-microsite \
+  --release-version=1.1 \
+  --minified-path-prefix="${REACT_APP_MICROSITE_URL}/static/js"
+
 cd /root/lab
 
 statusupdate complete

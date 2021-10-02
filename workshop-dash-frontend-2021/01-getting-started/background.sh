@@ -7,6 +7,8 @@ mv /root/docker-compose.yml /root/lab
 # mv /root/docker-compose-dev.yml /root/lab
 
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
+cd /storedog-microsite
+npm install
 
 npm i -g craco --silent
 
@@ -40,8 +42,8 @@ ln -s /storedog-microsite /root/lab/storedog-microsite
 # mv /root/puppeteer.sh /root/lab/puppeteer.sh
 # mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
 
-docker pull node:alpine 
-docker pull nginx 
+# docker pull node:alpine 
+# docker pull nginx 
 
 docker-compose -f /root/lab/docker-compose.yml pull
 

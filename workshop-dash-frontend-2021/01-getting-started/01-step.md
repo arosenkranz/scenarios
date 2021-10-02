@@ -58,4 +58,8 @@ Let's configure Datadog RUM for the app.
 
 9. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 
-10. 
+10. Now navigate back to RUM UI page in the browser, and you'll find that the application is now getting data from Storedog. The page should now resemble something like this image:
+
+    ![@TODO: add screenshot](assets/screenshot.png)
+
+11. Click through on 
