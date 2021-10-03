@@ -9,8 +9,7 @@ mv /root/docker-compose.yml /root/lab
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
 npm install
-
-# npm i -g craco --silent
+npm i -g craco --silent
 
 # Fetch discounts in the browser
 # mv /root/home_controller.rb /ecommworkshop/store-frontend-instrumented-fixed/app/controllers/spree/home_controller.rb
@@ -42,9 +41,6 @@ ln -s /storedog-microsite /root/lab/storedog-microsite
 # mv /root/puppeteer.sh /root/lab/puppeteer.sh
 # mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
 
-# docker pull node:alpine 
-# docker pull nginx 
-
-# docker-compose -f /root/lab/docker-compose.yml pull
+docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate environment
