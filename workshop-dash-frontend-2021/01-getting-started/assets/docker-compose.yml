@@ -134,6 +134,7 @@ services:
       - STOREDOG_URL
     depends_on:
       - frontend
+      - microsite
     command: bash puppeteer.sh
   microsite:
     image: nginx:1.19.7

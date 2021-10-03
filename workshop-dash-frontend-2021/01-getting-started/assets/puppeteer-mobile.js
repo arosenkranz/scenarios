@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 
 const startUrl = process.env.STOREDOG_URL;
+const micrositeUrl = process.env.MICROSITE_URL;
 
 const choosePhone = () => {
   const deviceNames = [
@@ -126,4 +127,57 @@ let selectors;
     '#home-link > .nav-link',
   ];
   await runSession(startUrl, selectors);
+})();
+
+// Session 6
+(async () => {
+  selectors = [
+    'tbody > tr:nth-child(3) > button',
+    'tbody > tr:nth-child(25) > button',
+    'tbody > tr:nth-child(1) > button',
+    'tbody > tr:nth-child(10) > button',
+    'thead > th:th-child(1)',
+  ];
+  await runSession(micrositeUrl, selectors);
+})();
+
+// Session 2
+(async () => {
+  selectors = [
+    '#product_2 > .card > .card-body > .d-block > .info',
+    '#add-to-cart-button',
+  ];
+  const browser = await getNewBrowser();
+  let page = await browser.newPage();
+
+  try {
+    await page.setDefaultNavigationTimeout(10000);
+    await page.emulate(choosePhone());
+    await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
+    const pageTitle = await page.title();
+    console.log(`"${pageTitle}" loaded`);
+
+    // Wait for xhr requests on home page
+    console.log('Waiting for asynchronous DOM elements...');
+    await page.waitForSelector('#ads-block', { visible: true });
+    await page.waitForSelector('#discount-block', { visible: true });
+
+    for (const selector of selectors) {
+      await page.waitForSelector(selector);
+      console.log(`Going to click on ${selector}...`);
+      await Promise.all([page.waitForNavigation(), page.click(selector)]);
+    }
+    const coupons = ['SORRY', 'REBUILD', 'HEARTS', 'STOREDOG', 'SUNSHINE'];
+
+    page.type(
+      '#order_coupon_code',
+      coupons[Math.floor(Math.random() * coupons.length)],
+      { delay: 100 }
+    );
+    page.click('[data-hook=coupon_code] button[type=submit]');
+  } catch (err) {
+    console.log(`Session failed: ${err}`);
+  } finally {
+    browser.close();
+  }
 })();
