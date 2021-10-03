@@ -1,7 +1,7 @@
 version: '3'
 services:
   agent:
-    image: 'datadog/agent:7.29.0'
+    image: 'datadog/agent:7.31.1'
     environment:
       - DD_API_KEY
       - DD_APM_ENABLED=true
@@ -136,7 +136,7 @@ services:
       - frontend
     command: bash puppeteer.sh
   microsite:
-    image: nginx:latest
+    image: nginx:1.19.7
     stdin_open: true
     ports:
       - '3001:80'

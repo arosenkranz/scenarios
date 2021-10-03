@@ -34,7 +34,6 @@ mv /root/ads-requirements.txt /ecommworkshop/ads-service/requirements.txt
 mv /root/ads.py /ecommworkshop/ads-service/ads.py
 ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
-
 # Link to microsite
 ln -s /storedog-microsite /root/lab/storedog-microsite
 
@@ -45,6 +44,6 @@ ln -s /storedog-microsite /root/lab/storedog-microsite
 # docker pull node:alpine 
 # docker pull nginx 
 
-docker-compose -f /root/lab/docker-compose.yml pull
+# docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate environment
