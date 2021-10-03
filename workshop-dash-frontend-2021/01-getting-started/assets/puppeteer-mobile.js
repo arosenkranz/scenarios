@@ -48,7 +48,7 @@ const getNewBrowser = async () => {
   return browser;
 };
 
-const runSession = async (url, selectors) => {
+const runSession = async (url, selectors, waitForBlocks = true) => {
   const browser = await getNewBrowser();
   let page = await browser.newPage();
 
@@ -59,10 +59,12 @@ const runSession = async (url, selectors) => {
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 
-    // Wait for xhr requests on home page
-    console.log('Waiting for asynchronous DOM elements...');
-    await page.waitForSelector('#ads-block', { visible: true });
-    await page.waitForSelector('#discount-block', { visible: true });
+    if (waitForBlocks) {
+      // Wait for xhr requests on home page
+      console.log('Waiting for asynchronous DOM elements...');
+      await page.waitForSelector('#ads-block', { visible: true });
+      await page.waitForSelector('#discount-block', { visible: true });
+    }
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
