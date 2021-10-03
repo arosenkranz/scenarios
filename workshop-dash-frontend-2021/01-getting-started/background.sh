@@ -10,7 +10,7 @@ git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-micros
 cd /storedog-microsite
 npm install
 
-npm i -g craco --silent
+# npm i -g craco --silent
 
 # Fetch discounts in the browser
 # mv /root/home_controller.rb /ecommworkshop/store-frontend-instrumented-fixed/app/controllers/spree/home_controller.rb
@@ -33,6 +33,7 @@ ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
 mv /root/ads-requirements.txt /ecommworkshop/ads-service/requirements.txt
 mv /root/ads.py /ecommworkshop/ads-service/ads.py
 ln -s /ecommworkshop/ads-service /root/lab/ads-service
+
 
 # Link to microsite
 ln -s /storedog-microsite /root/lab/storedog-microsite

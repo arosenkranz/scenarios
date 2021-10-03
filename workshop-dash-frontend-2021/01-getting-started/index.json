@@ -25,10 +25,6 @@
           "target": "/root"
         },
         {
-          "file": "docker-compose-dev.yml",
-          "target": "/root"
-        },
-        {
           "file": "index.html.erb",
           "target": "/root"
         },
