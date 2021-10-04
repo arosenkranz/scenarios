@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 
 const startUrl = process.env.STOREDOG_URL;
 const micrositeUrl = process.env.MICROSITE_URL;
+console.log(process.env);
 
 const choosePhone = () => {
   const deviceNames = [
