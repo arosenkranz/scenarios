@@ -135,11 +135,11 @@ let selectors;
 // Session 6
 (async () => {
   selectors = [
-    'tbody > tr:nth-child(3) > button',
-    'tbody > tr:nth-child(25) > button',
-    'tbody > tr:nth-child(1) > button',
-    'tbody > tr:nth-child(10) > button',
-    'thead > th:th-child(1)',
+    'tbody tr:nth-child(3) button',
+    'tbody tr:nth-child(25) button',
+    'tbody tr:nth-child(1) button',
+    'tbody tr:nth-child(10) button',
+    'thead th:th-child(1)',
   ];
 
   const browser = await getNewBrowser();
@@ -183,7 +183,7 @@ let selectors;
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
-      console.log(`Going to click on ${selector}...`);
+      console.log(`Going to click on ${selector}... COUPON`);
       await Promise.all([page.waitForNavigation(), page.click(selector)]);
     }
     const coupons = ['SORRY', 'REBUILD', 'HEARTS', 'STOREDOG', 'SUNSHINE'];
