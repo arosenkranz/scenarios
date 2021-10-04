@@ -147,6 +147,7 @@ let selectors;
   try {
     await page.setDefaultNavigationTimeout(10000);
     await page.emulate(choosePhone());
+    console.log(`Heading to ${micrositeUrl}`);
     await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
