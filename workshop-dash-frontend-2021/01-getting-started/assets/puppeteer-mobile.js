@@ -48,23 +48,21 @@ const getNewBrowser = async () => {
   return browser;
 };
 
-const runSession = async (url, selectors, waitForBlocks = true) => {
+const runSession = async (url, selectors) => {
   const browser = await getNewBrowser();
   let page = await browser.newPage();
 
   try {
-    await page.setDefaultNavigationTimeout(10000);
+    await page.setDefaultNavigationTimeout(40000);
     await page.emulate(choosePhone());
     await page.goto(url, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 
-    if (waitForBlocks) {
-      // Wait for xhr requests on home page
-      console.log('Waiting for asynchronous DOM elements...');
-      await page.waitForSelector('#ads-block', { visible: true });
-      await page.waitForSelector('#discount-block', { visible: true });
-    }
+    // Wait for xhr requests on home page
+    console.log('Waiting for asynchronous DOM elements...');
+    await page.waitForSelector('#ads-block', { visible: true });
+    await page.waitForSelector('#discount-block', { visible: true });
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
@@ -78,11 +76,9 @@ const runSession = async (url, selectors, waitForBlocks = true) => {
   }
 };
 
-let selectors;
-
 // Session 1
 (async () => {
-  selectors = [
+  const selectors = [
     '#search-bar > .ml-2 > .btn',
     '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
     '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
@@ -92,7 +88,7 @@ let selectors;
 
 // Session 2
 (async () => {
-  selectors = [
+  const selectors = [
     '#product_2 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
   ];
@@ -101,7 +97,7 @@ let selectors;
 
 // Session 3
 (async () => {
-  selectors = [
+  const selectors = [
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
     '.row > #sidebar > div > #sidebar_products_search > .btn',
     '.container > #main-nav-bar > .nav > #home-link > .nav-link',
@@ -111,7 +107,7 @@ let selectors;
 
 // Session 4
 (async () => {
-  selectors = [
+  const selectors = [
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(3)',
     '#product_8 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
@@ -122,7 +118,7 @@ let selectors;
 
 // Session 5
 (async () => {
-  selectors = [
+  const selectors = [
     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(3)',
     '#product_8 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
@@ -133,7 +129,7 @@ let selectors;
 
 // Session 6
 (async () => {
-  selectors = [
+  const selectors = [
     'tbody tr:nth-child(3) button',
     'tbody tr:nth-child(25) button',
     'tbody tr:nth-child(5) button',
@@ -166,7 +162,7 @@ let selectors;
 
 // Session 7
 (async () => {
-  selectors = [
+  const selectors = [
     '#product_2 > .card > .card-body > .d-block > .info',
     '#add-to-cart-button',
   ];
@@ -174,7 +170,7 @@ let selectors;
   let page = await browser.newPage();
 
   try {
-    await page.setDefaultNavigationTimeout(10000);
+    await page.setDefaultNavigationTimeout(30000);
     await page.emulate(choosePhone());
     await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
