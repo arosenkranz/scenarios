@@ -62,4 +62,6 @@ Let's configure Datadog RUM for the app.
 
     ![@TODO: add screenshot](assets/screenshot.png)
 
-11. Click through on 
+11. Navigate to RUM session data page and show how it is coming in.
+
+Now that the application is up and running with RUM, it's time to explore the different tools at your disposal for monitoring your application.

@@ -63,6 +63,10 @@
         {
           "file": "puppeteer-mobile.js",
           "target": "/root"
+        },
+        {
+          "file": "nginx.conf",
+          "target": "/root"
         }
       ]
     }
