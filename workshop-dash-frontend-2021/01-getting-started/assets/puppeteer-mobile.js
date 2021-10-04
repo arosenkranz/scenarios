@@ -140,10 +140,30 @@ let selectors;
     'tbody > tr:nth-child(10) > button',
     'thead > th:th-child(1)',
   ];
-  await runSession(micrositeUrl, selectors);
+
+  const browser = await getNewBrowser();
+  let page = await browser.newPage();
+
+  try {
+    await page.setDefaultNavigationTimeout(10000);
+    await page.emulate(choosePhone());
+    await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
+    const pageTitle = await page.title();
+    console.log(`"${pageTitle}" loaded`);
+
+    for (const selector of selectors) {
+      await page.waitForSelector(selector);
+      console.log(`Going to click on ${selector}...`);
+      await Promise.all([page.waitForNavigation(), page.click(selector)]);
+    }
+  } catch (err) {
+    console.log(`Session failed: ${err}`);
+  } finally {
+    browser.close();
+  }
 })();
 
-// Session 2
+// Session 7
 (async () => {
   selectors = [
     '#product_2 > .card > .card-body > .d-block > .info',
@@ -158,11 +178,6 @@ let selectors;
     await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
-
-    // Wait for xhr requests on home page
-    console.log('Waiting for asynchronous DOM elements...');
-    await page.waitForSelector('#ads-block', { visible: true });
-    await page.waitForSelector('#discount-block', { visible: true });
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
