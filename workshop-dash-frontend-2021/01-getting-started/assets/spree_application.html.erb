@@ -68,12 +68,12 @@ if (window.DD_RUM) {
      // @ads['base64'] = Base64.encode64(open('http://advertisements:5002/banners/' + @ads['path']).read).gsub("\n", '')
      if (document.querySelector("#ads-block")) {
     
-       fetch('<%= ENV['DD_ADS_URL'] %>ads')
+       fetch('<%= ENV['DD_ADS_URL'] %>/ads')
          .then(response => response.json())
          .then(data => data[Math.floor(Math.random() * data.length)])
          .then(ad => {
            document.querySelector("#ad-url").href = ad.url;
-           return fetch(`<%= ENV['DD_ADS_URL'] %>banners/${ad.path}`)
+           return fetch(`<%= ENV['DD_ADS_URL'] %>/banners/${ad.path}`)
          })
          .then(response => response.blob())
          .then(blob => {
