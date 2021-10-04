@@ -132,6 +132,7 @@ services:
       - /root/puppeteer.sh:/puppeteer.sh
     environment:
       - STOREDOG_URL
+      - MICROSITE_URL
     depends_on:
       - frontend
       - microsite
