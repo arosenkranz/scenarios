@@ -2,13 +2,13 @@
 
 - Navigate to Datadog and walk through OOTB Dashboard for RUM
 
-### Errors
+### User sessions
 
 ### Mobile
 
 ### Resources
 
-### User sessions
+### Errors
 
 - Walk through RUM Explorer
 

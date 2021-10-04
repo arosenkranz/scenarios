@@ -54,11 +54,10 @@ cp .env /storedog-microsite
 
 cd /storedog-microsite
 npm run build
-npx datadog-ci sourcemaps upload ./build \
+npx datadog-ci sourcemaps upload /storedog-microsite/build \
   --service=storedog-microsite \
   --release-version=1.1 \
-  --minified-path-prefix="${REACT_APP_MICROSITE_URL}/static/js" \
-  --repository-url=https://github.com/arosenkranz/storedog-microsite
+  --minified-path-prefix="${MICROSITE_URL}"
 
 cd /root/lab
 

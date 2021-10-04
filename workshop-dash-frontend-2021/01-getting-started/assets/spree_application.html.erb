@@ -16,7 +16,7 @@ if (window.DD_RUM) {
     applicationId: '<%= ENV['DD_APPLICATION_ID'] %>',
     sampleRate: 100,
     trackInteractions: true,
-    service: 'storedog-ui',
+    service: 'storedog-frontend',
     allowedTracingOrigins: [/https:\/\/.*\.environments.katacoda\.com/],
     env: '<%= ENV['DD_ENV'] %>',
     version: '<%= ENV['DD_VERSION'] %>'
@@ -53,7 +53,7 @@ if (window.DD_RUM) {
      if (document.querySelector("#discount-block")) {
      fetch('<%= ENV['DD_DISCOUNTS_URL'] %>')
        .then(response => response.json())
-       .then(data => data[Math.floor(Math.random() * data.length)])
+       .then(data => data[Math.floor(Math.random() * data.length) + 15])
        .then(discount => {
          document.querySelector("#discount-name").innerText = discount.name;
          document.querySelector("#discount-code").innerText = discount.code;
@@ -83,7 +83,7 @@ if (window.DD_RUM) {
              document.querySelector("#ads-block").style.visibility = "visible";
            };
            reader.readAsDataURL(blob);
-         });
+         }).catch(error => console.error(error));
      };
    </script>
   </body>
