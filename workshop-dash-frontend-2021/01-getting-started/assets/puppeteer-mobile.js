@@ -2,7 +2,6 @@ const puppeteer = require('puppeteer');
 
 const startUrl = process.env.STOREDOG_URL;
 const micrositeUrl = process.env.MICROSITE_URL;
-console.log(process.env);
 
 const choosePhone = () => {
   const deviceNames = [
@@ -81,7 +80,7 @@ const runSession = async (url, selectors, waitForBlocks = true) => {
 
 let selectors;
 
-// Session 1
+Session 1
 (async () => {
   selectors = [
     '#search-bar > .ml-2 > .btn',
@@ -137,16 +136,16 @@ let selectors;
   selectors = [
     'tbody tr:nth-child(3) button',
     'tbody tr:nth-child(25) button',
-    'tbody tr:nth-child(1) button',
+    'tbody tr:nth-child(5) button',
     'tbody tr:nth-child(10) button',
-    'thead th:th-child(1)',
+    'thead th:first-child',
+    'thead th:first-child',
   ];
 
   const browser = await getNewBrowser();
   let page = await browser.newPage();
 
   try {
-    await page.setDefaultNavigationTimeout(10000);
     await page.emulate(choosePhone());
     console.log(`Heading to ${micrositeUrl}`);
     await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
@@ -156,10 +155,10 @@ let selectors;
     for (const selector of selectors) {
       await page.waitForSelector(selector);
       console.log(`Going to click on ${selector}...`);
-      await Promise.all([page.waitForNavigation(), page.click(selector)]);
+      await page.click(selector);
     }
   } catch (err) {
-    console.log(`Session failed: ${err}`);
+    console.error(`Session failed: ${err}`);
   } finally {
     browser.close();
   }
