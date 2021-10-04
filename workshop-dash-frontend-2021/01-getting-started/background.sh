@@ -38,8 +38,8 @@ ln -s /ecommworkshop/ads-service /root/lab/ads-service
 ln -s /storedog-microsite /root/lab/storedog-microsite
 
 # # set puppeteer scripts
-# mv /root/puppeteer.sh /root/lab/puppeteer.sh
-# mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
+mv /root/puppeteer.sh /root/lab/puppeteer.sh
+mv /root/puppeteer-mobile.js /root/lab/puppeteer-mobile.js
 
 docker-compose -f /root/lab/docker-compose.yml pull
 
