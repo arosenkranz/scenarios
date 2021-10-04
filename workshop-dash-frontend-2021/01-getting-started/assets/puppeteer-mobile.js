@@ -147,7 +147,7 @@ let selectors;
   try {
     await page.setDefaultNavigationTimeout(10000);
     await page.emulate(choosePhone());
-    await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
+    await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 
@@ -186,12 +186,14 @@ let selectors;
     }
     const coupons = ['SORRY', 'REBUILD', 'HEARTS', 'STOREDOG', 'SUNSHINE'];
 
+    await page.waitForSelector('input#order_coupon_code');
+
     page.type(
-      '#order_coupon_code',
+      'input#order_coupon_code',
       coupons[Math.floor(Math.random() * coupons.length)],
       { delay: 100 }
     );
-    page.click('[data-hook=coupon_code] button[type=submit]');
+    page.click('[data-hook="coupon_code"] button[type="submit"]');
   } catch (err) {
     console.log(`Session failed: ${err}`);
   } finally {
