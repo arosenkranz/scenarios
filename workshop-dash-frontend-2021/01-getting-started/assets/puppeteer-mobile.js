@@ -80,7 +80,7 @@ const runSession = async (url, selectors, waitForBlocks = true) => {
 
 let selectors;
 
-Session 1
+// Session 1
 (async () => {
   selectors = [
     '#search-bar > .ml-2 > .btn',
@@ -189,12 +189,12 @@ Session 1
 
     await page.waitForSelector('input#order_coupon_code');
 
-    page.type(
+    await page.type(
       'input#order_coupon_code',
       coupons[Math.floor(Math.random() * coupons.length)],
       { delay: 100 }
     );
-    page.click('[data-hook="coupon_code"] button[type="submit"]');
+    await page.click('[data-hook="coupon_code"] button[type="submit"]');
   } catch (err) {
     console.log(`Session failed: ${err}`);
   } finally {
