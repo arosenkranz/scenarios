@@ -1,10 +1,15 @@
 {
-  "title": "Identifying Frontend Issues with RUM and Error Tracking",
+  "title": "Identifying Frontend Issues with Real User Monitoring and Error Tracking",
   "description": "",
   "courses": [
     {
       "course_id": "01-getting-started",
-      "title": "Introduction to the Course",
+      "title": "Finding Issues with RUM",
+      "description": ""
+    },
+    {
+      "course_id": "02-advanced-rum",
+      "title": "Using Monitors and Advanced RUM Tooling",
       "description": ""
     }
   ]

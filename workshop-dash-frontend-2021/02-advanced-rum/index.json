@@ -1,8 +1,8 @@
 {
-  "title": "Finding Issues with Real User Monitoring (RUM)",
+  "title": "Using Monitors and Advanced RUM Tooling",
   "description": "",
   "time": "50 minutes",
-  "difficulty": "Beginner",
+  "difficulty": "Intermediate",
   "details": {
     "intro": {
       "courseData": "background.sh",
