@@ -3,32 +3,6 @@ const puppeteer = require('puppeteer');
 const startUrl = process.env.STOREDOG_URL;
 const micrositeUrl = process.env.MICROSITE_URL;
 
-const choosePhone = () => {
-  const deviceNames = [
-    'Pixel 2 XL',
-    'Pixel 2',
-    'Nokia N9',
-    'Nokia Lumia 520',
-    'Nexus 7',
-    'Nexus 6P',
-    'LG Optimus L70',
-    'Galaxy S5',
-    'iPhone 11 Pro Max',
-    'iPhone 11',
-    'iPhone XR',
-    'iPhone X',
-    'iPhone SE',
-    'iPhone 8 Plus',
-    'iPhone 6',
-    'iPad Pro',
-    'iPad Mini',
-  ];
-
-  const deviceIndex = Math.floor(Math.random() * deviceNames.length);
-  const device = deviceNames[deviceIndex];
-  return puppeteer.devices[device];
-};
-
 const getNewBrowser = async () => {
   const browser = await puppeteer.launch({
     defaultViewport: null,
@@ -54,7 +28,6 @@ const runSession = async (url, selectors) => {
 
   try {
     await page.setDefaultNavigationTimeout(40000);
-    await page.emulate(choosePhone());
     await page.goto(url, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
@@ -142,7 +115,6 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    await page.emulate(choosePhone());
     console.log(`Heading to ${micrositeUrl}`);
     await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
@@ -171,7 +143,6 @@ const runSession = async (url, selectors) => {
 
   try {
     await page.setDefaultNavigationTimeout(30000);
-    await page.emulate(choosePhone());
     await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
@@ -193,6 +164,31 @@ const runSession = async (url, selectors) => {
     await page.click('[data-hook="coupon_code"] button[type="submit"]');
   } catch (err) {
     console.log(`Session failed: ${err}`);
+  } finally {
+    browser.close();
+  }
+})();
+
+// Session 6
+(async () => {
+  const selectors = ['header button', 'footer button'];
+
+  const browser = await getNewBrowser();
+  let page = await browser.newPage();
+
+  try {
+    console.log(`Heading to ${micrositeUrl}`);
+    await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
+    const pageTitle = await page.title();
+    console.log(`"${pageTitle}" loaded`);
+
+    for (const selector of selectors) {
+      await page.waitForSelector(selector);
+      console.log(`Going to click on ${selector}...`);
+      await page.click(selector);
+    }
+  } catch (err) {
+    console.error(`Session failed: ${err}`);
   } finally {
     browser.close();
   }

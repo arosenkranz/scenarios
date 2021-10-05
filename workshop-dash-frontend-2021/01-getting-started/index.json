@@ -16,11 +16,11 @@
       },
       {
         "text": "02-step.md",
-        "title": "Find Issues with Dashboards and the RUM Explorer"
+        "title": "Monitor Your Frontend with Dashboards"
       },
       {
         "text": "03-step.md",
-        "title": "Finding the Cause of a Bug"
+        "title": "Use the RUM Explorer and Session Replay to Find a Bug"
       }
     ],
     "finish": {
@@ -69,7 +69,7 @@
           "target": "/root"
         },
         {
-          "file": "puppeteer-mobile.js",
+          "file": "puppeteer.js",
           "target": "/root"
         },
         {

@@ -128,7 +128,7 @@ services:
   puppeteer:
     image: buildkite/puppeteer:10.0.0
     volumes:
-      - /root/lab/puppeteer-mobile.js:/puppeteer.js
+      - /root/lab/puppeteer.js:/puppeteer.js
       - /root/lab/puppeteer.sh:/puppeteer.sh
     environment:
       - STOREDOG_URL

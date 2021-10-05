@@ -12,19 +12,15 @@
     "steps": [
       {
         "text": "01-step.md",
-        "title": "Configure RUM to collect metrics"
+        "title": "Create a RUM Monitor to Prevent Issues"
       },
       {
         "text": "02-step.md",
-        "title": "Find Issues with Dashboards and the RUM Explorer"
-      },
-      {
-        "text": "03-step.md",
-        "title": "Finding the Cause of a Bug"
+        "title": "Configure Global Context and Custom Actions"
       }
     ],
     "finish": {
-      "text": "04-finish.md"
+      "text": "03-finish.md"
     },
     "assets": {
       "host01": [
@@ -69,7 +65,7 @@
           "target": "/root"
         },
         {
-          "file": "puppeteer-mobile.js",
+          "file": "puppeteer.js",
           "target": "/root"
         },
         {

@@ -12,7 +12,7 @@ Each application service runs in its own Docker container: `discounts`, `fronten
 
 Let's configure Datadog RUM for the app.
 
-### Configure Application's for Real User Monitoring
+### Configure Applications for Real User Monitoring
 
 1. In a new browser window/tab, use the login credentials provided in the Terminal to log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. Click the **Terminal** tab on the right to view the credentials.
 
@@ -36,7 +36,7 @@ Let's configure Datadog RUM for the app.
 
     Notice that values for `applicationId` and `clientToken` are displayed in the generated code snippet. You will need these to set up RUM in your application.
     
-    Adding RUM to Storedog like this propagates every app user’s session performance information up to Datadog and helps you retain and analyze not only the app’s CWV scores, but also every aspect of performance timing that is relevant to both UX and business concerns.
+    Adding RUM to Storedog like this propagates every app user’s session performance information up to Datadog and helps you retain and analyze not only the app’s Core Web Vital scores, but also every aspect of performance timing that is relevant to both UX and business concerns.
 
 6. On the right, click the **IDE** tab.  
 
@@ -48,7 +48,9 @@ Let's configure Datadog RUM for the app.
 
     Notice that the code snippet includes environment variables for `applicationId` and `clientToken`.
 
-7. Open the file `microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
+    Line 25 will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter.
+
+7. Open the file `storedog-microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
 
 8. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
     
@@ -60,9 +62,14 @@ Let's configure Datadog RUM for the app.
 
 8. With the environment variables in place, you'll now have to build the Storedog microsite application to make sure the RUM script is included in the bundle.
 
-    Run the command `cd /storedog-microsite && npm run build`{{execute}} to do so.
+    Run this comment to set the environment variables for the React application and build it: 
+    
+    ```
+    cd /storedog-microsite
+    REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_TOKEN REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
+    ```{{execute}}
 
-    When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
+9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
     
     ```
     npx datadog-ci sourcemaps upload /storedog-microsite/build \
@@ -70,23 +77,27 @@ Let's configure Datadog RUM for the app.
         --release-version=1.1 \
         --minified-path-prefix="${MICROSITE_URL}"
     ```{{execute}}
-    
-9. Now, navigate back to the Storedog directory with `cd /root/lab`{{execute}}.
 
-10. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the Storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
+    You'll learn more about this soon.
+    
+10. Now, navigate back to the Storedog directory with `cd /root/lab`{{execute}}.
+
+11. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the Storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
 
     > **Note:** Make sure you are in the `/root/lab` directory when you run this command.
 
-11. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
+12. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 
     You'll notice a few pieces of the application are a bit buggy. For instance, advertisements aren't showing up correctly in the microsite and there's some latency in both the microsite and the storefront.
 
     Don't worry about it for now, you'll investigate these errors soon.
 
-12. Now navigate back to RUM Application page in Datadog. After a few moments of gathering data, the section under **Verify you installation** should have a button titled **Explore User Sessions**, resembling this image: 
+13. Now navigate back to RUM Application page in Datadog. After a few moments of gathering data, the section under **Verify you installation** should have a button titled **Explore User Sessions**, resembling this image: 
 
     ![@TODO: add screenshot](assets/screenshot.png)
 
-13. Click that button and you will be taken to the RUM Explorer page, where user session data is displayed. It may take a few moments for more data to come in. Explore this page for a moment or two, you'll use it soon to drill down into a user's session.
+14. Click that button and you will be taken to the RUM Explorer page, where user session data is displayed. It may take a few moments for more data to come in. Explore this page for a moment or two, you'll use it soon to drill down into a user's session.
 
-Now that the application is up and running with RUM, it's time to explore the different tools at your disposal for monitoring your application.
+Now that the application is up and running with RUM, you'll want to give it a little time to send user session data. While that runs, this is a good time to explore the different tools at your disposal for monitoring your application.
+
+Click **Continue** below.
