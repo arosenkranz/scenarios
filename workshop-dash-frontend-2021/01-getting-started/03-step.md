@@ -12,4 +12,6 @@ Now you're going to use RUM to investigate a specific issue and see where it is 
   
   If you explored either application earlier, you may even find your own session by toggling the **GEO > City** facet.
 
-3. 
+3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
+
+  The result should be a list 

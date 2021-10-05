@@ -105,8 +105,10 @@ const runSession = async (url, selectors) => {
   const selectors = [
     'tbody tr:nth-child(3) button',
     'tbody tr:nth-child(25) button',
+    'footer button.text-underline',
     'tbody tr:nth-child(5) button',
     'tbody tr:nth-child(10) button',
+    'header button.text-underline',
     'thead th:first-child',
     'thead th:first-child',
   ];
@@ -171,7 +173,10 @@ const runSession = async (url, selectors) => {
 
 // Session 6
 (async () => {
-  const selectors = ['header button', 'footer button'];
+  const selectors = [
+    'header button.text-underline',
+    'footer button.text-underline',
+  ];
 
   const browser = await getNewBrowser();
   let page = await browser.newPage();
