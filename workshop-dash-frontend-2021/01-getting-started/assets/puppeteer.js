@@ -110,7 +110,9 @@ const runSession = async (url, selectors) => {
     'tbody tr:nth-child(10) button',
     'header button.text-underline',
     'thead th:first-child',
+    'header button.text-underline',
     'thead th:first-child',
+    'footer button.text-underline',
   ];
 
   const browser = await getNewBrowser();
