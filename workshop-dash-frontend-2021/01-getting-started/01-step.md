@@ -66,7 +66,7 @@ Let's configure Datadog RUM for the app.
     
     ```
     cd /storedog-microsite
-    REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_TOKEN REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
+    REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
     ```{{execute}}
 
 9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:

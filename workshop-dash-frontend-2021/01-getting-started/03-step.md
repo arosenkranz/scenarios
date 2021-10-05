@@ -14,4 +14,4 @@ Now you're going to use RUM to investigate a specific issue and see where it is 
 
 3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
 
-  The result should be a list 
+4. Select the 
