@@ -32,11 +32,6 @@ const runSession = async (url, selectors) => {
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 
-    // Wait for xhr requests on home page
-    console.log('Waiting for asynchronous DOM elements...');
-    await page.waitForSelector('#ads-block', { visible: true });
-    await page.waitForSelector('#discount-block', { visible: true });
-
     for (const selector of selectors) {
       await page.waitForSelector(selector);
       console.log(`Going to click on ${selector}...`);
