@@ -100,13 +100,16 @@ const runSession = async (url, selectors) => {
   const selectors = [
     'tbody tr:nth-child(3) button',
     'tbody tr:nth-child(25) button',
+    'thead th:nth-child(2)',
     'footer button.text-underline',
     'tbody tr:nth-child(5) button',
     'tbody tr:nth-child(10) button',
     'header button.text-underline',
     'thead th:first-child',
+    'tbody tr:nth-child(25) button',
     'header button.text-underline',
     'thead th:first-child',
+    'tbody tr:nth-child(10) button',
     'footer button.text-underline',
   ];
 
@@ -115,7 +118,9 @@ const runSession = async (url, selectors) => {
 
   try {
     console.log(`Heading to ${micrositeUrl}`);
-    await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+      waitUntil: 'domcontentloaded',
+    });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 

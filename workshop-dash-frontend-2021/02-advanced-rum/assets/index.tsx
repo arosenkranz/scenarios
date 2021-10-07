@@ -22,12 +22,17 @@ datadogRum.init({
 
 datadogRum.startSessionReplayRecording();
 
-// set global context to be able to track user actions
-datadogRum.setRumGlobalContext({ 'usr.handle': 'john@storedog.com' });
+// set context for the user
+datadogRum.setUser({
+  id: '1234',
+  name: 'John Doe',
+  email: 'john.doe@storedog.com',
+  plan: 'premium',
+});
 
-if (window.location.href.includes('utm')) {
-  // if coming from a marketing campaign, set the context
-  datadogRum.addRumGlobalContext({ fromUtm: true });
+// if coming from main storedog website, set a global context value
+if (window.location.search.includes('storedog')) {
+  datadogRum.addRumGlobalContext('fromStoredog', true);
 }
 
 ReactDOM.render(

@@ -3,7 +3,7 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 1. First, go ahead and fix the bug in the code by replacing the file with a fixed one using this command:
 
   ```
-  mv /root/Advertisement.tsx /storedog-microsite/src/components/Advertisment.tsx
+  mv /root/Advertisement.tsx /storedog-microsite/src/components/Advertisement.tsx
   ```{{execute}}
 
 2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
@@ -29,23 +29,30 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
   You'll notice that below the RUM configuration from earlier, there's two new lines:
 
   ```jsx
-  // set global context to be able to track user actions
-  datadogRum.setRumGlobalContext({ 'usr.handle': 'john@storedog.com' });
+  // set context for the user
+  datadogRum.setUser({
+    id: '1234',
+    name: 'John Doe',
+    email: 'john.doe@storedog.com',
+    plan: 'premium',
+  });
 
-  if (window.location.href.includes('utm')) {
-    // if coming from a marketing campaign, set the context
-    datadogRum.addRumGlobalContext({ fromUtm: true });
+  // if coming from main storedog website, set a global context value
+  if (window.location.search.includes('storedog')) {
+    datadogRum.addRumGlobalContext('fromStoredog', true);
   }
   ```
 
-  This sets the `usr.handle` and `fromUtm` context data, making it so every action performed by the user will have this associated data in Datadog, which gives you a better understanding of your user.
+  First, you'll notice that the `setUser` function is setting the user's ID, name, email, and plan. This helps gain an understanding of what users are receiving errors.
+  
+  The `addRumGlobalContext` function is setting a global context value that can be used to identify users that come from the main Storedog site.
 
-  > **Note:** Typically, you'd set the `usr.handle` context data after the user logs in and authorizes their session.
+  > **Note:** Typically, you'd set the user data context data after the user logs in and authorizes their session.
 
 5. Next, you're going to add some custom user actions to track how they are interacting with the discounts. Move an updated `DiscountList` component into the `src/components/` directory with this command:
 
   ```
-  mv /root/DiscountList.tsx /storedog-microsite/src/components/DiscountList.tsx
+  mv /root/DiscountList.tsx /store-microsite/src/components/DiscountList.tsx
   ```{{execute}}
 
 6. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/DiscountList.tsx`{{open}} file to see the updated component.

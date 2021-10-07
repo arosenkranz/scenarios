@@ -106,16 +106,19 @@ const DiscountList = () => {
           saved: !discount.saved,
         };
 
-        // add custom action
-        datadogRum.addAction('discount-saved-removed', {
-          discount: {
-            id: discount.id,
-            code: discount.code,
-            name: discount.name,
-            value: discount.value,
-            action: discount.saved ? 'saved' : 'removed',
-          },
-        });
+        // add custom actions for saving and removing discounts
+        datadogRum.addAction(
+          `Discount ${discount.saved ? 'Saved' : 'Removed'}`,
+          {
+            discount: {
+              id: discount.id,
+              code: discount.code,
+              name: discount.name,
+              value: discount.value,
+              action: discount.saved ? 'saved' : 'removed',
+            },
+          }
+        );
 
         return updatedSavedDiscount;
       }
