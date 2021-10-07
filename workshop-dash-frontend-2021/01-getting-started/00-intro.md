@@ -8,6 +8,6 @@ In this first portion of the workshop, you'll instrument an application for Real
 1. Get familiar with the lab environment.
 2. Instrument an application for Real User Monitoring.
 3. Understand how to use Datadog's out of the box dashboards for frontend applications to identify user habits and error patterns.
-4. Use Error Tracking and the RUM Explorer to find issues experienced by users. 
+4. Use the RUM Explorer, Session Replay, and source map uploads to investigate issues experienced by users. 
 
 When you are ready to continue, click **Start Scenario**.

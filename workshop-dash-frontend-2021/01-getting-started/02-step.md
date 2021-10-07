@@ -1,4 +1,4 @@
-While the the application is running and the Puppeteer service is simulating some traffic to the ecommerce application and microsite, this is a good time to explore what is provided out of the box for you with RUM.
+With the application running and the Puppeteer service simulating some traffic to the e-commerce application and microsite, this is a good time to explore what is provided out of the box for you with RUM.
 
 Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. These are all of the dashboards that start with **RUM** in the list. 
 
@@ -52,7 +52,7 @@ Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_dat
 
 2. This dashboard will give you an overview of how many errors and the types of errors that users have encountered during their sessions.
 
-3. Take a moment and explore this dashboard, you may notice some errors are starting to come in from the Storedog application.
+3. Take a moment and explore this dashboard, you may notice some errors are starting to come in from the Storedog microsite that may be worth looking into a bit more. 
 
 When you're ready to move on, go ahead and click the **Continue** button below, where you'll use the RUM Explorer to identify and begin to investigate the errors that are coming in.
 

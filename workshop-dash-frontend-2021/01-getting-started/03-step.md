@@ -40,37 +40,14 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
   ```jsx
   const bannerAdRes = await fetch(
-        `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}.jpg`
-      );
+      `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}.jpg`
+    );
   ```
 
-  The `path` already has a `.jpg` extension, so you don't need to have the second one. Now that you know where it happened, you will have a much easier time fixing it!
+  The `path` already has a `.jpg` extension, so you don't need to have the second one. Now that you know where it happened, you will have a much easier time fixing it.
 
-9. Open the **IDE** tab and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
+Great work using RUM to identify, diagnose, and fix issues in your application. With dashboards, the RUM Explorer, and Session Replay, you have the ability to see what's going on in your application and how any errors may affect users.
 
-  Find the line that has the error and remove the `.jpg` extension so the `fetch` request looks like this:
-
-  ```jsx
-  const bannerAdRes = await fetch(
-        `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}`
-      );
-  ``` 
-
-10. The file will save by itself, so now you can rebuild the application and see if that fixes the error.
-
-  Do so by running the following command in the terminal:
-
-  ```
-  cd /storedog-microsite
-  REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
-  ```{{execute}}
-
-  > **Note:** Usually, you'd want to run this command in a CI/CD pipeline and then upload the new sourcemaps, but for this tutorial, we're just going to run it locally and see if it fixes the error.
-
-11. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
-
-  Go back to the **RUM Explorer** page and wait a few moments, perhaps even update the time span to be for the past 5 minutes to see fresher data. You should that users are no longer having the issue!
-
-Great work using RUM to identify, diagnose, and fix issues in your application. With RUM dashboards, the Explorer, and Session Replay, you have the ability to see what's going on in your application and how it may be affecting users.
+Before you fix it, however, it's worth considering how you would have found this error if you weren't already looking for it. With this error identified, you can now create a monitor for it to be alerted if it were to happen again.
 
 Click **Continue** below to finish this first part of the workshop.

@@ -61,5 +61,7 @@ npx datadog-ci sourcemaps upload /storedog-microsite/build \
 
 cd /root/lab
 
+docker-compose up -d
+
 statusupdate complete
 prepenvironment

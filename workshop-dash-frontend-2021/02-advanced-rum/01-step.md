@@ -1,73 +1,47 @@
 In the terminal on the right, the environment is being prepared. You will see a message `Provisioning Complete` along with some login credentials when the environment is ready.
 
-Click the **IDE** tab on the right. It may take a few seconds to load. Once the IDE loads, open the file `docker-compose.yml`{{open}} to view the file in the editor. 
+Since you already created a RUM application with a name of "Storedog", this lab has already fetched that information and the application is already running. This way you can get right into creating a monitor.
 
-This docker-compose file brings the Storedog app online and instruments the Datadog agent and Storedog app services for monitoring with Datadog. 
-     
-All <a href="https://docs.datadoghq.com/agent/docker/?tab=standard" target="_datadog">configuration in a Docker environment</a> is done through environment variables, volumes, and Docker labels.
+1. Confirm the application is working by running the following command in the terminal:
 
-Because the application is run in a Docker (containerized) environment, the Datadog Agent runs in a container alongside the application containers: `agent`. 
-     
-Each application service runs in its own Docker container: `discounts`, `frontend`, `microsite`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
+  ```
+  docker ps
+  ```{{execute}}
 
-Let's configure Datadog RUM for the app.
+  You should see a list of seven containers running. If not, use `docker-compose down`{{execute}} and `docker-compose up`{{execute}} to restart the containers.
 
-### Configure Application's for Real User Monitoring
+2. Make sure you are logged into your <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. 
 
-1. In a new browser window/tab, use the login credentials provided in the Terminal to log in to the <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. Click the **Terminal** tab on the right to view the credentials.
+  > **Note:** If the credentials are not displayed in the terminal, run the command `creds`{{execute}} in the terminal.
 
-    Note: If the credentials are not displayed in the terminal, run the command `creds`{{execute}} in the terminal.
+3. Navigate to the <a href="https://app.datadoghq.com/monitors#/create" target="_datadog">**Monitors > New Monitor**</a> page and select the option to create a **Real User Monitoring** monitor.
 
-2. To get started with RUM in Datadog, you need to set up a RUM Application. Navigate to <a href="https://app.datadoghq.com/rum/list" target="_datadog">**UX Monitoring > Real User Monitoring**</a>.
+4. Under **Define the search query**, filter down to the particular error you experienced earlier with the following query:
 
-3. Click **New Application**.
+  ```
+  @type:error service:storedog-microsite @error.source:console
+  ```{{copy}}
 
-4. Under **Set your application details**, select **JS** as the **Application type** because you are integrating the app using Javascript.
+  Since this is already a narrow filter, there's no need to adjust the **Count** or **Group By** options.
 
-    Enter `Storedog` as the **Application name**.
+5. For **Set Alert Conditions**, set the monitor to trigger when the metric is **Above** the threshold during the last **5 minutes**.
 
-    Click **Create New RUM Application**.
+  Then set the **Alert Threshold** to `5` and the **Warning Threshold** to `3`.
 
-5. If you are using NPM to manage dependencies for your project front end, you can integrate RUM using the `@datadog/browser-rum` package. However, Storedog uses the inline JavaScript method, so select the **CDN Sync** tab.
+  > **Note:** You should see the graph at the top of the page update as you adjust your query and thresholds to confirm you're setting up the correct monitor.
 
-    ![cdnsync](assets/cdnsync.png)
+6. Under **Say what's happening**, provide this as a title:
 
-    Notice that values for `applicationId` and `clientToken` are displayed in the generated code snippet. You will need these to set up RUM in your application.
-    
-    Adding RUM to Storedog like this propagates every app user’s session performance information up to Datadog and helps you retain and analyze not only the app’s CWV scores, but also every aspect of performance timing that is relevant to both UX and business concerns.
+  ```
+  Storedog microsite experiencing high number of console errors.
+  ```{{copy}}
 
-6. On the right, click the **IDE** tab.  
+  No need for body text if you won't want to, but make sure check the box that says `Include a sample of 10 logs in the alert notification`{{copy}} to help provide some context.
 
-    Open the file `store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
+7. For **Notify your team**, you would usually put the Datadog users in your org or team that you want to be notified. In this case, since it's a training account, you can put your own email address in using `@email.address@yourorg.com` in the field.
 
-    **Lines 13-23** are the RUM script in the front end and set the initialization arguments. This code may be slightly different than the current code snippet in the Datadog UI. It will still work.
+8. Finally, click **Create** to create the monitor and you should be taken to the monitor's status page, where it will now take a few moments to gather data and start sending alerts.
 
-    **Line 20** connects associated APM traces to the RUM events. When you view RUM event details in the RUM UI, any associated traces will be displayed in the RUM event details.
+While you wait, take a moment to discover some other ways to help identify trends and prioritize your work.
 
-    Notice that the code snippet includes environment variables for `applicationId` and `clientToken`.
-
-7. Open the file `microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
-
-8. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
-    
-    Copy the `applicationId` from the RUM UI page. In the terminal, assign the value you copied to `DD_APPLICATION_ID` using the `export` command: `export DD_APPLICATION_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
-
-    Copy the `clientToken` from the RUM UI page. In the terminal, assign the value you copied to `DD_CLIENT_TOKEN` using the `export` command: `export DD_CLIENT_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
-    
-    Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
-
-8. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the Storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
-
-9. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
-
-    You'll notice a few pieces of the application are a bit buggy. For instance, advertisements aren't showing up correctly in the microsite and there's some latency in both the microsite and the storefront.
-
-    Don't worry about it for now, you'll investigate these errors soon.
-
-10. Now navigate back to RUM Application page in Datadog. After a few moments of gathering data, the section under **Verify you installation** should have a button titled **Explore User Sessions**, resembling this image: 
-
-    ![@TODO: add screenshot](assets/screenshot.png)
-
-11. Click that button and you will be taken to the RUM Explorer page, where user session data is displayed. It may take a few moments for more data to come in. Explore this page for a moment or two, you'll use it soon to drill down into a user's session.
-
-Now that the application is up and running with RUM, it's time to explore the different tools at your disposal for monitoring your application.
+Click the **Continue** button to move on and learn how to use RUM Analytics to determine which service needs more attention in terms of performance.

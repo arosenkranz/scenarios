@@ -12,15 +12,19 @@
     "steps": [
       {
         "text": "01-step.md",
-        "title": "Create a RUM Monitor to Prevent Issues"
+        "title": "Create a RUM Monitor to alert on issues"
       },
       {
         "text": "02-step.md",
-        "title": "Configure Global Context and Custom Actions"
+        "title": "Use RUM Analytics to identify performance issues"
+      },
+      {
+        "text": "03-step.md",
+        "title": "Fix and configure the app with global context and custom user actions"
       }
     ],
     "finish": {
-      "text": "03-finish.md"
+      "text": "04-finish.md"
     },
     "assets": {
       "host01": [
@@ -66,6 +70,18 @@
         },
         {
           "file": "puppeteer.js",
+          "target": "/root"
+        },
+        {
+          "file": "Advertisement.tsx",
+          "target": "/root"
+        },
+        {
+          "file": "DiscountList.tsx",
+          "target": "/root"
+        },
+        {
+          "file": "index.tsx",
           "target": "/root"
         },
         {
