@@ -17,7 +17,8 @@ const Advertisement = () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_DD_ADS_URL}/ads`);
       const data = await response.json();
-      const { url, path } = data[Math.floor(Math.random() * data.length)];
+      const { url, path, name, id } =
+        data[Math.floor(Math.random() * data.length)];
       const bannerAdRes = await fetch(
         `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}`
       );
@@ -27,8 +28,10 @@ const Advertisement = () => {
       const bannerAd = await bannerAdRes.blob();
       setAd({ img: URL.createObjectURL(bannerAd), url });
 
-      datadogRum.addAction('changed-advertisement', {
+      datadogRum.addAction('Changed Ad', {
         advertisement: {
+          id,
+          name,
           url,
           path,
         },

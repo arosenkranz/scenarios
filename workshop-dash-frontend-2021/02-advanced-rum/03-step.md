@@ -8,13 +8,22 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 
 2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
 
-  Find the line in the `handleUserGetAd` function that had the error and you'll notice the extra `.jpg` extension has been removed and the `fetch` request looks like this:
+  Find the line in the `handleUserGetAd` function that had the error and you'll notice the extra `.jpg` extension has been removed.
+  
+3. Also notice the use of the following code:
 
   ```jsx
-  const bannerAdRes = await fetch(
-      `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}`
-    );
-  ``` 
+  datadogRum.addAction('Changed Ad', {
+    advertisement: {
+      id,
+      name,
+      url,
+      path,
+    },
+  });
+  ```
+
+  This will send a custom action to Datadog that provides a more detailed view of the advertisement that was clicked, allowing you to identify any ads that have issues.
 
 3. Next, you're going to set some global context data so all collected metrics will be associated with data you can use in Datadog.
 
