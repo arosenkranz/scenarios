@@ -4,7 +4,9 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
 1. Navigate to the <a href="https://app.datadoghq.com/rum/explorer" target="_datadog">**RUM Explorer**</a> page.
 
-  From this page, you can see information about user sessions, errors encountered, what pages were viewed, and other important information that allows you to understand what's going on in your application.
+  From this page, you can see information about user sessions, errors encountered, what pages were viewed, and other important information that allows you to understand what's going on in your application. It should resemble this image:
+
+  ![The RUM Explorer displays user session data and error information](assets/rum-explorer.png)
 
 2. On the left-hand side, you'll find a list of facets you can use to help filter this data.
   
@@ -12,25 +14,31 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
 3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
 
-4. Click on one of the sessions that has an error, which you can find in the **Error Count** column.
+4. Click on one of the sessions that has an error, which you can find in the **Error Count** column. The session should look like this image:
+
+  ![The user session shows a list of actions the user took.](assets/session-events.png)
 
   Here, you can see exactly what path the user took in the application and when the error occurred throughout their session.
 
   In this menu, you can also view only the errors or the attributes of the user that had the errors, which makes it easier to see if the issue is specific to a user's environment or location.
 
-5. Another feature is **Session Replay**, which was turned on when we instrumented the applications earlier. Select that button now.
+5. Another feature is **Session Replay**, which was turned on when we instrumented the applications earlier. Select that button now to see a screen like this:
+
+  ![The session replay screen allows you to replay a user's actions and see errors that occurred.](assets/session-replay.png)
 
   This feature allows you to watch back the user's session and see what actions were taken that led them to the error.
 
   Watch the video and you'll notice the error occurred after the user selected the "Get New Ad" button on the site. 
 
-6. On the right-hand side, find one of the user actions that says **Click on Get New Ad**. Hover over it and click on the **Details** icon on it to get a deeper view of the action that led to an error.
+6. On the right-hand side, find one of the user actions that says **Click on Get New Ad**. Hover over it and click on the **Details** icon on it to get a deeper view of the action that led to this error.
 
-  You'll find a number of options for how to view the action, such as what resources were requested, the error message, and the stack trace.
+  ![The user action detailed view shows what occurred in the application during the action.](assets/user-event-performance.png)
 
   Look deep enough and you'll notice that the request was made to a banner endpoint with two `.jpg` extensions. Now that you have an idea of what the problem is, see if you can find where it happened.
 
 7. Click on the error and you'll get a detailed view of where the error occurs in the source code.
+
+  ![The error view shows the source code where the error occurred.](assets/sourcemap-error.png)
 
   Because you uploaded the source maps with the `datadog-ci` tool earlier, Datadog can show you the line in the application's source code that caused the error. Without it, you would be shown where the error occurred in the minified JavaScript, which is not very helpful.
 

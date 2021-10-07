@@ -94,7 +94,7 @@ Let's configure Datadog RUM for the app.
 
 13. Now navigate back to RUM Application page in Datadog. After a few moments of gathering data, the section under **Verify your installation** should have a button titled **Explore User Sessions**, resembling this image: 
 
-  ![@TODO: add screenshot](assets/screenshot.png)
+  ![The RUM application is ready display user data.](assets/rum-ready.png)
 
 14. Click that button and you will be taken to the RUM Explorer page, where user session data is displayed. It may take a few moments for more data to come in. Explore this page for a moment or two, you'll use it soon to drill down into a user's session.
 

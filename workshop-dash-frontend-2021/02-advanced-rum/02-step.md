@@ -16,13 +16,13 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   The result should look something like this:
 
-  ![@TODO: add screenshot]()
+  ![The analytics view compares both service's Largest Contentful Paint metrics for the home page.](assets/analytics-lcp.png)
 
 3. The **store-frontend** service seems to be experiencing a poor LCP metric, so it's safe to say this is where you may want to focus on next for performance improvements.
 
   Click on the service name to and then select **View events** from the menu. Then select one of the events to see how it performed. It should look something like this image:
 
-  ![@TODO: add screenshot]()
+  ![The page load time is broken down into different resources to view how long they individually took.](assets/analytics-loadpage.png)
 
 4. Navigate through the list and you'll notice it takes a lot of the scripts around 3 seconds to load, and then the ads and discounts take about another 3 seconds to load after that. 
 
@@ -30,7 +30,7 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
 Navigate back to the monitor you created earlier from the <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitors > Manage Monitors**</a> page and you'll find that it's starting to send an alert, as the next image shows:
 
-  ![@TODO: add screenshot]()
+  ![The monitor created earlier is now displaying an alert.](assets/monitor-alert.png)
 
 In the next and final step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the microsite's user events so you can capture more meaningful information about each user's session.
 
