@@ -6,8 +6,8 @@ import App from './App';
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
-  applicationId: process.env.REACT_APP_DD_APPLICATION_ID || '',
-  clientToken: process.env.REACT_APP_DD_CLIENT_TOKEN || '',
+  applicationId: `${import.meta.env.REACT_APP_DD_APPLICATION_ID}`,
+  clientToken: `${import.meta.env.REACT_APP_DD_CLIENT_TOKEN}`,
   site: 'datadoghq.com',
   service: 'storedog-microsite',
   version: '1.1',
