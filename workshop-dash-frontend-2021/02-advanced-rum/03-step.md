@@ -35,33 +35,18 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 
 4. Open the **IDE** tab to the right and then open the `storedog-microsite/src/index.tsx`{{open}} file.
 
-  You'll notice that below the RUM configuration from earlier, there's two new lines:
+  You'll notice that below the RUM configuration from earlier, there's two new lines of code.
 
-  ```jsx
-  // set context for the user
-  datadogRum.setUser({
-    id: '1234',
-    name: 'John Doe',
-    email: 'john.doe@storedog.com',
-    plan: 'premium',
-  });
-
-  // if coming from main storedog website, set a global context value
-  if (window.location.search.includes('storedog')) {
-    datadogRum.addRumGlobalContext('fromStoredog', true);
-  }
-  ```
-
-  First, you'll notice that the `setUser` function is setting the user's ID, name, email, and plan. This helps gain an understanding of what users are receiving errors.
+  The `setUser` method is setting the user's ID, name, email, and plan. This helps gain an understanding of what users are receiving errors.
   
-  The `addRumGlobalContext` function is setting a global context value that can be used to identify users that come from the main Storedog site.
+  The `addRumGlobalContext` method is setting a global context value that can be used to identify users that come from the main Storedog site.
 
   > **Note:** Typically, you'd set the user data context data after the user logs in and authorizes their session.
 
 5. Next, you're going to add some custom user actions to track how they are interacting with the discounts. Move an updated `DiscountList` component into the `src/components/` directory with this command:
 
   ```
-  mv /root/DiscountList.tsx /store-microsite/src/components/DiscountList.tsx
+  mv /root/DiscountList.tsx /storedog-microsite/src/components/DiscountList.tsx
   ```{{execute}}
 
 6. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/DiscountList.tsx`{{open}} file to see the updated component.
@@ -79,4 +64,10 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 
 11. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
 
-  Go back to the **RUM Explorer** page and wait a few moments, perhaps even update the time span to be for the past 5 minutes to see fresher data. You should that users are no longer having the issue!
+12. It'll take the monitor a bit to exit its **Alert** state, so while you wait, head back to the RUM Explorer in Datadog and watch the session data coming in for the `store-microsite` service. 
+
+13. After a few moments, you'll see that users are no longer encountering the errors from before. Open up a session and you'll see that the user can now change the ads without any issues.
+
+  ![@TODO: Add screenshot]()
+
+14. Note 

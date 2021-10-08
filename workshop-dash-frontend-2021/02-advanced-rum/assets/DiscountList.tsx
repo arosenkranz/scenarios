@@ -74,7 +74,7 @@ const DiscountList = () => {
     }
 
     // add custom action
-    datadogRum.addAction('discounts-sorted', {
+    datadogRum.addAction('Discount List Sorted', {
       sort: {
         column: columnName,
         sortDirection: sortDirection === 'asc' ? 'desc' : 'asc',
