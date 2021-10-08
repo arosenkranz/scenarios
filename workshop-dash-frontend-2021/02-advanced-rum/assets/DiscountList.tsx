@@ -148,6 +148,7 @@ const DiscountList = () => {
                       sortBy === 'name' ? 'bg-storedog-dark' : ''
                     }`}
                     onClick={() => sortDiscounts('name')}
+                    data-dd-action-name='Sort by name'
                   >
                     Discount Name
                     <span
@@ -165,6 +166,7 @@ const DiscountList = () => {
                       sortBy === 'code' ? 'bg-storedog-dark' : ''
                     }`}
                     onClick={() => sortDiscounts('code')}
+                    data-dd-action-name='Sort by code'
                   >
                     Code
                     <span
@@ -182,6 +184,7 @@ const DiscountList = () => {
                       sortBy === 'value' ? 'bg-storedog-dark' : ''
                     }`}
                     onClick={() => sortDiscounts('value')}
+                    data-dd-action-name='Sort by value'
                   >
                     Discount Value ($)
                     <span
