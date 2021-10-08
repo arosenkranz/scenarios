@@ -52,9 +52,12 @@ REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN" > .env
 
 cp .env /storedog-microsite
 
-statusupdate envars
-
-statuscheck built
+cd /storedog-microsite
+npm run build
+npx datadog-ci sourcemaps upload /storedog-microsite/dist \
+  --service=storedog-microsite \
+  --release-version=1.1 \
+  --minified-path-prefix="${MICROSITE_URL}"
 
 cd /root/lab
 docker-compose up -d

@@ -11,10 +11,8 @@ done
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 
-git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
+git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
-git fetch
-git checkout workshop
 npm install
 
 # Fetch discounts in the browser
@@ -44,14 +42,3 @@ mv /root/puppeteer.js /root/lab/puppeteer.js
 docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate environment
-
-statuscheck envars
-
-cd /storedog-microsite
-npm run build
-npx datadog-ci sourcemaps upload /storedog-microsite/dist \
-  --service=storedog-microsite \
-  --release-version=1.1 \
-  --minified-path-prefix="${MICROSITE_URL}"
-
-statusupdate built
