@@ -14,7 +14,7 @@ mv /root/docker-compose.yml /root/lab
 git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
 git fetch
-git checkout workshop-version
+git checkout workshop
 npm install
 
 # Fetch discounts in the browser
