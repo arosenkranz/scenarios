@@ -1,18 +1,16 @@
-In the terminal on the right, the environment is being prepared. You will see a message `Provisioning Complete` along with some login credentials when the environment is ready.
+In the terminal on the right, the same environment from the previous activity is being prepared. You will see a message `Provisioning Complete` along with some login credentials when the environment is ready.
 
-Since you already created a RUM application with a name of "Storedog", this lab has already fetched that information and the application is already running. This way you can get right into creating a monitor.
+Since you already created a RUM application with a name of "Storedog", this lab has already fetched that information and the application is already running. So no need to manually build and start up the service this time.
 
-1. Confirm the application is working by running the following command in the terminal:
+1. Confirm the seven services are running by executing the following command in the terminal:
 
   ```
   docker ps
   ```{{execute}}
 
-  You should see a list of seven containers running. If not, use `docker-compose down`{{execute}} and `docker-compose up`{{execute}} to restart the containers.
+  > **Note:** If , use `docker-compose down`{{execute}} and `docker-compose up`{{execute}} to restart the containers.
 
 2. Make sure you are logged into your <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. 
-
-  > **Note:** If the credentials are not displayed in the terminal, run the command `creds`{{execute}} in the terminal.
 
 3. Navigate to the <a href="https://app.datadoghq.com/monitors#/create" target="_datadog">**Monitors > New Monitor**</a> page and select the option to create a **Real User Monitoring** monitor.
 
