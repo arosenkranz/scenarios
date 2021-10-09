@@ -72,7 +72,7 @@ Let's configure Datadog RUM for the app.
 9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
     
   ```
-  npx datadog-ci sourcemaps upload /storedog-microsite/build \
+  npx @datadog/datadog-ci sourcemaps upload /storedog-microsite/build \
       --service=storedog-microsite \
       --release-version=1.1 \
       --minified-path-prefix="${MICROSITE_URL}"

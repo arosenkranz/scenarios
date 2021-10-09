@@ -110,14 +110,14 @@ const DiscountList = () => {
 
         // add custom actions for saving and removing discounts
         datadogRum.addAction(
-          `Discount ${discount.saved ? 'Saved' : 'Removed'}`,
+          `Discount ${discount.saved ? 'Removed' : 'Saved'}`,
           {
             discount: {
               id: discount.id,
               code: discount.code,
               name: discount.name,
               value: discount.value,
-              action: discount.saved ? 'saved' : 'removed',
+              action: discount.saved ? 'removed' : 'saved',
             },
           }
         );
