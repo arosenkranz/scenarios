@@ -39,6 +39,6 @@ ln -s /storedog-microsite /root/lab/storedog-microsite
 mv /root/puppeteer.sh /root/lab/puppeteer.sh
 mv /root/puppeteer.js /root/lab/puppeteer.js
 
-# docker-compose -f /root/lab/docker-compose.yml pull
+docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate environment
