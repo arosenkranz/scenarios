@@ -54,7 +54,7 @@ cp .env /storedog-microsite
 
 cd /storedog-microsite
 npm run build
-datadog-ci sourcemaps upload /storedog-microsite/dist \
+npx @datadog/datadog-ci sourcemaps upload /storedog-microsite/dist \
   --service=storedog-microsite \
   --release-version=1.1 \
   --minified-path-prefix="${MICROSITE_URL}"
