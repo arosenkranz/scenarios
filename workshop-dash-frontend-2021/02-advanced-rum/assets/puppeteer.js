@@ -45,14 +45,14 @@ const runSession = async (url, selectors) => {
 };
 
 // Session 1
-(async () => {
-  const selectors = [
-    '#search-bar > .ml-2 > .btn',
-    '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
-    '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
-  ];
-  await runSession(startUrl, selectors);
-})();
+// (async () => {
+//   const selectors = [
+//     '#search-bar > .ml-2 > .btn',
+//     '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
+//     '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
+//   ];
+//   await runSession(startUrl, selectors);
+// })();
 
 // Session 2
 (async () => {
@@ -64,14 +64,14 @@ const runSession = async (url, selectors) => {
 })();
 
 // Session 3
-(async () => {
-  const selectors = [
-    'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
-    '.row > #sidebar > div > #sidebar_products_search > .btn',
-    '.container > #main-nav-bar > .nav > #home-link > .nav-link',
-  ];
-  await runSession(startUrl, selectors);
-})();
+// (async () => {
+//   const selectors = [
+//     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
+//     '.row > #sidebar > div > #sidebar_products_search > .btn',
+//     '.container > #main-nav-bar > .nav > #home-link > .nav-link',
+//   ];
+//   await runSession(startUrl, selectors);
+// })();
 
 // Session 4
 (async () => {

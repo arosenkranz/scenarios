@@ -45,14 +45,14 @@ const runSession = async (url, selectors) => {
 };
 
 // Session 1
-(async () => {
-  const selectors = [
-    '#search-bar > .ml-2 > .btn',
-    '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
-    '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
-  ];
-  await runSession(startUrl, selectors);
-})();
+// (async () => {
+//   const selectors = [
+//     '#search-bar > .ml-2 > .btn',
+//     '#taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
+//     '.breadcrumb > .breadcrumb-item:nth-child(1) > span > a > span',
+//   ];
+//   await runSession(startUrl, selectors);
+// })();
 
 // Session 2
 (async () => {
@@ -64,14 +64,14 @@ const runSession = async (url, selectors) => {
 })();
 
 // Session 3
-(async () => {
-  const selectors = [
-    'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
-    '.row > #sidebar > div > #sidebar_products_search > .btn',
-    '.container > #main-nav-bar > .nav > #home-link > .nav-link',
-  ];
-  await runSession(startUrl, selectors);
-})();
+// (async () => {
+//   const selectors = [
+//     'div > #taxonomies > .mt-4 > .list-group > .list-group-item:nth-child(1)',
+//     '.row > #sidebar > div > #sidebar_products_search > .btn',
+//     '.container > #main-nav-bar > .nav > #home-link > .nav-link',
+//   ];
+//   await runSession(startUrl, selectors);
+// })();
 
 // Session 4
 (async () => {
@@ -100,13 +100,16 @@ const runSession = async (url, selectors) => {
   const selectors = [
     'tbody tr:nth-child(3) button',
     'tbody tr:nth-child(25) button',
+    'thead th:nth-child(2)',
     'footer button.text-underline',
     'tbody tr:nth-child(5) button',
     'tbody tr:nth-child(10) button',
     'header button.text-underline',
     'thead th:first-child',
+    'tbody tr:nth-child(25) button',
     'header button.text-underline',
     'thead th:first-child',
+    'tbody tr:nth-child(10) button',
     'footer button.text-underline',
   ];
 
@@ -115,7 +118,9 @@ const runSession = async (url, selectors) => {
 
   try {
     console.log(`Heading to ${micrositeUrl}`);
-    await page.goto(micrositeUrl, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+      waitUntil: 'domcontentloaded',
+    });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);
 
