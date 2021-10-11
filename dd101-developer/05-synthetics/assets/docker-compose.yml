@@ -39,7 +39,7 @@ services:
       - DD_SERVICE=discounts-service
       - DD_VERSION=1.0
       - DD_ENV=dd101-dev
-    image: 'ddtraining/discounts-service:latest'
+    image: 'ddtraining/discounts:2.0'
     command:
       [
         sh,
@@ -69,7 +69,7 @@ services:
       - DD_SERVICE=store-frontend
       - DD_VERSION=1.0
       - DD_ENV=dd101-dev
-    image: 'ddtraining/ecommerce-frontend:latest'
+    image: 'ddtraining/storefront-fixed:2.0'
     command: sh docker-entrypoint.sh
     ports:
       - '3000:3000'
@@ -96,7 +96,7 @@ services:
       - DD_SERVICE=advertisements-service
       - DD_VERSION=1.0
       - DD_ENV=dd101-dev
-    image: 'ddtraining/advertisements-service:latest'
+    image: 'ddtraining/advertisements:2.0'
     command:
       [
         sh,
