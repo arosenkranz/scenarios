@@ -18,7 +18,7 @@ Notice the drop in durations for certain resources after you restarted the app.
 
 Hover over each name in the legend below the graph to see which resources had improved performance after fixing the discounts and advertisements services.
 
-6. Navigate to <a href="https://app.datadoghq.com/apm/map" target="_datadog">**APM** > **Service Map**</a>. 
+6. Navigate to <a href="https://app.datadoghq.com/apm/map" target="_datadog">**APM** >**Service Map**</a>. 
 
 The outline of the store-frontend, discounts-service, and advertisements-service nodes are now green, meaning the monitor for each service is in the `OK` status.
 

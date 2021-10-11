@@ -5,28 +5,24 @@
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "about-lab.md",
-        "title": "About the Lab"
-      },
-      {
-        "text": "api-test.md",
+        "text": "01-api-test.md",
         "title": "Create an API Test"
       },
       {
-        "text": "improve-api-test.md",
+        "text": "02-improve-api-test.md",
         "title": "Improve the API Test"
       },
       {
-        "text": "browser-test-one.md",
+        "text": "03-browser-test-one.md",
         "title": "Create a Browser Test"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "04-finish.md"
     },
     "assets": {
       "host01": [

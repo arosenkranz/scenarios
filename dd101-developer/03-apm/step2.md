@@ -36,10 +36,4 @@ Let's create monitors to track the latency of specific store-frontend, discounts
 
 4. Repeat steps 5 - 8 above.
 
-#### Advertisements Service
-
-1. Repeat the steps you completed for the discounts service monitor. 
-  
-  In step 3, select `advertisements-service` for the **Service** and `get_/ads` for the **Resource**.
-
 When you view the monitors in <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitor** > **Manage Monitors**</a>, you'll notice that their status is `No Data`. Because the monitors are new, it may take a few minutes for the status of the monitors to update. 

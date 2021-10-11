@@ -1,9 +1,11 @@
 #!/bin/bash
 
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+
+statuscheck "environment"
 
 # Wait for required assets to appear in the filesystem
-until  [ -f /root/docker-compose.yml ]
+until  [ -f /root/puppeteer.sh ]
 do
   sleep 2
 done
@@ -28,6 +30,6 @@ ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 cd /root/lab
 
-docker pull datadog/agent:7.31.0
+docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate "workspace"

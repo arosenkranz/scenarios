@@ -6,7 +6,9 @@ export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environmen
 
 clear
 
+statusupdate "environment"
 statuscheck "workspace"
+
 cd /root/lab 
 
 printf "DD_API_KEY=$DD_API_KEY\n\
@@ -16,8 +18,6 @@ DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN\n\
 POSTGRES_USER=postgres\n\
 POSTGRES_PASSWORD=postgres\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
-
-statusupdate "environment"
 
 statusupdate complete
 prepenvironment

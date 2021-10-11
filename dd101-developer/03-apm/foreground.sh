@@ -8,7 +8,9 @@ export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environmen
 
 clear
 
-statuscheck environment
+statusupdate "environment"
+statuscheck "workspace"
+
 cd /root/lab 
 
 printf "DD_API_KEY=$DD_API_KEY\n\

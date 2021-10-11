@@ -19,9 +19,6 @@
       },
       {
         "text": "step4.md"
-      },
-      {
-        "text": "step5.md"
       }
     ],
     "finish": {
@@ -31,18 +28,47 @@
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
+        },
+        {
+          "file": "index.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "spree_application.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "home_controller.rb",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-config.rb",
+          "target": "/root"
+        },
+        {
+          "file": "discounts.py",
+          "target": "/root"
+        },
+        {
+          "file": "discounts-requirements.txt",
+          "target": "/root"
+        },
+        {
+          "file": "ads.py",
+          "target": "/root"
+        },
+        {
+          "file": "ads-requirements.txt",
+          "target": "/root"
         },
         {
           "file": "puppeteer-mobile.js",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer.sh",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         }
       ]
     }

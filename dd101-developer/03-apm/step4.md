@@ -30,19 +30,15 @@ The monitors you created should have gathered some data. Because the monitors ar
 
 11. Browse the file. Notice that two sleep commands (**Lines 32-33** and **Lines 52-53**) were left after testing. Delete these lines.
 
-12. Click `ads-service/ads.py`{{open}}.
+12. Go back to the Service Map browser tab where you were inspecting the store-frontend.
 
-13. Browse the file. Notice that two sleep commands (**Lines 41-42** and **Lines 55-56**) were left after testing. Delete these lines.
+13. Click the **store-frontend** node, then click **View service overview**. 
 
-14. Go back to the Service Map browser tab where you were inspecting the store-frontend.
-
-15. Click the **store-frontend** node, then click **View service overview**. 
-
-16. Scroll to the **Endpoints** list and sort the list by **AVG LATENCY**. <p> Note: If the **AVG LATENCY** column is not displayed, click the **Options** icon next to the **Search Endpoints** field and select **AVG LANTECY**. 
+14. Scroll to the **Endpoints** list and sort the list by **AVG LATENCY**. <p> Note: If the **AVG LATENCY** column is not displayed, click the **Options** icon next to the **Search Endpoints** field and select **AVG LANTECY**. 
 
   Notice the `Spree::HomeController#index`, `Spree::ProductsController#show`, and `Spree::ProductsController#index` have latencies more than 2.5 seconds. 
 
-17. For each endpoint listed in the previous step, click the endpoint to view its page. 
+15. For each endpoint listed in the previous step, click the endpoint to view its page. 
 
   Scroll to the **Span Summary** and sort by **AVG DURATION**. <p> Scroll to the **Traces** list. Click any of the traces to view the details. 
   

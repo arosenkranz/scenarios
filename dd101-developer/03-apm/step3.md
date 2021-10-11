@@ -40,4 +40,8 @@ While the monitors are gathering data, let's see how the store-frontend service 
 11. Create a new line under **Line 11** and paste the line from step 7. 
 ```<br /><center><a href="<%= @ads['url'] %>"><img src="data:image/png;base64,<%= @ads['base64'] %>" /></a></center>```{{copy}} Make sure to match the indent of the new line (**Line 12**) to that of the next line (**Line 13**).
 
-These changes should fix the errors you are seeing in the store-frontend service. It will take about 3-4 minutes for new data to be displayed into Datadog. In the meantime, navigate back to the <a href="https://app.datadoghq.com/apm/services?env=dd101-dev&paused=false" target="_datadog">**APM** > **Services**</a> page and you'll find that our other monitors are sending alerts. Let's explore what may be causing this high latency.
+These changes should fix the errors you are seeing in the store-frontend service. It will take about 3-4 minutes for new data to be displayed into Datadog. 
+
+In the meantime, navigate back to the <a href="https://app.datadoghq.com/apm/services?env=dd101-dev&paused=false" target="_datadog">**APM** > **Services**</a> page and you'll find that our other monitors are sending alerts. Let's explore what may be causing this high latency.
+
+Click **Continue** to move on.

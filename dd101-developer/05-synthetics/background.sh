@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statusupdate tools
 
 git clone https://github.com/DataDog/ecommerce-workshop.git /ecommworkshop
@@ -40,6 +40,3 @@ do sleep 5
 done
 
 statusupdate complete
-
-# Generate traffic
-# ./gor --input-file-loop --input-file requests_0.gor --output-http "http://localhost:3000" >> /dev/null 2>&1
