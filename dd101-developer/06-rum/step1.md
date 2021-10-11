@@ -14,7 +14,7 @@ This lab uses a Docker to run a demo ecommerce website called "Storedog".
   
   ![cdnsync](assets/cdnsync.png)
 
-7. Back in the lab platform, open the `IDE` tab (it may take a few seconds to load) to navigate to our front end code. Within the IDE, open the file located at `store-frontend/app/views/layouts/application.html.erb`{{open}} (you can click to load this file if the IDE is already displayed). 
+7. Back in the lab platform, open the `IDE` tab (it may take a few seconds to load) to navigate to our front end code. Within the IDE, open the file located at `store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}} (you can click to load this file if the IDE is already displayed). 
 
   This Ruby file is the main template for our application. By integrating the RUM script here, it will be available throughout our application.
 
