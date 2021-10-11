@@ -29,25 +29,13 @@
         {
           "file": "docker-compose.yml",
           "target": "/root"
-        },
-        {
-          "file": "regression.patch",
-          "target": "/root"
-        },
-        {
-          "file": "frontend-docker-entrypoint.sh",
-          "target": "/root"
-        },
-        {
-          "file": "discounts.py",
-          "target": "/root"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "terminal",
-    "uieditorpath": "/root",
+    "uieditorpath": "/root/lab",
     "showdashboard": true,
     "dashboards": [
       {

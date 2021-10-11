@@ -7,7 +7,6 @@ do
   sleep 2
 done
 
-
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 

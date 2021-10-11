@@ -39,7 +39,7 @@ services:
       - DD_SERVICE=discounts-service
       - DD_VERSION=1.0
       - DD_ENV=dd101-dev
-    image: 'ddtraining/discounts-service-fixed:latest'
+    image: 'ddtraining/discounts-service:latest'
     command:
       [
         sh,
@@ -49,7 +49,7 @@ services:
     ports:
       - '5001:5001'
     volumes:
-      - /ecommworkshop/discounts-service-fixed:/app
+      - /ecommworkshop/discounts-service:/app
     depends_on:
       - agent
       - db

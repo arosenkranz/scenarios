@@ -7,14 +7,12 @@ do
   sleep 2
 done
 
-
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 
-git clone https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
+git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
 npm install
-npm i -g craco --silent
 
 # Fetch discounts in the browser
 mv /root/home_controller.rb /ecommworkshop/store-frontend-broken-instrumented/app/controllers/spree/home_controller.rb
