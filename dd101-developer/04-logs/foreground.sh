@@ -2,31 +2,22 @@
 
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
+export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com
 
-statuscheck files
+clear
 
-cd /ecommworkshop
-rm -r ./store-frontend-instrumented-fixed
-rm -r ./store-frontend-broken-instrumented
-git fetch
-git checkout 11e4a4b ./store-frontend-instrumented-fixed
-git checkout 11e4a4b ./store-frontend-broken-instrumented
+cd /root/lab 
 
+printf "DD_API_KEY=$DD_API_KEY\n\
+DD_APP_KEY=$DD_APP_KEY\n\
+POSTGRES_USER=$POSTGRES_USER\n\
+POSTGRES_PASSWORD=$POSTGRES_PASSWORD\n\
+STOREDOG_URL=$STOREDOG_URL" > .env 
 
-sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./ads-service/requirements.txt
-sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./ads-service-fixed/requirements.txt
-sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./discounts-service-fixed/requirements.txt
-sed -i 's/ddtrace==0.28.0/ddtrace==0.41.0/g' ./discounts-service/requirements.txt
-#cp /root/frontend-docker-entrypoint.sh ./store-frontend-instrumented-fixed/docker-entrypoint.sh
-#cp /root/frontend-docker-entrypoint.sh ./store-frontend-broken-instrumented/docker-entrypoint.sh
+clear
 
-cd /ecommworkshop/deploy/docker-compose
-docker-compose -f docker-compose-fixed.yml up -d
-
-envready
-
-docker kill docker-compose_db_1
+statusupdate "environment"
+statuscheck "workspace"
 
 statusupdate complete
-
 prepenvironment

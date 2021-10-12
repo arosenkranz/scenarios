@@ -1,6 +1,6 @@
 {
   "title": "Log Querying and Analytics",
-  "description": "Quick overview of Search, Groups, Patterns, and Transactions",
+  "description": "Overview of Search, Groups, Patterns, and Transactions",
   "time": "30 minutes",
   "difficulty": "Beginner",
   "details": {
@@ -33,28 +33,43 @@
     "assets": {
       "host01": [
         {
-          "file": "envready",
-          "target": "/usr/local/bin/",
+          "file": "docker-compose.yml",
+          "target": "/root",
           "chmod": "+x"
         },
         {
-          "file": "docker-compose-fixed.yml",
-          "target": "/root"
+          "file": "dd_agent.sql",
+          "target": "/root",
+          "chmod": "+x"
         },
         {
-          "file": "docker-compose-broken.yml",
-          "target": "/root"
+          "file": "ads.py",
+          "target": "/root",
+          "chmod": "+x"
         },
         {
-          "file": "frontend-docker-entrypoint.sh",
-          "target": "/root"
+          "file": "discounts.py",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root",
+          "chmod": "+x"
         }
       ]
     }
   },
   "environment": {
     "uilayout": "terminal",
-    "uieditorpath": "/ecommworkshop",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
     "showdashboard": true,
     "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
