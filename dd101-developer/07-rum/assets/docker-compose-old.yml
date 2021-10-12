@@ -27,7 +27,7 @@ services:
       - POSTGRES_HOST=db
       - DD_ENV=dd101-dev
       - DD_SERVICE=discounts-service
-      - DD_VERSION=1.1
+      - DD_VERSION=2.0
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
@@ -50,7 +50,7 @@ services:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'discounts-service'
-      com.datadoghq.tags.version: '1.1'
+      com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'discounts'
   frontend:
     environment:
@@ -59,7 +59,7 @@ services:
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_ENV=dd101-dev
       - DD_SERVICE=store-frontend
-      - DD_VERSION=1.1
+      - DD_VERSION=2.0
       - DB_USERNAME
       - DB_PASSWORD
       - DD_CLIENT_TOKEN
@@ -81,7 +81,7 @@ services:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service": "store-frontend"}]'
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'store-frontend'
-      com.datadoghq.tags.version: '1.1'
+      com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'frontend'
   advertisements:
     environment:
@@ -92,7 +92,7 @@ services:
       - POSTGRES_HOST=db
       - DD_ENV=dd101-dev
       - DD_SERVICE=advertisements-service
-      - DD_VERSION=1.1
+      - DD_VERSION=2.0
       - DD_AGENT_HOST=agent
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
@@ -115,7 +115,7 @@ services:
       com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'advertisements-service'
-      com.datadoghq.tags.version: '1.1'
+      com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'advertisements'
   db:
     image: postgres:11-alpine

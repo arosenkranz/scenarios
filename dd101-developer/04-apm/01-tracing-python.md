@@ -38,7 +38,7 @@ You'll start by instrumenting the discounts service, which is written in Python:
 
     In the form, set **DD_SERVICE** to `discounts-service`
 
-7. Set **DD_ENV** to `dd101-sre`
+7. Set **DD_ENV** to `dd101-dev`
 
 8. Enable **Tracing Without Limits**. 
 
@@ -55,7 +55,7 @@ You'll start by instrumenting the discounts service, which is written in Python:
 12. Click on these lines to insert the environment variables:
 
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# discounts tracing vars">- DD_SERVICE=discounts-service
-          - DD_ENV=dd101-sre
+          - DD_ENV=dd101-dev
           - DD_LOGS_INJECTION=true
           - DD_TRACE_SAMPLE_RATE=1
           - DD_PROFILING_ENABLED=true

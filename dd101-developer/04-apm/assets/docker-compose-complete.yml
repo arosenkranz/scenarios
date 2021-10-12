@@ -8,7 +8,7 @@ services:
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
       - DD_PROCESS_AGENT_ENABLED=true
       - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
-      - DD_TAGS='env:dd101-sre'
+      - DD_TAGS='env:dd101-dev'
       - DD_APM_NON_LOCAL_TRAFFIC=true
     ports:
       - 127.0.0.1:8126:8126/tcp
@@ -24,25 +24,20 @@ services:
       - POSTGRES_USER
       - POSTGRES_HOST=db
       - DD_SERVICE=discounts-service
-      - DD_ENV=dd101-sre
+      - DD_ENV=dd101-dev
       - DD_LOGS_INJECTION=true
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
-      - DD_AGENT_HOST=datadog 
+      - DD_AGENT_HOST=datadog
     image: 'ddtraining/discounts:2.0.0'
-    command:
-      [
-        sh,
-        -c,
-        'ddtrace-run flask run --port=5001 --host=0.0.0.0',
-      ]
+    command: [sh, -c, 'ddtrace-run flask run --port=5001 --host=0.0.0.0']
     ports:
       - '5001:5001'
     depends_on:
       - datadog
       - db
     labels:
-      com.datadoghq.tags.env: 'dd101-sre'
+      com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'discounts-service'
       com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'discounts'
@@ -52,11 +47,11 @@ services:
   frontend:
     environment:
       - DD_SERVICE=store-frontend
-      - DD_ENV=dd101-sre
+      - DD_ENV=dd101-dev
       - DD_LOGS_INJECTION=true
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
-      - DD_AGENT_HOST=datadog 
+      - DD_AGENT_HOST=datadog
     image: 'ddtraining/storefront-fixed:2.0.0'
     command: sh docker-entrypoint.sh
     ports:
@@ -66,7 +61,7 @@ services:
       - discounts
       - advertisements
     labels:
-      com.datadoghq.tags.env: 'dd101-sre'
+      com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'store-frontend'
       com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'frontend'
@@ -79,25 +74,20 @@ services:
       - POSTGRES_USER
       - POSTGRES_HOST=db
       - DD_SERVICE=advertisements-service
-      - DD_ENV=dd101-sre
+      - DD_ENV=dd101-dev
       - DD_LOGS_INJECTION=true
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
-      - DD_AGENT_HOST=datadog 
+      - DD_AGENT_HOST=datadog
     image: 'ddtraining/advertisements:2.0.0'
-    command:
-      [
-        sh,
-        -c,
-        'ddtrace-run flask run --port=5002 --host=0.0.0.0',
-      ]
+    command: [sh, -c, 'ddtrace-run flask run --port=5002 --host=0.0.0.0']
     ports:
       - '5002:5002'
     depends_on:
       - datadog
       - db
     labels:
-      com.datadoghq.tags.env: 'dd101-sre'
+      com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'advertisements-service'
       com.datadoghq.tags.version: '2.0'
       my.custom.label.team: 'advertisements'
@@ -111,7 +101,7 @@ services:
     ports:
       - '5432:5432'
     labels:
-      com.datadoghq.tags.env: 'dd101-sre'
+      com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'database'
       com.datadoghq.tags.version: '11.12'
       my.custom.label.team: 'database'

@@ -5,13 +5,13 @@ Next, you'll add labels to the the discounts service so the Agent will know how 
 2. Add the the following labels to the `discounts` service by clicking on **Copy to Editor** in the following block of code:
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste discounts labels here">
 labels:
-         com.datadoghq.tags.env: 'dd101-sre'
+         com.datadoghq.tags.env: 'dd101-dev'
          com.datadoghq.tags.service: 'discounts-service'
          com.datadoghq.tags.version: '2.0'
          my.custom.label.team: 'discounts'
     </pre> 
 
-    `com.datadoghq.tags.env: 'dd101-sre'` is technically unnecessary in this case because the Agent will set that by default for all services. But there are many use cases where a service would have a different `env` value than the Agent's default.
+    `com.datadoghq.tags.env: 'dd101-dev'` is technically unnecessary in this case because the Agent will set that by default for all services. But there are many use cases where a service would have a different `env` value than the Agent's default.
 
     The last label sets the custom tag `team:discounts`, as declared by `DD_DOCKER_LABELS_AS_TAGS` in the `agent` service.
 

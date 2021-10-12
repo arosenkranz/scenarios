@@ -19,7 +19,7 @@
          - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
          - DD_PROCESS_AGENT_ENABLED=true
          - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
-         - DD_TAGS='env:dd101-sre'
+         - DD_TAGS='env:dd101-dev'
        volumes:
          - /var/run/docker.sock:/var/run/docker.sock:ro
          - /proc/:/host/proc/:ro
@@ -35,7 +35,7 @@ The `environment` block sets the specified environment variables in the Agent co
   - **DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL**: Whether to collect logs emitted by all containers it detects.
   - **DD_PROCESS_AGENT_ENABLED**: Whether to collect processes and containers.
   - **DD_DOCKER_LABELS_AS_TAGS**: Configures the Agent to treat custom container labels as custom tags. In this case, if the Agent reads the label `my.custom.label.team`, it will assign the value to the tag `team`.
-  - **DD_TAGS**: Sets the global `env` tag for all data emitted from the host. In this case, it is setting the special `env` tag to `dd101-sre`. 
+  - **DD_TAGS**: Sets the global `env` tag for all data emitted from the host. In this case, it is setting the special `env` tag to `dd101-dev`. 
 
     Throughout this workshop, you'll see how valuable tags are in Datadog. For now, focus on how to set them in this environment.
 
@@ -61,7 +61,7 @@ The `volumes` block mounts the files on the host filesystem into the container. 
 
 6. To see the Agent's configuration, run `docker-compose exec datadog agent config`{{execute}}. All of the settings are in alphabetical order.
 
-    Scroll up to find the `tags` setting. Confirm that `env:dd101-sre` is listed.
+    Scroll up to find the `tags` setting. Confirm that `env:dd101-dev` is listed.
 
 ### Explore the Datadog App 
 
@@ -73,7 +73,7 @@ Now that you're confident that the Agent is running according to your configurat
 
 2. Navigate to **Infrastructure > Containers**. Here you can see all of the service containers.
 
-3. Click on `lab_discounts_1` and notice the metadata the Agent captures by default. Find the tag `env:dd101-sre`, which was applied to all events, metrics, and logs collected by the Agent.
+3. Click on `lab_discounts_1` and notice the metadata the Agent captures by default. Find the tag `env:dd101-dev`, which was applied to all events, metrics, and logs collected by the Agent.
 
     ![Discounts container pre-configuration](./assets/discounts-container-pre-config.png)
 
