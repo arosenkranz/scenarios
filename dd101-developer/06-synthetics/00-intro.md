@@ -1,9 +1,9 @@
-In this lab you will learn about two different types of synthetic tests available in Datadog:
+In this part of the workshop, you are going to create a synthetic browser test to ensure an optimal user experience. Browser tests allow you to proactively test on popular user flows and confirm the Document Object Model (DOM) is in the correct state during a user session.
 
-  1. API Tests
-  2. Browser Tests
+In this lab, you will:
 
-You will create each of these tests to cover an important business function of Storedog. These tests will run automatically and alert staff when they fail. This will give the Storedog organization peace of mind as they continue to rapidly enhance and grow their application. 
+1. Create a functional test using a browser synthetic test
+2. Learn how connect traces to a synthetic test 
 
 > **Note:** You will use the [Datadog test recorder](https://chrome.google.com/webstore/detail/datadog-test-recorder/kkbncfpddhdmkfmalecgnphegacgejoa?hl=en) Chrome extension to record your tests, so make sure you use Chrome for this activity and install the extension.
 

@@ -10,11 +10,11 @@ Let's start working with the Logs Search.
 
     In the Facets on the left of the Log List, select `advertisements-service` and `discounts-service` under **Service** and `Error` under the **Status** to filter logs just those for these services. 
 
-    ![facets-search](querylogs/assets/facets-search.png)
+    ![facets-search](assets/facets-search.png)
 
 3. When you click a log in the Log List, the <a href="https://docs.datadoghq.com/logs/explorer/#the-log-side-panel" target="_blank">Log Side Panel</a> opens with the log details including assigned tags, the log message, any extracted attributes, related traces, and related infrastructure metrics.
 
-    ![logs-side-panel](querylogs/assets/logs-side-panel.gif)
+    ![logs-side-panel](assets/logs-side-panel.gif)
 
 4. Click a log in the list and view the details of the side panel. Click the **Traces** tab to view the associated trace. Click the **Metrics** tab to view the associated infrastructure metric.
     
@@ -28,7 +28,7 @@ Let's start working with the Logs Search.
 
 8. Common tags and attributes appear in the <a href="https://docs.datadoghq.com/logs/explorer/facets/" target="_blank">Facets</a> list on the left of the Log List automatically. You can add or edit a tag or attribute to the Facets panel from the log details in the log side panel.
 
-    ![create-facet](querylogs/assets/create-facet.gif)
+    ![create-facet](assets/create-facet.gif)
 
 9. Click one of the logs that contains `ERROR [bootstrap]` to open the log side panel. Scroll down to view the list of **Event Attributes**.
 

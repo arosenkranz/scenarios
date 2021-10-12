@@ -4,7 +4,9 @@ For example, the `db` container is running PostgreSQL. The Agent can see what pr
 
 ![DB service pre-integration template](./assets/postgres-pre-integration.png)
 
-The logs from the database service are messy, too. The Agent collects them as-is, without any special processing. Consequently, many are incorrectly tagged as errors. Furthermore, the `service` in log lines is identified as `postgres`, even though it is tagged as `database` in the docker-compose.yml file:
+The logs from the database service are messy, too. The Agent collects them as-is, without any special processing. 
+
+Consequently, many are incorrectly tagged as errors. Furthermore, the `service` in log lines is identified as `postgres`, even though it is tagged as `database` in the docker-compose.yml file:
 
 ![DB logs are in bad shape](./assets/postgres-logs-pre-integration.png)
 
@@ -14,8 +16,6 @@ There's a helpful note at the bottom of this log line detail.
 
 Navigate to the **Integrations** page. Under **Installed**, you should see **Docker**, with an indicator that it's installed. This is one of integrations that Datadog can Autodiscover. The Agent recognizes it as soon as it mounts the `docker.sock` file from the host, which you configured in the Agent lab earlier.
 
-![Docker integration autodiscovered](./assets/docker-autodiscovered.png)
-
 PostgreSQL needs a bit more work. In the search field at the top of the Integrations page, type `postgres`. Click on the card, and then on the **Configuration** tab.
 
 Under **Prepare Postgres**, there are `psql` commands to create a user for the Agent to read statistics. This was already done for you when the lab started.
@@ -23,7 +23,9 @@ Under **Prepare Postgres**, there are `psql` commands to create a user for the A
 Scroll down to the **Docker** section and look at the instructions for enabling metric, log, and trace collection. 
 
 ### Configure the Postgres Integration
+
 Following the instructions from the Postgres Integration:
+
 1. Open `docker-compose.yml`{{open}} in the IDE and find the `db` service section
 
 2.  The following lines have been adapted for docker-compose.yml. Add them to the `labels` block.
@@ -69,6 +71,6 @@ Following the instructions from the Postgres Integration:
 
     ![Postgres logs nicer](./assets/postgres-log-post-config.png)
 
-8. Navigate to **Logs > Configuration** and click on the new **Postgresql** pipeline. You'll learn more about how log pipelines work in the Logs lab.
+8. Navigate to **Logs > Configuration** and click on the new **Postgresql** pipeline to see how logs are processed.
 
 Click the **Continue** button. 

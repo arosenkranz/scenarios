@@ -23,6 +23,6 @@ labels:
 
     ![Discounts container post-configuration](./assets/discounts-container-post-config.png)
 
-5. Navigate to **Logs**, filter by the `discounts-service` facet, and click on a log line. You'll see that new `discounts-service` log lines also have the new tags.
+5. Navigate to the **Logs** page from the left-hand menu, filter by the `discounts-service` facet, and click on a log line. You'll see that new `discounts-service` log lines also have the new tags.
 
 Click the **Continue** button to configure the remaining services.

@@ -10,11 +10,11 @@ With pattern aggregation, logs that have a message with similar structures, belo
 
 3. Click one of the patterns to open the details side panel. The pattern and a list of Events Samples are displayed.
 
-    ![patterns](querylogs/assets/patterns.png)
+    ![patterns](assets/patterns.png)
 
     In the upper-right above the Pattern, click **Show Parsing Rule**. If you want to create a custom <a href="https://docs.datadoghq.com/logs/explorer/#patterns" target="_blank">pipeline</a> for this service/source, you can copy and paste this rule into a <a href="https://docs.datadoghq.com/logs/processing/processors/?tab=ui#grok-parser" target="_blank">Grok Parser</a> along with the log message in the one of the Event Samples, so that these logs are parsed by the pipeline.
 
-    ![grokparser-parsingrule](querylogs/assets/grokparser-parsingrule.png)
+    ![grokparser-parsingrule](assets/grokparser-parsingrule.png)
 
     Close the side panel.
 

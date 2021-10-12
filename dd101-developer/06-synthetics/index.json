@@ -9,16 +9,12 @@
     },
     "steps": [
       {
-        "text": "01-api-test.md",
-        "title": "Create an API Test"
-      },
-      {
-        "text": "02-improve-api-test.md",
-        "title": "Improve the API Test"
-      },
-      {
-        "text": "03-browser-test-one.md",
+        "text": "01-browser-test-setup.md",
         "title": "Create a Browser Test"
+      },
+      {
+        "text": "02-browser-test-result.md",
+        "title": "Check Browser Test Results"
       }
     ],
     "finish": {
