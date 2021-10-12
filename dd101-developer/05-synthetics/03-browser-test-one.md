@@ -14,7 +14,7 @@ You can also record user actions to change the state of the page, such as clicki
 
 In the Datadog App, navigate to **UX Monitoring > New Test** and click on **New Browser Test**. Browser tests are configured in two parts. First, you configure the details common to synthetic tests. Then, you will record the specific actions the test should perform on the web application to satisfy assertions.
 
-### Test cetails
+### Test details
 
 1. For **Starting URL**, enter the global variable `https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/`{{copy}}.
 
@@ -45,8 +45,6 @@ If you have already installed the Datadog Test Recorder extension, skip down to 
 1. Click Chrome's **Back** button to return to the Edit Browser Test page.
 
 ### Edit the browser test
-
-If you have installed the Datadog Test Recorder extension, it will automatically make a request to the **Starting URL** you provided and display the results in the right-hand pane. You should see the Storedog homepage there now. 
 
 You will now record a test to make the following assertion: **the coupon code block is displayed on the home page.**
 
