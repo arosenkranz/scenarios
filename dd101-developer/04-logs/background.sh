@@ -5,7 +5,7 @@ curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 statuscheck "environment"
 
 # Wait for required assets to appear in the filesystem
-until  [ -f /root/puppeteer.sh ]
+until  [ -f /root/frontend-docker-entrypoint.sh ]
 do
   sleep 2
 done

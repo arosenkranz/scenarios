@@ -33,11 +33,6 @@
     "assets": {
       "host01": [
         {
-          "file": "envready",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
           "file": "docker-compose-fixed.yml",
           "target": "/root"
         },
