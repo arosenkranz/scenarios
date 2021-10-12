@@ -1,0 +1,64 @@
+{
+  "time": "15-20 minutes",
+  "title": "The Datadog Agent",
+  "details": {
+    "intro": {
+      "background": "background.sh",
+      "foreground": "foreground.sh",
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "text": "install-agent.md",
+        "title": "Install the Agent on Docker"
+      },
+      {
+        "text": "configure-service.md",
+        "title": "Configure a Service for the Agent"
+      },
+      {
+        "text": "configure-all-services.md",
+        "title": "Configure All the Services"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "docker-compose-complete.yml",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root",
+          "chmod": "+x"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3",
+    "reuseConnection": "false"
+  }
+}

@@ -3,32 +3,42 @@
   "description": "",
   "courses": [
     {
-      "course_id": "01-intro",
-      "title": "Introduction to the Course",
-      "description": ""
+      "id": "01-environment",
+      "course_id": "01-environment",
+      "title": "The Lab Environment",
+      "description": "Introduction to the lab environment, trial account credentials, and Storedog."
     },
     {
-      "course_id": "02-install-agent-docker",
-      "title": "Instrument Application for APM and Log Collection",
-      "description": ""
+      "id": "02-agent-docker",
+      "course_id": "02-agent-docker",
+      "title": "The Agent on Docker",
+      "description": "Installing the Datadog Agent as a Docker container"
     },
     {
-      "course_id": "03-apm",
-      "title": "Monitoring App Performance with APM",
-      "description": ""
+      "id": "03-integrations",
+      "course_id": "03-integrations",
+      "title": "Integrations",
+      "description": "Introduction to Datadog Integrations, configuring an integration, and autodiscovery."
     },
     {
-      "course_id": "04-logs",
-      "title": "Log Querying and Analytics",
-      "description": ""
+      "id": "04-apm",
+      "course_id": "04-apm",
+      "title": "APM",
+      "description": "APM, traces, and Unified Service Tagging"
     },
     {
-      "course_id": "05-synthetics",
+      "id": "05-logs",
+      "course_id": "05-logs",
+      "title": "Logs",
+      "description": "Enabling and configuring logging, querying log entires, and creating custom metrics from logs"
+    },
+    {
+      "course_id": "06-synthetics",
       "title": "Introduction to Synthetic Tests",
       "description": ""
     },
     {
-      "course_id": "06-rum",
+      "course_id": "07-rum",
       "title": "Using Real User Monitoring",
       "description": ""
     }
