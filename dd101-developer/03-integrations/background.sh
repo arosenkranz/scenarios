@@ -14,7 +14,8 @@ mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 cd /root/lab
 
-docker pull datadog/datadog-agent:7.31.0
+docker-compose -f /root/lab/docker-compose.yml pull
+
 docker-compose up -d
 
 statusupdate "workspace"

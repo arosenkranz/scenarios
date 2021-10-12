@@ -26,8 +26,6 @@ You'll start by instrumenting the discounts service, which is written in Python:
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# agent tracing port">ports:
          - 127.0.0.1:8126:8126/tcp</pre>
 
-    *Note: This is unnecessary in this lab environment. All containers can automatically talk to each other on the Docker Compose network, and the `datadog` agent listens on port `8126` by default.* 
-
 5. Back in the Datadog App, Step 3 tells you to add the `ddtrace` library to a Python application. 
 
     In the IDE, open `discounts-service/requirements.txt`{{open}} These are the libraries that will be installed when the discounts service starts up.
