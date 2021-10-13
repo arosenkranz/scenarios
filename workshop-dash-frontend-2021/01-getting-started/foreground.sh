@@ -29,7 +29,8 @@ export DATADOG_API_KEY=$DD_API_KEY
 
 clear
 
-statuscheck environment
+statusupdate "environment"
+statuscheck "workspace"
 
 cd /root/lab
 

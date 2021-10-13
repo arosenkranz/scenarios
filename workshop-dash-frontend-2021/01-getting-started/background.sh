@@ -2,6 +2,8 @@
 
 curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
+statuscheck "environment"
+
 until  [ -f /root/nginx.conf ]
 do
   sleep 2
@@ -41,4 +43,4 @@ mv /root/puppeteer.js /root/lab/puppeteer.js
 
 docker-compose -f /root/lab/docker-compose.yml pull
 
-statusupdate environment
+statusupdate "workspace"
