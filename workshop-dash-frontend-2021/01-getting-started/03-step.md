@@ -14,7 +14,7 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
 3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
 
-4. Click on one of the sessions that has an error, which you can find in the **Error Count** column. The session should look like this image:
+4. Click on one of the sessions that has errors. The session should look like this image:
 
   ![The user session shows a list of actions the user took.](assets/session-events.png)
 
