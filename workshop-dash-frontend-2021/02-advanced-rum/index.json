@@ -21,10 +21,14 @@
       {
         "text": "03-step.md",
         "title": "Fix and configure the app with global context and custom user actions"
+      },
+      {
+        "text": "04-step.md",
+        "title": "Understanding custom user actions"
       }
     ],
     "finish": {
-      "text": "04-finish.md"
+      "text": "05-finish.md"
     },
     "assets": {
       "host01": [

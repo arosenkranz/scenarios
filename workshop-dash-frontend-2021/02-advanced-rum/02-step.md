@@ -26,9 +26,11 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
 4. Navigate through the list and you'll notice it takes a lot of the scripts around 3 seconds to load, and then the ads and discounts take about another 3 seconds to load after that. 
 
+5. In this list, click on the entry for `discount` to see a flame graph of the request. Here, you'll see that it's not the Storedog application causing the delay, but the discounts API itself.
+
   This is a big performance issue that needs to be addressed, perhaps even by different teams, depending who manages the ads and discounts services. The good news is you've identified both the issue and what the potential next steps are.
 
-Navigate back to the monitor you created earlier from the <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitors > Manage Monitors**</a> page and you'll find that it's starting to send an alert, as the next image shows:
+6. Navigate back to the monitor you created earlier from the <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitors > Manage Monitors**</a> page and you'll find that it's starting to send an alert, as the next image shows:
 
   ![The monitor created earlier is now displaying an alert.](assets/monitor-alert.png)
 
@@ -36,4 +38,4 @@ In the next and final step, you'll fix the error so you can witness the monitor 
 
 > **Note:** Another very important tool at your disposal is <a href="https://app.datadoghq.com/rum/error-tracking" target="_datadog">**Datadog Error Tracking**</a>. It uses machine learning to identify trends in errors and helps collect them in a way that's easy to understand and act upon. It takes some time for it to start working, so unfortunately it is unavailable in this workshop.
 
-Click the **Continue** button below to move on.
+Click the **Continue** button below to move on to the next step.

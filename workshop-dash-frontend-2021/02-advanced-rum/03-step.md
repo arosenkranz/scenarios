@@ -1,4 +1,6 @@
-In this last step, you'll fix the bug in the code you discovered earlier. You're also going to enhance your own experience with RUM by configuring the codebase to set specific contextual data and user actions that can be more easily tracked throughout Datadog.
+In this step, you'll fix the bug in the code you discovered earlier. 
+
+You're also going to enhance your own experience with RUM by configuring the codebase to set specific contextual data and user actions that can be more easily tracked throughout Datadog.
 
 1. First, go ahead and fix the bug in the code by replacing the file with a fixed one using this command:
 
@@ -53,7 +55,11 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 
   In **Line 77** and **Line 110**, you'll notice the use of `datadogRum.addAction`. This allows you to customize get a clearer picture of what the user is doing and how they are interacting with the discounts list.
 
-7. To see how it works, you'll need to rebuild the application. Do so by running the following command in the terminal:
+7. Also notice in the `<th>` elements the use of `data-dd-action-name` attributes.
+
+  These allow you to override the default action name displayed in Datadog so you could use more useful names to identify actions.
+
+8. To see how it works, you'll need to rebuild the application. Do so by running the following command in the terminal:
 
   ```
   cd /storedog-microsite
@@ -62,12 +68,8 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 
   > **Note:** Usually, you'd want to run this command in a CI/CD pipeline and then upload the new sourcemaps, but for this workshop, you're going to run it locally.
 
-11. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
+9. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
 
-12. It'll take the monitor a bit to exit its **Alert** state, so while you wait, head back to the RUM Explorer in Datadog and watch the session data coming in for the `store-microsite` service. 
+10. Click on the `microsite` tab to the right and click around on the microsite to make sure things are working correctly. Namely, make sure you click on the "Get New Ad" buttons by the banners, as they were the part that were broken earlier.
 
-13. After a few moments, you'll see that users are no longer encountering the errors from before. Open up a session and you'll see that the user can now change the ads without any issues.
-
-  ![@TODO: Add screenshot]()
-
-14. Note 
+Once you've finished clicking around on the microsite, click the **Continue** button below to move on to the final step, where you'll see the results of the advanced RUM configuration you just put in place and confirm the monitor returns to an **OK** state.
