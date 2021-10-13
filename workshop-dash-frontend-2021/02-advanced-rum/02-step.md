@@ -26,13 +26,15 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
 4. Navigate through the list and you'll notice it takes a lot of the scripts around 3 seconds to load, and then the ads and discounts take about another 3 seconds to load after that. 
 
-5. In this list, click on the entry for `discount` to see a flame graph of the request. Here, you'll see that it's not the Storedog application causing the delay, but the discounts API itself.
+5. In this list, click on the entry for **discount** to see a flame graph of the request. Here, you'll see that it's not the Storedog application causing the delay, but the discounts API service.
 
-  This is a big performance issue that needs to be addressed, perhaps even by different teams, depending who manages the ads and discounts services. The good news is you've identified both the issue and what the potential next steps are.
+  This is a big performance issue that needs to be addressed and may not have been found if it weren't for this ability to see . The good news is you've identified both the issue and what the potential next steps are.
 
 6. Navigate back to the monitor you created earlier from the <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitors > Manage Monitors**</a> page and you'll find that it's starting to send an alert, as the next image shows:
 
   ![The monitor created earlier is now displaying an alert.](assets/monitor-alert.png)
+
+  You may have also received an email notification about it if you entered it in the last step.
 
 In the next and final step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the microsite's user events so you can capture more meaningful information about each user's session.
 

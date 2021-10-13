@@ -24,7 +24,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
 
 5. For **Set Alert Conditions**, set the monitor to trigger when the metric is **Above** the threshold during the last **5 minutes**.
 
-  Then set the **Alert Threshold** to `5` and the **Warning Threshold** to `3`.
+  Then set the **Alert Threshold** to `3` and the **Warning Threshold** to `1`. Typically you wouldn't want to set it so low, but this will get you a result faster in this lab.
 
   > **Note:** You should see the graph at the top of the page update as you adjust your query and thresholds to confirm you're setting up the correct monitor.
 
