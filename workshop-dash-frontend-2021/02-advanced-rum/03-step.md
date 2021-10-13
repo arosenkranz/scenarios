@@ -3,7 +3,7 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 1. First, go ahead and fix the bug in the code by replacing the file with a fixed one using this command:
 
   ```
-  mv /root/Advertisement.tsx /storedog-microsite/src/components/Advertisement.tsx
+  cp /root/Advertisement.tsx /storedog-microsite/src/components/Advertisement.tsx
   ```{{execute}}
 
 2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
@@ -30,7 +30,7 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
   Replace the microsite's `index.tsx` file with the following command:
 
   ```
-  mv /root/index.tsx /storedog-microsite/src/index.tsx
+  cp /root/index.tsx /storedog-microsite/src/index.tsx
   ```{{execute}}
 
 4. Open the **IDE** tab to the right and then open the `storedog-microsite/src/index.tsx`{{open}} file.
@@ -46,7 +46,7 @@ In this last step, you'll fix the bug in the code you discovered earlier. You're
 5. Next, you're going to add some custom user actions to track how they are interacting with the discounts. Move an updated `DiscountList` component into the `src/components/` directory with this command:
 
   ```
-  mv /root/DiscountList.tsx /storedog-microsite/src/components/DiscountList.tsx
+  cp /root/DiscountList.tsx /storedog-microsite/src/components/DiscountList.tsx
   ```{{execute}}
 
 6. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/DiscountList.tsx`{{open}} file to see the updated component.

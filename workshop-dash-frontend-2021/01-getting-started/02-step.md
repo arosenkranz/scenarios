@@ -2,15 +2,13 @@ With the application running and the Puppeteer service simulating some traffic t
 
 Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. These are all of the dashboards that start with **RUM** in the list. 
 
-> **Note:** The workshop's environment is hosted from Germany, so the traffic generated from Puppeteer will show up as if it's coming from there.
-
 ### User Sessions Dashboard
 
 1. Start by navigating to the dashboard titled **RUM - User Sessions**. You'll be brought to a dashboard that looks like the following image:
 
   ![The User Sessions dashboard gives insight and demographics about users that are interacting with an application.](assets/user-session-dashboard.png)
 
-2. On this page, you'll get a general overview of user session data throughout the time period set in the upper-right of the page. 
+2. On this page, you'll get a general overview of user session data during the time period set in the upper-right of the page. 
 
   To get a better view, update this time to be the last 30 minutes.
 

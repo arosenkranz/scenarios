@@ -4,10 +4,6 @@ Click the **IDE** tab on the right. It may take a few seconds to load. Once the 
 
 This docker-compose file brings the Storedog app online and instruments the Datadog agent and Storedog app services for monitoring with Datadog. 
      
-All <a href="https://docs.datadoghq.com/agent/docker/?tab=standard" target="_datadog">configuration in a Docker environment</a> is done through environment variables, volumes, and Docker labels.
-
-Because the application is run in a Docker (containerized) environment, the Datadog Agent runs in a container alongside the application containers: `agent`. 
-     
 Each application service runs in its own Docker container: `discounts`, `frontend`, `microsite`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
 
 Let's configure Datadog RUM for the app.
@@ -35,8 +31,6 @@ Let's configure Datadog RUM for the app.
   ![cdnsync](assets/cdnsync.png)
 
   Notice that values for `applicationId` and `clientToken` are displayed in the generated code snippet. You will need these to set up RUM in your application.
-  
-  Adding RUM to Storedog like this propagates every app user’s session performance information up to Datadog and helps you retain and analyze not only the app’s Core Web Vital scores, but also every aspect of performance timing that is relevant to both UX and business concerns.
 
 6. On the right, click the **IDE** tab.  
 
@@ -72,7 +66,7 @@ Let's configure Datadog RUM for the app.
 9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
     
   ```
-  npx @datadog/datadog-ci sourcemaps upload /storedog-microsite/dist \
+  datadog-ci sourcemaps upload /storedog-microsite/dist \
       --service=storedog-microsite \
       --release-version=1.1 \
       --minified-path-prefix="${MICROSITE_URL}"
@@ -88,7 +82,7 @@ Let's configure Datadog RUM for the app.
 
 12. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
 
-  You'll notice a few pieces of the application are a bit buggy. For instance, advertisements aren't showing up correctly in the microsite and there's some latency in both the microsite and the storefront.
+  You'll notice a few pieces of the application are a bit buggy. For instance, fetching advertisements on click isn't working in the microsite and there's some latency in both the microsite and the main storefront.
 
   Don't worry about it for now, you'll investigate these errors soon.
 
