@@ -100,19 +100,25 @@ const runSession = async (url, selectors) => {
   const selectors = [
     'tbody tr:nth-child(3) button',
     'header button.text-underline',
+    'header button.text-underline',
     'tbody tr:nth-child(25) button',
     'thead th:nth-child(2)',
+    'header button.text-underline',
     'footer button.text-underline',
     'tbody tr:nth-child(5) button',
     'tbody tr:nth-child(10) button',
+    'footer button.text-underline',
     'header button.text-underline',
     'thead th:first-child',
     'tbody tr:nth-child(25) button',
     'header button.text-underline',
+    'header button.text-underline',
+    'footer button.text-underline',
     'thead th:first-child',
     'tbody tr:nth-child(10) button',
     'footer button.text-underline',
     'header button.text-underline',
+    'footer button.text-underline',
   ];
 
   const browser = await getNewBrowser();
@@ -142,19 +148,23 @@ const runSession = async (url, selectors) => {
   const selectors = [
     'tbody tr:nth-child(8) button',
     'header button.text-underline',
+    'footer button.text-underline',
     'tbody tr:nth-child(29) button',
     'thead th:nth-child(2)',
     'header button.text-underline',
     'footer button.text-underline',
+    'footer button.text-underline',
     'tbody tr:nth-child(33) button',
     'tbody tr:nth-child(10) button',
     'thead th:first-child',
+    'header button.text-underline',
     'header button.text-underline',
     'footer button.text-underline',
     'tbody tr:nth-child(45) button',
     'header button.text-underline',
     'thead th:first-child',
     'footer button.text-underline',
+    'footer button.text-underline',
     'header button.text-underline',
   ];
 
@@ -186,16 +196,116 @@ const runSession = async (url, selectors) => {
     'header button.text-underline',
     'tbody tr:nth-child(8) button',
     'header button.text-underline',
+    'header button.text-underline',
     'tbody tr:nth-child(28) button',
+    'footer button.text-underline',
     'footer button.text-underline',
     'tbody tr:nth-child(4) button',
     'header button.text-underline',
     'thead th:first-child',
     'footer button.text-underline',
+    'footer button.text-underline',
     'tbody tr:nth-child(60) button',
+    'header button.text-underline',
+    'header button.text-underline',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(29) button',
+    'header button.text-underline',
+    'header button.text-underline',
+  ];
+
+  const browser = await getNewBrowser();
+  let page = await browser.newPage();
+
+  try {
+    console.log(`Heading to ${micrositeUrl}`);
+    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+      waitUntil: 'domcontentloaded',
+    });
+    const pageTitle = await page.title();
+    console.log(`"${pageTitle}" loaded`);
+
+    for (const selector of selectors) {
+      await page.waitForSelector(selector);
+      console.log(`Going to click on ${selector}...`);
+      await page.click(selector);
+    }
+  } catch (err) {
+    console.error(`Session failed: ${err}`);
+  } finally {
+    browser.close();
+  }
+})();
+
+(async () => {
+  const selectors = [
+    'tbody tr:nth-child(8) button',
     'header button.text-underline',
     'footer button.text-underline',
     'tbody tr:nth-child(29) button',
+    'thead th:nth-child(2)',
+    'header button.text-underline',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(33) button',
+    'tbody tr:nth-child(10) button',
+    'thead th:first-child',
+    'header button.text-underline',
+    'header button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(45) button',
+    'header button.text-underline',
+    'thead th:first-child',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'header button.text-underline',
+  ];
+
+  const browser = await getNewBrowser();
+  let page = await browser.newPage();
+
+  try {
+    console.log(`Heading to ${micrositeUrl}`);
+    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+      waitUntil: 'domcontentloaded',
+    });
+    const pageTitle = await page.title();
+    console.log(`"${pageTitle}" loaded`);
+
+    for (const selector of selectors) {
+      await page.waitForSelector(selector);
+      console.log(`Going to click on ${selector}...`);
+      await page.click(selector);
+    }
+  } catch (err) {
+    console.error(`Session failed: ${err}`);
+  } finally {
+    browser.close();
+  }
+})();
+
+(async () => {
+  const selectors = [
+    'header button.text-underline',
+    'tbody tr:nth-child(8) button',
+    'header button.text-underline',
+    'header button.text-underline',
+    'tbody tr:nth-child(28) button',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(4) button',
+    'header button.text-underline',
+    'thead th:first-child',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(60) button',
+    'header button.text-underline',
+    'header button.text-underline',
+    'footer button.text-underline',
+    'footer button.text-underline',
+    'tbody tr:nth-child(29) button',
+    'header button.text-underline',
     'header button.text-underline',
   ];
 
