@@ -36,11 +36,6 @@
           "chmod": "+x"
         },
         {
-          "file": "docker-compose-complete.yml",
-          "target": "/root",
-          "chmod": "+x"
-        },
-        {
           "file": "dd_agent.sql",
           "target": "/root",
           "chmod": "+x"
