@@ -45,6 +45,10 @@
           "target": "/root"
         },
         {
+          "file": "discount_monitor.json",
+          "target": "/root"
+        },
+        {
           "file": "puppeteer-mobile.js",
           "target": "/root",
           "chmod": "+x"

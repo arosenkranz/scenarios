@@ -16,10 +16,24 @@ POSTGRES_USER=$POSTGRES_USER\n\
 POSTGRES_PASSWORD=$POSTGRES_PASSWORD\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
+string="Resource get_/discount has a high average latency on env:dd101-dev"
+if curl -X GET "https://api.datadoghq.com/api/v1/monitor" \
+-H "Content-Type: application/json" \
+-H "DD-API-KEY: ${DD_API_KEY}" \
+-H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | grep -q "$string"; then
+    echo "Monitor exists"
+else      
+  curl -X PUT "https://api.datadoghq.com/api/v1/monitor" \
+  -H "Content-Type: application/json" \
+  -H "DD-API-KEY: ${DD_API_KEY}" \
+  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
+  -d @/root/discount_monitor.json
+fi
+
+
 clear
 
 docker-compose up -d
-
 
 statusupdate complete
 prepenvironment
