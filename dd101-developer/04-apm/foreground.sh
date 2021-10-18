@@ -23,7 +23,7 @@ if curl -X GET "https://api.datadoghq.com/api/v1/monitor" \
 -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" | grep -q "$string"; then
     echo "Monitor exists"
 else      
-  curl -X PUT "https://api.datadoghq.com/api/v1/monitor" \
+  curl -X POST "https://api.datadoghq.com/api/v1/monitor" \
   -H "Content-Type: application/json" \
   -H "DD-API-KEY: ${DD_API_KEY}" \
   -H "DD-APPLICATION-KEY: ${DD_APP_KEY}" \
