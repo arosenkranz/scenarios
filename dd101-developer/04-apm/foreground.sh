@@ -5,6 +5,8 @@ export POSTGRES_PASSWORD=postgres
 export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com
 
 clear
+statusupdate "environment"
+statuscheck "workspace"
 
 cd /root/lab 
 
@@ -16,8 +18,8 @@ STOREDOG_URL=$STOREDOG_URL" > .env
 
 clear
 
-statusupdate "environment"
-statuscheck "workspace"
+docker-compose up -d
+
 
 statusupdate complete
 prepenvironment

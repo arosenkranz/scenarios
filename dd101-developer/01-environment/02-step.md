@@ -14,11 +14,13 @@ Here's a summary of the services that comprise Storedog:
 
     Open the `docker-compose.yml`{{open}} file and review how these services are configured. 
 
-2. To see this application running, execute the following command in the terminal:
+2. (Optional) The code for the Storedog services is available in the IDE file explorer, if you'd like to look at it.
 
-    `docker-compose up -d`{{execute}}
+2. The application is already running. To see the containers, execute the following command in the terminal:
 
-3. With the application up and running, select the tab titled "storedog" in the right-hand panel. This will open up Storedog as a new tab in your browser. You might need to refresh until the frontend service is fully responsive.
+    `docker-compose ps`{{execute}}
+
+3. Select the tab titled "storedog" in the right-hand panel. This will open up Storedog as a new tab in your browser. You might need to refresh until the frontend service is fully responsive.
 
     ![Storedog homepage](./assets/storedog_screenshot.png)
 

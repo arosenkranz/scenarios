@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 statuscheck "environment"
 
@@ -12,10 +12,11 @@ done
 
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
-cd /root/lab
-ln -s /ecommworkshop/discounts-service-fixed discounts-service
+mv /root/discounts.py /ecommworkshop/discounts-service/discounts.py
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
+ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
+ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
-docker pull datadog/datadog-agent:7.31.0
-docker-compose up -d
+docker-compose -f /root/lab/docker-compose.yml pull
 
 statusupdate "workspace"

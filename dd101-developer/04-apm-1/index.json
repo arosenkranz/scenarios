@@ -1,0 +1,61 @@
+{
+  "title": "Monitoring App Performance",
+  "description": "Using APM to investigate app performance ",
+  "difficulty": "Beginner",
+  "time": "25 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
+    },
+    "steps": [
+      {
+        "title": "Preparing the Environment",
+        "text": "step1.md"
+      },
+      {
+        "title": "Creating APM Monitors",
+        "text": "step2.md"
+      },
+      {
+        "title": "Investigating Request Errors",
+        "text": "step3.md"
+      },
+      {
+        "title": "Investigating Latency Issues",
+        "text": "step4.md"
+      },
+      {
+        "title": "Analyzing Trace Data in App Analytics",
+        "text": "step5.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "discounts.py",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
+    "showdashboard": true,
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}
