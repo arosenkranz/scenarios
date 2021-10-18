@@ -17,12 +17,8 @@
         "title": "Take a tour of APM in Datadog"
       },
       {
-        "text": "03-tracing-everything.md",
-        "title": "Trace the entire Storedog application"
-      },
-      {
-        "text": "04-profiling.md",
-        "title": "Explore profiling in Datadog"
+        "text": "03-monitors.md",
+        "title": "APM Monitors"
       }
     ],
     "finish": {

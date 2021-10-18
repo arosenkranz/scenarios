@@ -8,7 +8,11 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     You'll come back to this in a few minutes, but for now, continue exploring APM.
 
-1. Click on **discounts-service** and scroll down to **Endpoints**. Here you will see all of the service's application endpoints that APM traced. This service has one endpoint, `GET /discount`
+1. Select the <a href="https://app.datadoghq.com/apm/map?env=dd101-dev" target="_datadog">**APM > Service Map**</a> tab and you'll see a map of how each service communicates with one another.
+
+1. Click on **discounts-service** and then **View service overview**
+
+    On the resulting page, scroll down to **Endpoints**. Here you will see all of the service's application endpoints that APM traced. This service has one endpoint, `GET /discount`
 
     ![Discounts service endpoints](./assets/discounts_apm_services_endpoints.png)
 
@@ -24,7 +28,7 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     ![Discounts APM trace detail log tab](./assets/discounts_apm_traces_logs_tab.png)
 
-    Mouse over each line and look at the flamegraph. You'll see a horizontal line marking the exact point in the trace that the log line was emitted. This is enabled by the `DD_LOGS_INJECTION` configuration.
+    Mouse over each line and look at the flamegraph. You'll see a vertical line marking the exact point in the trace that the log line was emitted. This is enabled by the `DD_LOGS_INJECTION` configuration.
 
 1. Click on a log line from `discounts.py`. This takes you to a detailed view in the line in the Logs Explorer.
 
@@ -48,4 +52,4 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
 You can now travel back and forth between between APM traces and logs for the discounts service.  
 
-Click the **Continue** button to enable traces for all of the Storedog services.
+Click the **Continue** button move onto the next step, where you'll address the monitor from earlier.
