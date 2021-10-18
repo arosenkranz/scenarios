@@ -46,6 +46,10 @@
           "chmod": "+x"
         },
         {
+          "file": "discounts.py",
+          "target": "/root"
+        },
+        {
           "file": "puppeteer-mobile.js",
           "target": "/root",
           "chmod": "+x"
