@@ -22,4 +22,5 @@ DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
 statusupdate complete
+start
 prepenvironment

@@ -9,8 +9,8 @@
     },
     "steps": [
       {
-        "text": "01-tracing-python.md",
-        "title": "Configure ddtrace for a Python service"
+        "text": "01-configure-apm.md",
+        "title": "Configuring APM"
       },
       {
         "text": "02-tour-apm.md",

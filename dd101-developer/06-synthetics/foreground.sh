@@ -22,4 +22,5 @@ STOREDOG_URL=$STOREDOG_URL" > .env
 docker-compose up -d
 
 statusupdate complete
+start
 prepenvironment

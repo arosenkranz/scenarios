@@ -18,4 +18,5 @@ POSTGRES_PASSWORD=$POSTGRES_PASSWORD\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
 statusupdate complete
+start
 prepenvironment

@@ -36,4 +36,5 @@ clear
 docker-compose up -d
 
 statusupdate complete
+start
 prepenvironment

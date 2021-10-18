@@ -20,4 +20,5 @@ statusupdate "environment"
 statuscheck "workspace"
 
 statusupdate complete
+start
 prepenvironment

@@ -20,4 +20,5 @@ STOREDOG_URL=$STOREDOG_URL" > .env
 statusupdate "environment"
 
 statusupdate complete
+start
 prepenvironment

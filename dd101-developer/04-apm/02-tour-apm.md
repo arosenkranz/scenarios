@@ -1,16 +1,18 @@
-Now that the Agent is collecting traces from the discounts service, take a look at those traces in the Datadog App.
+With the Agent collecting traces from all of the Storedog services, you can take a look at those traces in the Datadog App.
 
-1. Navigate to **APM > Services**. You'll see the `discounts-service` that you just enabled. You'll also see `postgres`, which doesn't communicate with the Datadog Agent directly.
-
-    ![Discounts and postgres in APM services](./assets/discounts_apm_services.png)
+1. Navigate to <a href="https://app.datadoghq.com/apm/services?env=dd101-dev" target="_datadog">**APM > Services**</a>. You'll see the a list of all the services that are enabled. You'll also see `postgres`, which doesn't communicate with the Datadog Agent directly.
 
     `postgres` shows up because `discounts-service` traces capture it. You configured the PostgreSQL integration in the previous lab, but it doesn't send traces to the Datadog Agent. Applications that *connect* to the database do.
+
+1. You'll notice the `discounts-service` has an alert in the **Monitors** column on the page. A site reliability engineer (SRE) at Storedog created a monitor to check the latency of this service, and it seems to be a bit higher than expected.
+
+    You'll come back to this in a few minutes, but for now, continue exploring APM.
 
 1. Click on **discounts-service** and scroll down to **Endpoints**. Here you will see all of the service's application endpoints that APM traced. This service has one endpoint, `GET /discount`
 
     ![Discounts service endpoints](./assets/discounts_apm_services_endpoints.png)
 
-1. Navigate to **APM > Traces**. Here you see a live stream of the traces APM has captured over the past 15 minutes.
+1. Navigate to <a href="https://app.datadoghq.com/apm/traces?query=env%3Add101-dev" target="_datadog"> **APM > Traces**</a>. Here you see a live stream of the traces APM has captured over the past 15 minutes. 
 
     ![Discounts APM traces](./assets/discounts_apm_traces.png)
 
