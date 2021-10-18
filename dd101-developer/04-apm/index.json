@@ -17,7 +17,7 @@
         "title": "Take a tour of APM in Datadog"
       },
       {
-        "text": "03-monitors.md",
+        "text": "03-apm-monitors.md",
         "title": "APM Monitors"
       }
     ],
