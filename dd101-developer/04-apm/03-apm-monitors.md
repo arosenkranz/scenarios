@@ -10,15 +10,13 @@ In Datadog, monitors can be created to track any part of an application to detec
 
   ![The monitor page displays the settings and status for the monitor.](assets/monitor-status.png)
 
-1. Take a moment or two to explore this monitor. You'll find the query that was used to create the monitor, which is to check the average latency of the discounts service over the span of a minute. It is currently around 4 seconds, but the monitor is set to alert you if the latency is greater than 1 second.
+1. Here you'll find the query that was used to create the monitor, which is to check the average latency of the discounts service over the span of a minute. It is currently around 4 seconds, but the monitor is set to alert you if the latency is greater than 1 second.
 
-  Also notice how you can view a list of events around this monitor, so you know when it changes status. 
+1. Also notice how you can view a list of events around this monitor, so you know when it changes status. 
 
-  You also have the option to declare an incident from this monitor.
+  This monitor is set to alert you when the `/discounts` resource is slow, so it's safe to assume that there is an issue in that service's code that you should go look at.
 
 ## Fix the latency issue
-
-Now that you know what this monitor is checking, you can take action to fix the issue.
 
 1. Open the **IDE** tab to the right, then open the `discounts-service/discounts.py`{{open}} file.
 

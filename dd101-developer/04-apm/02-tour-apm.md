@@ -22,13 +22,15 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     Scroll down and click on an older `discounts-service` trace. This flamegraph displays the time spent in each service for this trace. 
 
-    ![Discounts APM trace flamegraph](./assets/discounts_apm_traces_flamegraph.png)
+    ![Discounts APM trace flamegraph](./assets/apm_traces_flamegraph.png)
 
 1. Click the **Logs** tab at the bottom of the trace details panel. These are the related log lines captured during the trace's timeframe.
 
     ![Discounts APM trace detail log tab](./assets/discounts_apm_traces_logs_tab.png)
 
     Mouse over each line and look at the flamegraph. You'll see a vertical line marking the exact point in the trace that the log line was emitted. This is enabled by the `DD_LOGS_INJECTION` configuration.
+
+    > **Note:** You may notice in the flamegraph 
 
 1. Click on a log line from `discounts.py`. This takes you to a detailed view in the line in the Logs Explorer.
 
