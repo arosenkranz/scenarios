@@ -5,46 +5,42 @@
     "intro": {
       "background": "background.sh",
       "foreground": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "install-agent.md",
+        "text": "01-install-agent.md",
         "title": "Install the Agent on Docker"
       },
       {
-        "text": "configure-service.md",
+        "text": "02-configure-service.md",
         "title": "Configure a Service for the Agent"
       },
       {
-        "text": "configure-all-services.md",
+        "text": "03-configure-all-services.md",
         "title": "Configure All the Services"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "04-finish.md"
     },
     "assets": {
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "docker-compose-complete.yml",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer-mobile.js",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer.sh",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         }
       ]
     }

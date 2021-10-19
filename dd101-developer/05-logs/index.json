@@ -1,66 +1,60 @@
 {
   "title": "Log Querying and Analytics",
   "description": "Overview of Search, Groups, Patterns, and Transactions",
-  "time": "30 minutes",
+  "time": "15-20 minutes",
   "difficulty": "Beginner",
   "details": {
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "step1.md",
+        "text": "01-step.md",
         "title": "Logs Search"
       },
       {
-        "text": "step2.md",
+        "text": "02-step.md",
         "title": "Fields Aggregation"
       },
       {
-        "text": "step3.md",
+        "text": "03-step.md",
         "title": "Patterns Aggregation"
       },
       {
-        "text": "step4.md",
+        "text": "04-step.md",
         "title": "Transactions Aggregation"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "05-finish.md"
     },
     "assets": {
       "host01": [
         {
           "file": "docker-compose.yml",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "dd_agent.sql",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "ads.py",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "discounts.py",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer-mobile.js",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         },
         {
           "file": "puppeteer.sh",
-          "target": "/root",
-          "chmod": "+x"
+          "target": "/root"
         }
       ]
     }

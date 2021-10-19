@@ -5,7 +5,7 @@
     "intro": {
       "background": "background.sh",
       "foreground": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
@@ -16,7 +16,7 @@
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "03-finish.md"
     },
     "assets": {
       "host01": [

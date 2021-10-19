@@ -5,20 +5,20 @@
     "intro": {
       "background": "background.sh",
       "foreground": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "core-integrations.md",
+        "text": "01-core-integrations.md",
         "title": "Configure an Integration for a Service"
       },
       {
-        "text": "configure-integration.md",
+        "text": "02-configure-integration.md",
         "title": "Configure All the Services"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "03-finish.md"
     },
     "assets": {
       "host01": [

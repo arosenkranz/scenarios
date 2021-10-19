@@ -1,28 +1,28 @@
 {
-  "time": "25 minutes",
+  "time": "20-25 minutes",
   "title": "Using Real User Monitoring",
   "details": {
     "intro": {
       "courseData": "background.sh",
       "code": "foreground.sh",
-      "text": "intro.md"
+      "text": "00-intro.md"
     },
     "steps": [
       {
-        "text": "step1.md"
+        "text": "01-step.md"
       },
       {
-        "text": "step2.md"
+        "text": "02-step.md"
       },
       {
-        "text": "step3.md"
+        "text": "03-step.md"
       },
       {
-        "text": "step4.md"
+        "text": "04-step.md"
       }
     ],
     "finish": {
-      "text": "finish.md"
+      "text": "05-finish.md"
     },
     "assets": {
       "host01": [
