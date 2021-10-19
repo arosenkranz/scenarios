@@ -16,21 +16,19 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     ![Discounts service endpoints](./assets/discounts_apm_services_endpoints.png)
 
-1. Navigate to <a href="https://app.datadoghq.com/apm/traces?query=env%3Add101-dev" target="_datadog"> **APM > Traces**</a>. Here you see a live stream of the traces APM has captured over the past 15 minutes. 
+1. Navigate to <a href="https://app.datadoghq.com/apm/traces?query=env%3Add101-dev" target="_datadog"> **APM > Traces**</a>. Here you see a live stream of the traces APM has captured over the past 15 minutes. Try and locate one for the `discounts-service` service.
 
-    ![Discounts APM traces](./assets/discounts_apm_traces.png)
+    > **Note:** You may have to filter the traces by service name. Use the facets menu on the left to filter by the `discounts-service` service.
 
     Scroll down and click on an older `discounts-service` trace. This flamegraph displays the time spent in each service for this trace. 
 
     ![Discounts APM trace flamegraph](./assets/apm_traces_flamegraph.png)
 
-1. Click the **Logs** tab at the bottom of the trace details panel. These are the related log lines captured during the trace's timeframe.
+1. Click the **Logs** tab at the bottom of the trace details panel. These are the related log lines captured during the trace's timeframe. You may notice that it's taking a long time to complete this request.
 
     ![Discounts APM trace detail log tab](./assets/apm_traces_logs.png)
 
     Mouse over each line and look at the flamegraph. You'll see a vertical line marking the exact point in the trace that the log line was emitted. This is enabled by the `DD_LOGS_INJECTION` configuration.
-
-    > **Note:** You may notice in the flamegraph 
 
 1. Click on a log line from `discounts.py`. This takes you to a detailed view in the line in the Logs Explorer.
 
