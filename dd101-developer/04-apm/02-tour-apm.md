@@ -32,7 +32,7 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
 1. Click on a log line from `discounts.py`. This takes you to a detailed view in the line in the Logs Explorer.
 
-    ![Discounts trace to log line](./assets/discounts_trace_to_logline.png)
+    ![Discounts trace to log line](./assets/discounts_logs.png)
 
 1. Close the log detail and notice that the search field is filtering logs by the specific ID of the trace. 
 
@@ -44,7 +44,7 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     Click on the **Trace** tab.
 
-    ![Traces in logs](./assets/discounts_apm_traces_in_logs.png)
+    ![Traces in logs](./assets/discounts_logs_trace.png)
 
     Here is the trace for this log line right in the log details view!
 
