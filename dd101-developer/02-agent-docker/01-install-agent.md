@@ -6,7 +6,7 @@
 
 2. Get familiar with the structure of this file. There is a block for each Storedog service: `discounts`, `frontend`, `advertisements`, and `db`.
 
-    You can ignore `puppeteer`, which is synthesizing traffic to the application. 
+    You can ignore `puppeteer`, which is creating user sessions on the application. 
 
 3. Add the Datadog Agent as a service by clicking on **Copy to Editor** in the following block of code:
 
