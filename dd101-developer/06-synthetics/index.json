@@ -23,6 +23,10 @@
     "assets": {
       "host01": [
         {
+          "file": "dd_agent.sql",
+          "target": "/root"
+        },
+        {
           "file": "docker-compose.yml",
           "target": "/root"
         }

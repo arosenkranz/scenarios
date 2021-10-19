@@ -26,9 +26,10 @@ Scroll down to the **Docker** section and look at the instructions for enabling 
 
 Following the instructions from the Postgres Integration:
 
-1. Open `docker-compose.yml`{{open}} in the IDE and find the `db` service section
+1. Open `docker-compose.yml`{{open}} in the IDE and find the `db` service section.
 
 2.  The following lines have been adapted for docker-compose.yml. Add them to the `labels` block.
+
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# postgres integration template here">
     com.datadoghq.ad.check_names: '["postgres"]'
           com.datadoghq.ad.init_configs: '[{}]'
@@ -42,11 +43,12 @@ Following the instructions from the Postgres Integration:
 
     This configures the log integration for PostgreSQL.
 
-4. Finally, you need to add an environment variable to the `agent` service. Copy the following line and add it to the `environments` block:
+4. Finally, you need to add an environment variable to the `datadog` service. Click the following line and add it to the `environments` block:
+
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# agent non-local apm here">
    - DD_APM_NON_LOCAL_TRAFFIC=true</pre>
 
-     This configures the Agent to observe other containers' performance at the application level.
+    This configures the Agent to observe other containers' performance at the application level.
 
 ### See the Results
 1. In the terminal, run `docker-compose down && docker-compose up -d`{{execute}} to restart the stack

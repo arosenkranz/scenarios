@@ -30,7 +30,6 @@ else
   -d @/root/discount_monitor.json
 fi
 
-
 clear
 
 docker-compose up -d

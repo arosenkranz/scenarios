@@ -63,6 +63,10 @@
           "target": "/root"
         },
         {
+          "file": "dd_agent.sql",
+          "target": "/root"
+        },
+        {
           "file": "puppeteer-mobile.js",
           "target": "/root"
         },
