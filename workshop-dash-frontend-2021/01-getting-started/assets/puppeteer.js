@@ -3,6 +3,32 @@ const puppeteer = require('puppeteer');
 const startUrl = process.env.STOREDOG_URL;
 const micrositeUrl = process.env.MICROSITE_URL;
 
+const choosePhone = () => {
+  const deviceNames = [
+    'Pixel 2 XL',
+    'Pixel 2',
+    'Nokia N9',
+    'Nokia Lumia 520',
+    'Nexus 7',
+    'Nexus 6P',
+    'LG Optimus L70',
+    'Galaxy S5',
+    'iPhone 11 Pro Max',
+    'iPhone 11',
+    'iPhone XR',
+    'iPhone X',
+    'iPhone SE',
+    'iPhone 8 Plus',
+    'iPhone 6',
+    'iPad Pro',
+    'iPad Mini',
+  ];
+
+  const deviceIndex = Math.floor(Math.random() * deviceNames.length);
+  const device = deviceNames[deviceIndex];
+  return puppeteer.devices[device];
+};
+
 const getNewBrowser = async () => {
   const browser = await puppeteer.launch({
     defaultViewport: null,
@@ -173,6 +199,8 @@ const runSession = async (url, selectors) => {
 
   try {
     console.log(`Heading to ${micrositeUrl}`);
+    await page.emulate(choosePhone());
+
     await page.goto(`${micrositeUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
@@ -314,6 +342,8 @@ const runSession = async (url, selectors) => {
 
   try {
     console.log(`Heading to ${micrositeUrl}`);
+    await page.emulate(choosePhone());
+
     await page.goto(`${micrositeUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
@@ -343,6 +373,8 @@ const runSession = async (url, selectors) => {
 
   try {
     await page.setDefaultNavigationTimeout(30000);
+    await page.emulate(choosePhone());
+
     await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
     console.log(`"${pageTitle}" loaded`);

@@ -20,11 +20,11 @@ Let's configure Datadog RUM for the app.
 
 4. Under **Set your application details**, select **JS** as the **Application type** because you are integrating the app using Javascript.
 
-  Enter `Storedog` as the **Application name**.
+  Enter `Storedog`{{copy}} as the **Application name**.
 
   Click **Create New RUM Application**.
 
-  > **Note:** It is important you name your application "Storedog" in this case. In upcoming activities, the lab environment will be configured to automatically search for and use this application for RUM.
+  > **Important:** It is important you name your application "Storedog" in this activity. In upcoming activities, the lab environment will be configured to automatically search for and use this application for RUM.
 
 5. If you are using NPM to manage dependencies for your project front end, you can integrate RUM using the `@datadog/browser-rum` package. However, Storedog uses the inline JavaScript method, so select the **CDN Sync** tab.
 
@@ -32,7 +32,9 @@ Let's configure Datadog RUM for the app.
 
   Notice that values for `applicationId` and `clientToken` are displayed in the generated code snippet. You will need these to set up RUM in your application.
 
-6. On the right, click the **IDE** tab.  
+  Also notice the other options you can set, including **Session Replay** and privacy settings for it, which allows you to see how users interact with your application but hides any sensitive data that may be entered.
+
+6. To see where these values will go in this app, click the **IDE** tab to the right.  
 
   Open the file `store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
 
@@ -42,15 +44,15 @@ Let's configure Datadog RUM for the app.
 
   Notice that the code snippet includes environment variables for `applicationId` and `clientToken`.
 
-  Line 25 will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter.
+  **Line 25** will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter.
 
 7. Open the file `storedog-microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
 
 8. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
     
-  Copy the `applicationId` from the RUM UI page. In the terminal, assign the value you copied to `DD_APPLICATION_ID` using the `export` command: `export DD_APPLICATION_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+  Copy the `applicationId` from the RUM UI page. In the terminal, assign the value you copied to `DD_APPLICATION_ID` using the `export` command: `export DD_APPLICATION_ID=<paste_application_id>`{{copy}}
 
-  Copy the `clientToken` from the RUM UI page. In the terminal, assign the value you copied to `DD_CLIENT_TOKEN` using the `export` command: `export DD_CLIENT_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+  Copy the `clientToken` from the RUM UI page. In the terminal, assign the value you copied to `DD_CLIENT_TOKEN` using the `export` command: `export DD_CLIENT_TOKEN=<paste_client_token>`{{copy}}
   
   Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
 
@@ -73,6 +75,8 @@ Let's configure Datadog RUM for the app.
   ```{{execute}}
 
   You'll learn more about this soon.
+
+  > **Note:** You may receive a warning message after running the above command. That's okay, it will still work as expected. 
     
 10. Now, navigate back to the Storedog directory with `cd /root/lab`{{execute}}.
 
@@ -80,7 +84,7 @@ Let's configure Datadog RUM for the app.
 
   > **Note:** Make sure you are in the `/root/lab` directory when you run this command.
 
-12. Open the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work.
+12. Give the services a few seconds to load up, then navigate to the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work, especially the **microsite**.
 
   You'll notice a few pieces of the application are a bit buggy. For instance, fetching advertisements on click isn't working in the microsite and there's some latency in both the microsite and the main storefront.
 

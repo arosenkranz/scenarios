@@ -10,9 +10,10 @@ datadogRum.init({
   clientToken: `${import.meta.env.REACT_APP_DD_CLIENT_TOKEN}`,
   site: 'datadoghq.com',
   service: 'storedog-microsite',
-  version: '1.1',
+  version: '1.2',
   sampleRate: 100,
   trackInteractions: true,
+  defaultPrivacyLevel: 'mask-user-input',
   allowedTracingOrigins: [
     /https:\/\/.*\.environments.katacoda\.com/,
     'http://localhost:3001',

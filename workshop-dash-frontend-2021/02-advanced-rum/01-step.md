@@ -8,7 +8,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   docker ps
   ```{{execute}}
 
-  > **Note:** If , use `docker-compose down`{{execute}} and `docker-compose up`{{execute}} to restart the containers.
+  > **Note:** If the containers aren't running, use `docker-compose down`{{execute}} and `docker-compose up -d`{{execute}} to restart them.
 
 2. Make sure you are logged into your <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. 
 
