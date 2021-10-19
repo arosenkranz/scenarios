@@ -17,6 +17,8 @@ POSTGRES_USER=$POSTGRES_USER\n\
 POSTGRES_PASSWORD=$POSTGRES_PASSWORD\n\
 STOREDOG_URL=$STOREDOG_URL" > .env 
 
+docker-compose up -d
+
 statusupdate complete
 start
 prepenvironment
