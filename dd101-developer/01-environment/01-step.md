@@ -18,7 +18,7 @@ Welcome to the first section of the workshop.
 
 1. On the right side in the terminal you should see login credentials for the account we created for you. Later if you forget the login information, run `creds`{{execute}} and you will see the information again.
 
-    Login to your [Datadog account](https://github.com/jmassey-datadog/security-workshop-2.git) using the credentials in the terminal.
+    Login to your <a href="https://app.datadoghq.com" target="_datadog">**Datadog account**</a> using the credentials in the terminal.
 
     **Tips:**
       - You must use app.datadoghq.**com**
