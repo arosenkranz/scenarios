@@ -20,11 +20,11 @@ Let's start working with the Logs Search.
     
     Notice the log message. Instead of using the ERROR status, let's use the log message to filter log error logs for these services. 
     
-5. Copy the part of the log message that reads `An error occured`{{copy}}, and close the log side panel.
+5. Copy the part of the log message that reads `An error occurred`, and close the log side panel.
 
-6. In the search field, click the X for `ERROR` to delete it. Now, paste the log message text `"An error occured"`{{copy}} in the search field and press Enter. Notice the same list of logs appears. 
+6. In the search field, click the X for `ERROR` to delete it. Now, paste the log message text `"An error occurred"`{{copy}} in the search field and press Enter. Notice the same list of logs appears. 
 
-7. Delete the `An error occured` text from the search field and press Enter. Select `Error` under the **Status** facet again.
+7. Delete the `An error occurred` text from the search field and press Enter. Select `Error` under the **Status** facet again.
 
 8. Common tags and attributes appear in the <a href="https://docs.datadoghq.com/logs/explorer/facets/" target="_blank">Facets</a> list on the left of the Log List automatically. You can add or edit a tag or attribute to the Facets panel from the log details in the log side panel.
 
