@@ -22,7 +22,7 @@ With the Agent collecting traces from all of the Storedog services, you can take
 
     Scroll down and click on an older `discounts-service` trace. This flamegraph displays the time spent in each service for this trace. 
 
-    ![Discounts APM trace flamegraph](./assets/apm_traces_flamegraph.png)
+    ![Discounts APM trace flamegraph](./assets/apm-traces-flamegraph.png)
 
 1. Click the **Logs** tab at the bottom of the trace details panel. These are the related log lines captured during the trace's timeframe.
 
