@@ -12,7 +12,9 @@ Let's start working with the Logs Search.
 
     ![facets-search](assets/facets-search.png)
 
-3. When you click a log in the Log List, the <a href="https://docs.datadoghq.com/logs/explorer/#the-log-side-panel" target="_blank">Log Side Panel</a> opens with the log details including assigned tags, the log message, any extracted attributes, related traces, and related infrastructure metrics.
+3. Find an error log that starts with `ERROR` and click it. 
+
+    The <a href="https://docs.datadoghq.com/logs/explorer/#the-log-side-panel" target="_blank">Log Side Panel</a> opens with the log details including assigned tags, the log message, any extracted attributes, related traces, and related infrastructure metrics.
 
     ![logs-side-panel](assets/logs-side-panel.gif)
 
