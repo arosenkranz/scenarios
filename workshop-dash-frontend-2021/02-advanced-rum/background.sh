@@ -14,8 +14,8 @@ mv /root/docker-compose.yml /root/lab
 
 git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
+npm install -g npm @datadog/datadog-ci
 npm install
-npm install -g @datadog/datadog-ci
 
 # Fetch discounts in the browser
 mv /root/home_controller.rb /ecommworkshop/store-frontend-broken-instrumented/app/controllers/spree/home_controller.rb
