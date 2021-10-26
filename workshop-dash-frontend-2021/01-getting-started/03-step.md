@@ -1,61 +1,27 @@
-As you just saw, RUM makes it easy to get a high-level view of your application's health and how it may be affecting users. This allows you to prioritize and address issues that may be impacting your application and its users.
+RUM Error Tracking in Datadog is a great way to see what errors are persistent throughout your application and how they are being handled.
 
-Now you're going to use the RUM Explorer and Session Replay to investigate a specific issue and see where it is failing in your application. 
+In this step, you'll use Error Tracking to identify and error in your code.
 
-1. Navigate to the <a href="https://app.datadoghq.com/rum/explorer" target="_datadog">**RUM Explorer**</a> page.
+1. Navigate to <a href="https://app.datadoghq.com/rum/error-tracking" target="_datadog">**UX Monitoring > Error Tracking**</a> and you'll see a page that looks like this image:
 
-  From this page, you can see information about user sessions, errors encountered, what pages were viewed, and other important information that allows you to understand what's going on in your application. It should resemble this image:
+  ![The error tracking page allows you to filter and identify issues happening in your site.](assets/error-tracking.png)
 
-  ![The RUM Explorer displays user session data and error information](assets/rum-explorer.png)
+2. Here, you'll find a list of persistent errors occurring in your application. This means that one-off errors may not appear, but ones that users consistently come across will be highlighted.
 
-2. On the left-hand side, you'll find a list of facets you can use to help filter this data.
-  
-  If you explored either application earlier, you may even find your own session by toggling the **GEO > City** facet.
+3. You can use the facets menu on the left to help filter out the list of errors, giving you the ability to identify ones that may be more urgent, such as ones that cause crashes.
 
-3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
+  You can also filter by versions, allowing you to accurately see if an issue was fixed by a new release.
 
-4. Click on one of the sessions that has errors. The session should look like this image:
+4. Click on the error to the right with a message of **Issue fetching banner ad** to see the details of this error. You should see something like this image:
 
-  ![The user session shows a list of actions the user took.](assets/session-events.png)
+  ![The error tracking issue panel shows all of the details of the error that occurred](assets/error-tracking-issue.png)
 
-  Here, you can see exactly what path the user took in the application and when the error occurred throughout their session.
-
-  In this menu, you can also view only the errors or the attributes of the user that had the errors, which makes it easier to see if the issue is specific to a user's environment or location.
-
-5. Another feature is **Session Replay**, which was turned on when we instrumented the applications earlier. Select that button now to see a screen like this:
-
-  ![The session replay screen allows you to replay a user's actions and see errors that occurred.](assets/session-replay.png)
-
-  This feature allows you to watch back the user's session and see what actions were taken that led them to the error.
-
-  Watch the video and you'll notice the error occurred after the user selected the "Get New Ad" button on the site. 
-
-6. On the right-hand side, find one of the user actions that says **Click on Get New Ad**. Hover over it and click on the **Details** icon on it to get a deeper view of the action that led to this error.
-
-  ![The user action detailed view shows what occurred in the application during the action.](assets/user-event-performance.png)
-
-  Look deep enough and you'll notice that the request was made to a banner endpoint with two `.jpg` extensions. Now that you have an idea of what the problem is, see if you can find where it happened.
-
-7. Click on the error and you'll get a detailed view of where the error occurs in the source code.
-
-  ![The error view shows the source code where the error occurred.](assets/sourcemap-error.png)
-
-  Because you uploaded the source maps with the `datadog-ci` tool earlier, Datadog can show you the line in the application's source code that caused the error. Without it, you would be shown where the error occurred in the minified JavaScript, which is not very helpful.
+5. Because you uploaded the source maps with the `datadog-ci` tool earlier, Datadog can show you the line in the application's source code that caused the error. Without it, you would be shown where the error occurred in the minified JavaScript, which is not very helpful.
 
   Since the source maps were uploaded within the context of a GitHub repository, Datadog will provide a link to the repo so you can quickly file an issue and fix the error.
 
-8. Notice in the source code that there's an extra `.jpg` extension on the end of the URL: 
+6. Further down this panel you'll find one of the sessions that led to this error. You can see the timeline of user actions, where they're from, and information about the device, all giving you greater insight into the error.
 
-  ```jsx
-  const bannerAdRes = await fetch(
-      `${process.env.REACT_APP_DD_ADS_URL}/banners/${path}.jpg`
-    );
-  ```
+7. Also notice in this panel that you can click through to view more about this error in the RUM Explorer using the **Replay Session** and **View in RUM** buttons. You'll learn more about this next.
 
-  The `path` already has a `.jpg` extension, so you don't need to have the second one. Now that you know where it happened, you will have a much easier time fixing it.
-
-Great work using RUM to identify, diagnose, and fix issues in your application. With dashboards, the RUM Explorer, and Session Replay, you have the ability to see what's going on in your application and how any errors may affect users.
-
-Before you fix it, however, it's worth considering how you would have found this error if you weren't already looking for it. With this error identified, you can now create a monitor for it to be alerted if it were to happen again.
-
-Click **Continue** below to finish this first part of the workshop.
+When you're ready to move on, go ahead and click the **Continue** button below, where you'll use the RUM Explorer to identify and begin to investigate how users are getting the error you just spotted.

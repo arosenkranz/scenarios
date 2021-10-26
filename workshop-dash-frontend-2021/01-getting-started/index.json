@@ -20,11 +20,15 @@
       },
       {
         "text": "03-step.md",
-        "title": "Use the RUM Explorer and Session Replay to Find a Bug"
+        "title": "Use Error Tracking to Identify Issues"
+      },
+      {
+        "text": "04-step.md",
+        "title": "Use the RUM Explorer and Session Replay to Investigate a Bug"
       }
     ],
     "finish": {
-      "text": "04-finish.md"
+      "text": "05-finish.md"
     },
     "assets": {
       "host01": [
