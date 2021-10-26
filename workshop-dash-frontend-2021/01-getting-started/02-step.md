@@ -1,6 +1,6 @@
 With the application running and the Puppeteer service simulating some traffic to the e-commerce application and microsite, this is a good time to explore what is provided out of the box for you with RUM.
 
-Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. These are all of the dashboards that start with **RUM** in the list. 
+Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. 
 
 ### User Sessions Dashboard
 
@@ -18,9 +18,7 @@ Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_dat
 
 4. Navigate even further down the page and you'll begin to see how these users are interacting with the application throughout the session.
 
-  Seems like there may be an error or two coming in, which you'll dive into soon. 
-
-> **Tip:** Use the Search tools at the top of the page to help filter the data by a number of different criteria.
+> **Tip:** Use the search tools at the top of the page to help filter the data by a number of different criteria.
 
 ### Mobile Dashboard
 

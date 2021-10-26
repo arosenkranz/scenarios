@@ -377,7 +377,7 @@ const runSession = async (url, selectors) => {
 
     await page.goto(startUrl, { waitUntil: 'domcontentloaded' });
     const pageTitle = await page.title();
-    console.log(`"${pageTitle}" loaded`);
+    console.log(`"${pageTitle}"- USE COUPON loaded`);
 
     for (const selector of selectors) {
       await page.waitForSelector(selector);
@@ -387,7 +387,7 @@ const runSession = async (url, selectors) => {
     const coupons = ['SORRY', 'REBUILD', 'HEARTS', 'STOREDOG', 'SUNSHINE'];
 
     await page.waitForSelector('input#order_coupon_code');
-
+    console.log(coupons);
     await page.type(
       'input#order_coupon_code',
       coupons[Math.floor(Math.random() * coupons.length)],
