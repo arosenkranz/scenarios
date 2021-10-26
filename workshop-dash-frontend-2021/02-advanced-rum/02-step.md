@@ -36,8 +36,6 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   You may have also received an email notification about it if you entered it in the last step.
 
-In the next and final step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the microsite's user events so you can capture more meaningful information about each user's session.
-
-> **Note:** Another very important tool at your disposal is <a href="https://app.datadoghq.com/rum/error-tracking" target="_datadog">**Datadog Error Tracking**</a>. It uses machine learning to identify trends in errors and helps collect them in a way that's easy to understand and act upon. It takes some time for it to start working, so unfortunately it is unavailable in this workshop.
+In the next and step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the microsite's user events so you can capture more meaningful information about each user's session.
 
 Click the **Continue** button below to move on to the next step.

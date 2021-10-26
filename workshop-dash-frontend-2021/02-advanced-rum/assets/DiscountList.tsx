@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import DiscountItem from './DiscountItem';
 
 import { datadogRum } from '@datadog/browser-rum';
