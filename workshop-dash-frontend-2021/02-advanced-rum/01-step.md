@@ -22,7 +22,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   @type:error service:storedog-microsite @error.source:source env:frontend-workshop-2
   ```{{copy}}
 
-  If the `frontend-workshop-2` environment doesn't show up, wait a moment or two and refresh the page. 
+  If the `frontend-workshop-2` environment doesn't show up, wait a moment or two and refresh the page, then reenter the query.
 
   > **Note:** The environment was set to `frontend-workshop-2` for this activity so any errors from the previous activity don't persist in this monitor.
 
