@@ -14,7 +14,7 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
 3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite by selecting the facet under **Services** titled **storedog-microsite**.
 
-4. Click on one of the sessions that has 19 actions associated with it, which can be found in the **Action Count** column. The session should look like this image:
+4. Click on one of the sessions that has over 15 actions associated with it, which can be found in the **Action Count** column. The session should look like this image:
 
   ![The user session shows a list of actions the user took.](assets/session-events.png)
 
