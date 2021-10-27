@@ -40,7 +40,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   Storedog microsite experiencing high number of console errors.
   ```{{copy}}
 
-  No need for body text if you won't want to, but make sure check the box that says `Include a sample of 10 logs in the alert notification`{{copy}} to help provide some context.
+  No need for body text if you won't want to, but make sure check the box that says `Include a sample of 10 logs in the alert notification` to help provide some context.
 
 8. Finally, click **Create** to create the monitor and you should be taken to the monitor's status page, where it will now take a few moments to gather data and start sending alerts.
 
