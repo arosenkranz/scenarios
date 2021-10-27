@@ -6,6 +6,8 @@ In this final step, you'll confirm the fixes and custom RUM configuration you im
 
 2. To ensure you're viewing the newer user sessions for the microsite, filter the sessions with `Service:storedog-microsite` in the bar at the top of the page and change the time value in the upper-right corner to `Past 5 Minutes`.
 
+  > **Note:** When the new session data comes in, you can also filter it by selecting **1.2** under the **Version** facet.
+
 3. It may take a moment or two to generate user session data but once it does, select one with a good amount of user actions and you'll see something like this image:
 
   ![The user session shows custom actions taken by the user.](assets/user-actions.png)
@@ -35,6 +37,8 @@ In this final step, you'll confirm the fixes and custom RUM configuration you im
 2. Click on the monitor to view it and you'll find a timeline of events for the different states of the monitor.
 
   ![The monitor has returned to its normal state.](assets/monitor-ok.png)
+
+> **Note:** You can also ensure the error isn't occurring anymore by checking the Error Tracking page. You'll notice that there are no issues listed for version 1.2 of the microsite.
 
 Great work resolving the issue on the microsite! Now that you have custom actions and a monitor in place, it'll be much easier for you to be alerted to problems in your application and what data or attributes are associated with those problems.
 

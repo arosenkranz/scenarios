@@ -9,4 +9,6 @@ In this part of the workshop, you will build a RUM monitor to detect and alert o
 2. Use session analytics to help identify where time should be spent investigating issues.
 3. Configure RUM global context and custom user actions to help gather important information about how your users are interacting with your application.
 
+> **Note:** If you didn't name your RUM application **Storedog** in the previous activity, the application will not build correctly. You'll need to create a new RUM application with that name now, then refresh this page to continue.
+
 When you are ready to continue, click **Start Scenario**.

@@ -2,7 +2,7 @@ As you just saw, RUM makes it easy to get a high-level view of your application'
 
 Now you're going to use the RUM Explorer and Session Replay to investigate a specific issue and see where it is failing in your application. 
 
-1. Navigate to the <a href="https://app.datadoghq.com/rum/explorer" target="_datadog">**RUM Explorer**</a> page.
+1. Navigate to the <a href="https://app.datadoghq.com/rum/explorer" target="_datadog">**UX Monitoring > Sessions**</a> page to view the RUM explorer.
 
   From this page, you can see information about user sessions, errors encountered, what pages were viewed, and other important information that allows you to understand what's going on in your application. It should resemble this image:
 
@@ -12,9 +12,9 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
   
   If you explored either application earlier, you may even find your own session by toggling the **GEO > City** facet.
 
-3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite with `Service:storedog-microsite`{{copy}}
+3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite by selecting the facet under **Services** titled **storedog-microsite**.
 
-4. Click on one of the sessions that has 19 actions associated with it. The session should look like this image:
+4. Click on one of the sessions that has 19 actions associated with it, which can be found in the **Action Count** column. The session should look like this image:
 
   ![The user session shows a list of actions the user took.](assets/session-events.png)
 
@@ -50,7 +50,7 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
 
   It seems the `path` variable already has a `.jpg` extension, so you don't need to have the second one. Now that you know where it happened, you will have a much easier time fixing it.
 
-Great work using RUM to identify, diagnose, and fix issues in your application. With dashboards, the RUM Explorer, and Session Replay, you have the ability to see what's going on in your application and how any errors may affect users.
+Great work using RUM to identify, diagnose, and fix issues in your application. With dashboards, Error Tracking, the RUM Explorer, and Session Replay, you have the ability to see what's going on in your application and how any errors may affect users.
 
 Before you fix it, however, it's worth considering how you would have found this error if you weren't already looking for it. With this error identified, you can now create a monitor for it to be alerted if it were to happen again.
 

@@ -10,7 +10,9 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   Set the filter bar at the top of the page to filter by `@view.url_path:"/"`{{copy}}, this way we can compare how both services' home pages are performing.
   
-  Then set the **Measure** value to `Largest Contentful Paint` (or `@view.largest_contentful_paint`{{copy}}) and **avg by** a value of `Service (service)`.
+  Then set the **Count** value to `Largest Contentful Paint` (or `@view.largest_contentful_paint`{{copy}}) and **avg by** a value of `Service (service)`.
+  
+  > **Note:** The **Count** label may say **Measure** instead when you change the value.
 
   Finally, update the **Time Range** option to have a value of `Top List` instead. This will give you a clear breakdown of which service has a worse LCP at the moment.
 
@@ -24,11 +26,13 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   ![The page load time is broken down into different resources to view how long they individually took.](assets/analytics-loadpage.png)
 
-4. Navigate through the list and you'll notice it takes a lot of the scripts around 3 seconds to load, and then the ads and discounts take about another 3 seconds to load after that. 
+4. Navigate through the list and you'll notice it takes a lot of the scripts around 2 seconds to load, and then the ads and discounts are fetched after the page loads, totalling in a near 5 second LCP value.
 
-5. In this list, click on the entry for **discount** to see a flame graph of the request. Here, you'll see that it's not the Storedog application causing the delay, but the discounts API service.
+5. In this list, click on the entry for **discount** to see a flame graph of the request. Here, you'll see that the discounts service is performing okay, but it still has to wait for the page to load before it can be fetched.
 
-  This is a big performance issue that needs to be addressed and may not have been found if it weren't for this ability to see . The good news is you've identified both the issue and what the potential next steps are.
+  This is a performance issue that needs to be addressed and may not have been found if it weren't for this ability to see how the page performs. 
+  
+  The good news is you've identified both the issue and what the potential next steps are, which may be to fetch the ads and discounts before the page loads and serve it with the rest of the page on load.
 
 6. Navigate back to the monitor you created earlier from the <a href="https://app.datadoghq.com/monitors/manage" target="_datadog">**Monitors > Manage Monitors**</a> page and you'll find that it's starting to send an alert, as the next image shows:
 
