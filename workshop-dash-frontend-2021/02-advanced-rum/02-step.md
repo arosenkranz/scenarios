@@ -14,7 +14,7 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
   
   > **Note:** The **Count** label may say **Measure** instead when you change the value.
 
-  Finally, update the **Time Range** option to have a value of `Top List` instead. This will give you a clear breakdown of which service has a worse LCP at the moment.
+  Finally, update the **Timeseries** option to have a value of `Top List` instead. This will give you a clear breakdown of which service has a worse LCP at the moment.
 
   The result should look something like this:
 
