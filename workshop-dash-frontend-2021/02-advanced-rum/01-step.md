@@ -8,7 +8,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   docker ps
   ```{{execute}}
 
-  > **Note:** If the containers aren't running, use `docker-compose down`{{execute}} and `docker-compose up -d`{{execute}} to restart them.
+  > **Note:** If the containers aren't running, step into the working directory with `cd /root/lab`{{execute}} use `docker-compose down`{{execute}} and `docker-compose up -d`{{execute}} to restart them.
 
 2. Make sure you are logged into your <a href="https://app.datadoghq.com/account/login" target="_datadog">Datadog account/organization</a> that was created for you for this activity. 
 
@@ -19,10 +19,12 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   Then filter down to the particular error you experienced earlier with the following query pasted in the input field:
 
   ```
-  @type:error service:storedog-microsite @error.source:source
+  @type:error service:storedog-microsite @error.source:source env:frontend-workshop-2
   ```{{copy}}
 
   Since this is already a narrow filter, there's no need to adjust the **Count** or **Group By** options.
+
+  > **Note:** The environment was set to `frontend-workshop-2` for this activity so any errors from the previous activity don't persist in this monitor.
 
 5. For **Set Alert Conditions**, set the monitor to trigger when the metric is **Above** the threshold during the last **5 minutes**.
 
