@@ -19,8 +19,7 @@ const Advertisement = () => {
         `${import.meta.env.REACT_APP_DD_ADS_URL}/ads`
       );
       const data = await response.json();
-      const { url, path, name, id } =
-        data[Math.floor(Math.random() * data.length)];
+      const { url, path } = data[Math.floor(Math.random() * data.length)];
       const bannerAdRes = await fetch(
         `${import.meta.env.REACT_APP_DD_ADS_URL}/banners/${path}`
       );
@@ -29,15 +28,6 @@ const Advertisement = () => {
       }
       const bannerAd = await bannerAdRes.blob();
       setAd({ img: URL.createObjectURL(bannerAd), url });
-
-      datadogRum.addAction('Changed Ad', {
-        advertisement: {
-          id,
-          name,
-          url,
-          path,
-        },
-      });
     } catch (err) {
       console.error(err);
     }
@@ -46,7 +36,8 @@ const Advertisement = () => {
   const handleUserGetAd = async () => {
     const response = await fetch(`${import.meta.env.REACT_APP_DD_ADS_URL}/ads`);
     const data = await response.json();
-    const { url, path } = data[Math.floor(Math.random() * data.length)];
+    const { url, path, name, id } =
+      data[Math.floor(Math.random() * data.length)];
     const bannerAdRes = await fetch(
       `${import.meta.env.REACT_APP_DD_ADS_URL}/banners/${path}`
     );
@@ -55,6 +46,15 @@ const Advertisement = () => {
     }
     const bannerAd = await bannerAdRes.blob();
     setAd({ img: URL.createObjectURL(bannerAd), url });
+
+    datadogRum.addAction('Changed Ad', {
+      advertisement: {
+        id,
+        name,
+        url,
+        path,
+      },
+    });
   };
 
   return (

@@ -1,6 +1,6 @@
 With the application running and the Puppeteer service simulating some traffic to the e-commerce application and microsite, this is a good time to explore what is provided out of the box for you with RUM.
 
-Navigate to the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. 
+Navigate to the <a href="https://app.datadoghq.com/dashboard/lists/preset/3?q=RUM" target="_datadog">**Dashboards > Dashboard List**</a> page and you'll find a list of dashboards provided to you by Datadog. Some of these out of the box dashboards are specifically designed to help you get a good overview of your Real User Monitoring data. 
 
 ### User Sessions Dashboard
 
@@ -26,7 +26,7 @@ The User Sessions dashboard is a good place to get an idea of your user demograp
 
 The mobile dashboard is great for identifying how your application is performing on mobile devices. Here, you can view information about what types of device you users are using, allowing you to filter the data by device type and version. 
 
-1. Using the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page, navigate to the dashboard titled **RUM - Mobile**.
+1. Using the <a href="https://app.datadoghq.com/dashboard/lists/preset/3?q=RUM" target="_datadog">**Dashboards > Dashboard List**</a> page, navigate to the dashboard titled **RUM - Mobile**.
 
 2. Explore the data in this dashboard and you'll find similar data to the one you saw in the previous dashboard, but this time it will be more specific to mobile devices.
 
@@ -38,7 +38,7 @@ The mobile dashboard is great for identifying how your application is performing
 
 The performance overview dashboard is where you can see how your application is behaving for users in terms of performance. You can see Core Web Vital stats, loading time averages, how long it takes for a user action to complete, and popular calls to an API over XHR or fetch.
 
-1. From the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page, navigate to the dashboard titled **RUM - Performance Overview**.
+1. From the <a href="https://app.datadoghq.com/dashboard/lists/preset/3?q=RUM" target="_datadog">**Dashboards > Dashboard List**</a> page, navigate to the dashboard titled **RUM - Performance Overview**.
 
 2. While the previous dashboard focused more on the resources needed to make the application work, this dashboard focuses on how the application's performance affects the user experience.
 
@@ -54,7 +54,7 @@ The resources dashboard is where you can get a better look at how your applicati
 
 You'll also get a good look at how many requests are responding with HTTP status codes of `400` and higher, indicating some form of failure.
 
-1. Using the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page, navigate to the dashboard titled **RUM - Resources**.
+1. Using the <a href="https://app.datadoghq.com/dashboard/lists/preset/3?q=RUM" target="_datadog">**Dashboards > Dashboard List**</a> page, navigate to the dashboard titled **RUM - Resources**.
 
 2. Use this dashboard to get a good look at how your application is utilizing different types of resources across different paths, locations, environment, or versions.
 
@@ -64,7 +64,7 @@ You'll also get a good look at how many requests are responding with HTTP status
 
 ### Errors Dashboard
 
-1. Finally, take a look at the <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards List**</a> page and navigate to the dashboard titled **RUM - Errors**.
+1. Finally, take a look at the <a href="https://app.datadoghq.com/dashboard/lists/preset/3?q=RUM" target="_datadog">**Dashboards > Dashboard List**</a> page and navigate to the dashboard titled **RUM - Errors**.
 
 2. This dashboard will give you an overview of how many errors and the types of errors that users have encountered during their sessions.
 

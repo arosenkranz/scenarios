@@ -26,12 +26,12 @@ mv /root/frontend-config.rb /ecommworkshop/store-frontend-broken-instrumented/co
 ln -s /ecommworkshop/store-frontend-broken-instrumented /root/lab/store-frontend
 
 
-mv /root/discounts-requirements.txt /ecommworkshop/discounts-service/requirements.txt
-mv /root/discounts.py /ecommworkshop/discounts-service/discounts.py
+# mv /root/discounts-requirements.txt /ecommworkshop/discounts-service/requirements.txt
+# mv /root/discounts.py /ecommworkshop/discounts-service/discounts.py
 ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
 
-mv /root/ads-requirements.txt /ecommworkshop/ads-service/requirements.txt
-mv /root/ads.py /ecommworkshop/ads-service/ads.py
+# mv /root/ads-requirements.txt /ecommworkshop/ads-service/requirements.txt
+# mv /root/ads.py /ecommworkshop/ads-service/ads.py
 ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 # Link to microsite

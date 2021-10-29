@@ -22,11 +22,13 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
 3. The **store-frontend** service seems to be experiencing a poor LCP metric, so it's safe to say this is where you may want to focus on next for performance improvements.
 
-  Click on the service name to and then select **View events** from the menu. Then select one of the events to see how it performed. It should look something like this image:
+  Click on the service name to and then select **View events** from the menu, then select one of the events to see how it performed. It should look something like this image:
 
   ![The page load time is broken down into different resources to view how long they individually took.](assets/analytics-loadpage.png)
 
-4. Navigate through the list and you'll notice it takes a lot of the scripts around 2 seconds to load, and then the ads and discounts are fetched after the page loads, totalling in a near 5 second LCP value.
+4. Navigate through this list and filter by the different types of resources to get a better sense of what's taking so long.
+
+  You'll notice it takes a lot of the scripts and images around 2 seconds to load when the page first loads, and then the ads and discounts are fetched afterwards, totalling in high LCP value for most of these sessions.
 
 5. In this list, click on the entry for **discount** to see a flame graph of the request. Here, you'll see that the discounts service is performing okay, but it still has to wait for the page to load before it can be fetched.
 
