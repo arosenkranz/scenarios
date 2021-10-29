@@ -28,11 +28,11 @@ ln -s /ecommworkshop/store-frontend-broken-instrumented /root/lab/store-frontend
 
 # mv /root/discounts-requirements.txt /ecommworkshop/discounts-service/requirements.txt
 # mv /root/discounts.py /ecommworkshop/discounts-service/discounts.py
-ln -s /ecommworkshop/discounts-service /root/lab/discounts-service
+ln -s /ecommworkshop/discounts-service-fixed /root/lab/discounts-service
 
 # mv /root/ads-requirements.txt /ecommworkshop/ads-service/requirements.txt
 # mv /root/ads.py /ecommworkshop/ads-service/ads.py
-ln -s /ecommworkshop/ads-service /root/lab/ads-service
+ln -s /ecommworkshop/ads-service-fixed /root/lab/ads-service
 
 # Link to microsite
 ln -s /storedog-microsite /root/lab/storedog-microsite
