@@ -26,13 +26,13 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   ![The page load time is broken down into different resources to view how long they individually took.](assets/analytics-loadpage.png)
 
-4. Navigate through this list and filter by the different types of resources to get a better sense of what's taking so long.
+4. Navigate through this waterfall list and filter by the different types of resources to get a better sense of what's taking so long.
 
-  You'll notice it takes a lot of the scripts and images around 2 seconds to load when the page first loads, and then the ads and discounts are fetched afterwards, totalling in high LCP value for most of these sessions.
+  You'll notice that there are a number of JavaScript file and images that take a while to load, and then a few fetch requests are made after the page loads for advertisement and discount data. All of this adds up to a high LCP value.
 
-5. In this list, click on the entry for **discount** to see a flame graph of the request. Here, you'll see that the discounts service is performing okay, but it still has to wait for the page to load before it can be fetched.
+5. From this list, click on the entry for **discount** to see a flame graph of the request and its associated APM trace. Here, you'll see that the discounts service is performing okay, but it still has to wait for the page to load before it can be fetched.
 
-  This is a performance issue that needs to be addressed and may not have been found if it weren't for this ability to see how the page performs. 
+  This is a performance issue that needs to be addressed and may not have been found if it weren't for this ability to see how the page performs.
   
   The good news is you've identified both the issue and what the potential next steps are, which may be to fetch the ads and discounts before the page loads and serve it with the rest of the page on load.
 

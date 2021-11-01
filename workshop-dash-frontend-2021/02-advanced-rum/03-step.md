@@ -10,9 +10,9 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
 2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
 
-  Find the line in the `handleUserGetAd` function that had the error and you'll notice the extra `.jpg` extension has been removed.
+  On **line 41** you'll notice the extra `.jpg` extension has been removed.
   
-3. Also notice the use of the following code:
+3. Also notice on **line 50** the use of the following code:
 
   ```jsx
   datadogRum.addAction('Changed Ad', {
@@ -53,7 +53,7 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
 6. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/DiscountList.tsx`{{open}} file to see the updated component.
 
-  In **Line 79** and **Line 112**, you'll notice the use of `datadogRum.addAction`. This allows you to customize get a clearer picture of what the user is doing and how they are interacting with the discounts list.
+  On **line 79** and **line 112**, you'll notice the use of `datadogRum.addAction`. This allows you to customize get a clearer picture of what the user is doing and how they are interacting with the discounts list.
 
 7. Also notice in the `<th>` elements the use of `data-dd-action-name` attributes.
 
