@@ -10,7 +10,7 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
 2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
 
-  On **line 41** you'll notice the extra `.jpg` extension has been removed.
+  On **line 41** you'll notice the extra `.jpg` extension in the URL you found earlier has now been removed, hopefully alleviating the error.
   
 3. Also notice on **line 50** the use of the following code:
 
