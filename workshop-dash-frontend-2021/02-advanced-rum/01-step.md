@@ -37,7 +37,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
 7. Under **Say what's happening**, provide this as a title:
 
   ```
-  Storedog microsite experiencing high number of console errors.
+  Storedog microsite experiencing high number of errors.
   ```{{copy}}
 
   No need for body text if you won't want to, but make sure check the box that says `Include a sample of 10 logs in the alert notification` to help provide some context.
