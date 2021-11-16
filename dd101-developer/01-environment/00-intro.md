@@ -1,4 +1,4 @@
-If you are seeing this message, it means you have successfully logged in and joined this workshop. Congratulations! 
+If you are seeing this message, it means you have successfully logged in and joined this course. Congratulations! 
 
 The objectives of this section are:
 
