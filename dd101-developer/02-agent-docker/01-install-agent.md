@@ -23,28 +23,27 @@
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock:ro
         - /proc/:/host/proc/:ro
-        - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
-  </pre>
+        - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro</pre>
 
-`image: 'datadog/agent:7.31.1` specifies the specific Agent Docker image to use for the the container.
+  `image: 'datadog/agent:7.31.1` specifies the specific Agent Docker image to use for the the container.
 
-The `environment` block sets the specified environment variables in the Agent container:
+  The `environment` block sets the specified environment variables in the Agent container:
 
-- **DD_API_KEY**: This is required by the Agent to submit metrics and events to Datadog. It's set in the host environment, and you can see it by running `env |grep DD_API_KEY`{{execute}} in the terminal. Because it is not set to a value here, Docker Compose will use the host's environment variable value.
+    - **DD_API_KEY**: This is required by the Agent to submit metrics and events to Datadog. It's set in the host environment, and you can see it by running `env |grep DD_API_KEY`{{execute}} in the terminal. Because it is not set to a value here, Docker Compose will use the host's environment variable value.
 
-- **DD_LOGS_ENABLED**: Whether to collect logs.
+    - **DD_LOGS_ENABLED**: Whether to collect logs.
 
-- **DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL**: Whether to collect logs emitted by all containers it detects.
+    - **DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL**: Whether to collect logs emitted by all containers it detects.
 
-- **DD_PROCESS_AGENT_ENABLED**: Whether to collect processes and containers.
+    - **DD_PROCESS_AGENT_ENABLED**: Whether to collect processes and containers.
 
-- **DD_DOCKER_LABELS_AS_TAGS**: Configures the Agent to treat custom container labels as custom tags. In this case, if the Agent reads the label `my.custom.label.team`, it will assign the value to the tag `team`.
+    - **DD_DOCKER_LABELS_AS_TAGS**: Configures the Agent to treat custom container labels as custom tags. In this case, if the Agent reads the label `my.custom.label.team`, it will assign the value to the tag `team`.
 
-- **DD_TAGS**: Sets the global `env` tag for all data emitted from the host. In this case, it is setting the special `env` tag to `dd101-dev`.
+    - **DD_TAGS**: Sets the global `env` tag for all data emitted from the host. In this case, it is setting the special `env` tag to `dd101-dev`.
 
   Throughout this workshop, you'll see how valuable tags are in Datadog. For now, focus on how to set them in this environment.
 
-The `volumes` block mounts the files on the host filesystem into the container. This gives the Agent tremendous power, able to query the Docker Daemon for data about the Docker environment, as well as process data from the host itself.
+  The `volumes` block mounts the files on the host filesystem into the container. This gives the Agent tremendous power, able to query the Docker Daemon for data about the Docker environment, as well as process data from the host itself.
 
 ### Run docker-compose
 
