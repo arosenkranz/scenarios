@@ -11,7 +11,7 @@
 1. Add the Datadog Agent as a service by clicking on **Copy to Editor** in the following block of code:
 
   <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste agent block here">
-  datadog:
+ datadog:
     image: 'datadog/agent:7.31.1'
     environment:
       - DD_API_KEY
