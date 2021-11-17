@@ -16,7 +16,10 @@ sed -i 's/ENV DD_ENV=development//g' /ecommworkshop/discounts-service/Dockerfile
 sed -i 's/ENV DD_ENV=development//g' /ecommworkshop/ads-service/Dockerfile
 
 cd /root/lab
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
+ln -s /ecommworkshop/discounts-service
+ln -s /ecommworkshop/ads-service
 
-docker-compose -f /root/lab/docker-compose.yml pull
+docker-compose pull
 
 statusupdate "workspace"

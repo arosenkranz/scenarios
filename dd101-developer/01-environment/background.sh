@@ -12,7 +12,7 @@ mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 cd /root/lab
 
-ln -s /ecommworkshop/store-frontend-instrumented-fixed
+ln -s /ecommworkshop/store-frontend-instrumented-fixed /root/lab/store-frontend
 ln -s /ecommworkshop/discounts-service
 ln -s /ecommworkshop/ads-service
 
