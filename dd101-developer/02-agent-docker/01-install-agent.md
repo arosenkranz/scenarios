@@ -1,4 +1,4 @@
-"Installing" the Agent container is done by specifying which image to use. Rather than configuration files, the container Agent relies on environment variables and container labels.
+"Installing" the Agent container is done by specifying which Docker image to use. Rather than configuration files, the container Agent relies on environment variables and container labels.
 
 ### Configure docker-compose.yml
 

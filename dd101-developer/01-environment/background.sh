@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 # Wait for required assets to appear in the filesystem
 until  [ -f /root/puppeteer.sh ]
