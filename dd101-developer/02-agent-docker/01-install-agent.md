@@ -75,22 +75,24 @@ Now that you're confident that the Agent is running according to your configurat
 
   The Agent container has access to the host that's running the Docker Daemon, which is running the Agent container!
 
-1. Navigate to **Infrastructure > Containers**. Here you can see all of the service containers.
+1. Navigate to <a href="https://app.datadoghq.com/containers" target="_datadog">**Infrastructure > Containers**</a>. Here you can see all of the service containers.
 
 1. Click on `lab_discounts_1` and notice the metadata the Agent captures by default. Find the tag `env:dd101-dev`, which was applied to all events, metrics, and logs collected by the Agent.
 
   ![Discounts container pre-configuration](./assets/discounts-container-pre-config.png)
 
-1. Navigate to **Logs**. You'll see a lot of log entries here. In the facets panel on the left, select **discounts** to show logs from that service only.
+1. Navigate to <a href="https://app.datadoghq.com/logs?query=env%3Add101-dev">**Logs > Search**</a> from the menu on the left. 
+
+  You'll see a lot of log entries here. In the facets panel on the left, select **discounts** to show logs from that service only.
 
   You are able to see logs from the `discounts` service because the Agent is configured to capture logs from all containers. But notice that they are all deemed **ERROR**, as indicated by the red marks.
 
-1. Click on a `discounts` log line. In addition to the log line content, the Agent was able to capture a lot of metadata, such as the **CONTAINER NAME**, **DOCKER IMAGE**, and **SERVICE** and **SOURCE** based on the service name.
+1. Click on a `discounts` log line from the list. In addition to the log line content, the Agent was able to capture a lot of metadata, such as the **CONTAINER NAME**, **DOCKER IMAGE**, and **SERVICE** and **SOURCE** based on the service name.
 
   Notice the tip at the bottom of the log details panel, recommending that you should set the source to an integration name.
 
   ![Discounts logs with no configuration](./assets/discounts-logs-pre-configure.png)
 
-  You'll see how to do this later in the workshop.
+  You'll see how to do this later in the course.
 
 Click the **Continue** button to configure the discounts service for the Agent container.
