@@ -11,19 +11,19 @@
 1. Add the Datadog Agent as a service by clicking on **Copy to Editor** in the following block of code:
 
   <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste agent block here">
- datadog:
-    image: 'datadog/agent:7.31.1'
-    environment:
-      - DD_API_KEY
-      - DD_LOGS_ENABLED=true
-      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
-      - DD_PROCESS_AGENT_ENABLED=true
-      - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
-      - DD_TAGS='env:dd101-dev'
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /proc/:/host/proc/:ro
-      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro</pre>
+  datadog:
+      image: 'datadog/agent:7.31.1'
+      environment:
+        - DD_API_KEY
+        - DD_LOGS_ENABLED=true
+        - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+        - DD_PROCESS_AGENT_ENABLED=true
+        - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
+        - DD_TAGS='env:dd101-dev'
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - /proc/:/host/proc/:ro
+        - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro</pre>
 
   `image: 'datadog/agent:7.31.1` specifies the specific Agent Docker image to use for the the container.
 
