@@ -3,6 +3,7 @@ Next, you'll add labels to the the discounts service so the Agent will know how 
 1. Open the file `docker-compose.yml`{{open}} in the IDE.
 
 1. Add the the following labels to the `discounts` service by clicking on **Copy to Editor** in the following block of code:
+
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# paste discounts labels here">
 labels:
          com.datadoghq.tags.env: 'dd101-dev'
