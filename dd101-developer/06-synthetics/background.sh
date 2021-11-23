@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -sk https://datadoghq.dev/katacodalabtools/r?raw=true|bash
+curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 statuscheck "environment"
 

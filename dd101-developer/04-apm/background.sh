@@ -4,7 +4,6 @@ curl -s https://datadoghq.dev/katacodalabtools/r?raw=true|bash
 
 statuscheck "environment"
 
-# Wait for required assets to appear in the filesystem
 until  [ -f /root/puppeteer.sh ]
 do
   sleep 2

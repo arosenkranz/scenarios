@@ -1,0 +1,23 @@
+Welcome to **Datadog 101 for Developers**! In this course, you'll learn about many of the core features in Datadog and how it can be used in your environments. 
+
+Datadog is a software-as-a-service (SASS) offering that specializes in the following:
+
+* Collects vast amounts of data that your systems produce
+* Puts all of that data in one place
+* Organizes that data so it makes sense to you, enabling you and your organization to do your job better
+
+Datadog offers much more than the above list, but everything you do within the service will revolve around those three being in place and working correctly.
+
+There was perhaps a point in time where this course could walk you through the entirety of Datadog, but that time has passed. Instead, this course will teach you key parts of the Datadog product that are especially useful to software developers. You'll learn the basics of installing the Datadog Agent, working with integrations, configuring your services for application performance monitoring (APM) and log collection, synthetic API and browser testing, and real user monitoring (RUM).
+
+If you want to take this course in a single sitting, expect to spend a few hours going through it. Some choose to break it up over a few days in a week. You can do whatever works for you, as this course and others on the Datadog Learning Center are available to you 24 hours a day.
+
+If you find yourself having questions or problems with the course or interactive labs, please do not hesitate to reach out to us for support. You can do so in two ways:
+
+1. Select the feedback icon in the lower right corner of the page within the Learning Center. This will allow you to leave feedback on the course, just don't forget to enter your email address if you're looking for a reply.
+
+2. You can also join us and other Datadog users here at the <a href="https://datadoghq.slack.com" target="_blank" rel="noopener noreferrer">Datadog public Slack workspace</a>. For the Learning Center, please direct all questions to the <strong>#learning-center</strong> channel. 
+
+The most important thing you can walk away with today is inspiration. Don’t try to memorize the steps or vocabulary - the Learning Center and Docs will always be there to refresh your memory. As you step through the course, keep asking yourself “How will this tool help me be better at my job?”.
+
+Next, you'll learn a bit about how to understand and categorize metrics.
