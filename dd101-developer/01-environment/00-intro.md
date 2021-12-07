@@ -5,7 +5,7 @@ The objectives of this section are:
 1. Get familiar with the lab environment.
 2. Login to Datadog with the account provisioned for you.
 3. Ensure you are in the correct Datadog account.
-4. Get familiar with Storedog, the application you'll use throughout the workshop.
+4. Get familiar with Storedog, the application you'll use throughout the course.
 
 Now click the **Start Scenario** button on this page to start the scenario and follow the directions.
 

@@ -1,6 +1,6 @@
 Now you'll employ a synthetic browser test that will monitor Storedog's front end and ensure a good user experience. 
 
-Throughout this workshop, you may have seen how the Storedog front end displays the response from the discounts service in the upper-left corner of the home page as a "coupon block":
+Throughout this course, you may have seen how the Storedog front end displays the response from the discounts service in the upper-left corner of the home page as a "coupon block":
 
 ![Coupon section detail of Storedog homepage](./assets/coupon_section_detail.png)
 

@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started with the Lab Environment
 
 Throughout this course, you'll learn how to use Datadog through interactive lab exercises. All of these exercises are ran in the browser, so there is no need to install any software or run any virtual machines on your personal computer. For the best results, however, it's recommended that you use Google Chrome or Firefox as your browser.
 

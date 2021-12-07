@@ -1,4 +1,4 @@
-# Configure Integrations
+# Datadog Integrations
 
 In the previous lab, you got the Datadog Agent up and running. However, you may have noticed that while log and metric data appeared, it wasn't very useful. This is because different services such as Postgres, Python, or Ruby all produce different types of data and the Datadog app doesn't automatically know exactly which one is which without being told what to expect. This is where integrations come in.
 

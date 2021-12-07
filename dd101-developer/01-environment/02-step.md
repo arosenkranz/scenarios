@@ -1,4 +1,4 @@
-In this workshop you're going to work with Storedog, a fully functional e-commerce application running on a few Docker containers managed by Docker Compose.
+In this course you're going to work with Storedog, a fully functional e-commerce application running on a few Docker containers managed by Docker Compose.
 
 Here's a summary of the services that comprise Storedog:
 
@@ -24,6 +24,5 @@ Here's a summary of the services that comprise Storedog:
 
   ![Storedog homepage](./assets/storedog_screenshot.png)
 
-1. Take a few moments and explore the application before moving on. You'll use this application throughout the rest of the workshop to learn about different components about the Datadog platform.
+1. Take a few moments and explore the application before moving on. You'll use this application throughout the rest of the course to learn about different components about the Datadog platform.
 
-1. At the end of every section of this workshop, including this one, run `finish`{{execute}} when you are finished.

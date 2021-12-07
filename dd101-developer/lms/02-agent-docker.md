@@ -1,4 +1,4 @@
-# Configure the Agent Using Docker
+# The Datadog Agent
 
 The Datadog Agent is open source software that runs on your hosts. It is the service that listens for and collects events, logs, and metrics from hosts and sends them to Datadog to be processed and displayed.
 

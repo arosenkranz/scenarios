@@ -1,4 +1,4 @@
-In this part of the workshop, you are going to create a synthetic browser test to ensure an optimal user experience. Browser tests allow you to proactively test on popular user flows and confirm the Document Object Model (DOM) is in the correct state during a user session.
+In this part of the course, you are going to create a synthetic browser test to ensure an optimal user experience. Browser tests allow you to proactively test on popular user flows and confirm the Document Object Model (DOM) is in the correct state during a user session.
 
 In this lab, you will:
 

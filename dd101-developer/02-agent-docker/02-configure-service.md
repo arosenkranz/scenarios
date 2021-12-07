@@ -1,4 +1,4 @@
-Next, you'll add labels to the the discounts service so the Agent will know how tag individual services. Specifically, you set the tags `env`, `service`, and `version` which enable Unified Service Tagging. You'll learn more about this when you work with APM and logs later in the workshop.
+Next, you'll add labels to the the discounts service so the Agent will know how tag individual services. Specifically, you set the tags `env`, `service`, and `version` which enable Unified Service Tagging. You'll learn more about this when you work with APM and logs later in the course.
 
 1. Open the file `docker-compose.yml`{{open}} in the IDE.
 
