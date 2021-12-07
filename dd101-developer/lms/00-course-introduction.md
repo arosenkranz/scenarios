@@ -10,6 +10,8 @@ Datadog offers much more than the above list, but everything you do within the s
 
 There was perhaps a point in time where this course could walk you through the entirety of Datadog, but that time has passed. Instead, this course will teach you key parts of the Datadog product that are especially useful to software developers. You'll learn the basics of installing the Datadog Agent, working with integrations, configuring your services for application performance monitoring (APM) and log collection, synthetic API and browser testing, and real user monitoring (RUM).
 
+The goal of this course is to get you up and running with the different services Datadog offers and give you a sense of what's possible. You won't go too deep into any one product, but rather gain a solid foundation in using Datadog. Once you complete this course, you can dive further into what you have learned with more product-specific courses offered at the Datadog Learning Center. 
+
 If you want to take this course in a single sitting, expect to spend a few hours going through it. Some choose to break it up over a few days in a week. You can do whatever works for you, as this course and others on the Datadog Learning Center are available to you 24 hours a day.
 
 If you find yourself having questions or problems with the course or interactive labs, please do not hesitate to reach out to us for support. You can do so in two ways:
@@ -20,4 +22,3 @@ If you find yourself having questions or problems with the course or interactive
 
 The most important thing you can walk away with today is inspiration. Don’t try to memorize the steps or vocabulary - the Learning Center and Docs will always be there to refresh your memory. As you step through the course, keep asking yourself “How will this tool help me be better at my job?”.
 
-Next, you'll learn a bit about how to understand and categorize metrics.

@@ -4,7 +4,7 @@ Throughout this course, you'll learn how to use Datadog through interactive lab 
 
 Each lab begins with an introduction page that informs you of what you will learn in the lab. The lab's instructional pages look something like the following image:
 
-![The lab environment displays instruction, a terminal, and editor.](./assets/01_lab-env.png) 
+![The lab environment displays instruction, a terminal, and editor.](./assets/01-lab-env.png) 
 
 On the left-hand side of the page, you'll find the instructions for the lab. On the right, you'll find an interactive terminal along with tabs to open other tools, such as an IDE and the application you'll be using to learn about Datadog's features.
 
