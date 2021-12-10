@@ -4,7 +4,7 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "pathway_id": "alexrosenkranz",
+      "pathway_id": "datadog",
       "course_id": "dd101-developer",
       "id": "dd101-developer",
       "title": "DD101"
