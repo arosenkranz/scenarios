@@ -29,7 +29,7 @@ services:
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
       - DD_AGENT_HOST=datadog
-    image: 'ddtraining/discounts:2.1.1'
+    image: 'ddtraining/discounts:2.1.2'
     command: [sh, -c, 'ddtrace-run flask run --port=5001 --host=0.0.0.0']
     ports:
       - '5001:5001'
@@ -52,7 +52,7 @@ services:
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
       - DD_AGENT_HOST=datadog
-    image: 'ddtraining/storefront-fixed:2.0.0'
+    image: 'ddtraining/storefront-fixed:2.1.2'
     command: sh docker-entrypoint.sh
     ports:
       - '3000:3000'
@@ -79,7 +79,7 @@ services:
       - DD_TRACE_SAMPLE_RATE=1
       - DD_PROFILING_ENABLED=true
       - DD_AGENT_HOST=datadog
-    image: 'ddtraining/advertisements:2.1.1'
+    image: 'ddtraining/advertisements:2.1.2'
     command: [sh, -c, 'ddtrace-run flask run --port=5002 --host=0.0.0.0']
     ports:
       - '5002:5002'

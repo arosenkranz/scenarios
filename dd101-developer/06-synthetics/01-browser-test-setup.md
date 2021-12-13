@@ -12,7 +12,7 @@ You can also record user actions to change the state of the page, such as clicki
 
 ## Create a simple browser test
 
-In the Datadog App, navigate to **UX Monitoring > New Test** and click on **New Browser Test**. Browser tests are configured in two parts. First, you configure the details common to synthetic tests. Then, you will record the specific actions the test should perform on the web application to satisfy assertions.
+In the <a href="https://app.datadoghq.com" target="_datadog">Datadog App</a>, navigate to **UX Monitoring > New Test** and click on **New Browser Test**. Browser tests are configured in two parts. First, you configure the details common to synthetic tests. Then, you will record the specific actions the test should perform on the web application to satisfy assertions.
 
 ### Test details
 
