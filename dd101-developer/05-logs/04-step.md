@@ -26,6 +26,4 @@ Transactions aggregate indexed logs according to instances of a sequence of even
 
 4. Click the X next to the **Group into** field to return to the Log List.
 
-When you are done with this section, run the `finish`{{execute}} command.
-
 Click the **Continue** button to wrap up this lab.

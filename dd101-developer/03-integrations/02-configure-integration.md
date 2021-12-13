@@ -38,6 +38,4 @@ Start by adding an autodiscovery label for the discounts service:
 
     These are especially nice. Notice under **Event Attributes** that there is a **LOGGER NAME** of `ddtrace`. This is because the store-frontend had been instrumented with Datadog's tracing client for Ruby. You'll learn more about that in the APM Lab.
 
-When you are done with this section, run the `finish`{{execute}} command.
-
 Click the **Continue** button to wrap up this lab.

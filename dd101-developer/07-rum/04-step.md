@@ -20,4 +20,4 @@
 
 4. If you go back to your [RUM Application List](https://app.datadoghq.com/rum/list), you can also check out the **Sessions**, **Resource** and **Errors** dashboards to view more details for those.
 
-Nice work! Now execute `finish`{{execute}} in the terminal to complete this activity and click **Continue** below.
+Click the **Continue** button to conclude this lab.

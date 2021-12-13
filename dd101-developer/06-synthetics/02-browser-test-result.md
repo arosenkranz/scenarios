@@ -52,4 +52,4 @@ After a few seconds you should have test results to observe:
 
 Now that you have a basic browser test set up for the coupon block, think about how you can expand upon it to other features of the site.
 
-Run the `finish`{{execute}} script to complete this activity, then click **Continue** below.
+Click the **Continue** button to conclude this lab.

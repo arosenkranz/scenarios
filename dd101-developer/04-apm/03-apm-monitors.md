@@ -42,4 +42,4 @@ In Datadog, monitors can be created to track any part of an application to detec
 
 Great work on using an APM monitor to quickly detect performance issues! Having the ability to see the performance of a service in your application is a great way to detect issues that may not be immediately apparent.
 
-To finish this lab, run `finish`{{execute}} in the terminal, then click the **Continue** button below to review what you've learned.
+Click the **Continue** button below to review what you've learned.

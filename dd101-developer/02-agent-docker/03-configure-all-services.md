@@ -16,6 +16,4 @@ For your comfort, there is a fully-configured Docker Compose file already in the
 
 1. In the Datadog App, take a tour of the areas you looked at earlier: **Infrastructure** and **Logs**. Notice the new tags for each service.
 
-When you are done with this section, run the `finish`{{execute}} command.
-
 Click the **Continue** button to conclude this lab.
