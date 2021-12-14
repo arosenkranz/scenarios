@@ -27,7 +27,7 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_SERVICE=discounts-service
-      - DD_VERSION=2.0
+      - DD_VERSION=2.1.2
       - DD_ENV=dd101-dev
     image: 'ddtraining/discounts:2.1.2'
     command:
@@ -57,7 +57,7 @@ services:
       - DD_CLIENT_TOKEN
       - DD_APPLICATION_ID
       - DD_SERVICE=store-frontend
-      - DD_VERSION=2.0
+      - DD_VERSION=2.1.2
       - DD_ENV=dd101-dev
     image: 'ddtraining/storefront-fixed:2.1.2'
     command: sh docker-entrypoint.sh
@@ -85,7 +85,7 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_SERVICE=advertisements-service
-      - DD_VERSION=2.0
+      - DD_VERSION=2.1.2
       - DD_ENV=dd101-dev
     image: 'ddtraining/advertisements-fixed:2.1.2'
     command:

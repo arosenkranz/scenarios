@@ -10,21 +10,29 @@
   type="text/javascript">
 </script>
 <script>
-if (window.DD_RUM) {
-  window.DD_RUM.init({
-    clientToken: '<%= ENV['DD_CLIENT_TOKEN'] %>',
-    applicationId: '<%= ENV['DD_APPLICATION_ID'] %>',
-    sampleRate: 100,
-    trackInteractions: true,
-    service: 'storedog-frontend',
-    allowedTracingOrigins: [/https:\/\/.*\.environments.katacoda\.com/],
-    env: '<%= ENV['DD_ENV'] %>',
-    version: '<%= ENV['DD_VERSION'] %>'
-  });
+window.DD_RUM && window.DD_RUM.init({
+  clientToken: '<%= ENV['DD_CLIENT_TOKEN'] %>',
+  applicationId: '<%= ENV['DD_APPLICATION_ID'] %>',
+  sampleRate: 100,
+  trackInteractions: true,
+  service: '<%= ENV['DD_SERVICE'] %>',
+  site: '<%= ENV['DD_SITE'] %>'
+  allowedTracingOrigins: [/https:\/\/.*\.environments.katacoda\.com/],
+  env: '<%= ENV['DD_ENV'] %>',
+  version: '<%= ENV['DD_VERSION'] %>'
+  defaultPrivacyLevel: 'mask-user-input'
+});
 
-  window.DD_RUM.startSessionReplayRecording();
+window.DD_RUM && window.DD_RUM.startSessionReplayRecording();
 
-}
+if (!window._DATADOG_SYNTHETICS_BROWSER) {
+  window.DD_RUM.setRumGlobalContext({'usr.handle': 'john@storedog.com'});
+};
+
+if (window.location.href.includes('utm')) {
+  window.DD_RUM.addRumGlobalContext({'fromUtm': true});
+};
+
 </script>
     <%= render partial: 'spree/shared/head' %>
   </head>
