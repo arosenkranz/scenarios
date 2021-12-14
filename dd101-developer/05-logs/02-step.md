@@ -4,11 +4,11 @@ With the <a href="https://docs.datadoghq.com/logs/explorer/#fields" target="_bla
 
 2. Select `Fields` for **Group into** below the search field. A graph visualization of the filtered logs will replace the Log List.  
 
-    Group the fields by service so that it reads **Group into** `Fields` by `Service`.
+    Group the fields by service so that it reads **Group into** `Fields`, **Show Count of** `all logs` by `Service`.
 
     Above the graph, you'll see that **Timeseries** is selected. Select **Toplist** next to Timeseries, then select **Table** to view the different visualizations. Click **Timeseries** again.
 
-    ![fields-agg](assets/fields-agg.gif)
+    ![fields-agg](assets/fields-agg.png)
 
 3. Click **Export** above the graph. You can export the visualization areas of the product, such as a Logs Monitor, to a dashboard, and to generate a log-based metric (<a href="https://docs.datadoghq.com/logs/logs_to_metrics/" target="_blank">Generate Metrics</a>). Click **Export** again to close the menu.
 

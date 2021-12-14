@@ -10,7 +10,7 @@ Transactions aggregate indexed logs according to instances of a sequence of even
 
 2. Select `Transactions` for **Group into** below the search field.
 
-    Group the transactions by service so that it reads **Group into** `Transactions` on `Service` and Count `all logs`.
+    Group the transactions by service so that it reads **Group into** `Transactions` and Count `all logs` by `Service`.
 
     The Transactions list will display each service along with the the total count of logs.
 

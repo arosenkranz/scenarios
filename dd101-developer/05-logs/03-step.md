@@ -4,7 +4,7 @@ With pattern aggregation, logs that have a message with similar structures, belo
 
 1. In <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>, filter the list to the `service:advertisements-service`, `service:discounts-service`.
 
-2. Select `Patterns` for **Group by** below the search field.
+2. Select `Patterns` for **Group in** below the search field.
 
     Observe the differences in the patterns that are listed.
 
