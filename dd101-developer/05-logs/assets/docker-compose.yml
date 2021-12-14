@@ -41,7 +41,7 @@ services:
     labels:
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'discounts-service'
-      com.datadoghq.tags.version: '2.0'
+      com.datadoghq.tags.version: '2.1.2'
       my.custom.label.team: 'discounts'
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
   frontend:
@@ -63,7 +63,7 @@ services:
     labels:
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'store-frontend'
-      com.datadoghq.tags.version: '2.0'
+      com.datadoghq.tags.version: '2.1.2'
       my.custom.label.team: 'frontend'
       com.datadoghq.ad.logs: '[{"source": "ruby", "service": "store-frontend"}]'
   advertisements:
@@ -91,7 +91,7 @@ services:
     labels:
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'advertisements-service'
-      com.datadoghq.tags.version: '2.0'
+      com.datadoghq.tags.version: '2.1.2'
       my.custom.label.team: 'advertisements'
       com.datadoghq.ad.logs: '[{"source": "python", "service": "advertisements-service"}]'
   db:

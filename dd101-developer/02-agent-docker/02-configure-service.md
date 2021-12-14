@@ -8,7 +8,7 @@ Next, you'll add labels to the the discounts service so the Agent will know how 
   labels:
          com.datadoghq.tags.env: 'dd101-dev'
          com.datadoghq.tags.service: 'discounts-service'
-         com.datadoghq.tags.version: '2.0'
+         com.datadoghq.tags.version: '2.1.2'
          my.custom.label.team: 'discounts'</pre>
 
   `com.datadoghq.tags.env: 'dd101-dev'` is technically unnecessary in this case because the Agent will set that by default for all services. But there are many use cases where a service would have a different `env` value than the Agent's default.
