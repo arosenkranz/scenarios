@@ -43,7 +43,7 @@ services:
       my.custom.label.team: 'discounts'
       com.datadoghq.ad.logs: '[{"source": "python", "service": "discounts-service"}]'
     volumes:
-      - ./discounts-service:/app
+      - /root/lab/discounts-service:/app
   frontend:
     environment:
       - DD_SERVICE=store-frontend
