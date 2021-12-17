@@ -16,7 +16,7 @@ window.DD_RUM && window.DD_RUM.init({
   sampleRate: 100,
   trackInteractions: true,
   service: '<%= ENV['DD_SERVICE'] %>',
-  site: '<%= ENV['DD_SITE'] %>'
+  site: '<%= ENV['DD_SITE'] %>',
   allowedTracingOrigins: [/https:\/\/.*\.environments.katacoda\.com/],
   env: '<%= ENV['DD_ENV'] %>',
   version: '<%= ENV['DD_VERSION'] %>'

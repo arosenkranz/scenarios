@@ -18,7 +18,7 @@ This lab uses a Docker to run a demo ecommerce website called "Storedog".
 
   This Ruby file is the main template for our application. By integrating the RUM script here, it will be available throughout our application.
 
-8. You'll see that we have already integrated the RUM script in the front end and set the initialization arguments. (The code block starts with `if (window.DD_RUM)`). 
+8. You'll see that we have already integrated the RUM script in the front end and set the initialization arguments. (The code block starts with `window.DD_RUM &&`). 
 
   You'll also notice that after initialization, the `startSessionReplayRecording()` method is called. This will allow you use **Session Replay** and play back the steps a user took during their session.
 

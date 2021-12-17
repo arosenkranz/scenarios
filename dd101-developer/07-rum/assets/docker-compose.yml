@@ -57,7 +57,7 @@ services:
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_ENV=dd101-dev
       - DD_SERVICE=store-frontend
-      - DD_SITE='datadoghq.com'
+      - DD_SITE=datadoghq.com
       - DD_VERSION=2.1.2
       - DB_USERNAME
       - DB_PASSWORD
