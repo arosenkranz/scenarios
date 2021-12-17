@@ -70,8 +70,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      #       - '/ecommworkshop/store-frontend-instrumented-fixed:/app'
-      - '/app/store-frontend/src/store-frontend-initial-state:/app'
+      - '/ecommworkshop/store-frontend-instrumented-fixed:/app'
     depends_on:
       - datadog
       - db

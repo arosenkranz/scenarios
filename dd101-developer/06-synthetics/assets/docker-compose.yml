@@ -38,8 +38,6 @@ services:
       ]
     ports:
       - '5001:5001'
-    volumes:
-      - /ecommworkshop/discounts-service:/app
     depends_on:
       - datadog
       - db
@@ -63,8 +61,6 @@ services:
     command: sh docker-entrypoint.sh
     ports:
       - '3000:3000'
-    volumes:
-      - '/ecommworkshop/store-frontend-instrumented-fixed:/app'
     depends_on:
       - datadog
       - db
@@ -96,8 +92,6 @@ services:
       ]
     ports:
       - '5002:5002'
-    volumes:
-      - /ecommworkshop/ads-service:/app
     depends_on:
       - datadog
       - db
