@@ -29,7 +29,6 @@
     ],
     "assets": {
       "host01": [
-        
         {
           "file": "idledown.sh",
           "target": "/usr/local/bin/",
@@ -39,7 +38,7 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
+    "uilayout": "vscode-terminal-split",
     "uieditorpath": "k8s-yaml-files",
     "showdashboard": true,
     "dashboards": [
