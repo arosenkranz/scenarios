@@ -40,7 +40,7 @@
   "environment": {
     "uilayout": "terminal",
     "showide": true,
-    "uieditorpath": "k8s-yaml-files",
+    "uieditorpath": "/k8s-yaml-files",
     "showdashboard": true,
     "dashboards": [
       {
