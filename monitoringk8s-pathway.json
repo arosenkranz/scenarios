@@ -1,0 +1,43 @@
+{
+  "title": "Monitoring Kubernetes with Datadog",
+  "description": "",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "course_id": "install-agent",
+      "id": "k8s1-install",
+      "title": "Installing the Agent",
+      "description": ""
+    },
+    {
+      "course_id": "tags",
+      "id": "k8s2-tags",
+      "title": "The Importance of Good Tags",
+      "description": ""
+    },
+    {
+      "course_id": "logs",
+      "id": "k8s3-logs",
+      "title": "Working with Logs",
+      "description": ""
+    },
+    {
+      "course_id": "apm",
+      "id": "k8s4-apm",
+      "title": "Working with APM",
+      "description": ""
+    },
+    {
+      "course_id": "platform",
+      "id": "k8s5-platform",
+      "title": "Working with Platform Metrics",
+      "description": ""
+    },
+    {
+      "course_id": "apps",
+      "id": "k8s6-applications",
+      "title": "Monitoring Your Applications",
+      "description": ""
+    }
+  ]
+}
