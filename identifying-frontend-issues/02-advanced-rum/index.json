@@ -1,0 +1,113 @@
+{
+  "title": "Using Monitors and Advanced RUM Tooling",
+  "description": "",
+  "time": "50 minutes",
+  "difficulty": "Intermediate",
+  "details": {
+    "intro": {
+      "courseData": "background.sh",
+      "code": "foreground.sh",
+      "text": "00-intro.md"
+    },
+    "steps": [
+      {
+        "text": "01-step.md",
+        "title": "Create a RUM Monitor to alert on issues"
+      },
+      {
+        "text": "02-step.md",
+        "title": "Use RUM Analytics to identify performance issues"
+      },
+      {
+        "text": "03-step.md",
+        "title": "Fix and configure the app with global context and custom user actions"
+      },
+      {
+        "text": "04-step.md",
+        "title": "Understanding custom user actions"
+      }
+    ],
+    "finish": {
+      "text": "05-finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "docker-compose.yml",
+          "target": "/root"
+        },
+        {
+          "file": "index.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "spree_application.html.erb",
+          "target": "/root"
+        },
+        {
+          "file": "home_controller.rb",
+          "target": "/root"
+        },
+        {
+          "file": "frontend-config.rb",
+          "target": "/root"
+        },
+        {
+          "file": "discounts.py",
+          "target": "/root"
+        },
+        {
+          "file": "discounts-requirements.txt",
+          "target": "/root"
+        },
+        {
+          "file": "ads.py",
+          "target": "/root"
+        },
+        {
+          "file": "ads-requirements.txt",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer.js",
+          "target": "/root"
+        },
+        {
+          "file": "Advertisement.tsx",
+          "target": "/root"
+        },
+        {
+          "file": "DiscountList.tsx",
+          "target": "/root"
+        },
+        {
+          "file": "index.tsx",
+          "target": "/root"
+        },
+        {
+          "file": "nginx.conf",
+          "target": "/root"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showide": "true",
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": true,
+    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "showdashboard": true,
+    "dashboards": [
+      { "name": "storedog", "port": 3000 },
+      { "name": "microsite", "port": 3001 }
+    ]
+  },
+  "backend": {
+    "imageid": "datadog-base-v3"
+  }
+}
