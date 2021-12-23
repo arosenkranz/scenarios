@@ -38,7 +38,8 @@
     }
   },
   "environment": {
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "terminal",
+    "showide": true,
     "uieditorpath": "k8s-yaml-files",
     "showdashboard": true,
     "dashboards": [
