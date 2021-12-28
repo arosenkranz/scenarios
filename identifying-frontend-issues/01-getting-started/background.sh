@@ -15,6 +15,7 @@ mv /root/docker-compose.yml /root/lab
 git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
 cd /storedog-microsite
 npm install -g npm @datadog/datadog-ci
+npm rebuild esbuild
 # npm install
 
 # Fetch discounts in the browser
