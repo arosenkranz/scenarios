@@ -56,4 +56,4 @@ Great work using RUM to identify and diagnose issues in your application. With d
 
 Before you fix it, however, it's worth considering how you would have found this error if you weren't already looking for it. With this error identified, you can now create a monitor for it to be alerted if it were to happen again.
 
-Click **Continue** below to finish this first part of the workshop.
+Click **Continue** below to finish this first part of the course.

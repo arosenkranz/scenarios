@@ -42,4 +42,4 @@ In this final step, you'll confirm the fixes and custom RUM configuration you im
 
 Great work resolving the issue on the microsite! Now that you have custom actions and a monitor in place, it'll be much easier for you to be alerted to problems in your application and what data or attributes are associated with those problems.
 
-Click the **Continue** button below to complete this activity and workshop.
+Click the **Continue** button below to complete this activity and course.

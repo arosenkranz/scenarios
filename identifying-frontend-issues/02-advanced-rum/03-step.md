@@ -66,7 +66,7 @@ You're also going to enhance your own experience with RUM by configuring the cod
   npm run build
   ```{{execute}}
 
-  > **Note:** Usually, you'd want to run this command in a CI/CD pipeline and then upload the new sourcemaps, but for this workshop, you're going to run it locally.
+  > **Note:** Usually, you'd want to run this command in a CI/CD pipeline and then upload the new sourcemaps, but for this course, you're going to run it locally.
 
 9. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
 
