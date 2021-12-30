@@ -103,8 +103,8 @@
     "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
     "showdashboard": true,
     "dashboards": [
-      { "name": "storedog", "port": 3000 },
-      { "name": "microsite", "port": 3001 }
+      { "name": "Storedog", "port": 3000 },
+      { "name": "Discounts Frontend", "port": 3001 }
     ]
   },
   "backend": {

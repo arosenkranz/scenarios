@@ -1,12 +1,12 @@
 The monitor you just created will take a moment or two before it's sending alerts, so it's a good opportunity to take some time to think about other issues your application may have.
 
-Here, you'll take a look at the **RUM Analytics** to identify performance issues between your frontend and microsite services to help prioritize where time should be spent. Then you'll revisit the monitor to see if it's sending an alert.
+Here, you'll take a look at the **RUM Analytics** to identify performance issues between your two frontend services to help prioritize where time should be spent. Then you'll revisit the monitor to see if it's sending an alert.
 
 1. Navigate to the <a href="https://app.datadoghq.com/rum/analytics" target="_datadog">**UX Monitoring > Analytics**</a> page and you'll be able to see how your application's are performing at a higher level.
 
   Rather than diving into individual user sessions, you can use this tool to track trends in your services and how they respond to both user input and their interactions with other services and APIs.
 
-2. For now, take a look at the Largest Contentful Paint (LCP) metrics for the Storedog frontend and microsite services. Having a high LCP can lead to a poor user experience and ultimately will cause users to drop the session, so it's important to keep an eye on these metrics and not just errors experienced by users.
+2. For now, take a look at the Largest Contentful Paint (LCP) metrics for the Storedog frontend and Discount frontend services. Having a high LCP can lead to a poor user experience and ultimately will cause users to drop the session, so it's important to keep an eye on these metrics and not just errors experienced by users.
 
   Set the filter bar at the top of the page to filter by `@view.url_path:"/"`{{copy}}, this way we can compare how both services' home pages are performing.
   
@@ -42,6 +42,6 @@ Here, you'll take a look at the **RUM Analytics** to identify performance issues
 
   You may have also received an email notification about it if you entered it in the last step.
 
-In the next and step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the microsite's user events so you can capture more meaningful information about each user's session.
+In the next and step, you'll fix the error so you can witness the monitor return back to an **OK** status. While you're at it, you'll also add some custom data to the Discount frontend's user events so you can capture more meaningful information about each user's session.
 
 Click the **Continue** button below to move on to the next step.

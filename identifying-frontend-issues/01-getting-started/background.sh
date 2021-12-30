@@ -12,10 +12,13 @@ done
 mkdir /root/lab
 mv /root/docker-compose.yml /root/lab
 
-git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /storedog-microsite
-cd /storedog-microsite
+git clone -b workshop https://github.com/arosenkranz/workshop-microsite.git /discounts-frontend
+cd /discounts-frontend
 npm install -g npm @datadog/datadog-ci
+# fixes missing esbuild-linux64 issue 
 npm rebuild esbuild
+
+# note: Currently using workaround where GitHub repo has the node_modules pushed for speed purposes, so no need for install
 # npm install
 
 # Fetch discounts in the browser
@@ -35,7 +38,7 @@ mv /root/ads.py /ecommworkshop/ads-service/ads.py
 ln -s /ecommworkshop/ads-service /root/lab/ads-service
 
 # Link to microsite
-ln -s /storedog-microsite /root/lab/storedog-microsite
+ln -s /discounts-frontend /root/lab/discounts-frontend
 
 # # set puppeteer scripts
 mv /root/puppeteer.sh /root/lab/puppeteer.sh

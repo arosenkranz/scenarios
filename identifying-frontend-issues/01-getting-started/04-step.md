@@ -12,7 +12,7 @@ Now you're going to use the RUM Explorer and Session Replay to investigate a spe
   
   If you explored either application earlier, you may even find your own session by toggling the **GEO > City** facet.
 
-3. In the search box at the top of the page, remove any existing filters and search for data from the Storedog microsite by selecting the facet under **Services** titled **storedog-microsite**.
+3. In the search box at the top of the page, remove any existing filters and search for data from the Discounts frontend by selecting the facet under **Services** titled **discounts-frontend**.
 
   To further narrow down your search, also select **Desktop** under the **Device** facet.
 

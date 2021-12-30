@@ -19,7 +19,7 @@ export POSTGRES_PASSWORD=postgres
 export DD_DISCOUNTS_URL=https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com/discount
 export DD_ADS_URL=https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com
 export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com
-export MICROSITE_URL=https://[[HOST_SUBDOMAIN]]-3001-[[KATACODA_HOST]].environments.katacoda.com
+export DISCOUNTS_FRONTEND_URL=https://[[HOST_SUBDOMAIN]]-3001-[[KATACODA_HOST]].environments.katacoda.com
 export REACT_APP_DD_ADS_URL=$DD_ADS_URL
 export REACT_APP_DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL
 export REACT_APP_STOREDOG_URL=$STOREDOG_URL
@@ -44,22 +44,22 @@ POSTGRES_PASSWORD=postgres\n\
 DD_ADS_URL=$DD_ADS_URL\n\
 DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n\
 STOREDOG_URL=$STOREDOG_URL\n\
-MICROSITE_URL=$MICROSITE_URL\n\
+DISCOUNTS_FRONTEND_URL=$DISCOUNTS_FRONTEND_URL\n\
 REACT_APP_DD_ADS_URL=$DD_ADS_URL\n\
 REACT_APP_DD_DISCOUNTS_URL=$DD_DISCOUNTS_URL\n\
 REACT_APP_STOREDOG_URL=$STOREDOG_URL\n\
 REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID\n\
 REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN\n\
-REACT_APP_DD_ENV=frontend-workshop-2" > .env 
+REACT_APP_DD_ENV=frontend-issues-2" > .env 
 
-cp .env /storedog-microsite
+cp .env /discounts-frontend
 
-cd /storedog-microsite
+cd /discounts-frontend
 npm run build
-datadog-ci sourcemaps upload /storedog-microsite/dist \
-  --service=storedog-microsite \
+datadog-ci sourcemaps upload /discounts-frontend/dist \
+  --service=discounts-frontend \
   --release-version=1.1 \
-  --minified-path-prefix="${MICROSITE_URL}"
+  --minified-path-prefix="${DISCOUNTS_FRONTEND_URL}"
 
 cd /root/lab
 docker-compose up -d

@@ -4,7 +4,7 @@ Click the **IDE** tab on the right. It may take a few seconds to load. Once the 
 
 This docker-compose file brings the Storedog app online and instruments the Datadog agent and Storedog app services for monitoring with Datadog. 
      
-Each application service runs in its own Docker container: `discounts`, `frontend`, `microsite`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
+Each application service runs in its own Docker container: `discounts`, `frontend`, `discounts-frontend`, `advertisements`, and `db`. (The `puppeteer` service is an extraneous container to generate simulated RUM traffic in this scenario.)
 
 Let's configure Datadog RUM for the app.
 
@@ -46,7 +46,7 @@ Let's configure Datadog RUM for the app.
 
   **Line 25** will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter.
 
-7. Open the file `storedog-microsite/src/index.tsx`{{open}} to see how RUM is initialized in the React microsite.
+7. Open the file `discounts-frontend/src/index.tsx`{{open}} to see how RUM is initialized in the React app.
 
 8. Click the **Terminal** tab on the right. Let's set the environment variables for `applicationId` and `clientToken`.
     
@@ -56,22 +56,22 @@ Let's configure Datadog RUM for the app.
   
   Run this command to verify that you saved the variables: `echo $DD_APPLICATION_ID $DD_CLIENT_TOKEN`{{execute}}
 
-8. With the environment variables in place, you'll now have to build the Storedog microsite application to make sure the RUM script is included in the bundle.
+8. With the environment variables in place, you'll now have to build the Discounts frontend application to make sure the RUM script is included in the bundle.
 
   Run this comment to set the environment variables for the React application and build it: 
     
   ```
-  cd /storedog-microsite
+  cd /discounts-frontend
   REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
   ```{{execute}}
 
 9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
     
   ```
-  datadog-ci sourcemaps upload /storedog-microsite/dist \
-      --service=storedog-microsite \
+  datadog-ci sourcemaps upload /discounts-frontend/dist \
+      --service=discounts-frontend \
       --release-version=1.1 \
-      --minified-path-prefix="${MICROSITE_URL}"
+      --minified-path-prefix="${DISCOUNTS_FRONTEND_URL}"
   ```{{execute}}
 
   You'll learn more about this soon.
@@ -80,13 +80,13 @@ Let's configure Datadog RUM for the app.
     
 10. Now, navigate back to the Storedog directory with `cd /root/lab`{{execute}}.
 
-11. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the Storedog app. Docker will pick up the environment variables you set in the host and pass them along to the containers.
+11. Click `docker-compose -f docker-compose.yml up -d`{{execute}} to start the application's services. Docker will pick up the environment variables that have been set and pass them along to the containers.
 
   > **Note:** Make sure you are in the `/root/lab` directory when you run this command.
 
-12. Give the services a few seconds to load up, then navigate to the Storedog app and microsite in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work, especially the **microsite**.
+12. Give the services a few seconds to load up, then navigate to the Storedog and Discounts frontend apps in your browser by selecting the two tabs on the right. Take a moment and familiarize yourself with how the applications work, especially the **Discounts Frontend**.
 
-  You'll notice a few pieces of the application are a bit buggy. For instance, fetching advertisements on click isn't working in the microsite and there's some latency in both the microsite and the main storefront.
+  You'll notice a few pieces of the application are a bit buggy. For instance, fetching advertisements on click isn't working in the discounts app and there's some latency in both that app and the main storefront.
 
   Don't worry about it for now, you'll investigate these errors soon.
 

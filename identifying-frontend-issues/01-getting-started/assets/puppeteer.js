@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 const startUrl = process.env.STOREDOG_URL;
-const micrositeUrl = process.env.MICROSITE_URL;
+const discountsUrl = process.env.DISCOUNTS_FRONTEND_URL;
 
 const choosePhone = () => {
   const deviceNames = [
@@ -151,8 +151,8 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    console.log(`Heading to ${micrositeUrl}`);
-    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+    console.log(`Heading to ${discountsUrl}`);
+    await page.goto(`${discountsUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
     const pageTitle = await page.title();
@@ -198,10 +198,10 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    console.log(`Heading to ${micrositeUrl}`);
+    console.log(`Heading to ${discountsUrl}`);
     await page.emulate(choosePhone());
 
-    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+    await page.goto(`${discountsUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
     const pageTitle = await page.title();
@@ -247,8 +247,8 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    console.log(`Heading to ${micrositeUrl}`);
-    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+    console.log(`Heading to ${discountsUrl}`);
+    await page.goto(`${discountsUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
     const pageTitle = await page.title();
@@ -294,8 +294,8 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    console.log(`Heading to ${micrositeUrl}`);
-    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+    console.log(`Heading to ${discountsUrl}`);
+    await page.goto(`${discountsUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
     const pageTitle = await page.title();
@@ -341,10 +341,10 @@ const runSession = async (url, selectors) => {
   let page = await browser.newPage();
 
   try {
-    console.log(`Heading to ${micrositeUrl}`);
+    console.log(`Heading to ${discountsUrl}`);
     await page.emulate(choosePhone());
 
-    await page.goto(`${micrositeUrl}?ref="storedog"`, {
+    await page.goto(`${discountsUrl}?ref="storedog"`, {
       waitUntil: 'domcontentloaded',
     });
     const pageTitle = await page.title();

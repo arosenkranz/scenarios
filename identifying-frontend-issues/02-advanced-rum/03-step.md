@@ -5,10 +5,10 @@ You're also going to enhance your own experience with RUM by configuring the cod
 1. First, go ahead and fix the bug in the code by replacing the file with a fixed one using this command:
 
   ```
-  cp /root/Advertisement.tsx /storedog-microsite/src/components/Advertisement.tsx
+  cp /root/Advertisement.tsx /discounts-frontend/src/components/Advertisement.tsx
   ```{{execute}}
 
-2. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/Advertisement.tsx`{{open}} file.
+2. Open the **IDE** tab to the right and then open the `discounts-frontend/src/components/Advertisement.tsx`{{open}} file.
 
   On **line 41** you'll notice the extra `.jpg` extension in the URL you found earlier has now been removed, hopefully alleviating the error.
   
@@ -29,13 +29,13 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
 3. Next, you're going to set some global context data so all collected metrics will be associated with data you can use in Datadog.
 
-  Replace the microsite's `index.tsx` file with the following command:
+  Replace the React app's `index.tsx` file with the following command:
 
   ```
-  cp /root/index.tsx /storedog-microsite/src/index.tsx
+  cp /root/index.tsx /discounts-frontend/src/index.tsx
   ```{{execute}}
 
-4. Open the **IDE** tab to the right and then open the `storedog-microsite/src/index.tsx`{{open}} file.
+4. Open the **IDE** tab to the right and then open the `discounts-frontend/src/index.tsx`{{open}} file.
 
   You'll notice that below the RUM configuration from earlier, there's two new lines of code.
 
@@ -48,10 +48,10 @@ You're also going to enhance your own experience with RUM by configuring the cod
 5. Next, you're going to add some custom user actions to track how they are interacting with the discounts. Move an updated `DiscountList` component into the `src/components/` directory with this command:
 
   ```
-  cp /root/DiscountList.tsx /storedog-microsite/src/components/DiscountList.tsx
+  cp /root/DiscountList.tsx /discounts-frontend/src/components/DiscountList.tsx
   ```{{execute}}
 
-6. Open the **IDE** tab to the right and then open the `storedog-microsite/src/components/DiscountList.tsx`{{open}} file to see the updated component.
+6. Open the **IDE** tab to the right and then open the `discounts-frontend/src/components/DiscountList.tsx`{{open}} file to see the updated component.
 
   On **line 79** and **line 112**, you'll notice the use of `datadogRum.addAction`. This allows you to customize get a clearer picture of what the user is doing and how they are interacting with the discounts list.
 
@@ -62,7 +62,7 @@ You're also going to enhance your own experience with RUM by configuring the cod
 8. To see how it works, you'll need to rebuild the application. Do so by running the following command in the terminal:
 
   ```
-  cd /storedog-microsite
+  cd /discounts-frontend
   npm run build
   ```{{execute}}
 
@@ -70,6 +70,6 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
 9. There is no need to restart the Docker container, as the application's `build` folder is mounted as a volume, so the changes will be automatically picked up.
 
-10. Click on the `microsite` tab to the right and click around on the microsite to make sure things are working correctly. Namely, make sure you click on the "Get New Ad" buttons by the banners, as they were the part that were broken earlier.
+10. Click on the `Discounts Frontend` tab to the right and click around on the app to make sure things are working correctly. Namely, make sure you click on the "Get New Ad" buttons by the banners, as they were the part that were broken earlier.
 
-Once you've finished clicking around on the microsite, click the **Continue** button below to move on to the final step, where you'll see the results of the advanced RUM configuration you just put in place and confirm the monitor returns to an **OK** state.
+Once you've finished clicking around on the Discounts frontend app, click the **Continue** button below to move on to the final step, where you'll see the results of the advanced RUM configuration you just put in place and confirm the monitor returns to an **OK** state.

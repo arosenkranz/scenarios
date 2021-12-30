@@ -19,12 +19,12 @@ Since you already created a RUM application with a name of "Storedog", this lab 
   Then filter down to the particular error you experienced earlier with the following query pasted in the input field:
 
   ```
-  @type:error service:storedog-microsite @error.source:source env:frontend-workshop-2
+  @type:error service:discounts-frontend @error.source:source env:frontend-issues-2
   ```{{copy}}
 
-  If the `frontend-workshop-2` environment doesn't show up, wait a moment or two and refresh the page, then reenter the query.
+  If the `frontend-issues-2` environment doesn't show up, wait a moment or two and refresh the page, then reenter the query.
 
-  > **Note:** The environment was set to `frontend-workshop-2` for this activity so any errors from the previous activity don't persist in this monitor.
+  > **Note:** The environment was set to `frontend-issues-2` for this activity so any errors from the previous activity don't persist in this monitor.
 
 5. For **Set Alert Conditions**, set the monitor to trigger when the metric is **Above** the threshold during the last **5 minutes**.
 
@@ -37,7 +37,7 @@ Since you already created a RUM application with a name of "Storedog", this lab 
 7. Under **Say what's happening**, provide this as a title:
 
   ```
-  Storedog microsite experiencing high number of errors.
+  Discounts frontend experiencing high number of errors.
   ```{{copy}}
 
   No need for body text if you won't want to, but make sure check the box that says `Include a sample of 10 logs in the alert notification` to help provide some context.
