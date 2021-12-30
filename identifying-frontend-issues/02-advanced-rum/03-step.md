@@ -59,11 +59,11 @@ You're also going to enhance your own experience with RUM by configuring the cod
 
   These allow you to override the default action name displayed in Datadog so you could use more useful names to identify actions.
 
-8. To see how it works, you'll need to rebuild the application. Do so by running the following command in the terminal:
+8. To see how it works, you'll need to rebuild the application. Do so by updating the version of the application and running the following command in the terminal:
 
   ```
   cd /discounts-frontend
-  npm run build
+  REACT_APP_DD_VERSION=1.2 npm run build
   ```{{execute}}
 
   > **Note:** Usually, you'd want to run this command in a CI/CD pipeline and then upload the new sourcemaps, but for this course, you're going to run it locally.

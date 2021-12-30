@@ -14,7 +14,7 @@ datadogRum.init({
     import.meta.env.REACT_APP_DD_CLIENT_TOKEN || 'DD_CLIENT_TOKEN_PLACEHOLDER'
   }`,
   site: `${import.meta.env.REACT_APP_DD_SITE || 'datadoghq.com'}`,
-  service: `${import.meta.env.REACT_APP_DD_SERVICE || 'discounts-react-app'}`,
+  service: `${import.meta.env.REACT_APP_DD_SERVICE || 'discounts-frontend'}`,
   version: `${import.meta.env.REACT_APP_DD_VERSION || '1.0.0'}`,
   env: `${import.meta.env.REACT_APP_DD_ENV || 'production'}`,
   sampleRate: 100,
