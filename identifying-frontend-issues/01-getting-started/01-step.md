@@ -38,13 +38,13 @@ Let's configure Datadog RUM for the app.
 
   Open the file `store-frontend/app/views/spree/layouts/spree_application.html.erb`{{open}}. This Ruby file is the main template for the Storedog app. By integrating the RUM script here, RUM will be available throughout the application.
 
-  **Lines 13-23** are the RUM script in the front end and set the initialization arguments. This code may be slightly different than the current code snippet in the Datadog UI. It will still work.
+  **Lines 13-24** are the RUM script in the front end and set the initialization arguments. This code may be slightly different than the current code snippet in the Datadog UI. It will still work.
 
   **Line 20** connects associated APM traces to the RUM events. When you view RUM event details in the RUM UI, any associated traces will be displayed in the RUM event details.
 
   Notice that the code snippet includes environment variables for `applicationId` and `clientToken`.
 
-  **Line 25** will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter.
+  **Line 26** will initialize Session Replay, a feature of RUM that allows you to replay a user's session and identify any issues they may encounter. To address privacy concerns, the `defaultPrivacyLevel` option has been configured in the initialization to hide any sensitive data. 
 
 7. Open the file `discounts-frontend/src/index.tsx`{{open}} to see how RUM is initialized in the React app.
 
@@ -58,11 +58,11 @@ Let's configure Datadog RUM for the app.
 
 8. With the environment variables in place, you'll now have to build the Discounts frontend application to make sure the RUM script is included in the bundle.
 
-  Run this comment to set the environment variables for the React application and build it: 
+  Run this command to set the environment variables for the React application and build it: 
     
   ```
   cd /discounts-frontend
-  REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
+  REACT_APP_DD_ENV=1.1 REACT_APP_DD_APPLICATION_ID=$DD_APPLICATION_ID REACT_APP_DD_CLIENT_TOKEN=$DD_CLIENT_TOKEN npm run build
   ```{{execute}}
 
 9. When the build completes, use the `datadog-ci` library to upload the application's source maps with the following command:
