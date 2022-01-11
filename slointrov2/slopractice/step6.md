@@ -1,65 +1,57 @@
-The <a href="https://docs.datadoghq.com/dashboards/widgets/slo/" target="_blank">SLO Summary widget</a> allows you to track your SLOs alongside other data in <a href="https://docs.datadoghq.com/dashboards/" target="_blank">Dashboards. 
+# Setting a Burn Rate Alert on our SLO
 
-1. Navigate to <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards**</a> and click **New Dashboard**.
+Error Budget Alerts are great for keeping a team on the same page for when to switch priorities to prevent an SLA breach, but what if you want to detect when there is an active issue that is currently depleting your error budget at an elevated rate? Based on the principles from [Chapter 5 of the Google SRE Workbook](https://sre.google/workbook/alerting-on-slos/), you can now set Burn Rate Alerts on Datadog SLOs!
 
-2. Enter the Dashboard name `Storedog App SLOs` and select **New Screenboard**.
+Unlike Error Budget Alerts, Burn Rate Alerts are intended for active incident response. A Burn Rate Alert is composed of three components:
 
-   <a href="https://docs.datadoghq.com/dashboards/screenboards/" target="_blank">Screenboards</a> are used as status boards or storytelling views that update in real-time or represent fixed points in the past. 
+1. A burn rate threshold
+2. A long window for evaluating the alert
+3. A short window for evaluating the alert
 
-3. Click **Edit Widget** next to the screenboard title if the widget options are not displayed.
+## Burn Rates
 
-4. Click and drag the **SLO Summary** widget to the board. The SLO Summary Editor window will pop up.
+A burn rate is a unitless number that indicates how fast your error budget is being consumed relative to the length of your SLO’s target. For example, for a 30-day target a burn rate of 1 means your error budget would be fully consumed in exactly 30 days if the rate of 1 was kept constant. A burn rate of 2 means the error budget would be exhausted in 15 days if kept constant, a burn rate of 3 means 10 days, etc.
 
-5. Under **Search and select SLO**, select the Monitor-based SLO you created `Home Page P99 Latency`.
+To measure the observed burn rate your SLO experiences, a Burn Rate Alert will use the recent “error rate” in its calculation. Note that “error rate” here just means the ratio of bad behavior over total behavior during a **given time period**: 
 
-6. Under **Set Time Windows**, notice that `7 Days` is automatically selected for the **Rolling Time Windows** because the SLO time window is for the past 7 days. 
+error rate = 1 - (good behavior during time period/total behavior during time period)
 
-   Select `Week to date` and `Previous week` below **Calendar Time Windows**.
+In an ideal world, your SLOs would always experience a burn rate of 1; meaning you're always spending your error budget fully without overspending it. Mathematically a burn rate of 1 is equal to your error budget in fractional form: 1 - SLO Target (e.g the SLO we just created has an ideal error rate of 1 - 0.99 = 0.01). 
 
-7. Under **Set display preferences**, make sure **Show error budget** is selected.
+However, in real life issues will pop up that cause your burn rate to increase suddenly until the issue is resolved. The purpose of a Burn Rate Alert is to detect these increases and notify you about them so you can resolve the issue and bring the burn rate back down again. 
 
-8. Next to **Widget title**, select **Show a title**. You can leave the title settings as is or modify as desired.
+## Long and Short Windows
 
-9. Click **Done**.
+A Burn Rate Alert will always measure the observed error rate of your SLO during two different rolling windows simultaneously. These windows are your long window and short window. 
 
-   ![slo-widget-monitorbased](slopractice/assets/slo-widget-monitorbased-2.png)
+In order for your Burn Rate Alerts to be most useful, you want them to: 
 
-10. Repeat steps 4 to 9 for the Metric-based SLO you created.
+1. Alert you when burn rate has been elevated for a significant period of time (you don't want to be notified every time a 1 second spike in burn rate happens due to a transient issue) 
+2. Stop alerting you as soon as the burn rate goes back down (you want your alerts to recover when the issue itself resolves)
 
-   Under **Set Time Windows**, notice that `30 Days` is automatically selected for the **Rolling Time Windows** because the SLO time window is for the past 30 days. 
+This is the purpose of the long window and short window, respectively.
 
-   Select `Month to date` and `Previous month` below **Calendar Time Windows**.
+## How Burn Rate Alerts Work
 
-   ![slo-widget-metricbased](slopractice/assets/slo-widget-metricbased-2.png)
+Combining your burn rate threshold, long window and short window, you get a Burn Rate Alert. Burn Rate Alerts evaluate the following formula in order to determine when to notify you:
 
-   Let's also add two separate Monitor Summary widgets: one for monitors used in Monitor-based SLOs and one for Error Budget Monitors.
+![Burn Rate Alert Formula](assets/burn-rate-formula.jpeg)
 
-11. In the Widget Bar, click the right arrow to see more options.
+As you can see, both the observed error rate is divided by your ideal error rate and measured during both the long window and short window to see if the burn rate threshold is violated during either time periods. If both the long window and short window measurements violate the threshold, then you will be notified. By checking both conditions, you know the alerts you get are both significant and ongoing.
 
-12. Click and drag the **Monitor Summary** widget to the board. The Monitor Summary Edtior window will pop up.
+## Configuring a Burn Rate Alert
 
-13. Under **Select summary type**, select **Monitor**.
+Now that we've established the concepts we need, let's set our own Burn Rate Alert! 
 
-14. Under **Search for monitors to summarize**, enter `tag:env:ruby-shop type:apm`{{copy}} to list all monitors created for the Storedog app.
+To do this, go back to the details side panel of your SLO and select the `New Monitor` button. Next, select `Burn Rate` under `Set alerting conditions`. This will take you to a configuration page for you to set your Error Budget Alert. In a real world scenario, it would make sense to get notified a bit before we've completely spent our error budget, so let's set our thresholds accordingly.
 
-15. Leave the **Set display preferences** as is.
+1. Set the alert threshold to `30` so that the monitor is configured to notify us if our burn rate is high enough to deplete our entire error budget in one day.
+2. Set the optional warning threshold. `15` would be a sensible choice.
+3. Let's keep the long window at its default value of `1h`, the short window is automatically calculated as 1/12 of the long window based on Google's recommendations for Burn Rate Alerts.
+4. Enter a monitor message in the large text box. In a real environment, you could type in `@` and select your name to receive an email notification.
 
-16. Under **Widget title**, select **Show a title** and enter the title `Monitors for Monitor-based SLOs`{{copy}}. Leave the title setting as is or modify as desired.
+![Burn Rate Configuration](assets/burn-rate-config.png)
 
-17. Click **Done**.
+Save the monitor when you're done!
 
-    ![monitor-widget-monitorsforslos](slopractice/assets/monitor-widget-monitorsforslos.png)
-
-18. Repeat steps 12 to 17 for the Error Budget Monitor you created. 
-
-    To search for the monitor, enter `tag:env:ruby-shop type:slo`{{copy}}.
-
-    Enter the title `Error Budget Monitors for SLOs`{{copy}}.
-
-    ![monitor-widget-errorbudgets](slopractice/assets/monitor-widget-errorbudgets.png)
-
-19. Rearrange and resize the widgets on the boards as desired.
-
-20. Click `Save Changes` next to the dashboard title.
-
-Now that you've created the dashboard for the SLOs and their related monitors, let's see what happens to the SLOs and their error budgets when the app has errors. 
+In the next step, we'll add our SLOs to a dashboard.

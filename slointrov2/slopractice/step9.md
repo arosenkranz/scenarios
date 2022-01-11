@@ -1,25 +1,41 @@
-You created an SLO related to the latency of viewing the home page and an SLO related to successfully managing items in the cart.
+You can explore the respective APM Resource pages to investigate the depleting error budgets for the SLOs. 
 
-You can also create an SLO related to successfully viewing the home page and an SLO related to the latency of managing items in the cart.
+1. Navigate to <a href="https://app.datadoghq.com/apm/services" target="_datadog">**APM > Services**</a>.
 
-1. Create a Metric-based SLO for successfully viewing the home page and an Error Budget Monitor for the SLO. You can set the target and time window as desired.
+2. Select the `store-frontend` service from the list. 
 
-   Hint: Use the `trace.rack.request.hits` and `trace.rack.request.errors` metrics scoped to the `env:ruby-shop`, `service:store-frontend`, and `resource_name:spree::homecontroller_index` for the SLI.
+   Notice that the APM monitor and the Error Budget monitor you created are linked to the service and are in the `ALERT` state.
 
-2. Create a Monitor-based SLO for the p99 latency of managing items in the cart. You can set the target and time window as desired.
+3. Scroll to the **Endpoints** list and select **Spree::HomeController#index** to explore the data for the resource.
 
-   Hint: Create a monitor similar to the one you created for the p99 latency of viewing the home page, but scoped to the resource `resource_name:spree::ordercontroller_edit` for the SLI.
+   Notice that the monitor you created for the Monitor-based SLO is linked to the resource and is in the `ALERT` state.
 
-3. Add the new SLOs and associated monitors to the dashboard you created.
+4. View the **Latency** graph. Notice the increase in latency when the app restarted. Select the `p99` legend option. This is metric you used to create the monitor for the Monitor-based SLO.
 
-   Are the new SLOs affected by the errors in the broken app? That is, do either have error budgets less than 0%?
+5. Scroll down to the **Traces** list. Browse the **Duration** column. 
 
-4. Explore the respective APM Resource pages. 
+   Select a trace with duration less than 3 seconds. Note the lengths of the spans for `flask.request GET_/ads` and `flask.request GET_/discounts`.
 
-   Are you able to find more information about the source of the consumed error budgets.
+   Select a trace with duration greater than 3 seconds. Notice the lengths of the spans for `flask.request GET_/ads` and `flask.request GET_/discounts` is longer than those in the traces with duration less than 3 seconds.
 
-5. Explore the Storedog app and the APM Service and Resource pages for the app in Datadog. 
+   *Looks like ads and discounts services are the sources of the higher latencies!* 
+   
+   *Investigating/troubleshooting these services can be a first step in restoring the error budget for the Monitor-based SLO.*
+  
+6. Navigate to `store-frontend` Service page.
 
-   What other SLOs can you create for the app?
+7. Select **Spree::OrdersController#edit** from the **Endpoints** list to explore the data for the resource.
 
+   Notice that the Error Budget Monitor you created for the Metric-based SLO is linked to the resource and is in the `ALERT` state.
 
+7. Scroll to the **Traces** list. 
+
+   Filter the list for traces with an **ERROR**. 
+   
+   Click a trace to see its details, specifically the **Errors** tab for details about the errors.
+
+   *Looks like there is error in a file for the store-frontend service!* 
+   
+   *Investigating/troubleshooting this error can be a first step in restoring the error budget for the Monitor-based SLO.*
+
+With Datadog, your teams can start exploring related infrastructure and app data to find the sources of depleting error budgets to work toward restoring them and meeting your SLO targets.  

@@ -71,4 +71,4 @@ Let's set an alert to monitor the error budget of the SLO. <a href="https://docs
 
 6. Navigate to <a href="https://app.datadoghq.com/event/stream" target="_datadog">**Events**</a> in the main menu. Browse the stream or search for `SLO` to see the <a href="https://docs.datadoghq.com/monitors/service_level_objectives/#slo-audit-events" target="_blank">audit events</a> for the SLOs and Monitors/Alerts you've created.
 
-Now that you've created the SLOs, let's add the SLOs to a dashboard.
+Now let's add a burn rate alert.

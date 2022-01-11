@@ -1,41 +1,35 @@
-You can explore the respective APM Resource pages to investigate the depleting error budgets for the SLOs. 
+In the terminal, the Storedog app is being restarted. This may take up to 2 minutes. Once the app is ready, you will see the following message in the terminal: `The environment is prepared!`. 
 
-1. Navigate to <a href="https://app.datadoghq.com/apm/services" target="_datadog">**APM > Services**</a>.
+The restarted app is broken, so you will now see errors in the app.
 
-2. Select the `store-frontend` service from the list. 
+1. Close the browser tab you opened earlier for the Storedog app.
 
-   Notice that the APM monitor and the Error Budget monitor you created are linked to the service and are in the `ALERT` state.
+2. Click the **storedog** tab to the right. A new browser tab will open for the broken Storedog app. 
 
-3. Scroll to the **Endpoints** list and select **Spree::HomeController#index** to explore the data for the resource.
+2. Notice how long it takes the home page to load. 
 
-   Notice that the monitor you created for the Monitor-based SLO is linked to the resource and is in the `ALERT` state.
+   *The home page is taking longer to load for the broken app.*
 
-4. View the **Latency** graph. Notice the increase in latency when the app restarted. Select the `p99` legend option. This is metric you used to create the monitor for the Monitor-based SLO.
+3. Click a product and add an item to the cart.
 
-5. Scroll down to the **Traces** list. Browse the **Duration** column. 
+   *A NoMethodError page appears. Users are unable to add items to the cart.* 
 
-   Select a trace with duration less than 3 seconds. Note the lengths of the spans for `flask.request GET_/ads` and `flask.request GET_/discounts`.
+   Let's check the SLOs that you created for these user actions.
 
-   Select a trace with duration greater than 3 seconds. Notice the lengths of the spans for `flask.request GET_/ads` and `flask.request GET_/discounts` is longer than those in the traces with duration less than 3 seconds.
+4. Navigate to <a href="https://app.datadoghq.com/dashboards" target="_datadog">**Dashboards**</a>. Select the dashboard you created for the SLOs `Storedog App SLOs`.
 
-   *Looks like ads and discounts services are the sources of the higher latencies!* 
-   
-   *Investigating/troubleshooting these services can be a first step in restoring the error budget for the Monitor-based SLO.*
-  
-6. Navigate to `store-frontend` Service page.
+   Notice the changes to each SLO and monitor now that errors are being introduced. You may need to wait 2 - 3 minutes and refresh the page to see new data.
 
-7. Select **Spree::OrdersController#edit** from the **Endpoints** list to explore the data for the resource.
+5. In each widget, click the SLO or monitor to view its details. Each SLO/monitor will open in a new browser tab.
 
-   Notice that the Error Budget Monitor you created for the Metric-based SLO is linked to the resource and is in the `ALERT` state.
+The significant change in the SLO statuses is due to the relatively low traffic and the trace metrics only having less than an hour's worth of history. The number of total events (SLI denominator value) is relatively small, making the SLO sensitive to even just one error. In a real world scenario, the number of total events will be in the thousands or millions, so one error wouldn't normally have such a large impact.
 
-7. Scroll to the **Traces** list. 
+When you see your error budget is consumed, or better when it is close to being consumed, you should take action to restore the error budget. 
 
-   Filter the list for traces with an **ERROR**. 
-   
-   Click a trace to see its details, specifically the **Errors** tab for details about the errors.
+The next page is an optional walkthrough of investigating the app errors using Datadog, followed by an optional exercise to create more SLOs.
 
-   *Looks like there is error in a file for the store-frontend service!* 
-   
-   *Investigating/troubleshooting this error can be a first step in restoring the error budget for the Monitor-based SLO.*
+#### Assessment
 
-With Datadog, your teams can start exploring related infrastructure and app data to find the sources of depleting error budgets to work toward restoring them and meeting your SLO targets.  
+This concludes the required portion of the activity. Click `grademe`{{execute}} to recieve a grade for the activity. 
+
+Click **Continue** to go to the next page. If you want to skip the two optional exercises, click the gray arrow `>` above the instructions for both pages.

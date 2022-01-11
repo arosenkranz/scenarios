@@ -33,7 +33,7 @@ The SLI for this SLO will be a monitor that tracks the trace metric for p99 late
 
    Select `Threshold Alert`. 
    
-   Set the alert criteria to **Alert when the** `p99 latency` **is** `above` `5` **over the last** `1 minute`.
+   Set the alert criteria to **Alert when the** `p99 latency` **is** `above` `5` **over the last** `1 minute`. (You'll have to first select `custom`)
 
    ![monitor-new-conditions](slopractice/assets/monitor-new-conditions.png)
 
