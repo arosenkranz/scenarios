@@ -14,7 +14,7 @@ Let's make sure that the Storedog app is instrumented successfully and you are c
    
    Make sure the **Services** shown below are listed. Click each to confirm that you are collecting live traces from them.
    
-   ![trace-services](slopractice/assets/trace-services.png)
+   ![trace-services](./assets/trace-services.png)
 
 With Datadog collecting live app data from Storedog, let's start exploring the data to select SLIs for SLOs.
 

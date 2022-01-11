@@ -43,14 +43,21 @@ As you can see, both the observed error rate is divided by your ideal error rate
 
 Now that we've established the concepts we need, let's set our own Burn Rate Alert! 
 
-To do this, go back to the details side panel of your SLO and select the `New Monitor` button. Next, select `Burn Rate` under `Set alerting conditions`. This will take you to a configuration page for you to set your Error Budget Alert. In a real world scenario, it would make sense to get notified a bit before we've completely spent our error budget, so let's set our thresholds accordingly.
+To do this, go back to the details side panel of your **Managing Items in the Cart** SLO, select the `Alerts` tab, and select the `New Monitor` button. 
+
+Next, select `Burn Rate` under `Set alerting conditions`. This will take you to a configuration page for you to set your Error Budget Alert. 
+
+In a real world scenario, it would make sense to get notified a bit before we've completely spent our error budget, so let's set our thresholds accordingly.
 
 1. Set the alert threshold to `30` so that the monitor is configured to notify us if our burn rate is high enough to deplete our entire error budget in one day.
+
 2. Set the optional warning threshold. `15` would be a sensible choice.
+
 3. Let's keep the long window at its default value of `1h`, the short window is automatically calculated as 1/12 of the long window based on Google's recommendations for Burn Rate Alerts.
+
 4. Enter a monitor message in the large text box. In a real environment, you could type in `@` and select your name to receive an email notification.
 
-![Burn Rate Configuration](assets/burn-rate-config.png)
+![Burn Rate Configuration](./assets/burn-rate-config.png)
 
 Save the monitor when you're done!
 

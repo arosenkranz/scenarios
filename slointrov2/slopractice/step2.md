@@ -2,7 +2,7 @@ Understanding user experience in the app is an important step for determining re
 
 Consider what users would do in the app and what critical user journeys should be reliable. For an e-commerce app like Storedog, users would reasonably expect to view the home page, log in, search for items, view item details, manage items in their cart, and check out items for purchase.
 
-![storedog-homepage](slopractice/assets/storedog-homepage.png)
+![storedog-homepage](./assets/storedog-homepage.png)
 
 Let's create SLOs for two user experiences: viewing the storedog home page and managing items in their cart.
 

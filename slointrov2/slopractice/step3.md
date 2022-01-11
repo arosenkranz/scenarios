@@ -28,7 +28,7 @@ Let's explore the available metrics in Datadog that can be used in SLIs for the 
 
    Close the graph.
 
-   ![homecontroller-latency](slopractice/assets/homecontroller-latency.gif)
+   ![homecontroller-latency](./assets/homecontroller-latency.gif)
 
 6. Above the graphs for the resource, click **store-frontend** to navigate back to the service page.
 
@@ -36,11 +36,11 @@ Let's explore the available metrics in Datadog that can be used in SLIs for the 
 
 7. Scroll to the **Endpoints** list and select **Spree::OrdersController#edit** to view its details.
 
-   The **Total Request** graph is related to adding items to the cart.
+   The **Requests and Errors** graph is related to adding items to the cart.
 
-8. Expand the **Total Request** graph as shown below.
+8. Expand the **Request and Errors** graph as shown below.
 
-   The `trace.rack.request.hits` metric is listed below the Total Requests graph. This metric is the count of total requests to the endpoint and is the sum of the requests that are successful and the requests that are errors
+   The `trace.rack.request.hits` metric is listed below the Requests and Errors graph. This metric is the count of total requests to the endpoint and is the sum of the requests that are successful and the requests that are errors
    
    If there are request errors, you would also see the `trace.rack.request.errors` metric. If you don't see the metric, that's alright. You'll see how to manually enter the metric when you create the SLO.
 
@@ -48,6 +48,6 @@ Let's explore the available metrics in Datadog that can be used in SLIs for the 
 
    Close the graph.
 
-   ![ordercontroller-requests](slopractice/assets/ordercontroller-requests.gif)
+   ![ordercontroller-requests](./assets/ordercontroller-requests.gif)
 
 Let's create the SLOs now that you know which metrics you can use for the SLIs. 

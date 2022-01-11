@@ -27,7 +27,7 @@ The SLI for this SLO will be a monitor that tracks the trace metric for p99 late
    
    For **Resource**, select `spree::homecontroller_index`.
 
-   ![monitor-new-scope](slopractice/assets/monitor-new-scope2.png)
+   ![monitor-new-scope](./assets/monitor-new-scope2.png)
 
 3. Expand **Set alert conditions**.
 
@@ -35,19 +35,19 @@ The SLI for this SLO will be a monitor that tracks the trace metric for p99 late
    
    Set the alert criteria to **Alert when the** `p99 latency` **is** `above` `5` **over the last** `1 minute`. (You'll have to first select `custom`)
 
-   ![monitor-new-conditions](slopractice/assets/monitor-new-conditions.png)
+   ![monitor-new-conditions](./assets/monitor-new-conditions.png)
 
-4. Expand **Say what’s happening**.
+4. Make sure the **Notify your team** field is blank and `Do not notify` is selected. No notifications are needed in this activity.
+
+   ![monitor-new-notification](./assets/monitor-new-notification.png)
+
+5. Expand **Say what’s happening**.
 
    Leave the name of the monitor as is.
    
    Replace the description with `Monitor for the SLO "99% of the time the p99 latency of a home page request should be less than 5 seconds."`{{copy}}.
 
-   ![monitor-new-descriptionslo](slopractice/assets/monitor-new-descriptionslo.png)
-
-5. Make sure the **Notify your team** field is blank and `Do not notify` is selected. No notifications are needed in this activity.
-
-   ![monitor-new-notification](slopractice/assets/monitor-new-notification.png)
+   ![monitor-new-descriptionslo](./assets/monitor-new-descriptionslo.png)
 
 6. Click **Save**. You'll be redirected to the monitor details. Browse the page.
 
@@ -61,7 +61,7 @@ Now that you've created the monitor. Let's create the Monitor-based SLO.
 
 1. Navigate to <a href="https://app.datadoghq.com/slo/new" target="_datadog">**Monitors** > **New SLO**</a>.
 
-2. Under **Define the source**, select **Monitor-based**, then select the monitor you created above, `Service store-frontend on resource_name:spree::homecontroller_index has a high p99 latency on env:ruby-shop`.
+2. Under **Define the source**, select **Monitor-based**, then select the monitor you created above, `Resource spree::homecontroller_index has a high p99 latency on env:ruby-shop`.
 
 3. Under **Set your targets**, click **New Target +**. Set **Target:** to `99%` and **Time Window:** to `7 Days`.
 
@@ -73,15 +73,15 @@ Now that you've created the monitor. Let's create the Monitor-based SLO.
    
    Individually enter or select the **Tags** `env:ruby-shop`{{copy}}, `service:store-frontend`{{copy}}, and `resource_name:spree::homecontroller_index`{{copy}}.
 
-   ![monitor-slo-create](slopractice/assets/monitor-slo-create.png)
+   ![monitor-slo-create](./assets/monitor-slo-create.png)
 
 5. Click **Save & Exit**. You will be redirected to the details, status, and history of the SLO.
 
-   ![new SLO](slopractice/assets/monitor-slo-new.png)
+   ![new SLO](./assets/monitor-slo-new.png)
 
 Because the app was just instrumented with Datadog, more metrics need to be collected before the SLO status and history provide insightful information about the SLO. If the app ran for more than 30 days, the history bar would be solid.
 
 Example of older Monitor-based SLO
-![old SLO](slopractice/assets/monitor-slo-7-days.png)
+![old SLO](./assets/monitor-slo-7-days.png)
 
 You've created the Monitor-based SLO to track latency for vieing the home page. Let's now create the second SLO to track successfully managing items in a cart.
