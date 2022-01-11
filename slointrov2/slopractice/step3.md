@@ -28,7 +28,7 @@ Let's explore the available metrics in Datadog that can be used in SLIs for the 
 
    Close the graph.
 
-   ![homecontroller-latency](./assets/homecontroller-latency.gif)
+   ![homecontroller-latency](./assets/homecontroller-latency.png)
 
 6. Above the graphs for the resource, click **store-frontend** to navigate back to the service page.
 
@@ -48,6 +48,6 @@ Let's explore the available metrics in Datadog that can be used in SLIs for the 
 
    Close the graph.
 
-   ![ordercontroller-requests](./assets/ordercontroller-requests.gif)
+   ![ordercontroller-requests](./assets/ordercontroller-requests.png)
 
 Let's create the SLOs now that you know which metrics you can use for the SLIs. 
