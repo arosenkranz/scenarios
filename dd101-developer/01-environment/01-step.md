@@ -12,10 +12,6 @@ It may take the lab environment a minute or two to get set up. Begin working you
 
   You'll also find a tab titled "storedog", which you'll learn more about soon.
 
-1. If you create a new file in the terminal, the IDE's file explorer should update within a few seconds. If it doesn't, click the refresh button above the file explorer and the view will update. The command below will create a new file called newfile.txt.
-
-  `touch newfile.txt`{{execute}}
-
 1. On the right side in the terminal you should see login credentials for the account we created for you. Later if you forget the login information, run `creds`{{execute}} and you will see the information again.
 
   Login to your <a href="https://app.datadoghq.com" target="_datadog">**Datadog account**</a> using the credentials in the terminal.

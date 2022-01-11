@@ -1,4 +1,4 @@
-If you are seeing this message, it means you have successfully logged in and joined this course. Congratulations! 
+Before you start, let's make sure you're set up and comfortable with the learning environment.
 
 The objectives of this section are:
 
