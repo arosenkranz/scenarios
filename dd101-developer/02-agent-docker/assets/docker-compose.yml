@@ -9,12 +9,7 @@ services:
       - POSTGRES_USER
       - POSTGRES_HOST=db
     image: 'ddtraining/discounts:2.1.2'
-    command:
-      [
-        sh,
-        -c,
-        'flask run --port=5001 --host=0.0.0.0',
-      ]
+    entrypoint: []
     ports:
       - '5001:5001'
     depends_on:
@@ -36,12 +31,7 @@ services:
       - POSTGRES_USER
       - POSTGRES_HOST=db
     image: 'ddtraining/advertisements:2.1.2'
-    command:
-      [
-        sh,
-        -c,
-        'flask run --port=5002 --host=0.0.0.0',
-      ]
+    entrypoint: []
     ports:
       - '5002:5002'
     depends_on:

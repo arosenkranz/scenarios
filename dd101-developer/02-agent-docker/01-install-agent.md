@@ -65,7 +65,7 @@
 
 1. To see the Agent's configuration, run `docker-compose exec datadog agent config`{{execute}}. All of the settings are in alphabetical order.
 
-  Scroll up to find the `tags` setting. Confirm that `env:dd101-dev` is listed.
+  Scroll up to find the `tags` setting. Confirm that `env:dd101-dev` is listed. If you'd rather not scroll, run `docker-compose exec datadog agent config|grep -A1 "^tags:"`{{execute}} in the terminal.
 
 ### Explore the Datadog App
 
