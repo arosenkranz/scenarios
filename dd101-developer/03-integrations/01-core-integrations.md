@@ -48,8 +48,8 @@ Following the instructions from the Postgres Integration:
 
     <pre class="file" data-filename="docker-compose.yml" data-target="insert" data-marker="# postgres integration template here">
     com.datadoghq.ad.check_names: '["postgres"]'
-          com.datadoghq.ad.init_configs: '[{}]'
-          com.datadoghq.ad.instances: '[{"host":"%%host%%", "port":5432,"username":"datadog","password":"datadog"}]'</pre>
+        com.datadoghq.ad.init_configs: '[{}]'
+        com.datadoghq.ad.instances: '[{"host":"%%host%%", "port":5432,"username":"datadog","password":"datadog"}]'</pre>
 
     These Autodiscovery labels tell the Agent to run the `postgres` check on this container, and provide the credentials for querying metrics.
 
@@ -79,7 +79,7 @@ Following the instructions from the Postgres Integration:
 
     If you don't see it on the first run, the Agent was still starting up. Rerun the command and you should see it.
 
-3. Return to the <a href="https://app.datadoghq.com/account/settings#integrations target="_datadog">**Integrations**</a> page in Datadog. You should see that the Postgres Integration is now installed. Click the card again, and open the **Metrics** tab.  These are the new metrics available, thanks to this integration.
+3. Return to the <a href="https://app.datadoghq.com/account/settings#integrations" target="_datadog">**Integrations**</a> page in Datadog. You should see that the Postgres Integration is now installed. Click the card again, and open the **Metrics** tab.  These are the new metrics available, thanks to this integration.
 
 4. Navigate to <a href="https://app.datadoghq.com/metric/explorer" target="_datadog">**Metrics > Explorer**</a>. In the **Graph** field, type `postgres.table.count` and hit the Enter key. You should see a steady graph of 4 tables over time.
 
