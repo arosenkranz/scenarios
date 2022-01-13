@@ -30,7 +30,7 @@ services:
     labels:
       com.datadoghq.tags.env: 'dd101-dev'
       com.datadoghq.tags.service: 'discounts-service'
-      com.datadoghq.tags.version: '2.'
+      com.datadoghq.tags.version: '2.1.2'
       my.custom.label.team: 'discounts'
   frontend:
     image: 'ddtraining/storefront-fixed:2.1.2'
