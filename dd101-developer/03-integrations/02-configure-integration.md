@@ -49,11 +49,11 @@ Now you can add Autodiscovery labels to the other services.
 
     You can confirm this by comparing the value listed under `Inputs:` with the `CONTAINER ID` values displayed by `docker ps`{{execute}}
 
-5. In the Datadog App, look at the <a href="https://app.datadoghq.com/account/settings#integrations">**Integrations**</a> page to see the newly-installed Python and Ruby integrations.
+5. In the Datadog App, look at the <a href="https://app.datadoghq.com/account/settings#integrations" target="_datadog">**Integrations**</a> page to see the newly-installed Python and Ruby integrations.
 
-6. Navigate [Dashboards](https://app.datadoghq.com/dashboard/lists) and examine the new **Python Runtime Metrics** and **Ruby Runtime Metrics** dashboards. They're not graphing anything yet, but they will when you configure APM later in the course.
+6. Navigate to <a href="https://app.datadoghq.com/dashboard/lists" target="_datadog">**Dashboards**</a> and examine the new **Python Runtime Metrics** and **Ruby Runtime Metrics** dashboards. They're not graphing anything yet, but they will when you configure APM later in the course.
 
-7. Navigate to [Logs Explorer](https://app.datadoghq.com/logs) and look at the latest `advertisements-service` and `store-frontend` log lines. Click on them to observe the details. The log lines are now correctly identified as Python and Ruby sources, and tagged with the correct `service:` tags. 
+7. Navigate to <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs Explorer**</a> and look at the latest `advertisements-service` and `store-frontend` log lines. Click on them to observe the details. The log lines are now correctly identified as Python and Ruby sources, and tagged with the correct `service:` tags. 
 
 As with the `discounts-service`, the Python and Ruby log pipelines are activated for these services, but the log output is not formatted uniformly. The `store-frontend` logs will look much better when you configure APM later in the course.
 
