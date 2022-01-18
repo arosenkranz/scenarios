@@ -6,5 +6,6 @@ In this lab, you will:
 1. Explore APM in the Datadog app
 1. Examine the connection between application traces and logs
 1. Use monitors to alert on application performance issues
+1. Enable and observe application Profiling
 
 When you are ready to continue, click **Start Scenario**.

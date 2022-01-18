@@ -19,10 +19,14 @@
       {
         "text": "03-apm-monitors.md",
         "title": "APM Monitors"
+      },
+      {
+        "text": "04-profiling.md",
+        "title": "Continuous Profiling"
       }
     ],
     "finish": {
-      "text": "04-finish.md"
+      "text": "05-finish.md"
     },
     "assets": {
       "host01": [
