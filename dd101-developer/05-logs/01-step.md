@@ -1,14 +1,12 @@
-The <a href="https://docs.datadoghq.com/logs/explorer/list/" target="_blank">Search</a> view in <a href="https://docs.datadoghq.com/logs/explorer/" target="_blank">Logs</a> is a <a href="https://docs.datadoghq.com/logs/explorer/list/" target="_blank">Log List</a> that displays indexed logs matching a search context (a search query for a selected time range). 
-
-Let's start working with the Logs Search.
+The Search view in <a href="https://docs.datadoghq.com/logs/explorer/" target="_datadog">Logs</a> is a Log List that displays indexed logs matching a search context (a search query for a selected time range). 
 
 1. Navigate to <a href="https://app.datadoghq.com/logs" target="_datadog">**Logs**</a>.
 
-2. You can use the search field and the Facets list to create a search query to filter the Log List. 
+2. You can use the search field and the Facets list, which is located to the left of the logs list, to create a search query to filter the Log List. 
 
     A search query can include assigned tags like `env` and `service`, attributes extracted from the logs like `@http.status_code`, and text strings from log messages. Search queries built in the search field require proper <a href="https://docs.datadoghq.com/logs/search_syntax/" target="_blank">search syntax</a>.
 
-    In the Facets on the left of the Log List, select `advertisements-service` and `discounts-service` under **Service** and `Error` under the **Status** to filter logs just those for these services. 
+    In the Facets on the left, select `advertisements-service` and `discounts-service` under **Service** and `Error` under **Status** to filter logs just those for these services. 
 
     ![facets-search](assets/facets-search.png)
 
@@ -18,9 +16,9 @@ Let's start working with the Logs Search.
 
     ![logs-side-panel](assets/logs-side-panel.gif)
 
-4. Click a log in the list and view the details of the side panel. Click the **Traces** tab to view the associated trace. Click the **Metrics** tab to view the associated infrastructure metric.
+4. In this detailed log panel, click the **Traces** tab to view the associated trace. Click the **Metrics** tab to view the associated infrastructure metric.
     
-    Notice the log message. Instead of using the ERROR status, let's use the log message to filter log error logs for these services. 
+    Notice the log message. Instead of using the ERROR status, use the log message to filter log error logs for these services. 
     
 5. Copy the part of the log message that reads `An error occurred`, and close the log side panel.
 
@@ -42,7 +40,9 @@ Let's start working with the Logs Search.
 
 12. Scroll to the bottom of the Facets list. Under the **OTHERS** facet group, expand the **process.name** facet. You may need to wait for new logs to be collected and processed. Then, you'll see the values of this attribute that are found in new filtered set of the logs.
 
+    ![The custom facet appears towards the bottom of the facets list](assets/logs-custom-facet.png)
+
     It’s important to remember, though, that the tags and attributes available to you for creating search contexts depends on the tags you assign to the logs and the attributes you extract from the logs. 
 
-Now that you've gone over the Log Search and querying, let's look at the different Aggregation features for analyzing logs.
+Now that you've gone over the Log Search and querying, it's time to look at the different Aggregation features for analyzing logs.
 
