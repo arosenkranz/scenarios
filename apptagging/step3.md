@@ -6,19 +6,19 @@ Tags can also act as Facets for various lists throughout Datadog. Let's create t
 
 3. For **Choose Request Type**, select **HTTP**.
 
-4. Under **Define request**, fill in each field as shown below. 
+4. Under **Define request**, fill in each field as shown in the image below (the UI for the page may look a little different, but the data is the same). 
 
     **Note**: For **URL**, enter the custom URL for your Storedog home page: `https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/`{{copy}} 
 
     ![syn-makerequest](apptagging/assets/syn-makerequest2.png)
 
-5. Expand **Define assertions**. Click **New Assertion** and fill in the fields as follows: **When `response time` `is less than` `10`ms**.
+5. Expand **Define assertions**. Click **New Assertion** and fill in the fields as follows: **When `response time` `is less than` `10`** (in milliseconds).
 
-6. Expand **Specify test frequency** and select **1w**.
+6. Expand **Specify test frequency** and select **7d**.
 
-5. Expand **Define alert conditions** and fill in each field as follows: **An alert is triggered if your test fails for `1` minutes from any `1` of 5 locations. Retry  `1` time before location is marked as failed**.
+5. Expand **Define alert conditions** and fill in each field as follows: **An alert is triggered if your test fails for `1` minutes from any `1` of 15 locations. Retry  `1` time before location is marked as failed**.
 
-6. Expand **Notify your team** the section. You can leave this section blank, or you can enter a message and select to receive notifications.
+6. Expand the **Configure the monitor for this test** section. You can leave this section blank, or you can enter a message and select to receive notifications.
 
 7. Click **Create Test**. You will be redirected to the new Synthethic test. 
 

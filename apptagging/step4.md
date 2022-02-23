@@ -72,7 +72,7 @@ With the help of tags, you can create <a href="https://docs.datadoghq.com/monito
 
     Delete your email address from the **Notify your team** field. 
     
-    Click **Save** to save the monitor. 
+    Click **Create** to save the monitor. 
 
 10. Select **Manage Monitors** above the monitor to navigate to the monitors list.
 
@@ -84,6 +84,4 @@ With the help of tags, you can create <a href="https://docs.datadoghq.com/monito
 
     Notice that the monitor you created is listed. Because of the tags you assigned to the monitor in step 6, the monitor is linked to the respective APM service pages.
 
-14. Click the command `grademe`{{execute}} to receive credit for creating the monitor.
-
-15. In the browser tab with the **Manage Monitors** list, hover over the monitor you created. Click the trash icon that appear on the right of the monitor to delete the monitor. 
+14. In the browser tab with the **Manage Monitors** list, hover over the monitor you created. Click the trash icon that appear on the right of the monitor to delete the monitor. 

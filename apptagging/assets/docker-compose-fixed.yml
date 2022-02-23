@@ -31,12 +31,10 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_PROFILING_ENABLED=true
-    image: "ddtraining/discounts-service-fixed:latest"
-    command: [sh, -c, "pip install ddtrace -U && ddtrace-run flask run --port=5001 --host=0.0.0.0"]
+    image: "ddtraining/discounts-fixed:2.1.0"
+    command: ddtrace-run flask run --port=5001 --host=0.0.0.0
     ports:
       - "5001:5001"
-    volumes:
-      - "/ecommworkshop/discounts-service-fixed:/app"
     depends_on:
       - agent
       - db
@@ -58,12 +56,10 @@ services:
       - DB_PASSWORD
       - DD_CLIENT_TOKEN
       - DD_APPLICATION_ID
-    image: "ddtraining/ecommerce-frontend:latest"
+    image: "ddtraining/storefront-fixed:2.1.0"
     command: sh docker-entrypoint.sh
     ports:
       - "3000:3000"
-    volumes:
-      - "/ecommworkshop/store-frontend-instrumented-fixed:/spree"
     depends_on:
       - agent
       - db
@@ -88,12 +84,10 @@ services:
       - DD_LOGS_INJECTION=true
       - DD_TRACE_ANALYTICS_ENABLED=true
       - DD_PROFILING_ENABLED=true
-    image: "ddtraining/advertisements-service:latest"
-    command: [sh, -c, "pip install ddtrace -U && ddtrace-run flask run --port=5002 --host=0.0.0.0"]
+    image: "ddtraining/advertisements-fixed:2.1.0"
+    command: ddtrace-run flask run --port=5002 --host=0.0.0.0
     ports:
       - "5002:5002"
-    volumes:
-      - "/ecommworkshop/ads-service-fixed:/app"
     depends_on:
       - agent
       - db
@@ -111,3 +105,23 @@ services:
       - POSTGRES_USER
     labels:
       com.datadoghq.ad.logs: '[{"source": "postgresql", "service": "postgres"}]'
+      com.datadoghq.tags.env: 'ruby-shop'
+      com.datadoghq.tags.service: 'database'
+      com.datadoghq.tags.version: '11.12'
+      my.custom.label.team: 'database'
+      com.datadoghq.ad.check_names: '["postgres"]'
+      com.datadoghq.ad.init_configs: '[{}]'
+      com.datadoghq.ad.instances: '[{"host":"%%host%%", "port":5432,"username":"datadog","password":"datadog"}]'
+    volumes:
+      - /root/postgres:/var/lib/postgresql/data
+      - /root/dd_agent.sql:/docker-entrypoint-initdb.d/dd_agent.sql
+  puppeteer:
+    image: buildkite/puppeteer:10.0.0
+    volumes:
+      - /root/puppeteer-mobile.js:/puppeteer.js
+      - /root/puppeteer.sh:/puppeteer.sh
+    environment:
+      - STOREDOG_URL
+    depends_on:
+      - frontend
+    command: bash puppeteer.sh
