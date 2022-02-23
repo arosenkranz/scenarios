@@ -31,10 +31,9 @@ services:
       - DD_PROFILING_ENABLED=true
       - DD_VERSION=1.0
     image: "ddtraining/discounts:2.1.0"
+    command: ddtrace-run flask run --port=5001 --host=0.0.0.0
     ports:
       - "5001:5001"
-    volumes:
-      - "/ecommworkshop/discounts-service:/app"
     depends_on:
       - agent
       - db
@@ -82,10 +81,9 @@ services:
       - DD_PROFILING_ENABLED=true
       - DD_VERSION=1.0
     image: "ddtraining/advertisements:2.1.0"
+    command: ddtrace-run flask run --port=5001 --host=0.0.0.0
     ports:
       - "5002:5002"
-    volumes:
-      - "/ecommworkshop/ads-service:/app"
     depends_on:
       - agent
       - db
