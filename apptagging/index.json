@@ -58,19 +58,32 @@
         {
           "file": "frontend-docker-entrypoint.sh",
           "target": "/root"
+        },
+        {
+          "file": "dd_agent.sql",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer-mobile.js",
+          "target": "/root"
+        },
+        {
+          "file": "puppeteer.sh",
+          "target": "/root"
         }
       ]
     }
   },
   "environment": {
-    "uilayout": "editor-terminal", 
-    "uieditorpath": "/ecommworkshop",
-    "hideHiddenFiles": true,
-    "exclusionPatterns": ["**/store-frontend/tmp/*", "**/store-frontend/log/*"],
+    "uilayout": "terminal",
+    "showide": true,
+    "uieditorpath": "/root/lab",
+    "hideHiddenFiles": false,
     "showdashboard": true,
-    "dashboards": [{"name": "storedog", "port": 3000}]
+    "dashboards": [{ "name": "storedog", "port": 3000 }]
   },
   "backend": {
-      "imageid": "datadog-base-v1"
+    "imageid": "datadog-base-v4",
+    "reuseConnection": "false"
   }
 }

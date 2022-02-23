@@ -2,6 +2,8 @@
 
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=postgres
+export STOREDOG_URL=https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com
+
 
 statuscheck files
 
