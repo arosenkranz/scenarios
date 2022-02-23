@@ -1,8 +1,10 @@
 # Detailed Course Description
 
-When working with web applications, it’s crucial to understand the different types of issues that negatively impact the user experience. Users can experience poor load times, encounter a transaction-stopping bug, or lose interest due to a confusing interface, all resulting in potential lost business. Having a solid grasp of the different types of metrics can help a team establish a workflow that can identify and fix these issues in an efficient manner.
+When working with web applications, it’s crucial to understand every type of issue that negatively impact the user's experience. Users often experience the effects of poor load times, transaction-stopping bugs, shifting views that cause unwanted interactions, confusing interfaces, and more. This not only makes them lose interest in your app and choose to bounce, but unnecessarily increases your rate of lost customers. 
 
-In this course, you will learn how to root out and distinguish the differences in issues that could be happening in your applications and ensure a consistently good user experience. With Error Tracking, RUM, Session Replay, and APM, you’ll see how efficient data collection can help identify, prioritize, and address your applications' most urgent issues as fast as possible.
+Giving your front end team the superpower of being able to discover and mitigate user experience issues before they make it to production can revolutionize both your team’s workflow, and your business overall. Integrating the practice of Real User Monitoring (RUM) not only enables your team to understand where performance bottlenecks are occurring for your real users in production, but it gives them an observability framework in which to continually gauge, monitor, and be alerted to any user experience issue that’s relevant.
+
+In this course, you’ll learn how to surface, triage, prioritize, and resolve the UX issues that are affecting an ecommerce app called Storedog. Using tools in tandem with RUM like Error Tracking, Session Replay, and APM will help you see how effective data collection can allow you to identify and address your application’s most urgent issues in the quickest way possible.
 
 ### Primary Audience
 All Datadog Users
