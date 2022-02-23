@@ -18,7 +18,7 @@ statuscheck files
 cd /root/lab
 docker-compose -f docker-compose-broken.yml up -d
 clear
-envready
+# envready
 statusupdate complete
 clear
 
