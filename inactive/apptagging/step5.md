@@ -10,7 +10,7 @@ In the meantime, let's compare the new version of the app with the first version
 
 3. Compare the two files. You'll notice that the images/volumes for the discounts, frontend, and advertisements services in the new version are labeled "fixed".
 
-    Also notice the differences between these lines in each file: **Lines 27-29, 45-47, 54-56, 74-76, 84-86, and 102-104**. The version numbers for the services are different. The original version of each service is `1.0` and the new version of each service is `1.1`.
+    Also notice the difference in the `environment` blocks for each service. The version numbers for the services are different. The original version of each service is `1.0` and the new version of each service is `1.1`.
 
 4. After you see the "environment is prepared" message in the terminal, navigate to <a href="https://app.datadoghq.com/apm/services" target="_datadog">**APM** > **Services**</a>. Select **discounts-service**.
 

@@ -8,7 +8,8 @@ services:
       - DD_LOGS_ENABLED=true
       - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
       - DD_PROCESS_AGENT_ENABLED=true
-      - DD_TAGS='env:development'
+      - DD_DOCKER_LABELS_AS_TAGS={"my.custom.label.team":"team"}
+      - DD_TAGS='env:ruby-shop'
     ports:
       - "8126:8126"
     volumes:
@@ -67,6 +68,10 @@ services:
       - advertisements
     labels:
       com.datadoghq.ad.logs: '[{"source": "ruby", "service": "store-frontend"}]'
+      com.datadoghq.tags.env: "ruby-shop"
+      com.datadoghq.tags.service: "store-frontend"
+      com.datadoghq.tags.version: "1.0"
+      my.custom.label.team: "frontend"
   advertisements:
     environment:
       - FLASK_DEBUG=1
